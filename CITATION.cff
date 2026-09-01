@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the software and the article."
+title: "Analysis code for: Honest performance estimation for small-sample QSAR"
+abstract: >-
+  Analysis code and raw permutation outputs for a study of selection leakage,
+  permutation-null inflation and a label-free remedy in small-sample QSAR.
+authors:
+  - family-names: Werle
+    given-names: Julia
+    affiliation: "Czech University of Life Sciences Prague; Charles University in Prague"
+  - family-names: Rondevaldova
+    given-names: Johana
+    affiliation: "Czech University of Life Sciences Prague"
+  - family-names: Werle
+    given-names: Egon
+    affiliation: "Heidelberg University Hospital"
+license: MIT
+repository-code: "https://github.com/juwe2026/Juwe-Honest_performance_estimation_for_small-sample_QSAR"
+version: "1.0.0"
+date-released: "2026-09-01"
+keywords:
+  - QSAR
+  - PLS-DA
+  - feature selection
+  - nested cross-validation
+  - permutation testing
+  - selection bias
+preferred-citation:
+  type: article
+  title: "Honest performance estimation for small-sample QSAR: selection leakage, permutation-null inflation, and a label-free remedy"
+  authors:
+    - family-names: Werle
+      given-names: Julia
+    - family-names: Rondevaldova
+      given-names: Johana
+    - family-names: Werle
+      given-names: Egon
+  journal: "Journal of Cheminformatics"
+  year: 2026

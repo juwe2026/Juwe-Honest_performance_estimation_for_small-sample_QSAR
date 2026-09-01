@@ -1,0 +1,13 @@
+numpy>=1.24,<3.0
+scipy>=1.10,<2.0
+pandas>=2.0,<3.0
+scikit-learn>=1.3,<2.0
+rdkit>=2023.9
+openpyxl>=3.1,<4.0
+matplotlib>=3.7,<4.0
+
+# Note: the exact package versions used for the published run were not recorded at the time
+# and cannot be reconstructed retroactively; the ranges above are compatible upper/lower
+# bounds, not a verified lockfile. For a fully pinned, reproducible environment, run
+# `pip freeze > requirements-lock.txt` after installing and verifying against the archived
+# results, and cite that file instead.
