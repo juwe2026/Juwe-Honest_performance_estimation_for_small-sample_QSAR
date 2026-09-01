@@ -1,0 +1,527 @@
+{
+ "nlv": 2,
+ "D13": {
+  "H.I.": {
+   "TPSA": {
+    "apparent": 1.1794932758546575,
+    "nested": 1.1754299895751696
+   },
+   "RingCount": {
+    "apparent": 1.055648409496938,
+    "nested": 1.0535028176742485
+   },
+   "FractionCSP3": {
+    "apparent": 1.5103139915126391,
+    "nested": 1.506226626887893
+   },
+   "C_Count": {
+    "apparent": 0.3787881044901816,
+    "nested": 0.37307891147469424
+   },
+   "NumAromaticRings": {
+    "apparent": 1.0193240840595172,
+    "nested": 1.0116846307338099
+   },
+   "CeqC_DoubleBonds": {
+    "apparent": 0.5914250093867329,
+    "nested": 0.5980497450325344
+   },
+   "Aldehyde_flag": {
+    "apparent": 1.4595293446521609,
+    "nested": 1.4556018329714921
+   },
+   "Ketone_flag": {
+    "apparent": 0.7329523033509092,
+    "nested": 0.7324497343023029
+   },
+   "CarboxAcid_flag": {
+    "apparent": 0.9006216965432843,
+    "nested": 0.8917923512159853
+   },
+   "Phenol_flag": {
+    "apparent": 1.4308946512372602,
+    "nested": 1.428660177075159
+   },
+   "Ether_flag": {
+    "apparent": 0.6634467775858254,
+    "nested": 0.6620861608471805
+   },
+   "EsterLacton_flag": {
+    "apparent": 0.3787881044901814,
+    "nested": 0.37307891147469424
+   },
+   "Alcohol_flag": {
+    "apparent": 0.755911470809847,
+    "nested": 0.7540792846300687
+   }
+  },
+  "S.A.": {
+   "TPSA": {
+    "apparent": 1.170801778556435,
+    "nested": 1.1639518542846934
+   },
+   "RingCount": {
+    "apparent": 0.47725507158034747,
+    "nested": 0.48186035229438756
+   },
+   "FractionCSP3": {
+    "apparent": 1.5902689132980814,
+    "nested": 1.590182441941047
+   },
+   "C_Count": {
+    "apparent": 0.22755692387248666,
+    "nested": 0.2245047360379323
+   },
+   "NumAromaticRings": {
+    "apparent": 1.610835566360119,
+    "nested": 1.6046681190196874
+   },
+   "CeqC_DoubleBonds": {
+    "apparent": 0.2187619522206233,
+    "nested": 0.2418066691247997
+   },
+   "Aldehyde_flag": {
+    "apparent": 0.1601508164406063,
+    "nested": 0.19589737535792598
+   },
+   "Ketone_flag": {
+    "apparent": 0.5482714616750257,
+    "nested": 0.5526675224542917
+   },
+   "CarboxAcid_flag": {
+    "apparent": 0.7536346259466823,
+    "nested": 0.7425085109085342
+   },
+   "Phenol_flag": {
+    "apparent": 2.147660949985531,
+    "nested": 2.14269681809762
+   },
+   "Ether_flag": {
+    "apparent": 0.5184881194138954,
+    "nested": 0.5149366859391787
+   },
+   "EsterLacton_flag": {
+    "apparent": 0.2275569238724866,
+    "nested": 0.22450473603793228
+   },
+   "Alcohol_flag": {
+    "apparent": 0.5922758980383851,
+    "nested": 0.5927501893673927
+   }
+  },
+  "S.Pneu": {
+   "TPSA": {
+    "apparent": 1.1800303681747615,
+    "nested": 1.1726466680422485
+   },
+   "RingCount": {
+    "apparent": 0.6300897193719048,
+    "nested": 0.629232429628678
+   },
+   "FractionCSP3": {
+    "apparent": 1.6913371592613748,
+    "nested": 1.690572343472864
+   },
+   "C_Count": {
+    "apparent": 0.25614329016512455,
+    "nested": 0.25253852045418895
+   },
+   "NumAromaticRings": {
+    "apparent": 1.4493048891938949,
+    "nested": 1.4418276661404825
+   },
+   "CeqC_DoubleBonds": {
+    "apparent": 0.30352294825428666,
+    "nested": 0.3234733725433527
+   },
+   "Aldehyde_flag": {
+    "apparent": 0.7844091198639199,
+    "nested": 0.7823666937568957
+   },
+   "Ketone_flag": {
+    "apparent": 0.5613211831975373,
+    "nested": 0.5632943591966668
+   },
+   "CarboxAcid_flag": {
+    "apparent": 0.7731063128719275,
+    "nested": 0.7623327276832558
+   },
+   "Phenol_flag": {
+    "apparent": 1.939786513994543,
+    "nested": 1.9357351924850033
+   },
+   "Ether_flag": {
+    "apparent": 0.5386021722418018,
+    "nested": 0.5354437951541468
+   },
+   "EsterLacton_flag": {
+    "apparent": 0.2561432901651244,
+    "nested": 0.25253852045418895
+   },
+   "Alcohol_flag": {
+    "apparent": 0.6671789478275048,
+    "nested": 0.6676334140414862
+   }
+  },
+  "S.Pyo": {
+   "TPSA": {
+    "apparent": 1.9520762349086875,
+    "nested": 1.9404404099395367
+   },
+   "RingCount": {
+    "apparent": 1.1521738379132516,
+    "nested": 1.1488997642484933
+   },
+   "FractionCSP3": {
+    "apparent": 0.7473821627663392,
+    "nested": 0.7372157226921703
+   },
+   "C_Count": {
+    "apparent": 0.8884477473447793,
+    "nested": 0.8702721673814169
+   },
+   "NumAromaticRings": {
+    "apparent": 0.9737599329768611,
+    "nested": 0.9611292107898647
+   },
+   "CeqC_DoubleBonds": {
+    "apparent": 0.8834464094184911,
+    "nested": 0.8803427433512276
+   },
+   "Aldehyde_flag": {
+    "apparent": 0.48195463827036816,
+    "nested": 0.494652073889334
+   },
+   "Ketone_flag": {
+    "apparent": 0.3862508358889311,
+    "nested": 0.3926367408751071
+   },
+   "CarboxAcid_flag": {
+    "apparent": 0.681584823694987,
+    "nested": 0.6998556515414569
+   },
+   "Phenol_flag": {
+    "apparent": 1.5860355130707722,
+    "nested": 1.5764450036569027
+   },
+   "Ether_flag": {
+    "apparent": 0.7685498544781958,
+    "nested": 0.7628591718203062
+   },
+   "EsterLacton_flag": {
+    "apparent": 0.8884477473447792,
+    "nested": 0.8702721673814169
+   },
+   "Alcohol_flag": {
+    "apparent": 0.20914965263050922,
+    "nested": 0.23852983697691355
+   }
+  },
+  "P.A.": {
+   "TPSA": {
+    "apparent": 0.6711463964621543,
+    "nested": 0.6758758759860154
+   },
+   "RingCount": {
+    "apparent": 0.20794330260588467,
+    "nested": 0.2056482087085161
+   },
+   "FractionCSP3": {
+    "apparent": 1.226619271449665,
+    "nested": 1.2234371816324348
+   },
+   "C_Count": {
+    "apparent": 0.1650999741432234,
+    "nested": 0.1620185198524227
+   },
+   "NumAromaticRings": {
+    "apparent": 1.8793478830484789,
+    "nested": 1.878291453634985
+   },
+   "CeqC_DoubleBonds": {
+    "apparent": 0.7281041979487316,
+    "nested": 0.7276406224319841
+   },
+   "Aldehyde_flag": {
+    "apparent": 0.35002027356868914,
+    "nested": 0.3497031448399572
+   },
+   "Ketone_flag": {
+    "apparent": 0.43133096991569847,
+    "nested": 0.43134478702060947
+   },
+   "CarboxAcid_flag": {
+    "apparent": 0.28603161279951655,
+    "nested": 0.2836712187560918
+   },
+   "Phenol_flag": {
+    "apparent": 2.497667089855549,
+    "nested": 2.497289249946176
+   },
+   "Ether_flag": {
+    "apparent": 0.30276558770782236,
+    "nested": 0.3001732195685204
+   },
+   "EsterLacton_flag": {
+    "apparent": 0.1650999741432233,
+    "nested": 0.16201851985242263
+   },
+   "Alcohol_flag": {
+    "apparent": 0.4058872933785963,
+    "nested": 0.4041240876344465
+   }
+  }
+ },
+ "D12": {
+  "H.I.": {
+   "TPSA": {
+    "apparent": 1.1040650251391704,
+    "nested": 1.1010268279246704
+   },
+   "RingCount": {
+    "apparent": 1.0256589637653655,
+    "nested": 1.0233434237217174
+   },
+   "FractionCSP3": {
+    "apparent": 1.4597297530610915,
+    "nested": 1.455704465036683
+   },
+   "NumAromaticRings": {
+    "apparent": 0.9752363218714588,
+    "nested": 0.9680848168685509
+   },
+   "CeqC_DoubleBonds": {
+    "apparent": 0.572418945674893,
+    "nested": 0.5785545273200917
+   },
+   "Aldehyde_flag": {
+    "apparent": 1.4092258845611607,
+    "nested": 1.405441862680118
+   },
+   "Ketone_flag": {
+    "apparent": 0.726127489914805,
+    "nested": 0.7253215776979964
+   },
+   "CarboxAcid_flag": {
+    "apparent": 0.8516454328953467,
+    "nested": 0.8436355956693006
+   },
+   "Phenol_flag": {
+    "apparent": 1.3800562716509959,
+    "nested": 1.3778762608544313
+   },
+   "Ether_flag": {
+    "apparent": 0.6516616417105139,
+    "nested": 0.6499074246325175
+   },
+   "EsterLacton_flag": {
+    "apparent": 0.44097594799717793,
+    "nested": 0.43295562414533256
+   },
+   "Alcohol_flag": {
+    "apparent": 0.7465568711523001,
+    "nested": 0.744650453898059
+   }
+  },
+  "S.A.": {
+   "TPSA": {
+    "apparent": 1.1079824940934997,
+    "nested": 1.1019276742799406
+   },
+   "RingCount": {
+    "apparent": 0.4621670006062025,
+    "nested": 0.46647140132441045
+   },
+   "FractionCSP3": {
+    "apparent": 1.531597764826461,
+    "nested": 1.5315191579127059
+   },
+   "NumAromaticRings": {
+    "apparent": 1.5488124964187042,
+    "nested": 1.5429739709300865
+   },
+   "CeqC_DoubleBonds": {
+    "apparent": 0.20540259243811732,
+    "nested": 0.22826488066203765
+   },
+   "Aldehyde_flag": {
+    "apparent": 0.1624160121012448,
+    "nested": 0.19551950500567566
+   },
+   "Ketone_flag": {
+    "apparent": 0.5457749887473379,
+    "nested": 0.5493351225945209
+   },
+   "CarboxAcid_flag": {
+    "apparent": 0.7161598178490032,
+    "nested": 0.7053981827617837
+   },
+   "Phenol_flag": {
+    "apparent": 2.0673602572700105,
+    "nested": 2.062580564391694
+   },
+   "Ether_flag": {
+    "apparent": 0.5074610098049025,
+    "nested": 0.5037369197536278
+   },
+   "EsterLacton_flag": {
+    "apparent": 0.2642157329919152,
+    "nested": 0.259383951266752
+   },
+   "Alcohol_flag": {
+    "apparent": 0.5775249965722967,
+    "nested": 0.5778039596546704
+   }
+  },
+  "S.Pneu": {
+   "TPSA": {
+    "apparent": 1.111860546044579,
+    "nested": 1.105442169742977
+   },
+   "RingCount": {
+    "apparent": 0.610587526918345,
+    "nested": 0.6095498705479117
+   },
+   "FractionCSP3": {
+    "apparent": 1.6300620947782025,
+    "nested": 1.6292743514824108
+   },
+   "NumAromaticRings": {
+    "apparent": 1.3924490655502315,
+    "nested": 1.3853937568371566
+   },
+   "CeqC_DoubleBonds": {
+    "apparent": 0.287373388523442,
+    "nested": 0.30729969363769916
+   },
+   "Aldehyde_flag": {
+    "apparent": 0.7612519941387591,
+    "nested": 0.7591259312926475
+   },
+   "Ketone_flag": {
+    "apparent": 0.5593232302810132,
+    "nested": 0.5607460548725847
+   },
+   "CarboxAcid_flag": {
+    "apparent": 0.7324157105079375,
+    "nested": 0.7221903323063508
+   },
+   "Phenol_flag": {
+    "apparent": 1.8681515270073357,
+    "nested": 1.8642109763186043
+   },
+   "Ether_flag": {
+    "apparent": 0.5271666496473439,
+    "nested": 0.5238362285272271
+   },
+   "EsterLacton_flag": {
+    "apparent": 0.30350539326992865,
+    "nested": 0.297830503928088
+   },
+   "Alcohol_flag": {
+    "apparent": 0.6508137407047296,
+    "nested": 0.6510274641071738
+   }
+  },
+  "S.Pyo": {
+   "TPSA": {
+    "apparent": 1.915650871284566,
+    "nested": 1.9049110391922088
+   },
+   "RingCount": {
+    "apparent": 1.1199852015970413,
+    "nested": 1.1166172416889548
+   },
+   "FractionCSP3": {
+    "apparent": 0.7572139063770934,
+    "nested": 0.7475555923654496
+   },
+   "NumAromaticRings": {
+    "apparent": 1.0044551150796204,
+    "nested": 0.9910873734440487
+   },
+   "CeqC_DoubleBonds": {
+    "apparent": 0.8508750240112111,
+    "nested": 0.8482395173839692
+   },
+   "Aldehyde_flag": {
+    "apparent": 0.40518866239950396,
+    "nested": 0.4218057343896445
+   },
+   "Ketone_flag": {
+    "apparent": 0.3321421046262691,
+    "nested": 0.3423865446937009
+   },
+   "CarboxAcid_flag": {
+    "apparent": 0.6937089118184865,
+    "nested": 0.7131025130639255
+   },
+   "Phenol_flag": {
+    "apparent": 1.5611098859649337,
+    "nested": 1.549994335786187
+   },
+   "Ether_flag": {
+    "apparent": 0.7572682772936064,
+    "nested": 0.7523455461608989
+   },
+   "EsterLacton_flag": {
+    "apparent": 0.98753971445507,
+    "nested": 0.9651954255046405
+   },
+   "Alcohol_flag": {
+    "apparent": 0.16775372194392557,
+    "nested": 0.20295979336924327
+   }
+  },
+  "P.A.": {
+   "TPSA": {
+    "apparent": 0.6392041115487664,
+    "nested": 0.6440715365074638
+   },
+   "RingCount": {
+    "apparent": 0.20359577233137344,
+    "nested": 0.20112740940344825
+   },
+   "FractionCSP3": {
+    "apparent": 1.1814013882690544,
+    "nested": 1.178268028250647
+   },
+   "NumAromaticRings": {
+    "apparent": 1.8077595572870966,
+    "nested": 1.8067558543748903
+   },
+   "CeqC_DoubleBonds": {
+    "apparent": 0.7000470678520718,
+    "nested": 0.6996156227719784
+   },
+   "Aldehyde_flag": {
+    "apparent": 0.33686602800447923,
+    "nested": 0.33659093801322454
+   },
+   "Ketone_flag": {
+    "apparent": 0.4153581469340812,
+    "nested": 0.4153906669240981
+   },
+   "CarboxAcid_flag": {
+    "apparent": 0.27265144907764927,
+    "nested": 0.2703994910505529
+   },
+   "Phenol_flag": {
+    "apparent": 2.4021784110549866,
+    "nested": 2.4017831516076633
+   },
+   "Ether_flag": {
+    "apparent": 0.29688584754784064,
+    "nested": 0.2942037780859154
+   },
+   "EsterLacton_flag": {
+    "apparent": 0.14234192593035258,
+    "nested": 0.1401968428758258
+   },
+   "Alcohol_flag": {
+    "apparent": 0.3962242272630257,
+    "nested": 0.3944087956302018
+   }
+  }
+ }
+}
