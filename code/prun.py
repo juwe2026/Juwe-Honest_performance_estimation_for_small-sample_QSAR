@@ -1,3 +1,4 @@
+# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
 import sys, os, time, numpy as np, nested_generic as ng
 short=sys.argv[1]; sheet=sys.argv[2]; target=int(sys.argv[3]); code=sys.argv[4]
 budget=float(sys.argv[5]) if len(sys.argv)>5 else 240.0
@@ -14,5 +15,5 @@ while len(q2s)<target and (time.time()-t0)<budget:
     q,a,_=ng.nested_cv(D,yv,1); q2s.append(q); aucs.append(a)
     if len(q2s)%50==0: save()
 save(); n=len(q2s)
-pQ=(1+np.sum(np.array(q2s)>=oq))/(1+n); pA=(1+np.sum(np.array(aucs)>=oa))/(1+n)
+pQ=(1+np.sum(np.array(q2s)>=oq - 1e-9))/(1+n); pA=(1+np.sum(np.array(aucs)>=oa - 1e-9))/(1+n)
 print(f'{short}: perms={n}/{target} | p(Q2)={pQ:.4f} p(AUC)={pA:.4f} | obs Q2={oq:.3f} AUC={oa:.3f} | null-med Q2={np.median(q2s):.3f} AUC={np.median(aucs):.3f} | {time.time()-t0:.0f}s')

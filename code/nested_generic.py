@@ -3,7 +3,7 @@ _ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 _DATA = _os.path.join(_ROOT, "data")
 _RES = _os.environ.get("QSAR_RECALC_DIR", _os.path.join(_ROOT, "results", "recalc"))
 _os.makedirs(_RES, exist_ok=True)
-# Additional file 4 is not bundled here because of its size; place it in data/ under
+# Additional file 6 is not bundled here because of its size; place it in data/ under
 # this name, or point QSAR_ROUTEA_XLSX at it.
 XLSX = "20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx"
 
@@ -16,7 +16,7 @@ BIG = _os.environ.get("QSAR_ROUTEA_XLSX", _os.path.join(_DATA, XLSX))
 _xl=pd.ExcelFile(BIG); _clean=pd.read_excel(_xl,'Cleaned_Steps1-4')
 
 def build(sheet, ycol=None):
-    """Assemble the Route A design matrix from one sheet of Additional file 4.
+    """Assemble the Route A design matrix from one sheet of Additional file 6.
 
     ycol names the activity column. It defaults to the third column, which is the
     convention of the strain-specific CS1-5_* sheets. The pooled sheet
@@ -64,9 +64,9 @@ def nested_cv(D,yv,nlv=1):
     X=D['X']; N=D['N']; yhat=np.zeros(N)
     for F in D['FOLDS']:
         tr=F['tr']; ytr=yv[tr]; ntr=int(tr.sum()); n1=int(ytr.sum()); n0=ntr-n1
-        if n1<1 or n0<1: yhat[F['i']]=ytr.mean(); continue
+        if n1<1 or n0<1: yhat[F['i']]=0.5; continue
         eff,p=eff_filter(F['R'],ytr,ntr); keep=np.where((eff>0.3)&(p<=0.05))[0]
-        if len(keep)<1: yhat[F['i']]=ytr.mean(); continue
+        if len(keep)<1: yhat[F['i']]=0.5; continue
         rl=group_reps(F['Xtr'][:,keep],F['R'][:,keep],eff[keep],ntr); cols=keep[rl]
         Xtr=F['Xtr'][:,cols]; Xte=F['Xte'][:,cols]
         mu=Xtr.mean(0); sd=Xtr.std(0,ddof=1); sd[sd==0]=1.0
@@ -113,11 +113,11 @@ def nested_cv_a2_topk(D, yv, nlv=1, top_k=15):
         tr = F['tr']; ytr = yv[tr]; ntr = int(tr.sum())
         n1 = int(ytr.sum())
         if n1 < 1 or n1 == ntr:
-            yhat[F['i']] = ytr.mean(); continue
+            yhat[F['i']] = 0.5; continue
         eff, pv = eff_filter(F['R'], ytr, ntr)
         keep = np.where((eff > 0.3) & (pv <= 0.05))[0]
         if len(keep) < 1:
-            yhat[F['i']] = ytr.mean(); continue
+            yhat[F['i']] = 0.5; continue
         rl = group_reps(F['Xtr'][:, keep], F['R'][:, keep], eff[keep], ntr)
         reps = keep[rl]
         cols = reps[np.argsort(-eff[reps])[:top_k]] if len(reps) > top_k else reps

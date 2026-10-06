@@ -1,3 +1,6 @@
+# REVISION OCTOBER 2026: the empty-selection / single-class fallback below previously
+# predicted ytr.mean(). Under leave-one-out that equals (S - y_i)/(n - 1) and therefore
+# carries the held-out label; it is now the neutral constant 0.5. See CHANGELOG_revision.md.
 """Leave-pair-out (LPO) cross-validated c-statistic, as recommended by Geroldinger et al. 2023.
 For every (event, non-event) pair the pair is removed, the ENTIRE supervised pipeline is
 re-run on the remaining n-2 compounds, and the pair is scored as concordant if the predicted
@@ -24,7 +27,7 @@ def lpo_routeA1(D, groups, nlv=1, top_k=None):
             R = rankdata(Xtr, axis=0)
             cols, eff, pv, _ = ao.alt_select(groups, R, ytr, ntr)
             if len(cols) < 1:
-                p = np.array([ytr.mean(), ytr.mean()])
+                p = np.array([0.5, 0.5])
             else:
                 if top_k is not None and len(cols) > top_k:
                     cols = cols[np.argsort(-eff[cols])[:top_k]]

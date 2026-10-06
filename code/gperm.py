@@ -1,9 +1,10 @@
+# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
 import os as _os
 _ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 _DATA = _os.path.join(_ROOT, "data")
 _RES = _os.environ.get("QSAR_RECALC_DIR", _os.path.join(_ROOT, "results", "recalc"))
 _os.makedirs(_RES, exist_ok=True)
-# Additional file 4 is not bundled here because of its size; place it in data/ under
+# Additional file 6 is not bundled here because of its size; place it in data/ under
 # this name, or point QSAR_ROUTEA_XLSX at it.
 XLSX = "20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx"
 
@@ -26,5 +27,5 @@ while len(q2s)<target and (time.time()-t0)<budget:
     q2s.append(gp.q2(yp,yh)); aucs.append(roc_auc_score(yp,yh))
     if len(q2s)%100==0: save()
 save(); n=len(q2s)
-pq=(1+np.sum(np.array(q2s)>=oq))/(1+n); pa=(1+np.sum(np.array(aucs)>=oa))/(1+n)
+pq=(1+np.sum(np.array(q2s)>=oq - 1e-9))/(1+n); pa=(1+np.sum(np.array(aucs)>=oa - 1e-9))/(1+n)
 print(f'{route}: n={n} | Q2={oq:.3f} AUC={oa:.3f} | p(Q2)={pq:.4f} p(AUC)={pa:.4f} | {time.time()-t0:.0f}s')

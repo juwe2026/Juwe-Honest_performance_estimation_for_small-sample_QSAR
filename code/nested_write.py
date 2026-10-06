@@ -1,3 +1,4 @@
+# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
 import numpy as np, pandas as pd, openpyxl
 from openpyxl.styles import Font, PatternFill
 from collections import Counter
@@ -42,7 +43,7 @@ def comments(short,n1,oq,oa,pQ,pA,bias):
 def write(short,full,sheet,code,fpath,D,cnt):
     d=np.load(f'/home/claude/perm_{code}.npz'); q2=d['q2s']; auc=d['aucs']
     oq=float(d['obs_q2']); oa=float(d['obs_auc']); n=len(q2)
-    pQ=(1+np.sum(q2>=oq))/(1+n); pA=(1+np.sum(auc>=oa))/(1+n)
+    pQ=(1+np.sum(q2>=oq - 1e-9))/(1+n); pA=(1+np.sum(auc>=oa - 1e-9))/(1+n)
     n1=int(D['Y'].sum()); bias=BIASED[short]; stab=sorted(cnt.items(),key=lambda x:-x[1])
     wb=openpyxl.load_workbook(fpath); nm=f'PLS-DA_nested_{short}'
     if nm in wb.sheetnames: del wb[nm]

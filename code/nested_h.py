@@ -1,3 +1,6 @@
+# REVISION OCTOBER 2026: the empty-selection / single-class fallback below previously
+# predicted ytr.mean(). Under leave-one-out that equals (S - y_i)/(n - 1) and therefore
+# carries the held-out label; it is now the neutral constant 0.5. See CHANGELOG_revision.md.
 import numpy as np, pandas as pd
 from scipy.stats import rankdata, norm, t as tdist
 from sklearn.cross_decomposition import PLSRegression
@@ -63,11 +66,11 @@ def nested_cv(yv, nlv=1):
         tr = F['tr']; ytr = yv[tr]; ntr = int(tr.sum())
         n1 = int(ytr.sum()); n0 = ntr - n1
         if n1 < 1 or n0 < 1:
-            yhat[F['i']] = ytr.mean(); nfeat.append(0); continue
+            yhat[F['i']] = 0.5; nfeat.append(0); continue
         eff, p = eff_filter(F['R'], ytr, ntr)
         keep = np.where((eff > 0.3) & (p <= 0.05))[0]
         if len(keep) < 1:
-            yhat[F['i']] = ytr.mean(); nfeat.append(0); continue
+            yhat[F['i']] = 0.5; nfeat.append(0); continue
         reps_local = group_reps(F['Xtr'][:, keep], F['R'][:, keep], eff[keep], ntr)
         cols = keep[reps_local]; nfeat.append(len(cols))
         Xtr = F['Xtr'][:, cols]; Xte = F['Xte'][:, cols]

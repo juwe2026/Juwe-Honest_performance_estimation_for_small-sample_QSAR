@@ -1,3 +1,6 @@
+# REVISION OCTOBER 2026: the empty-selection / single-class fallback below previously
+# predicted ytr.mean(). Under leave-one-out that equals (S - y_i)/(n - 1) and therefore
+# carries the held-out label; it is now the neutral constant 0.5. See CHANGELOG_revision.md.
 """Route A1 / A1u / A2 pipeline applied to the Smit 2007 Gaucher SELDI-TOF data.
 Same rules as the monoterpenoid study: correlation grouping (|r| or |rho| > 0.7, p < 0.05),
 rank-biserial effect-size filter (|r| > 0.3, p <= 0.05), PLS-DA with ONE latent variable,
@@ -110,9 +113,9 @@ def loo_nested(X, y, route, groups, reps_u, nlv=1, top_k=None):
     for i in range(n):
         tr = np.ones(n, bool); tr[i] = False
         Xtr, ytr = X[tr], y[tr]
-        if ytr.sum() < 1 or ytr.sum() == tr.sum(): yh[i] = ytr.mean(); continue
+        if ytr.sum() < 1 or ytr.sum() == tr.sum(): yh[i] = 0.5; continue
         cols, eff = select(route, Xtr, ytr, groups, reps_u)
-        if len(cols) < 1: yh[i] = ytr.mean(); continue
+        if len(cols) < 1: yh[i] = 0.5; continue
         if top_k is not None and len(cols) > top_k:
             cols = cols[np.argsort(-eff[cols])[:top_k]]
         A = Xtr[:, cols]; B = X[i:i+1, cols]

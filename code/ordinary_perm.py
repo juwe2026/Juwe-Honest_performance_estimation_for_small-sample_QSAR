@@ -1,3 +1,4 @@
+# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
 """Ordinary (non-nested, 'circular') permutation test: descriptors are selected ONCE on the
 true labels (the 'apparent' set), then only the PLS-DA model is refit under permuted labels
 via LOO-CV using that FIXED descriptor set. This is the naive test that the paper argues is
@@ -29,6 +30,6 @@ def ordinary_perm_test(X, y, cols, nlv=1, n_perm=1000, seed=101):
         yp = rng.permutation(y)
         yh = loo_fixed(X, yp, cols, nlv)
         q2s[k] = q2(yp, yh); aucs[k] = roc_auc_score(yp, yh)
-    pq = (1 + np.sum(q2s >= oq)) / (1 + n_perm)
-    pa = (1 + np.sum(aucs >= oa)) / (1 + n_perm)
+    pq = (1 + np.sum(q2s >= oq - 1e-9)) / (1 + n_perm)
+    pa = (1 + np.sum(aucs >= oa - 1e-9)) / (1 + n_perm)
     return oq, oa, pq, pa, q2s, aucs

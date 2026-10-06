@@ -3,7 +3,7 @@ _ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 _DATA = _os.path.join(_ROOT, "data")
 _RES = _os.environ.get("QSAR_RECALC_DIR", _os.path.join(_ROOT, "results", "recalc"))
 _os.makedirs(_RES, exist_ok=True)
-# Additional file 4 is not bundled here because of its size; place it in data/ under
+# Additional file 6 is not bundled here because of its size; place it in data/ under
 # this name, or point QSAR_ROUTEA_XLSX at it.
 XLSX = "20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx"
 
@@ -39,7 +39,10 @@ def compute(smiles):
     logp,mr=Crippen.MolLogP(mol),Crippen.MolMR(mol)
     n_atoms=lambda z:sum(1 for a in mol.GetAtoms() if a.GetAtomicNum()==z)
     def nmatch(key): return len(mol.GetSubstructMatches(SMOBJ[key],uniquify=True))
-    stereo=len(Chem.FindMolChiralCenters(mol,includeUnassigned=True,useLegacyImplementation=False))
+    # Revision (October 2026): CIP-based count (useLegacyImplementation=True, the RDKit default), as in the
+    # revised Additional file 3. The submitted file used useLegacyImplementation=False, which also counts the two
+    # ring-bridgehead atoms of 1,8-cineole (2 instead of 0); every other value of the 25 descriptors is the same.
+    stereo=len(Chem.FindMolChiralCenters(mol,includeUnassigned=True,useLegacyImplementation=True))
     d={
      # Grundlegende Konstitution
      'MolWt'            : Descriptors.MolWt(mol),

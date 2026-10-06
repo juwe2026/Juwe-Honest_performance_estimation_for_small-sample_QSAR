@@ -20,7 +20,11 @@ def main(outdir):
     # Sized to fit 180 mm width at 300 dpi; previously 251 mm wide. Height and layout
     # (axis label size, panel proportions, a/b label size and offset) matched to
     # Fig. 7's panel a/b, which uses the same rotated-label, two-panel layout.
-    fig, axes = plt.subplots(1, 2, figsize=(4.94, 2.90), gridspec_kw={"width_ratios": [1, 1]})
+    # Revision (October 2026, EW): same canvas, margins and panel spacing as Fig. 7
+    # (6.3 x 3.35 in; left 0.085, right 0.985, bottom 0.33, top 0.80, wspace 0.48), so that
+    # both figures, placed at the same width, have their y-axes on the same vertical lines
+    # and x-axes of equal length; font sizes as in Fig. 7. Layout only, data unchanged.
+    fig, axes = plt.subplots(1, 2, figsize=(6.3, 3.35), gridspec_kw={"width_ratios": [1, 1]})
     xs = np.arange(len(STRAINS))
     w = 0.2
     q_by_route, p_by_route = {}, {}
@@ -60,15 +64,16 @@ def main(outdir):
         for k, r in enumerate(routes):
             if p_by_route[r][i] < 0.05:
                 pos_x = xs[i] + (k - 1.5) * w
+                # 8 pt on the larger canvas: about the size the 6.75 pt glyph had in print
                 axes[0].text(pos_x, star_y, "*", ha="center", va="bottom",
-                             fontsize=6.75, color=INK, zorder=4)
+                             fontsize=8.0, color=INK, zorder=4)
 
     axes[0].axhline(0, color=MUTED, linewidth=0.7, zorder=2)
     axes[0].set_ylabel("nested $Q^2$", fontsize=9.5)
     axes[0].set_ylim(-0.35, 0.92)
     # Single line, one point smaller than panel (a)'s label, rather than the two-line
     # form that pushed up into the panel letter's position (round 5 report, 1.2).
-    axes[1].set_ylabel("descriptors entering PLS-DA", fontsize=8.5)
+    axes[1].set_ylabel("descriptors entering PLS-DA", fontsize=9.5)   # as in Fig. 7
     # Two-line wrapping (round 4) broke each rotated name into a diagonal pair that no
     # longer read as one label (round 5 report, 1.1): reverted to single-line names at
     # the same 30 degree rotation, which was already shallower than the pre-round-4
@@ -76,20 +81,24 @@ def main(outdir):
     strain_labels = [STRAIN_LABEL[s] for s in STRAINS]
     for ax in axes:
         tidy(ax)
+        ax.tick_params(axis="y", labelsize=8.0)   # revision (October 2026, EW): 10.5 -> 8 pt
         ax.set_xticks(xs)
-        ax.set_xticklabels(strain_labels, style="italic",
-                           rotation=30, ha="right")
+        # Revision (October 2026, EW): strain names 10.5 -> 7.5 pt, about the size of the legend
+        ax.set_xticklabels(strain_labels, style="italic", fontsize=8.0,   # as in Fig. 7
+                           rotation=30, ha="right", va="top", rotation_mode="anchor")
+    axes[0].yaxis.set_major_locator(plt.MultipleLocator(0.5))   # tick spacing as submitted
+    axes[1].yaxis.set_major_locator(plt.MultipleLocator(20))
     for i, ax in enumerate(axes):
         ax.text(-0.32, 1.06, "ab"[i], transform=ax.transAxes,
                 fontsize=11, fontweight="bold", va="top")
     handles, labels = axes[0].get_legend_handles_labels()
-    fig.subplots_adjust(left=0.11, right=0.985, bottom=0.36, top=0.80, wspace=0.42)
-    fig.legend(handles, labels, loc="upper center", ncol=2, columnspacing=1.2, handlelength=1.2, fontsize=8.0)
+    fig.subplots_adjust(left=0.085, right=0.985, bottom=0.33, top=0.80, wspace=0.48)   # = Fig. 7
+    fig.legend(handles, labels, loc="upper center", ncol=2, columnspacing=1.2, handlelength=1.5, fontsize=7.5)
     fig.text(0.5, 0.005,
              "* marks p < 0.05 in the permutation test of the nested $Q^2$; hatched bars mark\n"
              "the P. aeruginosa artefact; Route B is fixed at 12 descriptors",
-             ha="center", fontsize=6.8, color=MUTED, linespacing=1.4)
-    save(fig, "Fig6_order_comparison", outdir)
+             ha="center", fontsize=7.2, color=MUTED, linespacing=1.4)   # as the notes of Fig. 7
+    save(fig, "Fig6_order_comparison", outdir, xspan=XSPAN_FIG6_FIG7)
 
 
 if __name__ == "__main__":

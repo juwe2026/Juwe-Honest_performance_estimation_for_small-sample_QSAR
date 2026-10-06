@@ -1,3 +1,7 @@
+# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
+# REVISION OCTOBER 2026: the empty-selection / single-class fallback below previously
+# predicted ytr.mean(). Under leave-one-out that equals (S - y_i)/(n - 1) and therefore
+# carries the held-out label; it is now the neutral constant 0.5. See CHANGELOG_revision.md.
 """VIP selection starting from the label-free Route A1u descriptor set.
 A1u selection -> first PLS-DA (1 LV) -> top-15 by VIP -> second PLS-DA (1 LV)."""
 import sys, os, time, numpy as np, nested_generic as ng, altorder as ao, unsup_rep as ur
@@ -8,9 +12,9 @@ def viptop_unsup(D, reps_u, yv, nlv=1, top_k=15, nlv_vip=1):
     N=D['N']; yhat=np.zeros(N)
     for F in D['FOLDS']:
         tr=F['tr']; ytr=yv[tr]; ntr=int(tr.sum()); n1=int(ytr.sum())
-        if n1<1 or n1==ntr: yhat[F['i']]=ytr.mean(); continue
+        if n1<1 or n1==ntr: yhat[F['i']]=0.5; continue
         cols,eff,pv = ur.unsup_select(reps_u, F['R'], ytr, ntr)
-        if len(cols)<1: yhat[F['i']]=ytr.mean(); continue
+        if len(cols)<1: yhat[F['i']]=0.5; continue
         if len(cols)>top_k: cols=ng._viptop(F['Xtr'], ytr, cols, top_k, nlv_vip)
         Xtr=F['Xtr'][:,cols]; Xte=F['Xte'][:,cols]
         mu=Xtr.mean(0); sd=Xtr.std(0,ddof=1); sd[sd==0]=1.0
@@ -34,5 +38,5 @@ if __name__=='__main__':
         q,a,_=viptop_unsup(D,reps,yv); q2s.append(q); aucs.append(a)
         if len(q2s)%200==0: save()
     save(); n=len(q2s)
-    pQ=(1+np.sum(np.array(q2s)>=oq))/(1+n); pA=(1+np.sum(np.array(aucs)>=oa))/(1+n)
+    pQ=(1+np.sum(np.array(q2s)>=oq - 1e-9))/(1+n); pA=(1+np.sum(np.array(aucs)>=oa - 1e-9))/(1+n)
     print(f'{short} A1u-VIP15: n={n} | Q2={oq:.3f} AUC={oa:.3f} | p(Q2)={pQ:.4f} p(AUC)={pA:.4f} | {time.time()-t0:.0f}s')

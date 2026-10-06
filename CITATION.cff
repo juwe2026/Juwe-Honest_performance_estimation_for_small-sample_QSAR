@@ -3,7 +3,7 @@ message: "If you use this software, please cite both the software and the articl
 title: "Analysis code for: Honest performance estimation for small-sample QSAR"
 abstract: >-
   Analysis code and raw permutation outputs for a study of selection leakage,
-  permutation-null inflation and a label-free remedy in small-sample QSAR.
+  permutation-null inflation and its label-free remedy in small-sample QSAR.
 authors:
   - family-names: Werle
     given-names: Julia
@@ -16,8 +16,8 @@ authors:
     affiliation: "Heidelberg University Hospital"
 license: MIT
 repository-code: "https://github.com/juwe2026/Juwe-Honest_performance_estimation_for_small-sample_QSAR"
-version: "1.0.0"
-date-released: "2026-09-01"
+version: "1.1.0"
+date-released: "2026-10-05"
 keywords:
   - QSAR
   - PLS-DA
@@ -27,7 +27,7 @@ keywords:
   - selection bias
 preferred-citation:
   type: article
-  title: "Honest performance estimation for small-sample QSAR: selection leakage, permutation-null inflation, and a label-free remedy"
+  title: "Honest performance estimation for small-sample QSAR: selection leakage, permutation-null inflation, and its label-free remedy"
   authors:
     - family-names: Werle
       given-names: Julia

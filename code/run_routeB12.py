@@ -1,3 +1,4 @@
+# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
 """Route B, 12-descriptor set (C_Count removed, perfectly collinear with
 EsterLacton_flag): fully leave-one-out nested permutation test, one and three
 latent variables, 2,000 permutations per strain per model.
@@ -89,12 +90,12 @@ def main():
             oq, oa = obs[nlv]
             qs = np.array(q2s[nlv]); as_ = np.array(aucs[nlv])
             n = len(qs)
-            pq = (1 + np.sum(qs >= oq)) / (1 + n)
-            pa = (1 + np.sum(as_ >= oa)) / (1 + n)
+            pq = (1 + np.sum(qs >= oq - 1e-9)) / (1 + n)
+            pa = (1 + np.sum(as_ >= oa - 1e-9)) / (1 + n)
             np.savez(os.path.join(OUTDIR, "%s_%s.npz" % (tag, short)),
                      q2s=qs, aucs=as_, obs_q2=oq, obs_auc=oa)
             print("%s %s nLV=%d: n=%d | Q2=%.4f AUC=%.4f | p(Q2)=%.4f p(AUC)=%.4f | n_ge_q2=%d n_ge_auc=%d"
-                  % (s, tag, nlv, n, oq, oa, pq, pa, int(np.sum(qs >= oq)), int(np.sum(as_ >= oa))))
+                  % (s, tag, nlv, n, oq, oa, pq, pa, int(np.sum(qs >= oq - 1e-9)), int(np.sum(as_ >= oa - 1e-9))))
         print("  %s done in %.0fs" % (s, time.time() - t0), flush=True)
 
 

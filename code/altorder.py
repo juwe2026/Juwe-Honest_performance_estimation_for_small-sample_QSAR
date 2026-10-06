@@ -5,7 +5,7 @@ _ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 _DATA = _os.path.join(_ROOT, "data")
 _RES = _os.environ.get("QSAR_RECALC_DIR", _os.path.join(_ROOT, "results", "recalc"))
 _os.makedirs(_RES, exist_ok=True)
-# Additional file 4 is not bundled here because of its size; place it in data/ under
+# Additional file 6 is not bundled here because of its size; place it in data/ under
 # this name, or point QSAR_ROUTEA_XLSX at it.
 XLSX = "20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx"
 
@@ -79,9 +79,9 @@ def alt_nested_cv(D, groups, yv, nlv=1, top_k=None):
     for F in D['FOLDS']:
         tr = F['tr']; ytr = yv[tr]; ntr = int(tr.sum())
         n1 = int(ytr.sum())
-        if n1 < 1 or n1 == ntr: yhat[F['i']] = ytr.mean(); continue
+        if n1 < 1 or n1 == ntr: yhat[F['i']] = 0.5; continue
         cols, eff, pv, _ = alt_select(groups, F['R'], ytr, ntr)
-        if len(cols) < 1: yhat[F['i']] = ytr.mean(); continue
+        if len(cols) < 1: yhat[F['i']] = 0.5; continue
         if top_k is not None and len(cols) > top_k:
             cols = cols[np_.argsort(-eff[cols])[:top_k]]
         Xtr = F['Xtr'][:, cols]; Xte = F['Xte'][:, cols]
@@ -113,9 +113,9 @@ def alt_viptop(D, groups, yv, nlv=1, top_k=15, nlv_vip=2):
     N=D['N']; yhat=_np.zeros(N)
     for F in D['FOLDS']:
         tr=F['tr']; ytr=yv[tr]; ntr=int(tr.sum()); n1=int(ytr.sum())
-        if n1<1 or n1==ntr: yhat[F['i']]=ytr.mean(); continue
+        if n1<1 or n1==ntr: yhat[F['i']]=0.5; continue
         cols,eff,pv,_=alt_select(groups,F['R'],ytr,ntr)
-        if len(cols)<1: yhat[F['i']]=ytr.mean(); continue
+        if len(cols)<1: yhat[F['i']]=0.5; continue
         if len(cols)>top_k: cols=ng._viptop(F['Xtr'],ytr,cols,top_k,nlv_vip)
         Xtr=F['Xtr'][:,cols]; Xte=F['Xte'][:,cols]
         mu=Xtr.mean(0); sd=Xtr.std(0,ddof=1); sd[sd==0]=1.0

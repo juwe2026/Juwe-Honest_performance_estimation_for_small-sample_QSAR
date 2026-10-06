@@ -1,0 +1,80 @@
+{
+ "acids": {
+  "cis-Pinonic acid": {
+   "smiles": "CC(=O)C1CC(C1(C)C)CC(=O)O",
+   "tpsa": 54.370000000000005,
+   "tpsa_ion": 57.2
+  },
+  "Geranic acid": {
+   "smiles": "CC(=CCC/C(=C/C(=O)O)/C)C",
+   "tpsa": 37.3,
+   "tpsa_ion": 40.129999999999995
+  }
+ },
+ "routeB_q2": {
+  "HI_1LV": {
+   "neutral": 0.28934355003382073,
+   "carboxylate": 0.28026493890178605,
+   "diff": -0.009078611132034675
+  },
+  "SA_1LV": {
+   "neutral": 0.39394063888406816,
+   "carboxylate": 0.38697504094590174,
+   "diff": -0.0069655979381664235
+  },
+  "SPneu_1LV": {
+   "neutral": 0.3527933866583681,
+   "carboxylate": 0.34570202284403406,
+   "diff": -0.007091363814334062
+  },
+  "SPyo_1LV": {
+   "neutral": 0.04960044305638356,
+   "carboxylate": 0.03769278742557369,
+   "diff": -0.011907655630809866
+  },
+  "PA_1LV": {
+   "neutral": 0.8154011386243858,
+   "carboxylate": 0.8125813347705817,
+   "diff": -0.0028198038538040926
+  },
+  "HI_3LV": {
+   "neutral": 0.468603108865419,
+   "carboxylate": 0.4681994382743021,
+   "diff": -0.0004036705911169003
+  },
+  "SA_3LV": {
+   "neutral": 0.416507731747071,
+   "carboxylate": 0.4123254750995481,
+   "diff": -0.0041822566475229195
+  },
+  "SPneu_3LV": {
+   "neutral": 0.44006129912284553,
+   "carboxylate": 0.4373145311788095,
+   "diff": -0.002746767944036055
+  },
+  "SPyo_3LV": {
+   "neutral": -0.0006943065383955282,
+   "carboxylate": -0.003808463013920793,
+   "diff": -0.003114156475525265
+  },
+  "PA_3LV": {
+   "neutral": 0.9569436567910402,
+   "carboxylate": 0.95935940678051,
+   "diff": 0.0024157499894698065
+  }
+ },
+ "thujaplicin": [
+  {
+   "smiles": "CC(C)c1cccc(=O)c(O)c1",
+   "tpsa": 37.3,
+   "aromatic_rings": 1,
+   "phenol_flag": 1
+  },
+  {
+   "smiles": "CC(C)c1cccc(O)c(=O)c1",
+   "tpsa": 37.3,
+   "aromatic_rings": 1,
+   "phenol_flag": 1
+  }
+ ]
+}

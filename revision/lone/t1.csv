@@ -1,0 +1,49 @@
+﻿Source;"Lone A, Thomsen TT, Nielsen JE, Thulstrup PW, Klitgaard RN, Lobner-Olesen A, Lund R, Jenssen H, Hansen PR. Structure-Activity Study of an All-d Antimicrobial Octapeptide D2D. Molecules 2019;24(24):4571. doi:10.3390/molecules24244571 (CC BY). Table 1, extracted from the publisher PDF."
+Method;"MIC by broth microdilution in MHB-II, in triplicate, in accordance with CLSI standards (per Table 1 footnote [a]); Methods section states protocol adapted with minor modifications. Final concentration range 128-2 ug/mL, two-fold steps; inoculum ca. 5x10^5 CFU/mL; 18-20 h at 37 C."
+Units;"MIC in ug/mL. "">128"" = no inhibition at the highest tested concentration (128 ug/mL) = right-censored."
+Hemolysis;% hemolysis of human red blood cells at 150 uM.
+
+No;Sequence;MIC_EC;censored_EC;MIC_SA;censored_SA;MIC_PA;censored_PA;MIC_AB;censored_AB;Hemolysis_pct_150uM
+D2D;kk(1-nal)fk(1-nal)k(nle)-NH2;8;no;8;no;4;no;4;no;23
+1;ak(1-nal)fk(1-nal)k(nle)-NH2;8;no;2;no;8;no;4;no;41
+2;ka(1-nal)fk(1-nal)k(nle)-NH2;16;no;8;no;16;no;16;no;59
+3;kkafk(1-nal)k(nle)-NH2;128;yes;64;no;16;no;16;no;2
+4;kk(1-nal)ak(1-nal)k(nle)-NH2;128;yes;128;no;32;no;64;no;22
+5;kk(1-nal)fa(1-nal)k(nle)-NH2;4;no;4;no;4;no;4;no;47
+6;kk(1-nal)fkak(nle)-NH2;128;yes;128;yes;128;yes;128;yes;10
+7;kk(1-nal)fk(1-nal)a(nle)-NH2;8;no;8;no;8;no;4;no;67
+8;kk(1-nal)fk(1-nal)ka-NH2;64;no;64;no;16;no;64;no;5
+9;kk(1-nal)f(1-nal)(1-nal)k(nle)-NH2;64;no;4;no;128;no;32;no;20
+10;kk(1-nal)f(dap)(1-nal)k(nle)-NH2;8;no;16;no;16;no;16;no;28
+11;kk(1-nal)f(nle)(1-nal)k(nle)-NH2;16;no;4;no;64;no;64;no;33
+12;kk(1-nal)ff(1-nal)k(nle)-NH2;16;no;4;no;32;no;16;no;74
+13;kk(1-nal)fs(1-nal)k(nle)-NH2;4;no;8;no;32;no;8;no;29
+14;kk(1-nal)ft(1-nal)k(nle)-NH2;8;no;8;no;32;no;8;no;28
+15;kk(1-nal)fy(1-nal)k(nle)-NH2;8;no;2;no;16;no;8;no;40
+16;kk(1-nal)fv(1-nal)k(nle)-NH2;32;no;4;no;64;no;64;no;54
+17;kk(1-nal)fk(1-nal)(1-nal)(nle)-NH2;16;no;2;no;32;no;4;no;89
+18;kk(1-nal)fk(1-nal)(dap)(nle)-NH2;8;no;16;no;16;no;16;no;21
+19;kk(1-nal)fk(1-nal)(nle)(nle)-NH2;8;no;4;no;32;no;8;no;56
+20;kk(1-nal)fk(1-nal)f(nle)-NH2;8;no;4;no;32;no;4;no;91
+21;kk(1-nal)fk(1-nal)s(nle)-NH2;8;no;16;no;64;no;16;no;85
+22;kk(1-nal)fk(1-nal)t(nle)-NH2;8;no;8;no;32;no;8;no;66
+23;kk(1-nal)fk(1-nal)y(nle)-NH2;8;no;4;no;64;no;8;no;74
+24;kk(1-nal)fk(1-nal)v(nle)-NH2;8;no;4;no;32;no;8;no;50
+25;kk(1-nal)fkk(1-nal)(nle)-NH2;128;no;64;no;32;no;32;no;50
+26;kk(1-nal)fk(1-nal)(nle)k-NH2;128;no;64;no;32;no;32;no;18
+27;k(1-nal)fk(1-nal)k(nle)-NH2;8;no;8;no;32;no;16;no;49
+28;(1-nal)fk(1-nal)k(nle)-NH2;128;yes;128;yes;128;yes;128;yes;62
+29;fk(1-nal)k(nle)-NH2;128;yes;128;yes;128;no;128;yes;12
+30;kk(1-nal)fk(1-nal)k-NH2;128;yes;128;yes;128;no;128;yes;11
+31;kk(1-nal)fk(1-nal)-NH2;128;yes;128;yes;128;no;128;yes;20
+32;kk(1-nal)fk-NH2;128;yes;128;yes;128;yes;128;yes;5
+33;rk(1-nal)fk(1-nal)k(nle)-NH2;8;no;8;no;16;no;16;no;60
+34;kr(1-nal)fk(1-nal)k(nle)-NH2;8;no;4;no;16;no;16;no;35
+35;kk(1-nal)fr(1-nal)k(nle)-NH2;8;no;4;no;16;no;16;no;49
+36;kk(1-nal)fk(1-nal)r(nle)-NH2;8;no;2;no;16;no;8;no;51
+
+Strain key
+EC;Escherichia coli;ATCC 25922
+SA;Staphylococcus aureus;ATCC 29213
+PA;Pseudomonas aeruginosa;ATCC 27853
+AB;Acinetobacter baumannii;ATCC 19606

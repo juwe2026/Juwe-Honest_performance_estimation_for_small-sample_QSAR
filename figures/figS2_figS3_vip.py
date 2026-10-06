@@ -149,7 +149,7 @@ def figS3(outdir):
             # is numbered 1..N in the same rank order (every 5th number, plus the
             # first and last, so the labels themselves cannot overlap); the names
             # behind each number are the per-strain top-15 sets already listed in
-            # Additional file 6.
+            # Additional file 9.
             n = len(allnames)
             shown = sorted(set([0] + list(range(4, n, 5)) + [n - 1]))
             ax.set_xticks([x[j] for j in shown])
@@ -157,7 +157,7 @@ def figS3(outdir):
             print("  Fig. S3c: %d descriptors, numbered 1-%d in this rank order:" % (n, n))
             print("   " + ", ".join("%d=%s" % (j + 1, nm.split("::")[-1]) for j, nm in enumerate(allnames)))
             # Export the position-to-descriptor-name key so it can be published as a
-            # sheet in Additional file 5 (round 5 report, 3.2), instead of only being
+            # sheet in Additional file 8 (round 5 report, 3.2), instead of only being
             # printed to stdout. Keep the "Toolkit::Descriptor" full name (matching the
             # Descriptor column of the existing VIP_ChemDes_* sheets), not the
             # stripped short label used for the console summary above: two distinct

@@ -11,6 +11,21 @@ fa = io.npy("final_all.npy")
 a2t = io.npy("a2_top15_results.npy")
 rb12 = io.routeB12()          # 12 descriptors, C_Count removed (perfect collinearity)
 
+# Revision (October 2026): significance markers from the recomputed p-values (corrected fallback prediction,
+# ties counted, same seeds); the point estimates are unchanged. See data_recalc/revision_pvalues.json.
+import json as _json
+_rp = os.path.join(io.RECALC, "revision_pvalues.json")
+if os.path.exists(_rp):
+    _R = _json.load(open(_rp))
+    for _s, _v in _R.items():
+        if _s == "note":
+            continue
+        for _k in ("A1_p", "A1_pa", "A2_p", "A2_pa", "A1e15_p", "A1e15_pa"):
+            fa[_s][_k] = _v[_k]
+        a2t[_s]["pq"], a2t[_s]["pa"] = _v["a2t_pq"], _v["a2t_pa"]
+        rb12["nlv1"][_s]["p_q2"], rb12["nlv1"][_s]["p_auc"] = _v["B1_pq"], _v["B1_pa"]
+        rb12["nlv3"][_s]["p_q2"], rb12["nlv3"][_s]["p_auc"] = _v["B3_pq"], _v["B3_pa"]
+
 
 def series(top15):
     """Six bars per strain: A1 apparent/nested, A2 apparent/nested, B 1 LV / 3 LV."""

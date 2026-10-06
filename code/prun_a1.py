@@ -1,9 +1,10 @@
+# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
 import os as _os
 _ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 _DATA = _os.path.join(_ROOT, "data")
 _RES = _os.environ.get("QSAR_RECALC_DIR", _os.path.join(_ROOT, "results", "recalc"))
 _os.makedirs(_RES, exist_ok=True)
-# Additional file 4 is not bundled here because of its size; place it in data/ under
+# Additional file 6 is not bundled here because of its size; place it in data/ under
 # this name, or point QSAR_ROUTEA_XLSX at it.
 XLSX = "20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx"
 
@@ -14,7 +15,7 @@ Usage:  python code/prun_a1.py MODE SHORT SHEET NPERM CODE [BUDGET]
 
   MODE   e = top 15 by effect size (Fig. 5, Table 3), v = top 15 by VIP (Table 4)
   SHORT  strain key, one of HI, SA, SPneu, SPyo, PA (also selects the activity column)
-  SHEET  sheet of Additional file 4 holding the descriptor pool: Cleaned_Steps1-4
+  SHEET  sheet of Additional file 6 holding the descriptor pool: Cleaned_Steps1-4
   NPERM  number of permutations (2000 in the published runs)
   CODE   file suffix for the output, conventionally the same as SHORT
   BUDGET optional wall-clock limit in seconds; the run resumes where it stopped
@@ -44,5 +45,5 @@ while len(q2s)<target and (time.time()-t0)<budget:
     q,a,_=fn(yv); q2s.append(q); aucs.append(a)
     if len(q2s)%200==0: save()
 save(); n=len(q2s)
-pQ=(1+np.sum(np.array(q2s)>=oq))/(1+n); pA=(1+np.sum(np.array(aucs)>=oa))/(1+n)
+pQ=(1+np.sum(np.array(q2s)>=oq - 1e-9))/(1+n); pA=(1+np.sum(np.array(aucs)>=oa - 1e-9))/(1+n)
 print(f'{short} A1-{"eff" if mode=="e" else "vip"}15: {n}/{target} | Q2={oq:.3f} AUC={oa:.3f} | p(Q2)={pQ:.4f} p(AUC)={pA:.4f} | {time.time()-t0:.0f}s')

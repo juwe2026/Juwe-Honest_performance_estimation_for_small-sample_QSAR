@@ -1,13 +1,14 @@
+# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
 """Shared Route B pipeline, identical to code/run_routeB.py and code/lit_plsda.py.
 
 Reads the bundled data/RouteB_descriptor_data.xlsx (English sheet and column names,
-matching the published Additional file 2) by default; override with the QSAR_ROUTEB_XLSX
+matching the published Additional file 3) by default; override with the QSAR_ROUTEB_XLSX
 environment variable to point at a different copy.
 
 Corrected 2026-08-27: SRC previously pointed at an absolute, machine-specific path to a file
 not included in this archive, and the sheet/column names (German: "Deskriptoren",
 "VIP_reduziert", "Reduktion", "S. A. (Staph. Aureus)") no longer matched the published
-Additional file 2 (English: "Descriptors", "VIP_reduced", "Reduction", "S. A. (S. aureus)"),
+Additional file 3 (English: "Descriptors", "VIP_reduced", "Reduction", "S. A. (S. aureus)"),
 so every script importing this module failed immediately.
 """
 import os
@@ -33,7 +34,7 @@ def _leading_names(rows):
         out.append(r[0])
     return out
 
-# The 12 representatives that are actually modelled, read from Additional file 2.
+# The 12 representatives that are actually modelled, read from Additional file 3.
 RED12 = _leading_names(list(_wb["VIP_reduced"].values)[1:])
 
 # The superseded 13-descriptor set: the same representatives plus C_Count, which was dropped
@@ -77,9 +78,9 @@ YCOL = {'H.I.':'H. I. (H. influenzae)', 'S.A.':'S. A. (S. aureus)',
 FULLNAME = {'H.I.':'H. influenzae', 'S.A.':'S. aureus', 'S.Pneu':'S. pneumoniae',
             'S.Pyo':'S. pyogenes', 'P.A.':'P. aeruginosa'}
 # nLV per strain for the published VIP table: uniformly 2 components for every strain
-# (matching Fig. S2b/Fig. S3a and Additional file 2's VIP_reduced sheet). Previously this
+# (matching Fig. S2b/Fig. S3a and Additional file 3's VIP_reduced sheet). Previously this
 # used a mixed 4/4/3/1 per strain that matched neither the figures nor the validated (nLV=1)
-# models; corrected together with Additional file 2's VIP_reduced sheet.
+# models; corrected together with Additional file 3's VIP_reduced sheet.
 VIP_NLV = {'H.I.': 2, 'P.A.': 2, 'S.A.': 2, 'S.Pneu': 2, 'S.Pyo': 2}
 
 def col(name):
@@ -128,9 +129,9 @@ def perm_test(cols, s, nlv, nperm=2000, seed=702):
         yp = np.random.default_rng([seed, k]).permutation(y)
         yhp = loo(X, yp, nlv); qs[k] = q2(yp, yhp); as_[k] = roc_auc_score(yp, yhp)
     return dict(q2=float(oq), auc=float(oa),
-                p_q2=float((1+np.sum(qs >= oq))/(1+nperm)),
-                p_auc=float((1+np.sum(as_ >= oa))/(1+nperm)),
-                n_ge_q2=int(np.sum(qs >= oq)), n_ge_auc=int(np.sum(as_ >= oa)))
+                p_q2=float((1+np.sum(qs >= oq - 1e-9))/(1+nperm)),
+                p_auc=float((1+np.sum(as_ >= oa - 1e-9))/(1+nperm)),
+                n_ge_q2=int(np.sum(qs >= oq - 1e-9)), n_ge_auc=int(np.sum(as_ >= oa - 1e-9)))
 
 def confusion(cols, s, nlv=1, thr=0.5):
     y = y_of(s); yh = loo(X_of(cols), y, nlv); p = (yh >= thr).astype(float)

@@ -1,5 +1,10 @@
 """Fig. 7 and Fig. S6: how the reduction scheme changes the null distribution of the
-number of descriptors passing the univariate effect-size filter."""
+number of descriptors passing the univariate filter.
+
+Revision (October 2026): panel a shows the inflation both relative to the binomial SD at the
+route's own null hit rate (bars, "calibrated") and relative to the nominal 5 % rate (black ticks).
+Under Route A1 the representative is chosen by effect size, which roughly doubles the null hit
+rate; the nominal denominator then mixes that change in the marginal rate with dependence."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np, matplotlib.pyplot as plt
@@ -13,8 +18,16 @@ SCHEMES = [("A2", "A2", 2208), ("A1", "A1s", 182), ("A1u", "A1u", 182)]
 ALPHA = 0.05
 
 
-def binom_sd(n_tests):
-    return np.sqrt(n_tests * ALPHA * (1 - ALPHA))
+def binom_sd(n_tests, rate=ALPHA):
+    return np.sqrt(n_tests * rate * (1 - rate))
+
+
+def inflation(null, n_tests):
+    """(nominal, calibrated): null SD over the binomial SD at 5 % and at the route's own null hit rate"""
+    nl = np.asarray(null, dtype=float)
+    q = nl.mean() / n_tests
+    sd = np.std(nl, ddof=1)
+    return sd / binom_sd(n_tests), sd / binom_sd(n_tests, q)
 
 
 def fig7(outdir):
@@ -22,14 +35,18 @@ def fig7(outdir):
     # Height reduced from 3.38 in: about 10 mm between the axis labels and the two
     # explanatory lines at the foot was empty. The panel proportions are unchanged,
     # only the dead space is removed (round 6 report, 4.3).
-    fig, axes = plt.subplots(1, 2, figsize=(6.3, 3.00),
+    fig, axes = plt.subplots(1, 2, figsize=(6.3, 3.35),
                              gridspec_kw={"width_ratios": [1, 1], "wspace": 0.48})
     xs = np.arange(len(STRAINS))
     w = 0.24
     for k, (route, key, n_tests) in enumerate(SCHEMES):
-        infl = [np.std(H[s]["null_" + key], ddof=1) / binom_sd(n_tests) for s in STRAINS]
+        both = [inflation(H[s]["null_" + key], n_tests) for s in STRAINS]
+        infl = [b[1] for b in both]                       # calibrated: own null hit rate
+        nom = [b[0] for b in both]                        # nominal: 5 %
         bars = axes[0].bar(xs + (k - 1) * w, infl, w * 0.86, label=ROUTE_LABEL[route],
                            color=ROUTE[route], edgecolor=ROUTE[route], linewidth=0.7, zorder=3)
+        axes[0].plot(xs + (k - 1) * w, nom, ls="none", marker="_", markersize=7.5, mew=1.6,
+                     color=INK, zorder=4)
         for i, b in enumerate(bars):
             if STRAINS[i] == ARTEFACT:
                 b.set_hatch(ARTEFACT_HATCH); b.set_edgecolor(MUTED)
@@ -37,7 +54,8 @@ def fig7(outdir):
     axes[0].set_ylabel("null SD / binomial SD", fontsize=9.5)
     # The hatched P. aeruginosa / Route A2 bar reaches 10.02; without an explicit top
     # the autoscaled axis ended at 10 and clipped it against the frame (round 4 report, 4.5).
-    axes[0].set_ylim(top=11)
+    axes[0].set_ylim(top=12)
+    axes[0].set_yticks([0, 5, 10])   # fixed, so the taller panel keeps the submitted ticks
     tidy(axes[0])
 
     obs = [H[s]["obs_A1u"] for s in STRAINS]
@@ -58,29 +76,37 @@ def fig7(outdir):
                      markeredgecolor="white", markeredgewidth=0.8, zorder=5)
     axes[1].axhline(182 * ALPHA, color=MUTED, linewidth=0.9, linestyle=(0, (1, 2)), zorder=2)
     axes[1].set_ylabel("descriptors passing the filter", fontsize=9.5)
+    axes[1].yaxis.set_major_locator(plt.MultipleLocator(10))   # tick spacing as submitted
     tidy(axes[1])
 
     for i, ax in enumerate(axes):
+        ax.tick_params(axis="y", labelsize=8.0)   # revision (October 2026, EW): 10.5 -> 8 pt
         ax.set_xticks(xs)
-        ax.set_xticklabels([STRAIN_LABEL[s] for s in STRAINS], style="italic", rotation=30, ha="right")
+        # Revision (October 2026, EW): strain names 10.5 -> 8 pt, about the size of the legend
+        ax.set_xticklabels([STRAIN_LABEL[s] for s in STRAINS], style="italic", fontsize=8.0, rotation=30, ha="right",
+                           va="top", rotation_mode="anchor")
         ax.text(-0.32, 1.06, "ab"[i], transform=ax.transAxes, fontsize=11, fontweight="bold", va="top")
     from matplotlib.lines import Line2D
     h1, l1 = axes[0].get_legend_handles_labels()
-    h2 = [Line2D([], [], marker="D", ls="none", color=ROUTE["A1u"], markersize=6.5, label="observed count, within the null range"),
+    h2 = [Line2D([], [], marker="_", ls="none", color=INK, markersize=7.5, mew=1.6, label="a: relative to the nominal 5 % rate"),
+          Line2D([], [], marker="D", ls="none", color=ROUTE["A1u"], markersize=6.5, label="observed count, within the null range"),
           Line2D([], [], marker="D", ls="none", color="#C1272D", markersize=6.5, label="observed count, above the null range")]
-    fig.subplots_adjust(left=0.085, right=0.985, bottom=0.369, top=0.752, wspace=0.48)
-    fig.legend(h1 + h2, l1 + [h.get_label() for h in h2], loc="upper center",
-               bbox_to_anchor=(0.5, 1.0),
-               ncol=3, columnspacing=1.4, handlelength=1.5, fontsize=7.5)
+    fig.subplots_adjust(left=0.085, right=0.985, bottom=0.33, top=0.80, wspace=0.48)
+    # Revision (October 2026, EW): one legend per panel; the two observed-count markers stacked
+    # above panel b, the route colours and the 5 % tick above panel a
+    axes[0].legend(h1 + h2[:1], l1 + [h2[0].get_label()], loc="lower center", bbox_to_anchor=(0.5, 1.03),
+                   ncol=2, columnspacing=1.2, handlelength=1.5, fontsize=7.5, borderaxespad=0)
+    axes[1].legend(h2[1:], [h.get_label() for h in h2[1:]], loc="lower center", bbox_to_anchor=(0.5, 1.03),
+                   ncol=1, handlelength=1.5, fontsize=7.5, borderaxespad=0)
     fig.text(0.26, 0.011,
-             "a: inflation of the null distribution of\nthe hit count relative to independent tests.\n"
-             "Dashed line means independent tests (ratio = 1).",
+             "a: null SD of the hit count over the binomial SD of\nindependent tests at the route's own null hit rate\n"
+             "(bars) and at 5 % (ticks); dashed line: ratio = 1.",
              ha="center", fontsize=7.2, color=MUTED, linespacing=1.4)
     fig.text(0.76, 0.011,
              "b: null range of the Route A1u hit count,\n2.5th to 97.5th percentile of 1,000 permutations.\n"
              "Dotted line means 5 % of 182 tests, the naive expectation.",
              ha="center", fontsize=7.2, color=MUTED, linespacing=1.4)
-    save(fig, "Fig7_hitcount_inflation", outdir)
+    save(fig, "Fig7_hitcount_inflation", outdir, xspan=XSPAN_FIG6_FIG7)
 
 
 def figS6(outdir):

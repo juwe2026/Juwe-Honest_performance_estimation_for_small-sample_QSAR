@@ -1,3 +1,4 @@
+# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
 """Sensitivitaetsanalyse zu Gutachterpunkt 1.
 
 Die Korrelationsgruppierung von Route B benutzt keine Aktivitaetslabels, sie
@@ -14,7 +15,7 @@ _ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 _DATA = _os.path.join(_ROOT, "data")
 _RES = _os.environ.get("QSAR_RECALC_DIR", _os.path.join(_ROOT, "results", "recalc"))
 _os.makedirs(_RES, exist_ok=True)
-# Additional file 4 is not bundled here because of its size; place it in data/ under
+# Additional file 6 is not bundled here because of its size; place it in data/ under
 # this name, or point QSAR_ROUTEA_XLSX at it.
 XLSX = "20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx"
 
@@ -131,8 +132,8 @@ def run(folds, s, nlv, nperm=2000, seed=702):
         yhp = loo_fold(yp, nlv, folds)
         qs[k] = core.q2(yp, yhp); as_[k] = roc_auc_score(yp, yhp)
     return dict(q2=float(oq), auc=float(oa),
-                p_q2=float((1 + np.sum(qs >= oq)) / (1 + nperm)),
-                p_auc=float((1 + np.sum(as_ >= oa)) / (1 + nperm)))
+                p_q2=float((1 + np.sum(qs >= oq - 1e-9)) / (1 + nperm)),
+                p_auc=float((1 + np.sum(as_ >= oa - 1e-9)) / (1 + nperm)))
 
 
 NPERM = int(sys.argv[1]) if len(sys.argv) > 1 else 2000

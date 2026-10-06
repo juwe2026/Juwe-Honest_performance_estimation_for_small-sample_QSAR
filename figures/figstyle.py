@@ -91,13 +91,27 @@ def tidy(ax, grid_axis="y"):
         ax.set_axisbelow(True)
 
 
-def save(fig, stem, outdir="."):
+# Revision (October 2026, EW): Fig. 6 and Fig. 7 share one canvas and one horizontal crop, so that
+# at the same printed width their y-axes lie on the same vertical lines. The span is the content
+# width of Fig. 7 (inches, before the 0.1 in padding of the tight crop); each figure checks that
+# none of its content lies outside it.
+XSPAN_FIG6_FIG7 = (-0.1961129032258066, 6.268208333333334)   # measured from Fig. 7
+
+
+def save(fig, stem, outdir=".", xspan=None):
     import os
+    from matplotlib.transforms import Bbox
     # dpi is passed explicitly (not just via rcParams) so every PNG carries a pHYs
     # resolution chunk; a PNG without it is read by most viewers as 72 dpi, which
     # made Fig. 1 (1967 px wide) render at 694 mm instead of 166 mm (round 4 report).
+    bbox = "tight"
+    if xspan is not None:
+        tb = fig.get_tightbbox(fig.canvas.get_renderer())
+        assert tb.x0 >= xspan[0] - 1e-3 and tb.x1 <= xspan[1] + 1e-3, (stem, tb.x0, tb.x1, xspan)
+        pad = plt.rcParams["savefig.pad_inches"]
+        bbox = Bbox.from_extents(xspan[0] - pad, tb.y0 - pad, xspan[1] + pad, tb.y1 + pad)
     for ext in ("png", "pdf"):
-        fig.savefig(os.path.join(outdir, "%s.%s" % (stem, ext)), dpi=DPI)
+        fig.savefig(os.path.join(outdir, "%s.%s" % (stem, ext)), dpi=DPI, bbox_inches=bbox)
     plt.close(fig)
     print("  wrote %s.png and %s.pdf" % (stem, stem))
 

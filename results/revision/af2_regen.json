@@ -1,0 +1,36 @@
+{
+ "rdkit": "2026.03.6",
+ "changed": [
+  [
+   "1,8-Cineole",
+   "NumStereoCenters",
+   2,
+   0
+  ]
+ ],
+ "max_dS": 0.25454772637591405,
+ "max_dS_pair": [
+  "NumStereoCenters",
+  "Ether_flag"
+ ],
+ "max_dP": 0.23911467812122914,
+ "pairs": {
+  "union": 30,
+  "both": 25,
+  "spearman_only": 3,
+  "pearson_only": 2
+ },
+ "pls_p_changes": [
+  [
+   "SPneu",
+   6,
+   0.0065,
+   0.0075
+  ]
+ ],
+ "removed": [
+  "Comparison_3_routes",
+  "Conclusions"
+ ],
+ "out": "Additional_file_2_RouteB_descriptor_data_neu 03.10.2026 1956.xlsx"
+}

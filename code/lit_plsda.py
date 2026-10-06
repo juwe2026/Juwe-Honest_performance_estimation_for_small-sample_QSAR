@@ -1,3 +1,7 @@
+# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
+# REVISION OCTOBER 2026: the empty-selection / single-class fallback below previously
+# predicted ytr.mean(). Under leave-one-out that equals (S - y_i)/(n - 1) and therefore
+# carries the held-out label; it is now the neutral constant 0.5. See CHANGELOG_revision.md.
 import numpy as np, pandas as pd, openpyxl
 from openpyxl.styles import Font, PatternFill
 from sklearn.cross_decomposition import PLSRegression
@@ -18,7 +22,7 @@ def loo(X,y,nlv,selector=None):
         tr=np.ones(n,bool); tr[i]=False
         Xtr,Xte=X[tr],X[i:i+1]; ytr=y[tr]
         cols=selector(Xtr,ytr,nlv) if selector else np.arange(X.shape[1])
-        if len(cols)<1: yh[i]=ytr.mean(); continue
+        if len(cols)<1: yh[i]=0.5; continue
         a,b=asc(Xtr[:,cols],Xte[:,cols]); use=min(nlv,len(cols),tr.sum()-1)
         m=PLSRegression(use,scale=False).fit(a,ytr); yh[i]=m.predict(b).ravel()[0]
     return yh
@@ -59,7 +63,7 @@ for col in ACT:
     for k in range(2000):
         yp=rng.permutation(y); yhp=loo(Xred,yp,nlv)
         permsQ[k]=q2(yp,yhp); permsA[k]=roc_auc_score(yp,yhp)
-    pQ=(1+np.sum(permsQ>=Q))/2001; pA=(1+np.sum(permsA>=AUC))/2001
+    pQ=(1+np.sum(permsQ>=Q - 1e-9))/2001; pA=(1+np.sum(permsA>=AUC - 1e-9))/2001
     # VIP auf Gesamtdaten (nur Interpretation)
     mu=Xred.mean(0); sd=Xred.std(0,ddof=1); sd[sd==0]=1
     Vfull=vip(PLSRegression(nlv,scale=False).fit((Xred-mu)/sd,y),(Xred-mu)/sd,y)

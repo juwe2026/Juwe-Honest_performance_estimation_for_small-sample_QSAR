@@ -54,8 +54,10 @@ def figS4(outdir):
         ax.set_xticks([0, 1]); ax.set_xticklabels(["non-\nactive", "active"], fontsize=8.5)
         ax.set_title(STRAIN_LABEL[s], style="italic", fontsize=8.5)
         tidy(ax)
+        ax.tick_params(axis="y", labelsize=8.0)       # revision (October 2026, EW): 10.5 -> 8 pt
+        ax.yaxis.set_major_locator(plt.MultipleLocator(5))   # same tick spacing as submitted
         if c == 0:
-            ax.set_ylabel("LV1 score (apparent)")
+            ax.set_ylabel("LV1 score (apparent)", fontsize=8.5)   # 11.5 -> 8.5 pt
     fig.tight_layout(rect=[0, 0.03, 1, 1])
     fig.text(0.5, 0.005, "Route A1 top-15 descriptors; every compound is shown, "
              "the LV1 axis is oriented so that active compounds score higher",
@@ -93,7 +95,7 @@ def figS5(outdir):
             raise SystemExit("no rows for %s in FigS5_scores_2comp" % s)
         # Component1 in this workbook is already oriented so "active compounds
         # score higher" holds for all five strains, matching Fig. S4's LV1_score
-        # convention (Additional file 9 corrected H. influenzae's sign at the data
+        # convention (Additional file 12 corrected H. influenzae's sign at the data
         # level; flipping it again here would silently undo that fix).
         for name in ("non-active", "active"):
             xs = np.array([float(r[3]) for r in sub if str(r[2]).strip() == name])
@@ -104,13 +106,15 @@ def figS5(outdir):
         ax.axhline(0, color=GRID, linewidth=0.7, zorder=1)
         ax.axvline(0, color=GRID, linewidth=0.7, zorder=1)
         ax.set_title(STRAIN_LABEL[s], style="italic", fontsize=8.5)
-        ax.set_xlabel("component 1")
+        # revision (October 2026, EW): axis labels 11.5 -> 8.5 pt, tick labels 10.5 -> 8 pt
+        ax.set_xlabel("component 1", fontsize=8.5)
+        ax.tick_params(labelsize=8.0)
         if c == 0:
-            ax.set_ylabel("component 2")
+            ax.set_ylabel("component 2", fontsize=8.5)
         tidy(ax, grid_axis=None)
     handles, labels = axes[0].get_legend_handles_labels()
     fig.tight_layout(rect=[0, 0.04, 1, 0.88])
-    fig.legend(handles[:2], labels[:2], loc="upper center", ncol=2, handlelength=1.2)
+    fig.legend(handles[:2], labels[:2], loc="upper center", ncol=2, handlelength=1.2, fontsize=8.0)   # 10.5 -> 8 pt
     fig.text(0.5, 0.005, "Route A1 top-15 descriptors, apparent two-component model; "
              "dashed outlines are 95 % confidence ellipses",
              ha="center", fontsize=7.5, color=MUTED)

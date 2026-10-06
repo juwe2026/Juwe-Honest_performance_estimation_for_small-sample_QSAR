@@ -1,4 +1,4 @@
-"""Add machine-readable structure identifiers to Additional file 2.
+"""Add machine-readable structure identifiers to Additional file 3.
 
 Writes three columns into the ``Descriptors`` sheet, immediately after the existing
 ``SMILES`` column:
@@ -22,8 +22,8 @@ Info sheet:
   describe the constitution that was modelled, not the configuration of the material
   that was tested, whose stereochemistry the compound names give. This matches the
   Methods section, which states that descriptors were computed from neutral, canonical
-  SMILES without 3D optimisation and that ``NumStereoCenters`` counts unassigned
-  potential stereocentres.
+  SMILES without 3D optimisation and that ``NumStereoCenters`` counts assigned and
+  unassigned CIP stereocentres.
 * Because they pin the constitution exactly, the identifiers resolve the one compound
   name in the series that is ambiguous: "3-Carene, alpha-Carene" was modelled as
   3-carene (car-3-ene), InChIKey BQOFWKZOCNGFEC-UHFFFAOYSA-N.
@@ -62,7 +62,7 @@ INFO = [
     "The modelled structures are neutral and two-dimensional and carry no stereochemistry, apart from the",
     "double-bond geometry specified for Citral and Geranic acid; the compound names give the configuration of",
     "the material that was tested. The identifiers therefore describe constitution, matching the Methods",
-    "section of the manuscript and the NumStereoCenters column, which counts unassigned potential",
+    "section of the manuscript and the NumStereoCenters column, which counts assigned and unassigned CIP",
     "stereocentres. For the same reason the InChIKey resolves the one ambiguous name in the series:",
     "\"3-Carene, alpha-Carene\" was modelled as 3-carene (car-3-ene), BQOFWKZOCNGFEC-UHFFFAOYSA-N.",
 ]

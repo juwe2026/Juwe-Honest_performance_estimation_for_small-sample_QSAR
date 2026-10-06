@@ -1,3 +1,4 @@
+# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
 """Route B permutation test with a FIXED, a priori descriptor set (leakage-free:
 apparent == nested, and a simple permutation test is already honest)."""
 import sys, os, pickle, time, numpy as np, pandas as pd
@@ -37,5 +38,5 @@ while len(qs)<target and (time.time()-t0)<budget:
     yhp=loo(X,yp); qs.append(q2(yp,yhp)); as_.append(roc_auc_score(yp,yhp))
     if len(qs)%200==0: save()
 save(); n=len(qs)
-pq=(1+np.sum(np.array(qs)>=oq))/(1+n); pa=(1+np.sum(np.array(as_)>=oa))/(1+n)
+pq=(1+np.sum(np.array(qs)>=oq - 1e-9))/(1+n); pa=(1+np.sum(np.array(as_)>=oa - 1e-9))/(1+n)
 print(f'{short} RouteB-{which}: n={n} | Q2={oq:.3f} AUC={oa:.3f} | p(Q2)={pq:.4f} p(AUC)={pa:.4f} | {time.time()-t0:.0f}s')

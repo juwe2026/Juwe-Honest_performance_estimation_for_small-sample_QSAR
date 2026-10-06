@@ -1,3 +1,4 @@
+# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
 """Sensitivitaetsanalyse fuer den 2.208-Deskriptor-Pool von Route A.
 
 Tabelle S1 misst die X-Datenabhaengigkeit der unueberwachten Korrelations-
@@ -21,7 +22,7 @@ _ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 _DATA = _os.path.join(_ROOT, "data")
 _RES = _os.environ.get("QSAR_RECALC_DIR", _os.path.join(_ROOT, "results", "recalc"))
 _os.makedirs(_RES, exist_ok=True)
-# Additional file 4 is not bundled here because of its size; place it in data/ under
+# Additional file 6 is not bundled here because of its size; place it in data/ under
 # this name, or point QSAR_ROUTEA_XLSX at it.
 XLSX = "20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx"
 
@@ -211,7 +212,7 @@ def loo(y, mode, per_fold):
         ytr = y[tr]; ntr = N - 1
         n1 = int(ytr.sum())
         if n1 < 1 or n1 == ntr:
-            yh[i] = ytr.mean(); continue
+            yh[i] = 0.5; continue
         R = RANKS[i]
         eff, pv = eff_filter(R, ytr, ntr)
         if mode == 'A1':
@@ -220,7 +221,7 @@ def loo(y, mode, per_fold):
             reps = FG['folds_cent'][i] if per_fold else FG['global_cent']
         cols = reps[(eff[reps] > 0.3) & (pv[reps] <= 0.05)]
         if len(cols) < 1:
-            yh[i] = ytr.mean(); continue
+            yh[i] = 0.5; continue
         Xtr = X[tr][:, cols]; Xte = X[i:i + 1, cols]
         mu = Xtr.mean(0); sd = Xtr.std(0, ddof=1); sd[sd == 0] = 1.0
         m = PLSRegression(n_components=min(1, len(cols), ntr - 1),
@@ -245,8 +246,8 @@ def run(s, mode, per_fold, nperm, seed=1234):
         yhp = loo(yp, mode, per_fold)
         qs[k] = q2(yp, yhp); as_[k] = roc_auc_score(yp, yhp)
     return dict(q2=float(oq), auc=float(oa),
-                p_q2=float((1 + np.sum(qs >= oq)) / (1 + nperm)),
-                p_auc=float((1 + np.sum(as_ >= oa)) / (1 + nperm)))
+                p_q2=float((1 + np.sum(qs >= oq - 1e-9)) / (1 + nperm)),
+                p_auc=float((1 + np.sum(as_ >= oa - 1e-9)) / (1 + nperm)))
 
 
 NPERM = int(sys.argv[1]) if len(sys.argv) > 1 else 0

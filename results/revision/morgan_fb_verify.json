@@ -1,0 +1,32 @@
+{
+ "HI": {
+  "nperm": 2000,
+  "frac_folds": 0.8668709677419355,
+  "frac_perm_any": 0.9255,
+  "obs": 28
+ },
+ "SA": {
+  "nperm": 2000,
+  "frac_folds": 0.7986129032258065,
+  "frac_perm_any": 0.939,
+  "obs": 0
+ },
+ "SPneu": {
+  "nperm": 2000,
+  "frac_folds": 0.8168225806451613,
+  "frac_perm_any": 0.9225,
+  "obs": 0
+ },
+ "SPyo": {
+  "nperm": 2000,
+  "frac_folds": 0.8410806451612903,
+  "frac_perm_any": 0.924,
+  "obs": 22
+ },
+ "PA": {
+  "nperm": 2000,
+  "frac_folds": 0.8320322580645161,
+  "frac_perm_any": 0.9705,
+  "obs": 0
+ }
+}

@@ -1,3 +1,4 @@
+# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
 import sys, os, numpy as np, nested_h as nh
 
 STORE = '/home/claude/perm_HI.npz'
@@ -24,7 +25,7 @@ for k in range(start, start + batch):
 np.savez(STORE, q2s=np.array(q2s), aucs=np.array(aucs),
          obs_q2=obs_q2, obs_auc=obs_auc)
 n = len(q2s)
-pQ = (1 + np.sum(np.array(q2s) >= obs_q2)) / (1 + n)
-pA = (1 + np.sum(np.array(aucs) >= obs_auc)) / (1 + n)
+pQ = (1 + np.sum(np.array(q2s) >= obs_q2 - 1e-9)) / (1 + n)
+pA = (1 + np.sum(np.array(aucs) >= obs_auc - 1e-9)) / (1 + n)
 print(f'Perms gesamt: {n} | p(Q2)={pQ:.4f} p(AUC)={pA:.4f} | '
       f'perm-mean Q2={np.mean(q2s):.3f} AUC={np.mean(aucs):.3f}')

@@ -1,3 +1,4 @@
+# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
 import numpy as np, pandas as pd
 from sklearn.cross_decomposition import PLSRegression
 from sklearn.metrics import roc_auc_score
@@ -23,7 +24,7 @@ for col in ACT:
     PQ=np.empty(2000);PA=np.empty(2000)
     for k in range(2000):
         yp=rng.permutation(y); yhp=loo(X,yp,1); PQ[k]=q2(yp,yhp); PA[k]=roc_auc_score(yp,yhp)
-    pQ=(1+np.sum(PQ>=Q))/2001; pA=(1+np.sum(PA>=A))/2001
+    pQ=(1+np.sum(PQ>=Q - 1e-9))/2001; pA=(1+np.sum(PA>=A - 1e-9))/2001
     res[short]=(Q,A,pQ,pA)
     print(f'{short:7} {Q:10.3f} {A:6.3f} {pQ:7.4f} {pA:7.4f}')
 np.save('/home/claude/lit_nlv1.npy',res)

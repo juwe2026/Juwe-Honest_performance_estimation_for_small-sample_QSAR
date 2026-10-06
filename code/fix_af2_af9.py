@@ -77,7 +77,7 @@ for r in range(2, ws.max_row + 1):
 n = ws.max_row + 2
 for line in [
     "Note. Route A2 restricted to the 15 descriptors with the largest effect size per strain.",
-    "These values are identical to Additional file 7 and are NOT the values of main-text Table 3",
+    "These values are identical to Additional file 10 and are NOT the values of main-text Table 3",
     "and Table 4, which report Route A1. Earlier versions of this sheet carried p-values from 500",
     "permutations; they have been replaced by the 2,000-permutation values used throughout.",
 ]:

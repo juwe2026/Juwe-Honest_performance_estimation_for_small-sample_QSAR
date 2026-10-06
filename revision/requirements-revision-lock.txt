@@ -1,0 +1,8 @@
+# Package versions of the computing environment in which the revision analyses were run (October 2026), Python 3.11.15
+numpy==2.3.5
+scipy==1.17.1
+pandas==2.3.3
+scikit-learn==1.8.0
+rdkit==2026.3.6
+openpyxl==3.1.5
+matplotlib==3.10.9
