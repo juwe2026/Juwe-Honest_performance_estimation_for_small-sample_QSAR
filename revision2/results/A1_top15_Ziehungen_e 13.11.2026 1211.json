@@ -1,0 +1,107 @@
+{
+ "HI": {
+  "run": {
+   "n": 2000,
+   "q2": 0.004779987912446493,
+   "auc": 0.7238095238095239,
+   "p_q2": 0.06796601699150424,
+   "p_auc": 0.05547226386806597,
+   "null_q2_median": -0.43152849633412815,
+   "null_auc_mean": 0.4643809523809524
+  },
+  "equals_published_summary": true,
+  "older_draws": {
+   "file": "perm_a1e_HI.npz",
+   "observed_equal": true,
+   "p_q2": 0.06796601699150424,
+   "p_auc": 0.05547226386806597,
+   "differing_draws": 11,
+   "corrected_code_reproduces_run": 11,
+   "former_fallback_reproduces_older": 11
+  }
+ },
+ "SA": {
+  "run": {
+   "n": 2000,
+   "q2": -0.0192643179968488,
+   "auc": 0.7615384615384615,
+   "p_q2": 0.07396301849075462,
+   "p_auc": 0.06596701649175413,
+   "null_q2_median": -0.4607245121127028,
+   "null_auc_mean": 0.45287692307692307
+  },
+  "equals_published_summary": true,
+  "older_draws": {
+   "file": "perm_a1e_SA.npz",
+   "observed_equal": true,
+   "p_q2": 0.07396301849075462,
+   "p_auc": 0.06596701649175413,
+   "differing_draws": 11,
+   "corrected_code_reproduces_run": 11,
+   "former_fallback_reproduces_older": 11
+  }
+ },
+ "SPneu": {
+  "run": {
+   "n": 2000,
+   "q2": 0.15506958117015368,
+   "auc": 0.8266666666666667,
+   "p_q2": 0.01899050474762619,
+   "p_auc": 0.01999000499750125,
+   "null_q2_median": -0.4464601772630028,
+   "null_auc_mean": 0.45625
+  },
+  "equals_published_summary": true,
+  "older_draws": {
+   "file": "perm_a1e_SPneu.npz",
+   "observed_equal": true,
+   "p_q2": 0.01899050474762619,
+   "p_auc": 0.01999000499750125,
+   "differing_draws": 6,
+   "corrected_code_reproduces_run": 6,
+   "former_fallback_reproduces_older": 6
+  }
+ },
+ "SPyo": {
+  "run": {
+   "n": 2000,
+   "q2": 0.18396343054670794,
+   "auc": 0.8363636363636364,
+   "p_q2": 0.015492253873063468,
+   "p_auc": 0.00399800099950025,
+   "null_q2_median": -0.41554699829454966,
+   "null_auc_mean": 0.4698659090909091
+  },
+  "equals_published_summary": true,
+  "older_draws": {
+   "file": "perm_a1e_SPyo.npz",
+   "observed_equal": true,
+   "p_q2": 0.015492253873063468,
+   "p_auc": 0.00399800099950025,
+   "differing_draws": 9,
+   "corrected_code_reproduces_run": 9,
+   "former_fallback_reproduces_older": 9
+  }
+ },
+ "PA": {
+  "run": {
+   "n": 2000,
+   "q2": 0.4389459868877207,
+   "auc": 1.0,
+   "p_q2": 0.0009995002498750624,
+   "p_auc": 0.0004997501249375312,
+   "null_q2_median": -0.47807609045582633,
+   "null_auc_mean": 0.44386309523809525
+  },
+  "equals_published_summary": true,
+  "older_draws": {
+   "file": "perm_a1e_PA.npz",
+   "observed_equal": true,
+   "p_q2": 0.0009995002498750624,
+   "p_auc": 0.0004997501249375312,
+   "differing_draws": 93,
+   "corrected_code_reproduces_run": 93,
+   "former_fallback_reproduces_older": 93
+  }
+ }
+}

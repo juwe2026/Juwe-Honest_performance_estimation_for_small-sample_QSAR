@@ -1,8 +1,19 @@
-# Revision (G2-14, EW 03.10.2026): Ionisation und Tautomerie, Route B.
-# (1) cis-Pinonsaeure und Geraniumsaeure als Carboxylat: TPSA-Aenderung (RDKit, Ertl) und Route-B-Q2 (1 und 3 LV) mit sonst
-#     unveraenderten Deskriptoren. (2) beta-Thujaplicin: die beiden Tropolon-Tautomere, TPSA, aromatische Ringe, Phenol_flag-SMARTS.
-# Deterministisch. Braucht QSAR_ROUTEA_XLSX und QSAR_ROUTEB_XLSX.
-exec(open('/home/claude/rev/common.py').read())
+# Revision (G2-14, EW 03.10.2026): ionisation and tautomerism, Route B.
+# (1) cis-pinonic acid and geranic acid as carboxylate: TPSA change (RDKit, Ertl) and Route B Q2 (1 and 3 LV) with otherwise
+#     unchanged descriptors. (2) beta-thujaplicin: the two tropolone tautomers, TPSA, aromatic rings, Phenol_flag SMARTS.
+# Deterministic. Needs QSAR_ROUTEA_XLSX and QSAR_ROUTEB_XLSX.
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
+exec(open((_REV + '/common.py')).read())
 import core, json, openpyxl
 from rdkit import Chem
 from rdkit.Chem import rdMolDescriptors as rd
@@ -25,6 +36,6 @@ phen = Chem.MolFromSmarts('[c][OX2H1]')
 for s in ('CC(C)c1cccc(=O)c(O)c1', 'CC(C)c1cccc(O)c(=O)c1'):
     t = Chem.MolFromSmiles(s)
     out['thujaplicin'].append(dict(smiles=s, tpsa=rd.CalcTPSA(t), aromatic_rings=rd.CalcNumAromaticRings(t), phenol_flag=int(t.HasSubstructMatch(phen))))
-json.dump(out, open('/home/claude/rev/out/ionisation_check.json', 'w'), indent=1, default=float)
+json.dump(out, open((_OUT + '/ionisation_check.json'), 'w'), indent=1, default=float)
 print({n: round(v, 2) for n, v in dT.items()}, 'max |dQ2| 1LV %.4f' % max(abs(v['diff']) for k, v in out['routeB_q2'].items() if k.endswith('_1LV')))
 print(out['thujaplicin'])

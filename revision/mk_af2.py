@@ -1,32 +1,43 @@
 # -*- coding: utf-8 -*-
-"""Zusatzdatei 2 (neu: Additional file 3) fuer die Revision neu erzeugen (G2-20, Pruefung 03.10.2026).
+"""Regenerate supplementary file 2 (new: Additional file 3 in the numbering of Revision 1) for the revision (G2-20, check of 03.10.2026).
 
-Ausgangspunkt ist die eingereichte Datei (QSAR_selection_leakage/data/RouteB_descriptor_data.xlsx) mit allen Blaettern.
-Geaendert wird nur, was die Korrektur von NumStereoCenters (1,8-Cineol 2 -> 0) und die Neuberechnung der Matrizen beruehrt:
-  Descriptors        alle 25 Werte mit RDKit 2026.03.6 neu berechnet und gegen die eingereichten Werte geprueft;
-                     NumStereoCenters CIP-basiert (useLegacyImplementation=True); eingereichte Werte als Zusatzspalte
-  Computation_rules  Zeile NumStereoCenters
-  Pearson_Corr       neu aus den gespeicherten Werten
-  Spearman_Corr      neu aus den gespeicherten Werten, Gleichstaende mit mittleren Raengen (Gleitkommarauschen entfernt)
-  Reduction          unveraendert; geprueft, dass dieselben Paare > 0.7 und dieselbe Reduktion entstehen
-  PLS-DA_reduced     12er-Satz (ohne NumStereoCenters) unveraendert, p-Werte mit Gleichstandsbehandlung wie Table 1
-  VIP_two_stage, VIP_gt1_list   mit Cineol = 0 neu (out/twostage25_cineole0.json, Algorithmus code/lit_plsda.py)
-  Comparison_3_routes, Conclusions   aus den aktuellen Ergebnissen neu erzeugt (EW 03.10.2026), jede Zahl gegen Table 1/2 geprueft
-  Info               Revisionsabschnitt
+Starting point is the submitted file (QSAR_selection_leakage/data/RouteB_descriptor_data.xlsx) with all sheets.
+Changed is only what the correction of NumStereoCenters (1,8-cineole 2 -> 0) and the recomputation of the matrices touch:
+  Descriptors        all 25 values recomputed with RDKit 2026.03.6 and checked against the submitted values,
+                     NumStereoCenters CIP-based (useLegacyImplementation=True), submitted values as an additional column
+  Computation_rules  row NumStereoCenters
+  Pearson_Corr       new from the stored values
+  Spearman_Corr      new from the stored values, ties with mean ranks (floating-point noise removed)
+  Reduction          unchanged, checked that the same pairs > 0.7 and the same reduction result
+  PLS-DA_reduced     12-descriptor set (without NumStereoCenters) unchanged, p-values with treatment of ties as Table 1
+  VIP_two_stage, VIP_gt1_list   new with cineole = 0 (out/twostage25_cineole0.json, algorithm code/lit_plsda.py)
+  Comparison_3_routes, Conclusions   regenerated from the current results (EW 03.10.2026), every number checked against Table 1/2
+  Info               revision section
 """
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import os, sys, json, datetime, zoneinfo
-os.environ.setdefault('QSAR_ROUTEA_XLSX', '/home/claude/rev/QSAR_selection_leakage/data/20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx')
-sys.path.insert(0, '/home/claude/rev/QSAR_selection_leakage/code')
+os.environ.setdefault('QSAR_ROUTEA_XLSX', (_ROOT + '/data/20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx'))
+sys.path.insert(0, (_ROOT + '/code'))
 import numpy as np, pandas as pd, openpyxl, rdkit
 from openpyxl.styles import Font
 from rdkit import Chem
 import desc_compute as dc
-exec(open('/home/claude/rev/pval_tie.py').read().replace("_NULLDIR = '/home/claude/rev/out/nulls'", "_NULLDIR = '/tmp/claude-0/nulls_af2'"))
+exec(open((_REV + '/pval_tie.py')).read().replace("_NULLDIR = (_OUT + '/nulls')", "_NULLDIR = (_WORK + '/nulls_af2')"))
 
-SRC = '/home/claude/rev/QSAR_selection_leakage/data/RouteB_descriptor_data.xlsx'
-RP = '/home/claude/rev/QSAR_selection_leakage/results/raw_permutations/'
+SRC = (_ROOT + '/data/RouteB_descriptor_data_submitted.xlsx')
+RP = (_ROOT + '/results/raw_permutations/')
 TS = datetime.datetime.now(zoneinfo.ZoneInfo('Europe/Berlin')).strftime('%d.%m.%Y %H%M')
-OUT = '/mnt/user-data/outputs/Additional_file_2_RouteB_descriptor_data_neu %s.xlsx' % TS
+OUT = (_WORK + '/Additional_file_2_RouteB_descriptor_data_neu %s.xlsx') % TS
 wb = openpyxl.load_workbook(SRC)
 FONT = 'Calibri'
 
@@ -49,7 +60,7 @@ for i in range(31):
     for k, d in enumerate(DESC):
         o, n = float(OLD[i][k]), float(NEW[i][d])
         if abs(o - n) > 1e-6: changed.append((names[i], d, OLD[i][k], NEW[i][d]))
-print('RDKit', rdkit.__version__, '| abweichende Werte:', changed)
+print('RDKit', rdkit.__version__, '| deviating values:', changed)
 assert changed == [('1,8-Cineole', 'NumStereoCenters', 2, 0)], changed
 for i in range(31):
     for k, d in enumerate(DESC):
@@ -71,10 +82,10 @@ for r in range(2, ws.max_row + 1):
                             'those values are kept in column NumStereoCenters_submitted of the Descriptors sheet.')
         break
 else:
-    raise SystemExit('Computation_rules: NumStereoCenters fehlt')
+    raise SystemExit('Computation_rules: NumStereoCenters missing')
 
 # ------------------------------------------------------- Pearson / Spearman
-P = M.corr(method='pearson'); S = M.corr(method='spearman')   # pandas: mittlere Raenge bei Gleichstand
+P = M.corr(method='pearson'); S = M.corr(method='spearman')   # pandas: mean ranks for ties
 def write_matrix(name, C):
     w = wb[name]; h = [w.cell(1, c).value for c in range(2, w.max_column + 1)]
     rows = [w.cell(r, 1).value for r in range(2, w.max_row + 1)]
@@ -86,21 +97,21 @@ def write_matrix(name, C):
     return old
 Po = write_matrix('Pearson_Corr', P); So = write_matrix('Spearman_Corr', S)
 pairs = lambda A: {tuple(sorted((a, b))) for a in DESC for b in DESC if a < b and abs(A.loc[a, b]) > 0.7}
-assert pairs(Po) == pairs(P) and pairs(So) == pairs(S), 'Paare > 0.7 veraendert'
+assert pairs(Po) == pairs(P) and pairs(So) == pairs(S), 'pairs > 0.7 changed'
 nP, nS, nU = len(pairs(P)), len(pairs(S)), len(pairs(P) | pairs(S))
 nboth = len(pairs(P) & pairs(S))
 assert (nU, nboth, nS - nboth, nP - nboth) == (30, 25, 3, 2), (nU, nboth, nP, nS)
 dS = (So - S.loc[So.index, So.columns]).abs(); dP = (Po - P.loc[Po.index, Po.columns]).abs()
-mxS = dS.stack().idxmax(); print('max. Aenderung Spearman %.4f %s, Pearson %.4f' % (dS.values.max(), mxS, dP.values.max()))
+mxS = dS.stack().idxmax(); print('max. change Spearman %.4f %s, Pearson %.4f' % (dS.values.max(), mxS, dP.values.max()))
 
-# Verweis "Table S4" war in der Notiz auf zwei Zeilen getrennt ("... matching Table" / "S4). ..."); fuer die Umnummerierung zusammenfuehren
+# reference "Table S4" was split across two lines in the note ("... matching Table" / "S4). ..."), joined for the renumbering
 _w = wb['Reduction']; _hit = 0
 for r in range(1, _w.max_row):
     a, b = _w.cell(r, 1).value, _w.cell(r + 1, 1).value
     if isinstance(a, str) and isinstance(b, str) and a.endswith(' matching Table') and b.startswith('S4). '):
         _w.cell(r, 1, value=a[:-len(' Table')]); _w.cell(r + 1, 1, value='Table ' + b); _hit += 1
 assert _hit == 1, _hit
-# Reduktion wie code/reduction.py (combined, Ausnahme seltener Flags zuerst) auf den neuen Matrizen
+# reduction as code/reduction.py (combined, exemption of rare flags first) on the new matrices
 w = wb['Reduction']
 PUB = {}
 for r in range(2, w.max_row + 1):
@@ -115,8 +126,8 @@ while left:
     part = [m for m in left if m != best and link(best, m)]
     reps[best] = part; left = [m for m in left if m != best and m not in part]
 for n in RARE: reps[n] = []
-assert set(reps) == set(PUB) and all(set(reps[k]) == set(PUB[k][1]) for k in reps), 'Reduktion veraendert'
-print('Reduktion unveraendert:', len(reps), 'Repraesentanten (13, davon C_Count/EsterLacton_flag exakt redundant -> 12)')
+assert set(reps) == set(PUB) and all(set(reps[k]) == set(PUB[k][1]) for k in reps), 'reduction changed'
+print('reduction unchanged:', len(reps), 'representatives (13, of which C_Count/EsterLacton_flag exactly redundant -> 12)')
 
 # ------------------------------------------------------------ PLS-DA_reduced
 w = wb['PLS-DA_reduced']; SH = {'H. influenzae': 'HI', 'S. aureus': 'SA', 'S. pneumoniae': 'SPneu', 'S. pyogenes': 'SPyo', 'P. aeruginosa': 'PA'}
@@ -130,12 +141,12 @@ for r in range(2, w.max_row + 1):
         p = round(pval(nul, ob), 4)
         if abs(p - w.cell(r, col).value) > 1e-9: plog.append((s, col, w.cell(r, col).value, p))
         w.cell(r, col, value=p)
-print('PLS-DA_reduced, p mit Gleichstandsbehandlung geaendert:', plog)
+print('PLS-DA_reduced, p with treatment of ties changed:', plog)
 n = w.max_row + 2
 w.cell(n, 1, value='p-values count permuted values within 1e-9 of the observed value as ties, as in Table 1 of the manuscript.').font = Font(name=FONT, size=10, italic=True)
 
 # ------------------------------------------------------ VIP_two_stage / VIP_gt1_list
-T = json.load(open('/home/claude/rev/out/twostage25_cineole0.json'))
+T = json.load(open((_OUT + '/twostage25_cineole0.json')))
 w = wb['VIP_two_stage']
 for r in range(2, w.max_row + 1):
     s = w.cell(r, 1).value; t = T[s]
@@ -159,12 +170,12 @@ for r in range(2, w.max_row + 1):
 n = w.max_row + 2
 w.cell(n, 1, value='Revision: recomputed with the corrected stereocentre count of 1,8-cineole (0 instead of 2).').font = Font(name=FONT, size=10, italic=True)
 
-# ------------------------------------------------------ Comparison_3_routes und Conclusions neu aus den aktuellen Ergebnissen (EW 03.10.2026)
-# Die eingereichten Fassungen enthielten Zahlen eines frueheren Stands (z. B. apparentes Q2 0.43 statt 0.46). Jede Zahl wird hier aus
-# derselben Quelle gelesen wie Table 1 des Manuskripts; jede Aussage der Schlussfolgerungen wird per assert geprueft.
+# ------------------------------------------------------ Comparison_3_routes and Conclusions regenerated from the current results (EW 03.10.2026)
+# The submitted versions contained numbers of an earlier state (e.g. apparent Q2 0.43 instead of 0.46). Every number is read here from
+# the same source as Table 1 of the manuscript, every statement of the conclusions is checked by assert.
 import pickle, core
 REG = []
-O_ = '/home/claude/rev/out/'
+O_ = (_OUT + '/')
 T1P = json.load(open(O_ + 'table1_pub_exact.json')); T1C = json.load(open(O_ + 'I_fallback_seeds.json'))
 OPR = pickle.load(open(RP + 'ordinary_perm_results.pkl', 'rb'))
 B25 = json.load(open(O_ + 'B25_cineole0_seed701.json')); T25 = json.load(open(O_ + 'twostage25_cineole0.json'))
@@ -181,10 +192,10 @@ for nm, k, lg in SK:
     interp = ('Artefact (3 actives): descriptive only, no p-value interpreted' if k == 'PA' else
               'Route B: %s; Route A2 nested: %s' % (cls(pb), cls(a2['p_q2'])))
     ROWS.append([nm, round(app, 2), round(a2['q2'], 2), round(a2['p_q2'], 4), round(qb, 2), round(pb, 4), interp])
-# Gegenpruefung mit Table 1 des Manuskripts (gedruckte Werte)
+# cross-check with Table 1 of the manuscript (printed values)
 _t1 = {}
 for _r in json.load(open(O_ + 'numbercheck_rev.json'))['rows']:
-    if _r['Table'] == 'Table 1': _t1.setdefault(_r['Endpoint'] + '|' + _r['Row'], _r)   # erste Fundstelle = Teil (a), Q2
+    if _r['Table'] == 'Table 1': _t1.setdefault(_r['Endpoint'] + '|' + _r['Row'], _r)   # first occurrence = part (a), Q2
 for (nm, k, lg), r in zip(SK, ROWS):
     if k == 'PA': continue
     c = _t1[k + '|Route A2']; assert c['Printed'].replace('−', '-').startswith('%+.2f (%.4f)' % (r[2], r[3])), (k, c['Printed'])
@@ -205,7 +216,7 @@ for line in ['Regenerated for the revision from the result files behind Table 1 
     w.cell(n, 1, value=line).font = Font(name=FONT, size=10, italic=True); n += 1
 REG.append('Comparison_3_routes')
 
-# Pearson-only-Reduktion (fuer die Robustheitsaussage) und ihr Modellsatz
+# Pearson-only reduction (for the robustness statement) and its model set
 def _reduce(mode):
     link = lambda a, b: {'combined': max(abs(P.loc[a, b]), abs(S.loc[a, b])), 'pearson': abs(P.loc[a, b])}[mode] > 0.7
     left = [x for x in DESC if x not in RARE]; reps = {}
@@ -224,7 +235,7 @@ SETP = [x for x in RPe if x != 'C_Count']; assert len(SETP) == 13
 qP = {k: core.q2(core.y_of(lg), core.loo(core.X_of(SETP), core.y_of(lg), 1)) for _, k, lg in SK}
 q12 = {k: float(np.load(RP + 'permB_12_%s.npz' % k)['obs_q2']) for _, k, _ in SK}
 dmax = max(abs(qP[k] - q12[k]) for k in ('HI', 'SA', 'SPneu', 'SPyo'))
-# Zahlen fuer die Schlussfolgerungen
+# numbers for the conclusions
 R12 = {k: dict(zip(('q2', 'pq'), (q12[k], tiep(np.load(RP + 'permB_12_%s.npz' % k), 'q2')[0])), pa=tiep(np.load(RP + 'permB_12_%s.npz' % k), 'auc')[0],
               auc=float(np.load(RP + 'permB_12_%s.npz' % k)['obs_auc'])) for _, k, _ in SK}
 A2N = {k: (T1C.get(k, {}).get('A2') or T1P['A2'][k]) for _, k, _ in SK}
@@ -282,7 +293,7 @@ w = wb['Conclusions']; w.delete_rows(1, w.max_row)
 for i, line in enumerate(CONC, 1):
     w.cell(i, 1, value=line).font = Font(name=FONT, size=10, bold=line.isupper() or line.startswith(('CONCLUSIONS', 'ON THE', 'ROBUSTNESS', 'NOTE')))
 REG.append('Conclusions')
-print('Pearson-only-Satz: Q2 max. Abweichung %.3f' % dmax, {k: round(qP[k], 3) for k in qP})
+print('Pearson-only set: Q2 max. deviation %.3f' % dmax, {k: round(qP[k], 3) for k in qP})
 
 # ------------------------------------------------------------------ Info
 w = wb['Info']
@@ -324,7 +335,7 @@ REV = [
 for line in REV:
     w.cell(n, 1, value=line).font = Font(name=FONT, size=10, bold=line.startswith('REVISION')); n += 1
 wb.save(OUT)
-print('geschrieben:', OUT)
+print('written:', OUT)
 json.dump(dict(rdkit=rdkit.__version__, changed=changed, max_dS=float(dS.values.max()), max_dS_pair=list(mxS), max_dP=float(dP.values.max()),
                pairs=dict(union=nU, both=nboth, spearman_only=nS - nboth, pearson_only=nP - nboth), pls_p_changes=plog, regenerated=REG, out=OUT),
-          open('/home/claude/rev/out/af2_regen.json', 'w'), indent=1)
+          open((_OUT + '/af2_regen.json'), 'w'), indent=1)

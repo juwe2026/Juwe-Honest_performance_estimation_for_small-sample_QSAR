@@ -1,0 +1,1 @@
+{"datensatz": "Monoterpenoide", "endpunkt": "HI", "n": 31, "nsamples": 30000, "rang_stichprobenkovarianz": 30, "wiederholung_stichprobe": [0.97, 7], "wiederholung_ledoit": [0.947, 8], "stichprobe_vs_ledoit": [0.751, 1], "nur5_ledoit_wolf_seed1": [0.686, 8], "nur5_ledoit_wolf_seed2": [0.686, 9], "nur5_stichprobe_seed1": [0.792, 22], "nur5_stichprobe_seed2": [0.792, 23]}

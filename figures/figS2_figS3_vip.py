@@ -70,7 +70,7 @@ def panel(ax, getter, s, show_title=True, numbered=False):
         ax.set_yticks(y)
         ax.set_yticklabels(names, fontsize=7.0)
     ax.set_ylim(-0.8, len(data) - 0.2)
-    # enge x-Grenze: ohne den Vorgabe-Rand von 5 % nutzen die Balken die Flaeche aus
+    # tight x limit: without the default margin of 5 % the bars use the area
     ax.set_xlim(0, max(max(app), max(nst), 1.05) * 1.02)
     tidy(ax, grid_axis="x")
     ax.set_xlabel("VIP")
@@ -79,12 +79,12 @@ def panel(ax, getter, s, show_title=True, numbered=False):
 
 
 def figS2(outdir):
-    """Fuenf Zeilen fuer die Staemme, drei Spalten fuer die Deskriptorsaetze.
+    """Five rows for the strains, three columns for the descriptor sets.
 
-    Die fruehere Anordnung hatte fuenf Felder nebeneinander; die Deskriptornamen
-    beanspruchten dann den halben Feldbereich und die Balken blieben kurz. Mit
-    drei Spalten statt fuenf ist jedes Feld rund dreimal breiter, und da die
-    Namensspalte gleich breit bleibt, werden die Balken etwa dreimal laenger.
+    The earlier layout had five panels side by side. The descriptor names
+    then took half of the panel area and the bars stayed short. With
+    three columns instead of five every panel is about three times wider, and since the
+    name column keeps its width, the bars become about three times longer.
     """
     getters = [chemdes, lambda s: lit(s, True), lambda s: lit(s, False)]
     titles = ["a  A1 top-15",
@@ -110,8 +110,8 @@ def figS2(outdir):
 
 
 def figS3(outdir):
-    # a, b und c untereinander: jedes Feld bekommt die volle Breite, die
-    # Deskriptornamen auf der x-Achse werden dadurch lesbar
+    # a, b and c one below the other: every panel gets the full width, the
+    # descriptor names on the x axis thereby become legible
     # Sized to fit 180 x 225 mm at 300 dpi; previously 291 x 380 mm.
     fig, axes = plt.subplots(3, 1, figsize=(6.3, 7.3))
     specs = [(lambda s: lit(s, True), "Route B, 12 descriptors"),

@@ -1,0 +1,153 @@
+{
+ "DS01": {
+  "n": 50,
+  "aktiv": 25,
+  "median": 234.9999999999999,
+  "ausgeschlossen": [],
+  "geaendert": 9,
+  "p": 1394,
+  "G": 95
+ },
+ "DS02": {
+  "n": 34,
+  "aktiv": 14,
+  "median": 50000.0,
+  "ausgeschlossen": [],
+  "geaendert": 0,
+  "p": 1396,
+  "G": 82
+ },
+ "DS03": {
+  "n": 45,
+  "aktiv": 22,
+  "median": 5199.999999999998,
+  "ausgeschlossen": [],
+  "geaendert": 10,
+  "p": 1295,
+  "G": 66
+ },
+ "DS04": {
+  "n": 40,
+  "aktiv": 20,
+  "median": 869.5000000000001,
+  "ausgeschlossen": [],
+  "geaendert": 3,
+  "p": 1286,
+  "G": 89
+ },
+ "DS05": {
+  "n": 42,
+  "aktiv": 21,
+  "median": 2.05,
+  "ausgeschlossen": [],
+  "geaendert": 9,
+  "p": 1335,
+  "G": 90
+ },
+ "DS06": {
+  "n": 58,
+  "aktiv": 22,
+  "median": 12.500000000000002,
+  "ausgeschlossen": [],
+  "geaendert": 0,
+  "p": 1371,
+  "G": 140
+ },
+ "DS07": {
+  "n": 42,
+  "aktiv": 19,
+  "median": 62499.99999999996,
+  "ausgeschlossen": [],
+  "geaendert": 6,
+  "p": 1316,
+  "G": 47
+ },
+ "DS08": {
+  "n": 36,
+  "aktiv": 18,
+  "median": 48000.00000000004,
+  "ausgeschlossen": [],
+  "geaendert": 3,
+  "p": 1309,
+  "G": 68
+ },
+ "DS09": {
+  "n": 32,
+  "aktiv": 16,
+  "median": 450.00000000000006,
+  "ausgeschlossen": [],
+  "geaendert": 6,
+  "p": 1373,
+  "G": 86
+ },
+ "DS10": {
+  "n": 45,
+  "aktiv": 22,
+  "median": 212.99999999999997,
+  "ausgeschlossen": [],
+  "geaendert": 3,
+  "p": 1387,
+  "G": 98
+ },
+ "DS11": {
+  "n": 34,
+  "aktiv": 17,
+  "median": 314.5,
+  "ausgeschlossen": [],
+  "geaendert": 7,
+  "p": 1315,
+  "G": 93
+ },
+ "DS12": {
+  "n": 30,
+  "aktiv": 13,
+  "median": 1000.0,
+  "ausgeschlossen": [],
+  "geaendert": 2,
+  "p": 1306,
+  "G": 61
+ },
+ "DS13": {
+  "n": 28,
+  "aktiv": 11,
+  "median": 13345.0,
+  "ausgeschlossen": [
+   "CHEMBL3621999",
+   "CHEMBL3622000",
+   "CHEMBL3622003",
+   "CHEMBL3622005",
+   "CHEMBL3622298",
+   "CHEMBL3622299"
+  ],
+  "geaendert": 1,
+  "p": 1361,
+  "G": 58
+ },
+ "DS14": {
+  "n": 48,
+  "aktiv": 24,
+  "median": 17419.99999999999,
+  "ausgeschlossen": [],
+  "geaendert": 2,
+  "p": 1372,
+  "G": 79
+ },
+ "DS15": {
+  "n": 39,
+  "aktiv": 19,
+  "median": 8900.0,
+  "ausgeschlossen": [],
+  "geaendert": 8,
+  "p": 1353,
+  "G": 62
+ },
+ "DS16": {
+  "n": 32,
+  "aktiv": 16,
+  "median": 12449.999999999996,
+  "ausgeschlossen": [],
+  "geaendert": 3,
+  "p": 1307,
+  "G": 30
+ }
+}

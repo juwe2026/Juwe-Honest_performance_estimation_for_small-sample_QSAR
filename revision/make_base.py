@@ -10,7 +10,7 @@ built from the archive code and the Route A matrix (Additional file 6, placed as
 README). It is not bundled because of its size (about 175 MB) and because this script rebuilds it.
 
 Usage:  python revision/make_base.py [OUT]       default OUT: results/recalc/base.pkl
-common.py expects the file at /home/claude/rev/base.pkl (see README_revision.md on paths).
+common.py expects the file as base.pkl in results/recalc (or in QSAR_RECALC_DIR).
 """
 import os, sys, pickle
 import numpy as np

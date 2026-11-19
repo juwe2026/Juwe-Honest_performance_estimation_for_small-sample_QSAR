@@ -1,3 +1,9 @@
+// Archive-relative: QSAR_BUILD_IN holds the inputs of this historical build (JSON summaries, figure files and the
+// unpacked manuscript, not part of the archive), QSAR_BUILD_OUT receives the document. Both default to results/recalc.
+const _path=require('path');
+const _ROOT=_path.resolve(__dirname,'..','..');
+const _IN=(process.env.QSAR_BUILD_IN||_path.join(_ROOT,'results','recalc'))+'/';
+const _OUT=(process.env.QSAR_BUILD_OUT||_path.join(_ROOT,'results','recalc'))+'/';
 const d = require("docx");
 const { Document, Packer, Paragraph, TextRun, AlignmentType, HeadingLevel } = d;
 const fs = require("fs");
@@ -50,4 +56,4 @@ push(new Paragraph({ spacing:{before:260,after:120}, children:[new TextRun({
 
 const doc = new Document({ creator:"Werle et al.", styles:{ default:{ document:{ run:{ font:FONT, size:21 } } } },
   sections:[{ properties:{ page:{ margin:{ top:1440,bottom:1440,left:1440,right:1440 } } }, children:ch }] });
-Packer.toBuffer(doc).then(b=>{ fs.writeFileSync("/mnt/user-data/outputs/Werle_JCheminform_Manuskriptaenderungen_2026-08-11.docx", b); console.log("written"); });
+Packer.toBuffer(doc).then(b=>{ fs.writeFileSync(_OUT+"Werle_JCheminform_Manuskriptaenderungen_2026-08-11.docx", b); console.log("written"); });

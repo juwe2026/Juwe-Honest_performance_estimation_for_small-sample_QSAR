@@ -1,0 +1,3 @@
+{"nsamples": 10000, "ledoit_wolf_seed1": {"anteil_ungenutzt": 0.812, "ungenutzte_ueber_kleinstem_genutzten": 10}, "ledoit_wolf_seed2": {"anteil_ungenutzt": 0.812, "ungenutzte_ueber_kleinstem_genutzten": 9}, "stichprobe_seed1": {"anteil_ungenutzt": 0.877, "ungenutzte_ueber_kleinstem_genutzten": 27}, "stichprobe_seed2": {"anteil_ungenutzt": 0.876, "ungenutzte_ueber_kleinstem_genutzten": 27}}
+{"nsamples": 30000, "eig_min_stichprobe": -8.079045430354213e-15, "rang_stichprobe": 49, "wiederholung_stichprobe": [0.94, 7], "wiederholung_ledoit": [0.942, 6], "stichprobe_vs_ledoit": [0.233, 3]}
+fertig

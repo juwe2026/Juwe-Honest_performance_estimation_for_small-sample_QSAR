@@ -1,0 +1,274 @@
+{
+ "strains": [
+  "EC",
+  "SA",
+  "PA",
+  "AB"
+ ],
+ "versions": {
+  "numpy": "2.5.3",
+  "pandas": "3.0.5"
+ },
+ "forms": [
+  {
+   "form": "csv, default parser (matrix used for all results)",
+   "cells": 47175,
+   "bit_identical_with_reference": 47175,
+   "max_relative_difference": 0.0,
+   "columns_repeating_an_earlier_column": 105,
+   "G": 50,
+   "hits_A2": [
+    252,
+    705,
+    203,
+    252
+   ],
+   "hits_A1": [
+    16,
+    25,
+    23,
+    12
+   ],
+   "hits_A1u": [
+    4,
+    12,
+    11,
+    3
+   ]
+  },
+  {
+   "form": "csv, float_precision=round_trip",
+   "cells": 47175,
+   "bit_identical_with_reference": 33591,
+   "max_relative_difference": 9.417213562952473e-13,
+   "columns_repeating_an_earlier_column": 105,
+   "G": 50,
+   "hits_A2": [
+    252,
+    705,
+    203,
+    251
+   ],
+   "hits_A1": [
+    16,
+    25,
+    23,
+    12
+   ],
+   "hits_A1u": [
+    4,
+    12,
+    11,
+    3
+   ]
+  },
+  {
+   "form": "Additional file 6, sheet Descriptors_1275",
+   "cells": 47175,
+   "bit_identical_with_reference": 47175,
+   "max_relative_difference": 0.0,
+   "columns_repeating_an_earlier_column": 105,
+   "G": 50,
+   "hits_A2": [
+    252,
+    705,
+    203,
+    252
+   ],
+   "hits_A1": [
+    16,
+    25,
+    23,
+    12
+   ],
+   "hits_A1u": [
+    4,
+    12,
+    11,
+    3
+   ]
+  },
+  {
+   "form": "rounded to 15 significant digits",
+   "cells": 47175,
+   "bit_identical_with_reference": 12402,
+   "max_relative_difference": 5.055566426993863e-15,
+   "columns_repeating_an_earlier_column": 109,
+   "G": 50,
+   "hits_A2": [
+    249,
+    705,
+    205,
+    255
+   ],
+   "hits_A1": [
+    16,
+    25,
+    23,
+    12
+   ],
+   "hits_A1u": [
+    4,
+    12,
+    11,
+    3
+   ]
+  },
+  {
+   "form": "rounded to 14 significant digits",
+   "cells": 47175,
+   "bit_identical_with_reference": 7556,
+   "max_relative_difference": 4.992585475542987e-14,
+   "columns_repeating_an_earlier_column": 114,
+   "G": 50,
+   "hits_A2": [
+    248,
+    705,
+    205,
+    259
+   ],
+   "hits_A1": [
+    16,
+    25,
+    23,
+    12
+   ],
+   "hits_A1u": [
+    4,
+    12,
+    11,
+    3
+   ]
+  },
+  {
+   "form": "rounded to 13 significant digits",
+   "cells": 47175,
+   "bit_identical_with_reference": 6164,
+   "max_relative_difference": 4.965847610282888e-13,
+   "columns_repeating_an_earlier_column": 114,
+   "G": 47,
+   "hits_A2": [
+    246,
+    705,
+    204,
+    258
+   ],
+   "hits_A1": [
+    17,
+    28,
+    20,
+    13
+   ],
+   "hits_A1u": [
+    6,
+    14,
+    9,
+    3
+   ]
+  },
+  {
+   "form": "rounded to 12 significant digits",
+   "cells": 47175,
+   "bit_identical_with_reference": 5866,
+   "max_relative_difference": 4.925762351491432e-12,
+   "columns_repeating_an_earlier_column": 114,
+   "G": 47,
+   "hits_A2": [
+    245,
+    704,
+    204,
+    258
+   ],
+   "hits_A1": [
+    17,
+    28,
+    20,
+    13
+   ],
+   "hits_A1u": [
+    6,
+    14,
+    9,
+    3
+   ]
+  },
+  {
+   "form": "rounded to 10 significant digits",
+   "cells": 47175,
+   "bit_identical_with_reference": 5715,
+   "max_relative_difference": 4.964916220373611e-10,
+   "columns_repeating_an_earlier_column": 114,
+   "G": 47,
+   "hits_A2": [
+    247,
+    699,
+    205,
+    258
+   ],
+   "hits_A1": [
+    17,
+    28,
+    20,
+    13
+   ],
+   "hits_A1u": [
+    6,
+    14,
+    9,
+    3
+   ]
+  },
+  {
+   "form": "rounded to 8 significant digits",
+   "cells": 47175,
+   "bit_identical_with_reference": 5574,
+   "max_relative_difference": 4.96881044338223e-08,
+   "columns_repeating_an_earlier_column": 114,
+   "G": 48,
+   "hits_A2": [
+    247,
+    697,
+    205,
+    258
+   ],
+   "hits_A1": [
+    17,
+    28,
+    20,
+    13
+   ],
+   "hits_A1u": [
+    6,
+    14,
+    9,
+    3
+   ]
+  },
+  {
+   "form": "rounded to 6 significant digits",
+   "cells": 47175,
+   "bit_identical_with_reference": 5293,
+   "max_relative_difference": 4.945526747550777e-06,
+   "columns_repeating_an_earlier_column": 114,
+   "G": 49,
+   "hits_A2": [
+    247,
+    697,
+    205,
+    259
+   ],
+   "hits_A1": [
+    17,
+    28,
+    20,
+    13
+   ],
+   "hits_A1u": [
+    6,
+    14,
+    9,
+    3
+   ]
+  }
+ ]
+}

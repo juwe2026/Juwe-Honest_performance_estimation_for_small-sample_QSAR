@@ -1,18 +1,17 @@
 # -*- coding: utf-8 -*-
-"""Rekonstruktion von nested_cv_viptop (Route A2, Auswahl der 15 Deskriptoren
-nach VIP statt nach Effektstaerke).
+"""Reconstruction of nested_cv_viptop (Route A2, selection of the 15 descriptors
+by VIP instead of by effect size).
 
-prun_vip.py im abgelegten Archiv ruft ng.nested_cv_viptop auf, aber die Funktion
-ist in nested_generic.py nicht vorhanden; sie ist beim Aufraeumen des Codes
-verloren gegangen. Die abgelegten Permutationsdateien perm_vip_*.npz existieren
-weiter, der Arm ist also gerechnet worden, laesst sich mit dem abgelegten Code
-aber nicht nachrechnen.
+prun_vip.py in the deposited archive calls ng.nested_cv_viptop, but the function
+is not present in nested_generic.py. It was lost when the code was tidied up.
+The deposited permutation files perm_vip_*.npz still exist,
+so the arm was computed, but it cannot be recomputed with the deposited code.
 
-Hier als nested_cv_a2_viptop neu aufgebaut, Zeile fuer Zeile wie
-nested_generic.nested_cv_a2_topk, nur mit _viptop statt der Effektstaerke-
-Sortierung in der letzten Auswahlzeile. Die Rekonstruktion wird gegen die
-abgelegten Beobachtungswerte geprueft (check_a2vip.py). Der Rueckfallzweig ist
-hier bereits korrigiert (0.5 statt ytr.mean()).
+Rebuilt here as nested_cv_a2_viptop, line by line as
+nested_generic.nested_cv_a2_topk, only with _viptop instead of the effect size
+sorting in the last selection line. The reconstruction is checked against the
+deposited observed values (check_a2vip.py). The fallback branch is
+already corrected here (0.5 instead of ytr.mean()).
 """
 import numpy as np
 from sklearn.cross_decomposition import PLSRegression

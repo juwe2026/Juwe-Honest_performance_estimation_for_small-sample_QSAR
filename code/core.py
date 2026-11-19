@@ -1,4 +1,4 @@
-# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
+# Revision 03.10.2026: permutation p-values count ties (tolerance 1e-9), see CHANGELOG_revision.md
 """Shared Route B pipeline, identical to code/run_routeB.py and code/lit_plsda.py.
 
 Reads the bundled data/RouteB_descriptor_data.xlsx (English sheet and column names,

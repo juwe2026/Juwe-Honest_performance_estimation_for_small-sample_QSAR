@@ -1,4 +1,4 @@
-# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
+# Revision 03.10.2026: permutation p-values count ties (tolerance 1e-9), see CHANGELOG_revision.md
 """Ordinary (non-nested, 'circular') permutation test: descriptors are selected ONCE on the
 true labels (the 'apparent' set), then only the PLS-DA model is refit under permuted labels
 via LOO-CV using that FIXED descriptor set. This is the naive test that the paper argues is

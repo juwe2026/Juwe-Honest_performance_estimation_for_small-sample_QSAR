@@ -1,13 +1,24 @@
-"""Zusatzdatei 2 auf 12 Deskriptoren umstellen. Der a-priori-Satz von 25 bleibt unveraendert."""
-import sys, json; sys.path.insert(0,'/home/claude/work/recalc')
+"""Switch supplementary file 2 to 12 descriptors. The a priori set of 25 stays unchanged."""
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
+import sys, json; sys.path.insert(0,(_ROOT + '/code'))
 import openpyxl, core
 from openpyxl.styles import Font
 
-R = json.load(open("recalc/results.json"))
-CV = json.load(open("recalc/nlvcv.json"))
+R = json.load(open(_WORK + '/results.json'))
+CV = json.load(open(_WORK + '/nlvcv.json'))
 FULL = {'H.I.':'H. influenzae','S.A.':'S. aureus','S.Pneu':'S. pneumoniae',
         'S.Pyo':'S. pyogenes','P.A.':'P. aeruginosa'}
-wb = openpyxl.load_workbook("recalc/AF2_en.xlsx")
+wb = openpyxl.load_workbook(_WORK + '/AF2_en.xlsx')
 
 def font_of(ws, row=2, colmax=6):
     for c in range(1, colmax+1):
@@ -92,12 +103,12 @@ for r in range(1, ws.max_row+1):
     v2 = (v.replace("with 13 unsupervised-reduced", "with 12 unsupervised-reduced")
             .replace("13 descriptors combined vs. 14 with Pearson alone",
                      "12 descriptors combined vs. 13 with Pearson alone"))
-    if v2 != v: ws.cell(row=r, column=1, value=v2); print("  Conclusions Zeile %d angepasst" % r)
+    if v2 != v: ws.cell(row=r, column=1, value=v2); print("  Conclusions row %d adjusted" % r)
 n = ws.max_row + 2
 for line in ["", "ADDENDUM: the modelling set comprises 12 descriptors. C_Count was removed because it is",
              "perfectly collinear with EsterLacton_flag (r = rho = 1.000). Q2 changes by at most 0.012,",
              "no significance decision changes, and the confusion matrices are identical. See sheet Reduction."]:
     ws.cell(row=n, column=1, value=line).font = Font(name=FONT, size=10, italic=True); n += 1
 
-wb.save("out/Additional_file_2_RouteB_descriptor_data.xlsx")
-print("geschrieben: out/Additional_file_2_RouteB_descriptor_data.xlsx")
+wb.save(_WORK + '/Additional_file_2_RouteB_descriptor_data.xlsx')
+print("written: out/Additional_file_2_RouteB_descriptor_data.xlsx")

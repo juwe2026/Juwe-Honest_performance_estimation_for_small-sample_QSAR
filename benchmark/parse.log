@@ -1,0 +1,2 @@
+DONE 21511 1400 {'activities': 8049395, 'assays': 1970438, 'component_class': 13180, 'compound_structures': 2897819, 'docs': 101100, 'molecule_dictionary': 2921148, 'molecule_hierarchy': 2828129, 'protein_classification': 905, 'source': 67, 'target_components': 17284, 'target_dictionary': 18552, 'version': 11} bad {'activities': 0, 'assays': 0, 'component_class': 0, 'compound_structures': 0, 'docs': 0, 'molecule_dictionary': 0, 'molecule_hierarchy': 0, 'protein_classification': 0, 'source': 0, 'target_components': 0, 'target_dictionary': 0, 'version': 0}
+EXIT 0

@@ -1,13 +1,24 @@
 # REVISION OCTOBER 2026: the empty-selection / single-class fallback below previously
 # predicted ytr.mean(). Under leave-one-out that equals (S - y_i)/(n - 1) and therefore
 # carries the held-out label; it is now the neutral constant 0.5. See CHANGELOG_revision.md.
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import numpy as np, pandas as pd
 from scipy.stats import rankdata, norm, t as tdist
 from sklearn.cross_decomposition import PLSRegression
 from sklearn.metrics import roc_auc_score
 
-# --- Daten laden (bereinigte 2208er-Basis) ---
-big = pd.ExcelFile('/mnt/user-data/outputs/20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx')
+# --- load the data (cleaned 2,208-descriptor basis) ---
+big = pd.ExcelFile(_osp.environ.get('QSAR_ROUTEA_XLSX', _ROOT + '/data/20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx'))
 clean = pd.read_excel(big, 'Cleaned_Steps1-4')
 hi = pd.read_excel(big, 'CS1-4_H.I.')
 DESC = [c for c in clean.columns if '::' in c and c in hi.columns]
@@ -15,12 +26,12 @@ X = hi[DESC].apply(pd.to_numeric, errors='coerce').values.astype(float)
 Y = (hi['H. I. (H. influenzae)'].astype(str).str.strip() == 'active').astype(float).values
 N = len(Y)
 
-# --- Precompute: pro LOO-Fold die Trainings-Rangmatrix (haengt nur an X, nicht an y) ---
+# --- precompute: per LOO fold the training rank matrix (depends only on X, not on y) ---
 FOLDS = []
 for i in range(N):
     tr = np.ones(N, bool); tr[i] = False
     Xtr = X[tr]
-    R = rankdata(Xtr, axis=0)            # Spearman-Basis + MW-Raenge
+    R = rankdata(Xtr, axis=0)            # Spearman basis + Mann-Whitney ranks
     FOLDS.append(dict(tr=tr, i=i, Xtr=Xtr, R=R, Xte=X[i:i+1]))
 
 def eff_filter(R, ytr, ntr):
@@ -36,7 +47,7 @@ def group_reps(Xk, Rk, effk, ntr):
     k0 = Xk.shape[1]
     if k0 <= 1:
         return np.arange(k0, dtype=int)
-    # Korrelationen (Pearson auf Werten, Spearman auf Raengen) + t-Approx-p
+    # correlations (Pearson on values, Spearman on ranks) + t approximation p
     def cor_p(M):
         C = np.corrcoef(M, rowvar=False); C = np.nan_to_num(C, nan=0.0)
         np.fill_diagonal(C, 0.0)
@@ -56,7 +67,7 @@ def group_reps(Xk, Rk, effk, ntr):
             reps.extend(sorted(remaining)); break
         hub = sorted([j for j in remaining if cnt[j] == mx], key=lambda j: (-effk[j], j))[0]
         members = [hub] + sorted(partners[hub] & remaining, key=lambda j: (-effk[j], j))
-        rep = max(members, key=lambda j: effk[j])       # Repraesentant = hoechste Effektgroesse
+        rep = max(members, key=lambda j: effk[j])       # representative = highest effect size
         reps.append(rep); remaining -= set(members)
     return np.array(sorted(reps), dtype=int)
 

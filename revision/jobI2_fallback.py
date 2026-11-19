@@ -1,32 +1,43 @@
-# KORRIGIERTE SEEDS: die erste Fassung dieses Laufs hat fuer alle Routen den Seed 702
-# benutzt; 702 ist aber der Seed von Route B. Die veroeffentlichten Laeufe benutzen
-# 31 (A1, prun_alt.py), 47 (A1u, prun_uns.py) und 7 (A2, prun.py); die Zuordnung ist
-# mit check_seeds.py gegen die ersten Nullwerte der abgelegten Dateien geprueft
-# (Abweichung 0). Nur mit demselben Seed ist die Differenz der p-Werte die Wirkung der
-# Korrektur und nicht zusaetzliches Monte-Carlo-Rauschen.
+# CORRECTED SEEDS: the first version of this run used the seed 702 for all routes,
+# but 702 is the seed of Route B. The published runs use
+# 31 (A1, prun_alt.py), 47 (A1u, prun_uns.py) and 7 (A2, prun.py). The assignment was
+# checked with check_seeds.py against the first null values of the deposited files
+# (deviation 0). Only with the same seed is the difference of the p-values the effect of the
+# correction and not additional Monte Carlo noise.
 #
-# Eigenbefund: Rueckfallvorhersage ytr.mean() im leeren-Auswahl-Zweig verraet das ausgelassene Label.
-# Hier: Permutations-p-Werte mit neutraler Konstante 0.5 statt ytr.mean(), sonst identische Pipeline.
+# Own finding: the fallback prediction ytr.mean() in the empty-selection branch reveals the held-out label.
+# Here: permutation p-values with the neutral constant 0.5 instead of ytr.mean(), otherwise identical pipeline.
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import sys,os,json,time
-sys.path.insert(0,'/home/claude/rev/fixcode')      # korrigierte Kopie zuerst
-sys.path.insert(1,'/home/claude/rev/QSAR_selection_leakage/code')
-exec(open('/home/claude/rev/common.py').read())     # setzt sys.path erneut
+sys.path.insert(0,(_ROOT + '/code'))      # corrected copy first
+sys.path.insert(1,(_ROOT + '/code'))
+exec(open((_REV + '/common.py')).read())     # sets sys.path again
 for _m in ['nested_generic','altorder','unsup_rep','core']:
     sys.modules.pop(_m,None)
-sys.path.insert(0,'/home/claude/rev/fixcode')
+sys.path.insert(0,(_ROOT + '/code'))
 import nested_generic as ng, altorder as ao, unsup_rep as ur
 for m in (ng,ao,ur):
-    assert '/home/claude/rev/fixcode' in m.__file__, m.__file__
+    assert (_ROOT + '/code') in m.__file__, m.__file__
 from scipy.stats import rankdata
 NP=int(os.environ.get('NP','2000'))
 ROUTES=os.environ.get('ROUTES','A1u,A1,A2').split(',')
-SEED={'A1':31,'A1u':47,'A2':7}   # wie in den veroeffentlichten Laeufen
+SEED={'A1':31,'A1u':47,'A2':7}   # as in the published runs
 FOLDS=[]
 for i in range(N):
     tr=np.ones(N,bool); tr[i]=False
     FOLDS.append(dict(tr=tr,i=i,Xtr=X[tr],R=rankdata(X[tr],axis=0),Xte=X[i:i+1]))
 out={}
-p=os.path.join('/home/claude/rev/out','I_fallback_seeds.json')
+p=os.path.join(_OUT,'I_fallback_seeds.json')
 if os.path.exists(p): out=json.load(open(p))
 out.setdefault('meta',dict(nperm=NP,seed={'A1':31,'A1u':47,'A2':7},change='empty-selection fallback prediction changed from mean of the training labels to the constant 0.5'))
 for k in KEYS:
@@ -45,4 +56,4 @@ for k in KEYS:
         out[k][nm]=dict(q2=oq,auc=oa,p_q2=pval(qs,oq),p_auc=pval(as_,oa),nperm=NP,seconds=round(time.time()-t,1))
         print('%s %-4s Q2 %6.3f p %.4f AUC %.3f p %.4f  %.0fs'%(k,nm,oq,out[k][nm]['p_q2'],oa,out[k][nm]['p_auc'],time.time()-t),flush=True)
         json.dump(out,open(p,'w'),indent=1,default=float)
-print('fertig',ROUTES,flush=True)
+print('done',ROUTES,flush=True)

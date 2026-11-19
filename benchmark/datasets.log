@@ -1,0 +1,17 @@
+DS01 schon da
+DS02 ['Enzym', 'divers', 'B >35-50 %'] n 36 16/20 p 1410 G 98 G/p 0.0695 9.1s
+DS03 ['Enzym', 'kongener', 'A 25-35 %'] n 45 12/33 p 1295 G 66 G/p 0.051 10.4s
+DS04 ['Enzym', 'kongener', 'B >35-50 %'] n 40 23/17 p 1286 G 89 G/p 0.0692 7.4s
+DS05 ['MIC', 'divers', 'A 25-35 %'] n 44 32/12 p 1356 G 102 G/p 0.0752 9.8s
+DS06 ['MIC', 'divers', 'B >35-50 %'] n 30 18/12 p 1436 G 66 G/p 0.046 79.3s
+DS07 ['MIC', 'kongener', 'A 25-35 %'] n 43 14/29 p 1327 G 47 G/p 0.0354 6.6s
+DS08 ['MIC', 'kongener', 'B >35-50 %'] n 37 16/21 p 1359 G 77 G/p 0.0567 8.3s
+DS09 ['Rezeptor', 'divers', 'A 25-35 %'] n 36 11/25 p 1375 G 94 G/p 0.0684 10.1s
+DS10 ['Rezeptor', 'divers', 'B >35-50 %'] n 47 20/27 p 1388 G 103 G/p 0.0742 12.8s
+DS11 ['Rezeptor', 'kongener', 'A 25-35 %'] n 35 11/24 p 1362 G 96 G/p 0.0705 6.5s
+DS12 ['Rezeptor', 'kongener', 'B >35-50 %'] n 31 12/19 p 1336 G 68 G/p 0.0509 6.7s
+DS13 ['Zytotox', 'divers', 'A 25-35 %'] n 35 11/24 p 1376 G 76 G/p 0.0552 10.0s
+DS14 ['Zytotox', 'divers', 'B >35-50 %'] n 49 23/26 p 1375 G 87 G/p 0.0633 10.3s
+DS15 ['Zytotox', 'kongener', 'A 25-35 %'] n 39 27/12 p 1353 G 62 G/p 0.0458 8.0s
+DS16 ['Zytotox', 'kongener', 'B >35-50 %'] n 33 14/19 p 1355 G 34 G/p 0.0251 8.8s
+EXIT 0

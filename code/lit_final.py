@@ -1,16 +1,27 @@
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import numpy as np, pandas as pd, openpyxl
 from openpyxl.styles import Font, PatternFill
-nlv1=np.load('lit_nlv1.npy',allow_pickle=True).item()
-cv=pd.read_pickle('lit_results.pkl'); two=pd.read_pickle('lit_twostage.pkl')
-fn='/mnt/user-data/outputs/20260706_31MT_LitDeskriptoren_Analyse.xlsx'
+nlv1=np.load(_WORK + '/lit_nlv1.npy',allow_pickle=True).item()
+cv=pd.read_pickle(_WORK + '/lit_results.pkl'); two=pd.read_pickle(_WORK + '/lit_twostage.pkl')
+fn=(_WORK + '/20260706_31MT_LitDeskriptoren_Analyse.xlsx')
 
-# 2208er-Ergebnisse (aus früheren Sitzungen)
+# results of the 2,208 pool (from earlier sessions)
 biased={'H.I.':0.43,'S.A.':0.50,'S.Pneu':0.56,'S.Pyo':0.52,'P.A.':0.88}
 nested2208={'H.I.':(-0.14,0.15),'S.A.':(0.16,0.013),'S.Pneu':(0.19,0.010),'S.Pyo':(-0.11,0.13),'P.A.':(0.40,0.0015)}
 order=['H.I.','S.A.','S.Pneu','S.Pyo','P.A.']; full={'H.I.':'H. influenzae','S.A.':'Staph. aureus','S.Pneu':'S. pneumoniae','S.Pyo':'S. pyogenes','P.A.':'P. aeruginosa'}
 cvm={r['Erreger']:r for _,r in cv.iterrows()}
 
-# PLS-DA_reduziert neu: nLV=1 (ehrlich) + nLV-CV (Obergrenze)
+# PLS-DA_reduced new: nLV=1 (honest) + nLV-CV (upper bound)
 rows=[]
 for s in order:
     Q1,A1,pQ1,pA1=nlv1[s]; c=cvm[s]
@@ -20,7 +31,7 @@ for s in order:
                  'Konfusion nLV-CV (TP/FN/FP/TN)':c['Konfusion']})
 RES=pd.DataFrame(rows)
 
-# Drei-Wege-Vergleich
+# three-way comparison
 cmp=[]
 for s in order:
     Q1,A1,pQ1,pA1=nlv1[s]; nq,npv=nested2208[s]
@@ -39,7 +50,7 @@ with pd.ExcelWriter(fn,engine='openpyxl',mode='a',if_sheet_exists='replace') as 
     RES.to_excel(w,sheet_name='PLS-DA_reduziert',index=False)
     CMP.to_excel(w,sheet_name='Vergleich_3Ansaetze',index=False)
 
-# Fazit-Blatt mit Kommentaren
+# summary sheet with comments
 wb=openpyxl.load_workbook(fn)
 if 'Fazit' in wb.sheetnames: del wb['Fazit']
 ws=wb.create_sheet('Fazit'); H=Font(bold=True,size=12); fill=PatternFill('solid',fgColor='DDEEDD'); r=1
@@ -83,4 +94,4 @@ for t in [
     put(t)
 ws.column_dimensions['A'].width=100
 wb.save(fn)
-print('Final geschrieben. Blätter:', openpyxl.load_workbook(fn).sheetnames)
+print('Final written. Sheets:', openpyxl.load_workbook(fn).sheetnames)

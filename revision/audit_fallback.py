@@ -1,31 +1,42 @@
 # -*- coding: utf-8 -*-
-"""Wie oft greift der fehlerhafte Rueckfallzweig ueberhaupt?
+"""How often does the faulty fallback branch actually apply?
 
-Der Zweig (im Fold passiert kein Deskriptor den Filter, oder eine Klasse ist im
-Trainingsfold leer) setzte die Vorhersage auf ytr.mean(). Unter LOO ist das
-(S - y_i)/(n - 1) und verraet damit das ausgelassene Label. Entscheidend fuer die
-Frage, welche abgelegten Ergebnisse betroffen sind, ist nicht, in welcher Datei
-die Zeile steht, sondern ob sie je ausgefuehrt wird.
+The branch (no descriptor passes the filter in the fold, or one class is empty in the
+training fold) set the prediction to ytr.mean(). Under LOO this is
+(S - y_i)/(n - 1) and therefore reveals the held-out label. What decides
+which deposited results are affected is not in which file
+the line stands, but whether it is ever executed.
 
-Hier wird fuer jeden Arm gezaehlt: wie viele der 31 Folds den Zweig bei den
-echten Labels nehmen, und wie viele Folds und Permutationen ihn unter
-permutierten Labels nehmen. Gezaehlt wird mit der korrigierten Konstanten 0.5,
-der Zaehler aendert das Ergebnis also nicht.
+Here, for every arm, we count how many of the 31 folds take the branch with the
+true labels, and how many folds and permutations take it under
+permuted labels. Counting uses the corrected constant 0.5,
+so the counter does not change the result.
 
-Arme, bei denen der Zweig in keiner Permutation greift, sind unberuehrt; dort
-braucht nichts nachgerechnet zu werden.
+Arms in which the branch applies in no permutation are unaffected, nothing
+needs to be recomputed there.
 """
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import sys, os, json, time
 os.environ.setdefault('QSAR_ROUTEA_XLSX',
-    '/home/claude/rev/QSAR_selection_leakage/data/20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx')
-sys.path.insert(0, '/home/claude/rev/QSAR_selection_leakage/code')
-exec(open('/home/claude/rev/common.py').read())
+    (_ROOT + '/data/20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx'))
+sys.path.insert(0, (_ROOT + '/code'))
+exec(open((_REV + '/common.py')).read())
 for _m in ['nested_generic', 'altorder', 'unsup_rep']:
     sys.modules.pop(_m, None)
-sys.path.insert(0, '/home/claude/rev/auditcode')
+sys.path.insert(0, (_REV + '/auditcode'))
 import nested_generic as ng, altorder as ao, unsup_rep as ur, a2vip, a1uvip
 for m in (ng, ao, ur):
-    assert '/home/claude/rev/auditcode' in m.__file__, m.__file__
+    assert (_REV + '/auditcode') in m.__file__, m.__file__
 from scipy.stats import rankdata
 
 NP = int(os.environ.get('NP', '200'))
@@ -50,10 +61,10 @@ if ONLY:
     ARMS = {k: v for k, v in ARMS.items() if k in ONLY.split('|')}
 
 out = {}
-p_out = '/home/claude/rev/out/fallback_audit.json'
+p_out = (_OUT + '/fallback_audit.json')
 if os.path.exists(p_out):
     out = json.load(open(p_out))
-print('Permutationen je Arm:', NP, flush=True)
+print('permutations per arm:', NP, flush=True)
 for arm, (seed, fn) in ARMS.items():
     for k in KEYS:
         key = '%s | %s' % (arm, k)
@@ -78,9 +89,9 @@ for arm, (seed, fn) in ARMS.items():
                         permutations_affected=perm_hit,
                         permutations_affected_pct=round(100.0 * perm_hit / NP, 2),
                         seconds=round(time.time() - t, 1))
-        print('%-26s %-6s echte Labels %2d/31 Folds | permutiert %5.2f %% der Folds, '
-              '%5.1f %% der Permutationen  (%.0fs)'
+        print('%-26s %-6s true labels %2d/31 folds | permuted %5.2f %% of the folds, '
+              '%5.1f %% of the permutations  (%.0fs)'
               % (arm, k, obs_folds, out[key]['folds_permuted_pct'],
                  out[key]['permutations_affected_pct'], time.time() - t), flush=True)
         json.dump(out, open(p_out, 'w'), indent=1)
-print('fertig', flush=True)
+print('done', flush=True)

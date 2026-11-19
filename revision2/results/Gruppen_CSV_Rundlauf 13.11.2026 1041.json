@@ -1,0 +1,394 @@
+{
+ "datasets/DS01": {
+  "n_groups_stored": 95,
+  "n_groups_default": 94,
+  "default_equals_stored": false,
+  "n_groups_round_trip": 95,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS02": {
+  "n_groups_stored": 98,
+  "n_groups_default": 98,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 98,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS03": {
+  "n_groups_stored": 66,
+  "n_groups_default": 66,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 66,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS04": {
+  "n_groups_stored": 89,
+  "n_groups_default": 89,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 89,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS05": {
+  "n_groups_stored": 102,
+  "n_groups_default": 102,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 102,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS06": {
+  "n_groups_stored": 66,
+  "n_groups_default": 66,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 66,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS07": {
+  "n_groups_stored": 47,
+  "n_groups_default": 48,
+  "default_equals_stored": false,
+  "n_groups_round_trip": 47,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS08": {
+  "n_groups_stored": 77,
+  "n_groups_default": 78,
+  "default_equals_stored": false,
+  "n_groups_round_trip": 77,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS09": {
+  "n_groups_stored": 94,
+  "n_groups_default": 94,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 94,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS10": {
+  "n_groups_stored": 103,
+  "n_groups_default": 103,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 103,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS11": {
+  "n_groups_stored": 96,
+  "n_groups_default": 96,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 96,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS12": {
+  "n_groups_stored": 68,
+  "n_groups_default": 68,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 68,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS13": {
+  "n_groups_stored": 76,
+  "n_groups_default": 76,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 76,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS14": {
+  "n_groups_stored": 87,
+  "n_groups_default": 87,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 87,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS15": {
+  "n_groups_stored": 62,
+  "n_groups_default": 62,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 62,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS16": {
+  "n_groups_stored": 34,
+  "n_groups_default": 34,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 34,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS21": {
+  "n_groups_stored": 61,
+  "n_groups_default": 61,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 61,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS22": {
+  "n_groups_stored": 84,
+  "n_groups_default": 85,
+  "default_equals_stored": false,
+  "n_groups_round_trip": 84,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS23": {
+  "n_groups_stored": 78,
+  "n_groups_default": 79,
+  "default_equals_stored": false,
+  "n_groups_round_trip": 78,
+  "round_trip_equals_stored": true
+ },
+ "datasets/DS24": {
+  "n_groups_stored": 117,
+  "n_groups_default": 117,
+  "default_equals_stored": false,
+  "n_groups_round_trip": 117,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS01": {
+  "n_groups_stored": 95,
+  "n_groups_default": 94,
+  "default_equals_stored": false,
+  "n_groups_round_trip": 95,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS02": {
+  "n_groups_stored": 82,
+  "n_groups_default": 84,
+  "default_equals_stored": false,
+  "n_groups_round_trip": 82,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS03": {
+  "n_groups_stored": 66,
+  "n_groups_default": 66,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 66,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS04": {
+  "n_groups_stored": 89,
+  "n_groups_default": 89,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 89,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS05": {
+  "n_groups_stored": 90,
+  "n_groups_default": 90,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 90,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS06": {
+  "n_groups_stored": 140,
+  "n_groups_default": 140,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 140,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS07": {
+  "n_groups_stored": 47,
+  "n_groups_default": 47,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 47,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS08": {
+  "n_groups_stored": 68,
+  "n_groups_default": 68,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 68,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS09": {
+  "n_groups_stored": 86,
+  "n_groups_default": 86,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 86,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS10": {
+  "n_groups_stored": 98,
+  "n_groups_default": 98,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 98,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS11": {
+  "n_groups_stored": 93,
+  "n_groups_default": 92,
+  "default_equals_stored": false,
+  "n_groups_round_trip": 93,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS12": {
+  "n_groups_stored": 61,
+  "n_groups_default": 61,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 61,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS13": {
+  "n_groups_stored": 66,
+  "n_groups_default": 66,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 66,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS14": {
+  "n_groups_stored": 79,
+  "n_groups_default": 79,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 79,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS15": {
+  "n_groups_stored": 62,
+  "n_groups_default": 62,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 62,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS16": {
+  "n_groups_stored": 30,
+  "n_groups_default": 30,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 30,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS21": {
+  "n_groups_stored": 83,
+  "n_groups_default": 84,
+  "default_equals_stored": false,
+  "n_groups_round_trip": 83,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS22": {
+  "n_groups_stored": 128,
+  "n_groups_default": 128,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 128,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS23": {
+  "n_groups_stored": 86,
+  "n_groups_default": 86,
+  "default_equals_stored": false,
+  "n_groups_round_trip": 86,
+  "round_trip_equals_stored": true
+ },
+ "datasets_k/DS24": {
+  "n_groups_stored": 134,
+  "n_groups_default": 134,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 134,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS01": {
+  "n_groups_stored": 95,
+  "n_groups_default": 94,
+  "default_equals_stored": false,
+  "n_groups_round_trip": 95,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS02": {
+  "n_groups_stored": 82,
+  "n_groups_default": 84,
+  "default_equals_stored": false,
+  "n_groups_round_trip": 82,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS03": {
+  "n_groups_stored": 66,
+  "n_groups_default": 66,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 66,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS04": {
+  "n_groups_stored": 89,
+  "n_groups_default": 89,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 89,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS05": {
+  "n_groups_stored": 90,
+  "n_groups_default": 90,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 90,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS06": {
+  "n_groups_stored": 140,
+  "n_groups_default": 140,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 140,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS07": {
+  "n_groups_stored": 47,
+  "n_groups_default": 47,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 47,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS08": {
+  "n_groups_stored": 68,
+  "n_groups_default": 68,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 68,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS09": {
+  "n_groups_stored": 86,
+  "n_groups_default": 86,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 86,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS10": {
+  "n_groups_stored": 98,
+  "n_groups_default": 98,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 98,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS11": {
+  "n_groups_stored": 93,
+  "n_groups_default": 92,
+  "default_equals_stored": false,
+  "n_groups_round_trip": 93,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS12": {
+  "n_groups_stored": 61,
+  "n_groups_default": 61,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 61,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS13": {
+  "n_groups_stored": 58,
+  "n_groups_default": 62,
+  "default_equals_stored": false,
+  "n_groups_round_trip": 58,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS14": {
+  "n_groups_stored": 79,
+  "n_groups_default": 79,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 79,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS15": {
+  "n_groups_stored": 62,
+  "n_groups_default": 62,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 62,
+  "round_trip_equals_stored": true
+ },
+ "datasets_m/DS16": {
+  "n_groups_stored": 30,
+  "n_groups_default": 30,
+  "default_equals_stored": true,
+  "n_groups_round_trip": 30,
+  "round_trip_equals_stored": true
+ }
+}

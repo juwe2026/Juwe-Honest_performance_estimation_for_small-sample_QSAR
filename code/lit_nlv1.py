@@ -1,8 +1,19 @@
-# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
+# Revision 03.10.2026: permutation p-values count ties (tolerance 1e-9), see CHANGELOG_revision.md
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import numpy as np, pandas as pd
 from sklearn.cross_decomposition import PLSRegression
 from sklearn.metrics import roc_auc_score
-full=pd.read_pickle('desc_full.pkl'); reduced=list(np.load('reduced_desc.npy',allow_pickle=True))
+full=pd.read_pickle(_WORK + '/desc_full.pkl'); reduced=list(np.load(_WORK + '/reduced_desc.npy',allow_pickle=True))
 ACT=[c for c in full.columns if c.startswith(('H. I','P. A','S. A','S. Pneu','S. pyo'))]
 NAME={'H. I. (H. influenzae)':'H.I.','P. A. (P. aeruginosa)':'P.A.','S. A. (Staph. Aureus)':'S.A.','S. Pneu (S. pneumoniae)':'S.Pneu','S. pyo (S. pyogenes)':'S.Pyo'}
 X=full[reduced].astype(float).values
@@ -15,7 +26,7 @@ def loo(X,y,nlv):
     return yh
 def q2(y,yh): return 1-np.sum((y-yh)**2)/np.sum((y-y.mean())**2)
 rng=np.random.default_rng(7)
-print(f"{'Erreger':7} {'nLV=1: Q2':>10} {'AUC':>6} {'p(Q2)':>7} {'p(AUC)':>7}")
+print(f"{'strain':7} {'nLV=1: Q2':>10} {'AUC':>6} {'p(Q2)':>7} {'p(AUC)':>7}")
 res={}
 for col in ACT:
     y=(full[col].astype(str).str.strip().str.lower()=='active').astype(float).values; short=NAME[col]
@@ -27,4 +38,4 @@ for col in ACT:
     pQ=(1+np.sum(PQ>=Q - 1e-9))/2001; pA=(1+np.sum(PA>=A - 1e-9))/2001
     res[short]=(Q,A,pQ,pA)
     print(f'{short:7} {Q:10.3f} {A:6.3f} {pQ:7.4f} {pA:7.4f}')
-np.save('/home/claude/lit_nlv1.npy',res)
+np.save((_WORK + '/lit_nlv1.npy'),res)

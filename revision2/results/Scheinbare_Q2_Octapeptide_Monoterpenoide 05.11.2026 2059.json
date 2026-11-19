@@ -1,0 +1,168 @@
+{
+ "Octapeptide": {
+  "gruppen": 50,
+  "EC": {
+   "A1": {
+    "scheinbar": 0.3847,
+    "genestet": 0.1883,
+    "genestet_AF2": 0.1883,
+    "optimismus": 0.1964
+   },
+   "A1u": {
+    "scheinbar": 0.2665,
+    "genestet": 0.0037,
+    "genestet_AF2": 0.0037,
+    "optimismus": 0.2629
+   },
+   "A2": {
+    "scheinbar": 0.3809,
+    "genestet": 0.1245,
+    "genestet_AF2": 0.1245,
+    "optimismus": 0.2565
+   }
+  },
+  "SA": {
+   "A1": {
+    "scheinbar": 0.5758,
+    "genestet": 0.4461,
+    "genestet_AF2": 0.4461,
+    "optimismus": 0.1297
+   },
+   "A1u": {
+    "scheinbar": 0.4989,
+    "genestet": 0.2515,
+    "genestet_AF2": 0.2515,
+    "optimismus": 0.2475
+   },
+   "A2": {
+    "scheinbar": 0.5555,
+    "genestet": 0.3941,
+    "genestet_AF2": 0.3941,
+    "optimismus": 0.1614
+   }
+  },
+  "PA": {
+   "A1": {
+    "scheinbar": 0.4765,
+    "genestet": 0.2987,
+    "genestet_AF2": 0.2987,
+    "optimismus": 0.1778
+   },
+   "A1u": {
+    "scheinbar": 0.4082,
+    "genestet": 0.3457,
+    "genestet_AF2": 0.3457,
+    "optimismus": 0.0626
+   },
+   "A2": {
+    "scheinbar": 0.4565,
+    "genestet": 0.2613,
+    "genestet_AF2": 0.2613,
+    "optimismus": 0.1952
+   }
+  },
+  "AB": {
+   "A1": {
+    "scheinbar": 0.186,
+    "genestet": -0.2031,
+    "genestet_AF2": -0.2031,
+    "optimismus": 0.389
+   },
+   "A1u": {
+    "scheinbar": 0.1095,
+    "genestet": -0.3154,
+    "genestet_AF2": -0.3154,
+    "optimismus": 0.4249
+   },
+   "A2": {
+    "scheinbar": 0.1677,
+    "genestet": -0.2184,
+    "genestet_AF2": -0.2184,
+    "optimismus": 0.386
+   }
+  }
+ },
+ "Monoterpenoide": {
+  "gruppen": 182,
+  "HI": {
+   "A1": {
+    "scheinbar": 0.4032,
+    "scheinbar_Table1": 0.4,
+    "genestet": 0.0197,
+    "genestet_Table1": 0.0197
+   },
+   "A1u": {
+    "scheinbar": 0.2859,
+    "scheinbar_Table1": 0.29,
+    "genestet": -0.2155,
+    "genestet_Table1": -0.2155
+   },
+   "A2": {
+    "scheinbar": 0.4606,
+    "scheinbar_Table1": 0.46,
+    "genestet": -0.137,
+    "genestet_Table1": -0.137
+   }
+  },
+  "SA": {
+   "A1": {
+    "scheinbar": 0.5122,
+    "scheinbar_Table1": 0.51,
+    "genestet": 0.1042,
+    "genestet_Table1": 0.1042
+   },
+   "A1u": {
+    "scheinbar": 0.4484,
+    "scheinbar_Table1": 0.45,
+    "genestet": 0.0811,
+    "genestet_Table1": 0.0811
+   },
+   "A2": {
+    "scheinbar": 0.5221,
+    "scheinbar_Table1": 0.52,
+    "genestet": 0.155,
+    "genestet_Table1": 0.155
+   }
+  },
+  "SPneu": {
+   "A1": {
+    "scheinbar": 0.5606,
+    "scheinbar_Table1": 0.56,
+    "genestet": 0.3017,
+    "genestet_Table1": 0.3017
+   },
+   "A1u": {
+    "scheinbar": 0.4743,
+    "scheinbar_Table1": 0.47,
+    "genestet": 0.1394,
+    "genestet_Table1": 0.1394
+   },
+   "A2": {
+    "scheinbar": 0.5498,
+    "scheinbar_Table1": 0.55,
+    "genestet": 0.191,
+    "genestet_Table1": 0.191
+   }
+  },
+  "SPyo": {
+   "A1": {
+    "scheinbar": 0.4886,
+    "scheinbar_Table1": 0.49,
+    "genestet": -0.1329,
+    "genestet_Table1": -0.1329
+   },
+   "A1u": {
+    "scheinbar": 0.3731,
+    "scheinbar_Table1": 0.37,
+    "genestet": -0.2575,
+    "genestet_Table1": -0.2575
+   },
+   "A2": {
+    "scheinbar": 0.5302,
+    "scheinbar_Table1": 0.53,
+    "genestet": -0.1131,
+    "genestet_Table1": -0.1131
+   }
+  }
+ }
+}

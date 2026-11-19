@@ -119,8 +119,8 @@ def draw(top15, stem, outdir):
     fig.legend(handles, labels, loc="upper center", bbox_to_anchor=(0.5, 1.055),
                ncol=2, columnspacing=1.2, handlelength=1.3, fontsize=8.0)
     fig.text(0.5, -0.045,
-             "pale fill = apparent, solid fill = nested; darker purple is the Route B\n"
-             "three-component model; * marks p < 0.05; hatched bars mark P. aeruginosa",
+             "pale fill = apparent, solid fill = nested. Darker purple is the Route B\n"
+             "three-component model. * marks p < 0.05. Hatched bars mark P. aeruginosa.",
              ha="center", fontsize=7.2, color=MUTED, linespacing=1.5)
     fig.tight_layout()
     save(fig, stem, outdir)

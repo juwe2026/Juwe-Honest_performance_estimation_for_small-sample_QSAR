@@ -1,0 +1,436 @@
+{
+ "threshold": "prediction >= 0.5 counts as active",
+ "script": "revision2/analysis/classification_controls.py",
+ "results": {
+  "HI": {
+   "PLS-DA, all 2,208 descriptors": {
+    "TP": 4,
+    "FN": 6,
+    "FP": 6,
+    "TN": 15,
+    "sens": 0.4,
+    "spec": 0.7142857142857143,
+    "bal_acc": 0.5571428571428572,
+    "mcc": 0.11428571428571428
+   },
+   "PLS-DA, 182 label-free representatives": {
+    "TP": 5,
+    "FN": 5,
+    "FP": 7,
+    "TN": 14,
+    "sens": 0.5,
+    "spec": 0.6666666666666666,
+    "bal_acc": 0.5833333333333333,
+    "mcc": 0.15995247832289886
+   },
+   "Random forest, all 2,208 descriptors": {
+    "TP": 5,
+    "FN": 5,
+    "FP": 2,
+    "TN": 19,
+    "sens": 0.5,
+    "spec": 0.9047619047619048,
+    "bal_acc": 0.7023809523809523,
+    "mcc": 0.45253756687495744,
+    "oob": true
+   },
+   "Random forest, 182 label-free representatives": {
+    "TP": 2,
+    "FN": 8,
+    "FP": 4,
+    "TN": 17,
+    "sens": 0.2,
+    "spec": 0.8095238095238095,
+    "bal_acc": 0.5047619047619047,
+    "mcc": 0.011268723396380222,
+    "oob": true
+   },
+   "Random forest, Route B 12 descriptors": {
+    "TP": 6,
+    "FN": 4,
+    "FP": 3,
+    "TN": 18,
+    "sens": 0.6,
+    "spec": 0.8571428571428571,
+    "bal_acc": 0.7285714285714285,
+    "mcc": 0.47079190906919977,
+    "oob": true
+   },
+   "Random forest, Morgan bits": {
+    "TP": 0,
+    "FN": 10,
+    "FP": 3,
+    "TN": 18,
+    "sens": 0.0,
+    "spec": 0.8571428571428571,
+    "bal_acc": 0.42857142857142855,
+    "mcc": -0.22587697572631282,
+    "oob": true
+   },
+   "PLS-DA, Morgan bits, no selection": {
+    "TP": 2,
+    "FN": 8,
+    "FP": 4,
+    "TN": 17,
+    "sens": 0.2,
+    "spec": 0.8095238095238095,
+    "bal_acc": 0.5047619047619047,
+    "mcc": 0.011268723396380222
+   },
+   "PLS-DA, Morgan bits, filter nested": {
+    "TP": 7,
+    "FN": 3,
+    "FP": 21,
+    "TN": 0,
+    "sens": 0.7,
+    "spec": 0.0,
+    "bal_acc": 0.35,
+    "mcc": -0.47434164902525694
+   }
+  },
+  "SA": {
+   "PLS-DA, all 2,208 descriptors": {
+    "TP": 2,
+    "FN": 3,
+    "FP": 1,
+    "TN": 25,
+    "sens": 0.4,
+    "spec": 0.9615384615384616,
+    "bal_acc": 0.6807692307692308,
+    "mcc": 0.44976591388118475
+   },
+   "PLS-DA, 182 label-free representatives": {
+    "TP": 2,
+    "FN": 3,
+    "FP": 2,
+    "TN": 24,
+    "sens": 0.4,
+    "spec": 0.9230769230769231,
+    "bal_acc": 0.6615384615384616,
+    "mcc": 0.3544587784792833
+   },
+   "Random forest, all 2,208 descriptors": {
+    "TP": 4,
+    "FN": 1,
+    "FP": 0,
+    "TN": 26,
+    "sens": 0.8,
+    "spec": 1.0,
+    "bal_acc": 0.9,
+    "mcc": 0.8777074514725111,
+    "oob": true
+   },
+   "Random forest, 182 label-free representatives": {
+    "TP": 0,
+    "FN": 5,
+    "FP": 0,
+    "TN": 26,
+    "sens": 0.0,
+    "spec": 1.0,
+    "bal_acc": 0.5,
+    "mcc": 0.0,
+    "oob": true
+   },
+   "Random forest, Route B 12 descriptors": {
+    "TP": 3,
+    "FN": 2,
+    "FP": 1,
+    "TN": 25,
+    "sens": 0.6,
+    "spec": 0.9615384615384616,
+    "bal_acc": 0.7807692307692308,
+    "mcc": 0.6160831149758972,
+    "oob": true
+   },
+   "Random forest, Morgan bits": {
+    "TP": 0,
+    "FN": 5,
+    "FP": 1,
+    "TN": 25,
+    "sens": 0.0,
+    "spec": 0.9615384615384616,
+    "bal_acc": 0.4807692307692308,
+    "mcc": -0.08006407690254357,
+    "oob": true
+   },
+   "PLS-DA, Morgan bits, no selection": {
+    "TP": 1,
+    "FN": 4,
+    "FP": 2,
+    "TN": 24,
+    "sens": 0.2,
+    "spec": 0.9230769230769231,
+    "bal_acc": 0.5615384615384615,
+    "mcc": 0.15311180047019055
+   },
+   "PLS-DA, Morgan bits, filter nested": {
+    "TP": 0,
+    "FN": 5,
+    "FP": 1,
+    "TN": 25,
+    "sens": 0.0,
+    "spec": 0.9615384615384616,
+    "bal_acc": 0.4807692307692308,
+    "mcc": -0.08006407690254357
+   }
+  },
+  "SPneu": {
+   "PLS-DA, all 2,208 descriptors": {
+    "TP": 4,
+    "FN": 2,
+    "FP": 2,
+    "TN": 23,
+    "sens": 0.6666666666666666,
+    "spec": 0.92,
+    "bal_acc": 0.7933333333333333,
+    "mcc": 0.5866666666666667
+   },
+   "PLS-DA, 182 label-free representatives": {
+    "TP": 3,
+    "FN": 3,
+    "FP": 2,
+    "TN": 23,
+    "sens": 0.5,
+    "spec": 0.92,
+    "bal_acc": 0.71,
+    "mcc": 0.4511523706448427
+   },
+   "Random forest, all 2,208 descriptors": {
+    "TP": 4,
+    "FN": 2,
+    "FP": 0,
+    "TN": 25,
+    "sens": 0.6666666666666666,
+    "spec": 1.0,
+    "bal_acc": 0.8333333333333333,
+    "mcc": 0.7856742013183861,
+    "oob": true
+   },
+   "Random forest, 182 label-free representatives": {
+    "TP": 0,
+    "FN": 6,
+    "FP": 1,
+    "TN": 24,
+    "sens": 0.0,
+    "spec": 0.96,
+    "bal_acc": 0.48,
+    "mcc": -0.08944271909999159,
+    "oob": true
+   },
+   "Random forest, Route B 12 descriptors": {
+    "TP": 3,
+    "FN": 3,
+    "FP": 2,
+    "TN": 23,
+    "sens": 0.5,
+    "spec": 0.92,
+    "bal_acc": 0.71,
+    "mcc": 0.4511523706448427,
+    "oob": true
+   },
+   "Random forest, Morgan bits": {
+    "TP": 0,
+    "FN": 6,
+    "FP": 0,
+    "TN": 25,
+    "sens": 0.0,
+    "spec": 1.0,
+    "bal_acc": 0.5,
+    "mcc": 0.0,
+    "oob": true
+   },
+   "PLS-DA, Morgan bits, no selection": {
+    "TP": 1,
+    "FN": 5,
+    "FP": 2,
+    "TN": 23,
+    "sens": 0.16666666666666666,
+    "spec": 0.92,
+    "bal_acc": 0.5433333333333333,
+    "mcc": 0.11581320482871722
+   },
+   "PLS-DA, Morgan bits, filter nested": {
+    "TP": 0,
+    "FN": 6,
+    "FP": 3,
+    "TN": 22,
+    "sens": 0.0,
+    "spec": 0.88,
+    "bal_acc": 0.44,
+    "mcc": -0.16035674514745463
+   }
+  },
+  "SPyo": {
+   "PLS-DA, all 2,208 descriptors": {
+    "TP": 4,
+    "FN": 7,
+    "FP": 3,
+    "TN": 17,
+    "sens": 0.36363636363636365,
+    "spec": 0.85,
+    "bal_acc": 0.6068181818181818,
+    "mcc": 0.2444735487068407
+   },
+   "PLS-DA, 182 label-free representatives": {
+    "TP": 4,
+    "FN": 7,
+    "FP": 3,
+    "TN": 17,
+    "sens": 0.36363636363636365,
+    "spec": 0.85,
+    "bal_acc": 0.6068181818181818,
+    "mcc": 0.2444735487068407
+   },
+   "Random forest, all 2,208 descriptors": {
+    "TP": 6,
+    "FN": 5,
+    "FP": 3,
+    "TN": 17,
+    "sens": 0.5454545454545454,
+    "spec": 0.85,
+    "bal_acc": 0.6977272727272728,
+    "mcc": 0.41684569156765,
+    "oob": true
+   },
+   "Random forest, 182 label-free representatives": {
+    "TP": 6,
+    "FN": 5,
+    "FP": 2,
+    "TN": 18,
+    "sens": 0.5454545454545454,
+    "spec": 0.9,
+    "bal_acc": 0.7227272727272727,
+    "mcc": 0.4870861981486208,
+    "oob": true
+   },
+   "Random forest, Route B 12 descriptors": {
+    "TP": 5,
+    "FN": 6,
+    "FP": 5,
+    "TN": 15,
+    "sens": 0.45454545454545453,
+    "spec": 0.75,
+    "bal_acc": 0.6022727272727273,
+    "mcc": 0.20935894733965596,
+    "oob": true
+   },
+   "Random forest, Morgan bits": {
+    "TP": 1,
+    "FN": 10,
+    "FP": 3,
+    "TN": 17,
+    "sens": 0.09090909090909091,
+    "spec": 0.85,
+    "bal_acc": 0.47045454545454546,
+    "mcc": -0.08433738561749833,
+    "oob": true
+   },
+   "PLS-DA, Morgan bits, no selection": {
+    "TP": 1,
+    "FN": 10,
+    "FP": 6,
+    "TN": 14,
+    "sens": 0.09090909090909091,
+    "spec": 0.7,
+    "bal_acc": 0.39545454545454545,
+    "mcc": -0.23927198384073772
+   },
+   "PLS-DA, Morgan bits, filter nested": {
+    "TP": 8,
+    "FN": 3,
+    "FP": 20,
+    "TN": 0,
+    "sens": 0.7272727272727273,
+    "spec": 0.0,
+    "bal_acc": 0.36363636363636365,
+    "mcc": -0.44136741475237473
+   }
+  },
+  "PA": {
+   "PLS-DA, all 2,208 descriptors": {
+    "TP": 0,
+    "FN": 3,
+    "FP": 1,
+    "TN": 27,
+    "sens": 0.0,
+    "spec": 0.9642857142857143,
+    "bal_acc": 0.48214285714285715,
+    "mcc": -0.05976143046671969
+   },
+   "PLS-DA, 182 label-free representatives": {
+    "TP": 1,
+    "FN": 2,
+    "FP": 0,
+    "TN": 28,
+    "sens": 0.3333333333333333,
+    "spec": 1.0,
+    "bal_acc": 0.6666666666666666,
+    "mcc": 0.5577733510227171
+   },
+   "Random forest, all 2,208 descriptors": {
+    "TP": 0,
+    "FN": 3,
+    "FP": 1,
+    "TN": 27,
+    "sens": 0.0,
+    "spec": 0.9642857142857143,
+    "bal_acc": 0.48214285714285715,
+    "mcc": -0.05976143046671969,
+    "oob": true
+   },
+   "Random forest, 182 label-free representatives": {
+    "TP": 0,
+    "FN": 3,
+    "FP": 0,
+    "TN": 28,
+    "sens": 0.0,
+    "spec": 1.0,
+    "bal_acc": 0.5,
+    "mcc": 0.0,
+    "oob": true
+   },
+   "Random forest, Route B 12 descriptors": {
+    "TP": 3,
+    "FN": 0,
+    "FP": 0,
+    "TN": 28,
+    "sens": 1.0,
+    "spec": 1.0,
+    "bal_acc": 1.0,
+    "mcc": 1.0,
+    "oob": true
+   },
+   "Random forest, Morgan bits": {
+    "TP": 0,
+    "FN": 3,
+    "FP": 1,
+    "TN": 27,
+    "sens": 0.0,
+    "spec": 0.9642857142857143,
+    "bal_acc": 0.48214285714285715,
+    "mcc": -0.05976143046671969,
+    "oob": true
+   },
+   "PLS-DA, Morgan bits, no selection": {
+    "TP": 0,
+    "FN": 3,
+    "FP": 1,
+    "TN": 27,
+    "sens": 0.0,
+    "spec": 0.9642857142857143,
+    "bal_acc": 0.48214285714285715,
+    "mcc": -0.05976143046671969
+   },
+   "PLS-DA, Morgan bits, filter nested": {
+    "TP": 3,
+    "FN": 0,
+    "FP": 0,
+    "TN": 28,
+    "sens": 1.0,
+    "spec": 1.0,
+    "bal_acc": 1.0,
+    "mcc": 1.0
+   }
+  }
+ }
+}

@@ -1,0 +1,149 @@
+{
+ "CHEMBL4627398": {
+  "gelesen": true,
+  "ausschluss": []
+ },
+ "CHEMBL4190169": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL118",
+   "CHEMBL139"
+  ]
+ },
+ "CHEMBL2016491": {
+  "gelesen": true,
+  "ausschluss": []
+ },
+ "CHEMBL1128536": {
+  "gelesen": true,
+  "ausschluss": []
+ },
+ "CHEMBL1817626": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL64",
+   "CHEMBL44884"
+  ]
+ },
+ "CHEMBL4390654": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL8",
+   "CHEMBL127",
+   "CHEMBL702",
+   "CHEMBL148",
+   "CHEMBL158",
+   "CHEMBL44354",
+   "CHEMBL174",
+   "CHEMBL177",
+   "CHEMBL186",
+   "CHEMBL376140",
+   "CHEMBL1440",
+   "CHEMBL1730"
+  ]
+ },
+ "CHEMBL2086304": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL64"
+  ]
+ },
+ "CHEMBL5370535": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL106"
+  ]
+ },
+ "CHEMBL5360615": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL2443262",
+   "CHEMBL5415557"
+  ]
+ },
+ "CHEMBL5046218": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL54",
+   "CHEMBL596"
+  ]
+ },
+ "CHEMBL1140004": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL188"
+  ]
+ },
+ "CHEMBL1128248": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL56"
+  ]
+ },
+ "CHEMBL3621184": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL53463"
+  ]
+ },
+ "CHEMBL1143213": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL185"
+  ]
+ },
+ "CHEMBL1159121": {
+  "gelesen": true,
+  "ausschluss": []
+ },
+ "CHEMBL3603803": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL53463"
+  ]
+ },
+ "CHEMBL4190362": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL106",
+   "CHEMBL157101",
+   "CHEMBL104",
+   "CHEMBL91",
+   "CHEMBL1200438",
+   "CHEMBL267345",
+   "CHEMBL44354"
+  ]
+ },
+ "CHEMBL5360622": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL5179655",
+   "CHEMBL5414801",
+   "CHEMBL5416942",
+   "CHEMBL388978",
+   "CHEMBL1230165",
+   "CHEMBL4643847",
+   "CHEMBL4531334"
+  ]
+ },
+ "CHEMBL1123819": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL104",
+   "CHEMBL91",
+   "CHEMBL808",
+   "CHEMBL27289"
+  ]
+ },
+ "CHEMBL1139165": {
+  "gelesen": true,
+  "ausschluss": []
+ },
+ "CHEMBL3407479": {
+  "gelesen": true,
+  "ausschluss": [
+   "CHEMBL126",
+   "CHEMBL262777"
+  ]
+ }
+}

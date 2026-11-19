@@ -1,3 +1,9 @@
+// Archive-relative: QSAR_BUILD_IN holds the inputs of this historical build (JSON summaries, figure files and the
+// unpacked manuscript, not part of the archive), QSAR_BUILD_OUT receives the document. Both default to results/recalc.
+const _path=require('path');
+const _ROOT=_path.resolve(__dirname,'..','..');
+const _IN=(process.env.QSAR_BUILD_IN||_path.join(_ROOT,'results','recalc'))+'/';
+const _OUT=(process.env.QSAR_BUILD_OUT||_path.join(_ROOT,'results','recalc'))+'/';
 const fs=require('fs'); const d=require('docx');
 const {Document,Packer,Paragraph,TextRun,HeadingLevel,AlignmentType,ImageRun,Table,TableRow,TableCell,WidthType,ShadingType,PageBreak}=d;
 const FONT="Calibri";
@@ -16,9 +22,9 @@ function table(rows,widths,fs2){fs2=fs2||16;const total=widths.reduce((a,b)=>a+b
     return new TableRow({tableHeader:ri===0,children:r.map(function(c,ci){return new TableCell({width:{size:widths[ci],type:WidthType.DXA},
       shading:ri===0?{type:ShadingType.CLEAR,fill:"D9E2F3"}:undefined,
       children:[new Paragraph({spacing:{after:10,line:230},children:[new TextRun({text:String(c),bold:ri===0,font:FONT,size:fs2})]})]});})});}) });}
-const J=(f)=>JSON.parse(fs.readFileSync('/home/claude/'+f,'utf8'));
+const J=(f)=>JSON.parse(fs.readFileSync(_IN+f,'utf8'));
 const rez=J('s_rez.json'), red=J('s_red.json'), two=J('s_two.json'), hits=J('s_hits.json'), hits2=J('s_hits2.json'), mets=J('s_metrics.json');
-const M='/mnt/user-data/outputs/', MED='/home/claude/ms_unpack/word/media/';
+const M=_IN, MED=_IN+'ms_unpack/word/media/';
 const ch=[]; const push=function(){for(var i=0;i<arguments.length;i++)ch.push(arguments[i]);};
 
 push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{after:80},children:[new TextRun({text:"Supplementary Information (Additional file)",bold:true,size:30,font:FONT})]}));
@@ -257,4 +263,4 @@ push(tblCap("Table S12|  A genetic algorithm applied to the same data, for compa
 
 const doc=new Document({creator:"Werle et al.",styles:{default:{document:{run:{font:FONT,size:22}}}},
   sections:[{properties:{page:{margin:{top:1440,bottom:1440,left:1080,right:1080}}},children:ch}]});
-Packer.toBuffer(doc).then(function(b){fs.writeFileSync(M+"Werle_JCheminform_SupplementaryInformation_2026-08-10.docx",b);console.log("written");});
+Packer.toBuffer(doc).then(function(b){fs.writeFileSync(_OUT+"Werle_JCheminform_SupplementaryInformation_2026-08-10.docx",b);console.log("written");});

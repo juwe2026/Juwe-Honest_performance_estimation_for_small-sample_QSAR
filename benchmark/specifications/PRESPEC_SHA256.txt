@@ -1,0 +1,11 @@
+Vorab-Spezifikation ChEMBL-Benchmark – Festschreibung
+
+Datei:        Vorab-Spezifikation_ChEMBL-Benchmark_FESTGESCHRIEBEN 22.10.2026 1810.md
+Groesse:      24340 Bytes
+SHA-256:      a13bb2c0b513289b160de744bd8d6bc47662d46553ab5a2fe3db6d336a0ae419
+Festgeschrieben: 22.10.2026, 18:10 Uhr MESZ (Europe/Berlin)
+
+Zu diesem Zeitpunkt waren die 16 natuerlichen Serien ausgewaehlt und
+KEIN Modell, KEIN Filter und KEINE Permutation gerechnet.
+
+Pruefen mit:  shasum -a 256 "Vorab-Spezifikation_ChEMBL-Benchmark_FESTGESCHRIEBEN 22.10.2026 1810.md"

@@ -1,0 +1,427 @@
+{
+ "per_spectrum": {
+  "control_01": {
+   "spearman_with_median_of_others": 0.6957,
+   "rank_lowest_correlation": 24,
+   "hotelling_T2": 2.17,
+   "rank_T2": 16,
+   "residual_Q": 523.3,
+   "rank_Q": 16,
+   "max_intensity": 83.51,
+   "rank_lowest_max": 29
+  },
+  "control_02": {
+   "spearman_with_median_of_others": 0.7523,
+   "rank_lowest_correlation": 38,
+   "hotelling_T2": 0.72,
+   "rank_T2": 37,
+   "residual_Q": 339.5,
+   "rank_Q": 38,
+   "max_intensity": 87.33,
+   "rank_lowest_max": 32
+  },
+  "control_03": {
+   "spearman_with_median_of_others": 0.717,
+   "rank_lowest_correlation": 31,
+   "hotelling_T2": 1.04,
+   "rank_T2": 31,
+   "residual_Q": 471.6,
+   "rank_Q": 24,
+   "max_intensity": 67.87,
+   "rank_lowest_max": 11
+  },
+  "control_04": {
+   "spearman_with_median_of_others": 0.5864,
+   "rank_lowest_correlation": 10,
+   "hotelling_T2": 9.12,
+   "rank_T2": 2,
+   "residual_Q": 1612.7,
+   "rank_Q": 3,
+   "max_intensity": 50.18,
+   "rank_lowest_max": 5
+  },
+  "control_05": {
+   "spearman_with_median_of_others": 0.784,
+   "rank_lowest_correlation": 40,
+   "hotelling_T2": 1.04,
+   "rank_T2": 30,
+   "residual_Q": 327.5,
+   "rank_Q": 40,
+   "max_intensity": 83.03,
+   "rank_lowest_max": 28
+  },
+  "control_06": {
+   "spearman_with_median_of_others": 0.7122,
+   "rank_lowest_correlation": 30,
+   "hotelling_T2": 1.89,
+   "rank_T2": 21,
+   "residual_Q": 394.9,
+   "rank_Q": 34,
+   "max_intensity": 78.72,
+   "rank_lowest_max": 23
+  },
+  "control_07": {
+   "spearman_with_median_of_others": 0.646,
+   "rank_lowest_correlation": 18,
+   "hotelling_T2": 2.09,
+   "rank_T2": 18,
+   "residual_Q": 462.1,
+   "rank_Q": 25,
+   "max_intensity": 64.07,
+   "rank_lowest_max": 8
+  },
+  "control_08": {
+   "spearman_with_median_of_others": 0.7083,
+   "rank_lowest_correlation": 28,
+   "hotelling_T2": 1.84,
+   "rank_T2": 22,
+   "residual_Q": 440.1,
+   "rank_Q": 27,
+   "max_intensity": 82.09,
+   "rank_lowest_max": 27
+  },
+  "control_09": {
+   "spearman_with_median_of_others": 0.6423,
+   "rank_lowest_correlation": 16,
+   "hotelling_T2": 4.47,
+   "rank_T2": 8,
+   "residual_Q": 717.1,
+   "rank_Q": 8,
+   "max_intensity": 55.6,
+   "rank_lowest_max": 6
+  },
+  "control_10": {
+   "spearman_with_median_of_others": 0.3412,
+   "rank_lowest_correlation": 2,
+   "hotelling_T2": 2.54,
+   "rank_T2": 15,
+   "residual_Q": 879.7,
+   "rank_Q": 6,
+   "max_intensity": 17.08,
+   "rank_lowest_max": 2
+  },
+  "control_11": {
+   "spearman_with_median_of_others": 0.7028,
+   "rank_lowest_correlation": 25,
+   "hotelling_T2": 1.23,
+   "rank_T2": 26,
+   "residual_Q": 366.2,
+   "rank_Q": 35,
+   "max_intensity": 90.7,
+   "rank_lowest_max": 39
+  },
+  "control_12": {
+   "spearman_with_median_of_others": 0.5788,
+   "rank_lowest_correlation": 8,
+   "hotelling_T2": 3.48,
+   "rank_T2": 9,
+   "residual_Q": 447.6,
+   "rank_Q": 26,
+   "max_intensity": 61.95,
+   "rank_lowest_max": 7
+  },
+  "control_13": {
+   "spearman_with_median_of_others": 0.6329,
+   "rank_lowest_correlation": 14,
+   "hotelling_T2": 4.7,
+   "rank_T2": 7,
+   "residual_Q": 661.4,
+   "rank_Q": 9,
+   "max_intensity": 76.52,
+   "rank_lowest_max": 19
+  },
+  "control_14": {
+   "spearman_with_median_of_others": 0.6204,
+   "rank_lowest_correlation": 12,
+   "hotelling_T2": 6.14,
+   "rank_T2": 5,
+   "residual_Q": 912.4,
+   "rank_Q": 5,
+   "max_intensity": 72.53,
+   "rank_lowest_max": 13
+  },
+  "control_15": {
+   "spearman_with_median_of_others": 0.632,
+   "rank_lowest_correlation": 13,
+   "hotelling_T2": 2.03,
+   "rank_T2": 19,
+   "residual_Q": 505.7,
+   "rank_Q": 18,
+   "max_intensity": 75.39,
+   "rank_lowest_max": 16
+  },
+  "control_16": {
+   "spearman_with_median_of_others": 0.7349,
+   "rank_lowest_correlation": 36,
+   "hotelling_T2": 2.97,
+   "rank_T2": 11,
+   "residual_Q": 403.2,
+   "rank_Q": 32,
+   "max_intensity": 89.5,
+   "rank_lowest_max": 37
+  },
+  "control_17": {
+   "spearman_with_median_of_others": 0.7535,
+   "rank_lowest_correlation": 39,
+   "hotelling_T2": 2.11,
+   "rank_T2": 17,
+   "residual_Q": 355.2,
+   "rank_Q": 37,
+   "max_intensity": 77.29,
+   "rank_lowest_max": 21
+  },
+  "control_18": {
+   "spearman_with_median_of_others": 0.5626,
+   "rank_lowest_correlation": 6,
+   "hotelling_T2": 1.93,
+   "rank_T2": 20,
+   "residual_Q": 540.3,
+   "rank_Q": 15,
+   "max_intensity": 76.28,
+   "rank_lowest_max": 18
+  },
+  "control_19": {
+   "spearman_with_median_of_others": 0.6444,
+   "rank_lowest_correlation": 17,
+   "hotelling_T2": 2.63,
+   "rank_T2": 14,
+   "residual_Q": 574.7,
+   "rank_Q": 12,
+   "max_intensity": 88.76,
+   "rank_lowest_max": 36
+  },
+  "control_20": {
+   "spearman_with_median_of_others": 0.5945,
+   "rank_lowest_correlation": 11,
+   "hotelling_T2": 0.87,
+   "rank_T2": 33,
+   "residual_Q": 481.5,
+   "rank_Q": 20,
+   "max_intensity": 74.27,
+   "rank_lowest_max": 15
+  },
+  "gaucher_01": {
+   "spearman_with_median_of_others": 0.5242,
+   "rank_lowest_correlation": 4,
+   "hotelling_T2": 1.53,
+   "rank_T2": 23,
+   "residual_Q": 563.2,
+   "rank_Q": 13,
+   "max_intensity": 23.02,
+   "rank_lowest_max": 3
+  },
+  "gaucher_02": {
+   "spearman_with_median_of_others": 0.4193,
+   "rank_lowest_correlation": 3,
+   "hotelling_T2": 8.85,
+   "rank_T2": 3,
+   "residual_Q": 4982.6,
+   "rank_Q": 1,
+   "max_intensity": 80.58,
+   "rank_lowest_max": 26
+  },
+  "gaucher_03": {
+   "spearman_with_median_of_others": 0.6399,
+   "rank_lowest_correlation": 15,
+   "hotelling_T2": 1.09,
+   "rank_T2": 29,
+   "residual_Q": 660.2,
+   "rank_Q": 10,
+   "max_intensity": 66.37,
+   "rank_lowest_max": 10
+  },
+  "gaucher_04": {
+   "spearman_with_median_of_others": 0.7219,
+   "rank_lowest_correlation": 33,
+   "hotelling_T2": 0.81,
+   "rank_T2": 34,
+   "residual_Q": 364.1,
+   "rank_Q": 36,
+   "max_intensity": 64.51,
+   "rank_lowest_max": 9
+  },
+  "gaucher_05": {
+   "spearman_with_median_of_others": 0.733,
+   "rank_lowest_correlation": 34,
+   "hotelling_T2": 1.24,
+   "rank_T2": 25,
+   "residual_Q": 404.2,
+   "rank_Q": 31,
+   "max_intensity": 90.09,
+   "rank_lowest_max": 38
+  },
+  "gaucher_06": {
+   "spearman_with_median_of_others": 0.7101,
+   "rank_lowest_correlation": 29,
+   "hotelling_T2": 0.76,
+   "rank_T2": 35,
+   "residual_Q": 400.0,
+   "rank_Q": 33,
+   "max_intensity": 47.22,
+   "rank_lowest_max": 4
+  },
+  "gaucher_07": {
+   "spearman_with_median_of_others": 0.5845,
+   "rank_lowest_correlation": 9,
+   "hotelling_T2": 2.78,
+   "rank_T2": 13,
+   "residual_Q": 504.4,
+   "rank_Q": 19,
+   "max_intensity": 79.81,
+   "rank_lowest_max": 25
+  },
+  "gaucher_08": {
+   "spearman_with_median_of_others": 0.7181,
+   "rank_lowest_correlation": 32,
+   "hotelling_T2": 1.0,
+   "rank_T2": 32,
+   "residual_Q": 430.1,
+   "rank_Q": 30,
+   "max_intensity": 79.01,
+   "rank_lowest_max": 24
+  },
+  "gaucher_09": {
+   "spearman_with_median_of_others": 0.6925,
+   "rank_lowest_correlation": 23,
+   "hotelling_T2": 1.33,
+   "rank_T2": 24,
+   "residual_Q": 575.3,
+   "rank_Q": 11,
+   "max_intensity": 77.07,
+   "rank_lowest_max": 20
+  },
+  "gaucher_10": {
+   "spearman_with_median_of_others": 0.7349,
+   "rank_lowest_correlation": 35,
+   "hotelling_T2": 0.75,
+   "rank_T2": 36,
+   "residual_Q": 439.9,
+   "rank_Q": 28,
+   "max_intensity": 88.48,
+   "rank_lowest_max": 35
+  },
+  "gaucher_11": {
+   "spearman_with_median_of_others": 0.706,
+   "rank_lowest_correlation": 26,
+   "hotelling_T2": 2.81,
+   "rank_T2": 12,
+   "residual_Q": 480.4,
+   "rank_Q": 22,
+   "max_intensity": 91.79,
+   "rank_lowest_max": 40
+  },
+  "gaucher_12": {
+   "spearman_with_median_of_others": 0.6858,
+   "rank_lowest_correlation": 20,
+   "hotelling_T2": 0.54,
+   "rank_T2": 39,
+   "residual_Q": 481.1,
+   "rank_Q": 21,
+   "max_intensity": 74.24,
+   "rank_lowest_max": 14
+  },
+  "gaucher_13": {
+   "spearman_with_median_of_others": 0.6899,
+   "rank_lowest_correlation": 22,
+   "hotelling_T2": 6.87,
+   "rank_T2": 4,
+   "residual_Q": 821.3,
+   "rank_Q": 7,
+   "max_intensity": 88.22,
+   "rank_lowest_max": 33
+  },
+  "gaucher_14": {
+   "spearman_with_median_of_others": 0.529,
+   "rank_lowest_correlation": 5,
+   "hotelling_T2": 5.72,
+   "rank_T2": 6,
+   "residual_Q": 1301.7,
+   "rank_Q": 4,
+   "max_intensity": 87.03,
+   "rank_lowest_max": 31
+  },
+  "gaucher_15": {
+   "spearman_with_median_of_others": 0.6877,
+   "rank_lowest_correlation": 21,
+   "hotelling_T2": 1.22,
+   "rank_T2": 27,
+   "residual_Q": 541.1,
+   "rank_Q": 14,
+   "max_intensity": 88.39,
+   "rank_lowest_max": 34
+  },
+  "gaucher_16": {
+   "spearman_with_median_of_others": 0.7068,
+   "rank_lowest_correlation": 27,
+   "hotelling_T2": 1.11,
+   "rank_T2": 28,
+   "residual_Q": 436.3,
+   "rank_Q": 29,
+   "max_intensity": 86.83,
+   "rank_lowest_max": 30
+  },
+  "gaucher_17": {
+   "spearman_with_median_of_others": 0.6603,
+   "rank_lowest_correlation": 19,
+   "hotelling_T2": 0.46,
+   "rank_T2": 40,
+   "residual_Q": 520.1,
+   "rank_Q": 17,
+   "max_intensity": 68.49,
+   "rank_lowest_max": 12
+  },
+  "gaucher_18": {
+   "spearman_with_median_of_others": 0.2655,
+   "rank_lowest_correlation": 1,
+   "hotelling_T2": 17.97,
+   "rank_T2": 1,
+   "residual_Q": 1618.7,
+   "rank_Q": 2,
+   "max_intensity": 5.81,
+   "rank_lowest_max": 1
+  },
+  "gaucher_19": {
+   "spearman_with_median_of_others": 0.7372,
+   "rank_lowest_correlation": 37,
+   "hotelling_T2": 0.58,
+   "rank_T2": 38,
+   "residual_Q": 331.4,
+   "rank_Q": 39,
+   "max_intensity": 75.45,
+   "rank_lowest_max": 17
+  },
+  "gaucher_20": {
+   "spearman_with_median_of_others": 0.5637,
+   "rank_lowest_correlation": 7,
+   "hotelling_T2": 3.26,
+   "rank_T2": 10,
+   "residual_Q": 478.8,
+   "rank_Q": 23,
+   "max_intensity": 78.14,
+   "rank_lowest_max": 22
+  }
+ },
+ "correlation_groups": {
+  "all_40": 405,
+  "without_gaucher_01": 397,
+  "without_gaucher_02": 409,
+  "without_gaucher_03": 400,
+  "without_gaucher_04": 400,
+  "without_gaucher_05": 394,
+  "without_gaucher_06": 403,
+  "without_gaucher_07": 401,
+  "without_gaucher_08": 404,
+  "without_gaucher_09": 401,
+  "without_gaucher_10": 405,
+  "without_gaucher_11": 402,
+  "without_gaucher_12": 403,
+  "without_gaucher_13": 403,
+  "without_gaucher_14": 408,
+  "without_gaucher_15": 401,
+  "without_gaucher_16": 401,
+  "without_gaucher_17": 403,
+  "without_gaucher_18": 428,
+  "without_gaucher_19": 400,
+  "without_gaucher_20": 399
+ }
+}

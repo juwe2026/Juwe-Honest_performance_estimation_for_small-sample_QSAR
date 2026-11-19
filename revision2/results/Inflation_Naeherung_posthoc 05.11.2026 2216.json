@@ -1,0 +1,251 @@
+{
+ "k": 0.5524949737458891,
+ "serien": {
+  "DS01": {
+   "spearman_A2_vorhergesagt": 12.887,
+   "spearman_A1u_vorhergesagt": 2.023,
+   "spearman_A1_vorhergesagt": 2.023,
+   "pearson_A2_vorhergesagt": 13.043,
+   "pearson_A1u_vorhergesagt": 1.999,
+   "pearson_A1_vorhergesagt": 1.999,
+   "beobachtet_A2": 13.050824,
+   "beobachtet_A1u": 1.805186,
+   "beobachtet_A1": 2.16659,
+   "rs2_alle": 0.2145,
+   "rs2_reps": 0.05952
+  },
+  "DS02": {
+   "spearman_A2_vorhergesagt": 11.758,
+   "spearman_A1u_vorhergesagt": 2.105,
+   "spearman_A1_vorhergesagt": 2.105,
+   "pearson_A2_vorhergesagt": 11.905,
+   "pearson_A1u_vorhergesagt": 2.077,
+   "pearson_A1_vorhergesagt": 2.077,
+   "beobachtet_A2": 11.80649,
+   "beobachtet_A1u": 1.839916,
+   "beobachtet_A1": 2.339688,
+   "rs2_alle": 0.17807,
+   "rs2_reps": 0.07669
+  },
+  "DS03": {
+   "spearman_A2_vorhergesagt": 12.368,
+   "spearman_A1u_vorhergesagt": 1.932,
+   "spearman_A1_vorhergesagt": 1.932,
+   "pearson_A2_vorhergesagt": 12.33,
+   "pearson_A1u_vorhergesagt": 1.897,
+   "pearson_A1_vorhergesagt": 1.897,
+   "beobachtet_A2": 12.104348,
+   "beobachtet_A1u": 1.724862,
+   "beobachtet_A1": 2.28437,
+   "rs2_alle": 0.21257,
+   "rs2_reps": 0.07605
+  },
+  "DS04": {
+   "spearman_A2_vorhergesagt": 11.554,
+   "spearman_A1u_vorhergesagt": 1.955,
+   "spearman_A1_vorhergesagt": 1.955,
+   "pearson_A2_vorhergesagt": 11.409,
+   "pearson_A1u_vorhergesagt": 1.952,
+   "pearson_A1_vorhergesagt": 1.952,
+   "beobachtet_A2": 11.691125,
+   "beobachtet_A1u": 1.584857,
+   "beobachtet_A1": 1.958738,
+   "rs2_alle": 0.18663,
+   "rs2_reps": 0.05805
+  },
+  "DS05": {
+   "spearman_A2_vorhergesagt": 10.764,
+   "spearman_A1u_vorhergesagt": 2.039,
+   "spearman_A1_vorhergesagt": 2.039,
+   "pearson_A2_vorhergesagt": 10.654,
+   "pearson_A1u_vorhergesagt": 2.048,
+   "pearson_A1_vorhergesagt": 2.048,
+   "beobachtet_A2": 10.547514,
+   "beobachtet_A1u": 1.723367,
+   "beobachtet_A1": 2.271961,
+   "rs2_alle": 0.15584,
+   "rs2_reps": 0.06418
+  },
+  "DS06": {
+   "spearman_A2_vorhergesagt": 10.866,
+   "spearman_A1u_vorhergesagt": 2.245,
+   "spearman_A1_vorhergesagt": 2.245,
+   "pearson_A2_vorhergesagt": 10.894,
+   "pearson_A1u_vorhergesagt": 2.251,
+   "pearson_A1_vorhergesagt": 2.251,
+   "beobachtet_A2": 11.191531,
+   "beobachtet_A1u": 1.830865,
+   "beobachtet_A1": 2.348236,
+   "rs2_alle": 0.15468,
+   "rs2_reps": 0.0526
+  },
+  "DS07": {
+   "spearman_A2_vorhergesagt": 12.823,
+   "spearman_A1u_vorhergesagt": 1.781,
+   "spearman_A1_vorhergesagt": 1.781,
+   "pearson_A2_vorhergesagt": 13.54,
+   "pearson_A1u_vorhergesagt": 1.789,
+   "pearson_A1_vorhergesagt": 1.789,
+   "beobachtet_A2": 12.623552,
+   "beobachtet_A1u": 1.572477,
+   "beobachtet_A1": 1.985987,
+   "rs2_alle": 0.22495,
+   "rs2_reps": 0.08552
+  },
+  "DS08": {
+   "spearman_A2_vorhergesagt": 10.93,
+   "spearman_A1u_vorhergesagt": 1.883,
+   "spearman_A1_vorhergesagt": 1.883,
+   "pearson_A2_vorhergesagt": 10.881,
+   "pearson_A1u_vorhergesagt": 1.856,
+   "pearson_A1_vorhergesagt": 1.856,
+   "beobachtet_A2": 10.193536,
+   "beobachtet_A1u": 1.629945,
+   "beobachtet_A1": 2.024516,
+   "rs2_alle": 0.16392,
+   "rs2_reps": 0.06879
+  },
+  "DS09": {
+   "spearman_A2_vorhergesagt": 12.888,
+   "spearman_A1u_vorhergesagt": 2.074,
+   "spearman_A1_vorhergesagt": 2.074,
+   "pearson_A2_vorhergesagt": 12.499,
+   "pearson_A1u_vorhergesagt": 2.088,
+   "pearson_A1_vorhergesagt": 2.088,
+   "beobachtet_A2": 13.782657,
+   "beobachtet_A1u": 1.662552,
+   "beobachtet_A1": 2.185654,
+   "rs2_alle": 0.21781,
+   "rs2_reps": 0.07027
+  },
+  "DS10": {
+   "spearman_A2_vorhergesagt": 12.099,
+   "spearman_A1u_vorhergesagt": 2.201,
+   "spearman_A1_vorhergesagt": 2.201,
+   "pearson_A2_vorhergesagt": 12.255,
+   "pearson_A1u_vorhergesagt": 2.219,
+   "pearson_A1_vorhergesagt": 2.219,
+   "beobachtet_A2": 12.982864,
+   "beobachtet_A1u": 1.938802,
+   "beobachtet_A1": 2.427697,
+   "rs2_alle": 0.18986,
+   "rs2_reps": 0.07177
+  },
+  "DS11": {
+   "spearman_A2_vorhergesagt": 10.893,
+   "spearman_A1u_vorhergesagt": 2.049,
+   "spearman_A1_vorhergesagt": 2.049,
+   "pearson_A2_vorhergesagt": 10.564,
+   "pearson_A1u_vorhergesagt": 2.056,
+   "pearson_A1_vorhergesagt": 2.056,
+   "beobachtet_A2": 10.96559,
+   "beobachtet_A1u": 1.730405,
+   "beobachtet_A1": 2.158148,
+   "rs2_alle": 0.16206,
+   "rs2_reps": 0.06295
+  },
+  "DS12": {
+   "spearman_A2_vorhergesagt": 12.567,
+   "spearman_A1u_vorhergesagt": 1.868,
+   "spearman_A1_vorhergesagt": 1.868,
+   "pearson_A2_vorhergesagt": 12.669,
+   "pearson_A1u_vorhergesagt": 1.838,
+   "pearson_A1_vorhergesagt": 1.838,
+   "beobachtet_A2": 12.661208,
+   "beobachtet_A1u": 1.5463,
+   "beobachtet_A1": 2.007759,
+   "rs2_alle": 0.21766,
+   "rs2_reps": 0.07507
+  },
+  "DS13": {
+   "spearman_A2_vorhergesagt": 12.873,
+   "spearman_A1u_vorhergesagt": 1.865,
+   "spearman_A1_vorhergesagt": 1.865,
+   "pearson_A2_vorhergesagt": 12.72,
+   "pearson_A1u_vorhergesagt": 1.872,
+   "pearson_A1_vorhergesagt": 1.872,
+   "beobachtet_A2": 13.538388,
+   "beobachtet_A1u": 1.610095,
+   "beobachtet_A1": 2.07172,
+   "rs2_alle": 0.21777,
+   "rs2_reps": 0.06902
+  },
+  "DS14": {
+   "spearman_A2_vorhergesagt": 12.712,
+   "spearman_A1u_vorhergesagt": 2.035,
+   "spearman_A1_vorhergesagt": 2.035,
+   "pearson_A2_vorhergesagt": 13.097,
+   "pearson_A1u_vorhergesagt": 2.045,
+   "pearson_A1_vorhergesagt": 2.045,
+   "beobachtet_A2": 12.901229,
+   "beobachtet_A1u": 1.819268,
+   "beobachtet_A1": 2.291909,
+   "rs2_alle": 0.21202,
+   "rs2_reps": 0.07292
+  },
+  "DS15": {
+   "spearman_A2_vorhergesagt": 11.694,
+   "spearman_A1u_vorhergesagt": 1.833,
+   "spearman_A1_vorhergesagt": 1.833,
+   "pearson_A2_vorhergesagt": 12.328,
+   "pearson_A1u_vorhergesagt": 1.777,
+   "pearson_A1_vorhergesagt": 1.777,
+   "beobachtet_A2": 12.30791,
+   "beobachtet_A1u": 1.741803,
+   "beobachtet_A1": 2.113723,
+   "rs2_alle": 0.18174,
+   "rs2_reps": 0.07005
+  },
+  "DS16": {
+   "spearman_A2_vorhergesagt": 13.133,
+   "spearman_A1u_vorhergesagt": 1.643,
+   "spearman_A1_vorhergesagt": 1.643,
+   "pearson_A2_vorhergesagt": 13.503,
+   "pearson_A1u_vorhergesagt": 1.645,
+   "pearson_A1_vorhergesagt": 1.645,
+   "beobachtet_A2": 13.694195,
+   "beobachtet_A1u": 1.506292,
+   "beobachtet_A1": 2.104836,
+   "rs2_alle": 0.23766,
+   "rs2_reps": 0.10615
+  }
+ },
+ "zusammenfassung": {
+  "spearman_A2": {
+   "spearman": 0.924,
+   "verhaeltnis_median": 1.012,
+   "verhaeltnis_min": 0.933,
+   "verhaeltnis_max": 1.073
+  },
+  "spearman_A1u": {
+   "spearman": 0.753,
+   "verhaeltnis_median": 0.87,
+   "verhaeltnis_min": 0.802,
+   "verhaeltnis_max": 0.95
+  },
+  "spearman_A1": {
+   "spearman": 0.765,
+   "verhaeltnis_median": 1.107,
+   "verhaeltnis_min": 1.002,
+   "verhaeltnis_max": 1.281
+  },
+  "pearson_A2": {
+   "spearman": 0.8,
+   "verhaeltnis_median": 1.0,
+   "verhaeltnis_min": 0.932,
+   "verhaeltnis_max": 1.103
+  },
+  "pearson_A1u": {
+   "spearman": 0.712,
+   "verhaeltnis_median": 0.876,
+   "verhaeltnis_min": 0.796,
+   "verhaeltnis_max": 0.98
+  },
+  "pearson_A1": {
+   "spearman": 0.747,
+   "verhaeltnis_median": 1.1,
+   "verhaeltnis_min": 1.004,
+   "verhaeltnis_max": 1.28
+  }
+ }
+}

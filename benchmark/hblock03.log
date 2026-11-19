@@ -1,0 +1,64 @@
+beobachtete Werte vollstaendig (3s)
+Pakete gesamt 2900, offen 916
+DS06 A1 0400  100 Permutationen  157s
+DS06 A1 0500  100 Permutationen  150s
+DS06 A1 0600  100 Permutationen  150s
+DS06 A1 0700  100 Permutationen  150s
+DS06 A1 0800  100 Permutationen  149s
+DS06 A1 0900  100 Permutationen  154s
+DS06 A1 1000  100 Permutationen  153s
+DS06 A1 1100  100 Permutationen  154s
+DS06 A1 1200  100 Permutationen  153s
+DS06 A1 1300  100 Permutationen  152s
+DS06 A1 1400  100 Permutationen  151s
+DS06 A1 1500  100 Permutationen  155s
+DS06 A1 1600  100 Permutationen  155s
+DS06 A1 1700  100 Permutationen  157s
+DS06 A1 1800  100 Permutationen  153s
+DS06 A1 1900  100 Permutationen  159s
+DS07 A1 0000  100 Permutationen  110s
+DS07 A1 0100  100 Permutationen  122s
+DS07 A1 0200  100 Permutationen  121s
+DS07 A1 0300  100 Permutationen  124s
+DS07 A1 0400  100 Permutationen  113s
+DS07 A1 0500  100 Permutationen  117s
+DS07 A1 0600  100 Permutationen  115s
+DS07 A1 0700  100 Permutationen  109s
+DS07 A1 0800  100 Permutationen  104s
+DS07 A1 0900  100 Permutationen  106s
+DS07 A1 1000  100 Permutationen  105s
+DS07 A1 1100  100 Permutationen  102s
+DS07 A1 1200  100 Permutationen  104s
+DS07 A1 1300  100 Permutationen  105s
+DS07 A1 1400  100 Permutationen  102s
+DS07 A1 1500  100 Permutationen  102s
+DS07 A1 1600  100 Permutationen  106s
+DS07 A1 1700  100 Permutationen  104s
+DS07 A1 1800  100 Permutationen  104s
+DS07 A1 1900  100 Permutationen  110s
+DS08 A1 0000  100 Permutationen  98s
+DS08 A1 0100  100 Permutationen  98s
+DS08 A1 0200  100 Permutationen  83s
+DS08 A1 0300  100 Permutationen  85s
+DS08 A1 0400  100 Permutationen  84s
+DS08 A1 0500  100 Permutationen  86s
+DS08 A1 0600  100 Permutationen  86s
+DS08 A1 0700  100 Permutationen  88s
+DS08 A1 0800  100 Permutationen  90s
+DS08 A1 0900  100 Permutationen  91s
+DS08 A1 1000  100 Permutationen  89s
+DS08 A1 1100  100 Permutationen  90s
+DS08 A1 1200  100 Permutationen  90s
+DS08 A1 1300  100 Permutationen  86s
+DS08 A1 1400  100 Permutationen  91s
+DS08 A1 1500  100 Permutationen  88s
+DS08 A1 1600  100 Permutationen  96s
+DS08 A1 1700  100 Permutationen  90s
+DS08 A1 1800  100 Permutationen  84s
+DS08 A1 1900  100 Permutationen  81s
+DS09 A1 0000  100 Permutationen  63s
+DS09 A1 0100  100 Permutationen  65s
+DS09 A1 0200  100 Permutationen  67s
+Zeitlimit erreicht
+FERTIG in diesem Block: 59 Pakete, offen danach: 857
+EXIT 0

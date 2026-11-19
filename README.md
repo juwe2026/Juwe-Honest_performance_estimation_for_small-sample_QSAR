@@ -4,15 +4,21 @@ Analysis code and raw permutation outputs for:
 
 > Werle J, Rondevaldova J, Werle E. *Honest performance estimation for small-sample QSAR: selection leakage, permutation-null inflation, and its label-free remedy.* Journal of Cheminformatics (revised version under review).
 
-This repository is Additional file 7 of that article. It contains the analysis code and the
+This repository is Additional file 10 of that article. It contains the analysis code and the
 archived result objects (raw permutation outputs, cached intermediate results) that the numbers
 reported in the manuscript and its Supplementary Information were computed from. See "Known
 limitations" below before relying on `code/` to reproduce those numbers by re-running it.
 
+Version 1.2.0 accompanies the second revision. It adds the ChEMBL benchmark (`benchmark/`, see
+`benchmark/README_benchmark.md`) and the analyses of the second revision (`revision2/`, see
+`revision2/README_revision2.md`). `CHANGELOG_revision2.md` lists the changes. References to tables, figures and
+Additional files in the README files follow the published numbering of the article.
+
 Development version: https://github.com/juwe2026/Juwe-Honest_performance_estimation_for_small-sample_QSAR
-Released under the MIT licence (see `LICENSE`). Each release is archived on Zenodo with its own
-DOI; the article cites the DOI of the release that corresponds to the submitted version, and any
-later release is reachable from the same Zenodo record.
+Released under the MIT licence (see `LICENSE`), apart from the third-party data named under "Licence"
+below. Each release is archived on Zenodo with its own DOI. The article cites the DOI of the release
+that corresponds to the submitted version, and any later release is reachable from the same Zenodo
+record.
 
 ## What the study does
 
@@ -26,65 +32,79 @@ assessed by permuting the class labels through the complete pipeline:
 | A1 | correlation grouping first, group representative chosen by effect size, then supervised effect-size filter |
 | A1u | as A1, but the representative is chosen by network centrality, which makes the grouping label-free |
 | A2 | supervised effect-size filter first, correlation grouping of the survivors |
-| B | 25 literature-derived descriptors reduced to 13 representatives by unsupervised correlation grouping; 12 of those are used for modelling, since one further pair (C_Count and EsterLacton_flag) is exactly redundant (r = rho = 1.000) and collapses to a single representative |
+| B | 25 literature-derived descriptors reduced to 13 representatives by unsupervised correlation grouping. Twelve of those are used for modelling, since one further pair (C_Count and EsterLacton_flag) is exactly redundant (r = rho = 1.000) and collapses to a single representative |
 
 ## Layout
 
 ```
+benchmark/              ChEMBL benchmark: code, derived data sets, permutation results, specifications
+revision/               analyses of the first revision (October 2026)
+revision2/              analyses, figures and table scripts of the second revision (November 2026)
 code/                   analysis scripts (Python, RDKit, scikit-learn)
   manuscript_build/     scripts that assemble the manuscript and supplement documents
   add_structure_identifiers.py   writes the canonical SMILES, InChI and InChIKey columns
-                         of Additional file 3 from its own SMILES column
+                         of Additional file 4 from its own SMILES column
 data/                   Route B descriptor data and VIP workbook (each revised and
-                         submitted); score-plot workbook; Gaucher comparison data set
-figures/                nine scripts generating Fig. 1-7 and the six supplementary figures (dataio.py and
-                         figstyle.py are shared helpers, not figures themselves)
+                         submitted), score-plot workbook, Gaucher comparison data set
+figures/                scripts generating Figs. 2 to 5 and the eight supplementary figures (dataio.py and
+                         figstyle.py are shared helpers, not figures themselves), output/ with all 14 figures
 results/raw_permutations/   permutation outputs and per-route result objects
-results/Additional_file_9_RouteA1_top15_EffSize_vs_VIP.xlsx
-results/Additional_file_10_RouteA2_top15_EffSize_vs_VIP.xlsx
+results/Additional_file_9_RouteA1_top15_EffSize_vs_VIP.xlsx     Additional file 14 (name of the submitted version)
+results/Additional_file_10_RouteA2_top15_EffSize_vs_VIP.xlsx    Additional file 15 (name of the submitted version)
 results/fold_reduction.json
 results/fold_grouping_routeA.json
 ```
 
 The Route A descriptor matrix (2,208 cleaned descriptors for 31 compounds) is not included
-here because of its size; it is Additional file 6 of the article.
+here because of its size. It is Additional file 3 of the article.
 
 ## Which file holds which result
 
 | File | Contains |
 | --- | --- |
-| `final_all.npy` | Route A1, A1u, A2 and the top-15 variants: apparent and nested Q2/AUC with permutation p-values. Table 1 and Table 3 (Route A1u, Table 5 of the submitted version, is part of Table 1 in the revised article). |
-| `vip1lv_final.npy` | Route A1 top-15 selected by VIP, one latent variable. Table 4. |
-| `a2_top15_results.npy` | Route A2 top-15. Additional file 10. |
-| `hits_three_variants.npy` | Observed and null univariate hit counts for A2, A1 and A1u, 1,000 permutations each. Table S12, Fig. 7, Fig. S1. Regenerated byte for byte by `code/make_hits_three_variants.py` (seed 9). |
-| `routeB_final.json` | Route B with 13 representatives (superseded by the published 12-descriptor set; see `figures/data_recalc/routeB12.json`) and with the 25 a priori descriptors. Table 2 (25-descriptor rows only; the Table 1 Route B rows use the 12-descriptor set). |
-| `routeB_nlv3.pkl`, `mono_nlv.pkl`, `mono_dcv.pkl` | Effect of the number of latent variables, including the doubly nested estimates. Table S8. |
-| `lpo_all_routes.json`, `lpo_compare.pkl` | Leave-pair-out c-statistic and leave-2-out / leave-3-out Q2. Table S22. |
-| `gaucher_res.pkl`, `gaucher_optlv.pkl`, `gaucher_doublecv.pkl`, `code/gaucher_doublecv.py` | The three routes applied to the SELDI-TOF data of Smit et al. (2007). Table S20; `gaucher_doublecv.py` regenerates the doubly nested row. |
-| `gaucher_downsample.pkl`, `gaucher_bootstrap.pkl`, `code/gaucher_downsample.py`, `code/gaucher_bootstrap.py` | Detection-limit analysis by thinning the Gaucher data, and the bootstrap-the-controls check quoted in its legend. Table S21. The two `.pkl` files hold the earlier 150-draw runs. The table and its legend as published use the 2,000-draw runs, whose complete outputs are bundled as `results/raw_permutations/gaucher_downsample_2000.json` (all 10,001 per-draw Q2 and AUC values) and `results/raw_permutations/gaucher_bootstrap_2000.json` (both bootstrap arms, with the per-draw duplicate-control counts), so every figure in Table S21 and its legend can be recomputed from an archived object instead of repeating the run; `python code/gaucher_downsample.py 2000` and `python code/gaucher_bootstrap.py 2000` regenerate them. |
+| `final_all.npy` | Route A1, A1u, A2 and the top-15 variants: apparent and nested Q2/AUC with permutation p-values. Table 1 and Table S17 (Route A1u, Table 5 of the submitted version, is part of Table 1 in the revised article). |
+| `vip1lv_final.npy` | Route A1 top-15 selected by VIP, one latent variable. Table S18. |
+| `a2_top15_results.npy` | Route A2 top-15. Additional file 15. |
+| `hits_three_variants.npy` | Observed and null univariate hit counts for A2, A1 and A1u, 1,000 permutations each. Table S20, Fig. 5, Fig. S6. Regenerated byte for byte by `code/make_hits_three_variants.py` (seed 9). |
+| `routeB_final.json` | Route B with 13 representatives (superseded by the published 12-descriptor set, see `figures/data_recalc/routeB12.json`) and with the 25 a priori descriptors. Table S16 (25-descriptor rows only, while the Table 1 Route B rows use the 12-descriptor set). |
+| `routeB_nlv3.pkl`, `mono_nlv.pkl`, `mono_dcv.pkl` | Effect of the number of latent variables, including the doubly nested estimates. Table S9. |
+| `lpo_all_routes.json`, `lpo_compare.pkl` | Leave-pair-out c-statistic and leave-2-out / leave-3-out Q2. Table S25. |
+| `gaucher_res.pkl`, `gaucher_optlv.pkl`, `gaucher_doublecv.pkl`, `code/gaucher_doublecv.py` | The three routes applied to the SELDI-TOF data of Smit et al. (2007). Table S21. The script `gaucher_doublecv.py` regenerates the doubly nested row. |
+| `gaucher_downsample.pkl`, `gaucher_bootstrap.pkl`, `code/gaucher_downsample.py`, `code/gaucher_bootstrap.py` | Detection-limit analysis by thinning the Gaucher data, and the bootstrap-the-controls check quoted in its legend. Table S22. The two `.pkl` files hold the earlier 150-draw runs. The table and its legend as published use the 2,000-draw runs, whose complete outputs are bundled as `results/raw_permutations/gaucher_downsample_2000.json` (all 10,001 per-draw Q2 and AUC values) and `results/raw_permutations/gaucher_bootstrap_2000.json` (both bootstrap arms, with the per-draw duplicate-control counts), so every figure in Table S22 and its legend can be recomputed from an archived object instead of repeating the run. The commands `python code/gaucher_downsample.py 2000` and `python code/gaucher_bootstrap.py 2000` regenerate them. |
 | `r2_vs_q2.json` | R2 against Q2 for Routes A1 and B. Table S15. |
-| `ga_HI.pkl`, `ga_SA.pkl` | Genetic-algorithm wrapper comparison. Table S18. |
+| `ga_HI.pkl`, `ga_SA.pkl` | Genetic-algorithm wrapper comparison. Table S24. |
 | `scaling_leakage.json` | Global versus in-fold autoscaling. |
 | `fold_reduction.json` | Route B with the unsupervised correlation grouping recomputed inside every training fold, against the grouping fixed on all 31 compounds. Table S1. |
 | `fold_grouping_routeA.json` | The same test for the 2,208-descriptor pool: Routes A1 and A1u with the 182 correlation groups rebuilt inside every training fold. Table S2. |
-| `vip_simil.npy` | Spearman correlations between the per-strain VIP profiles, one latent variable. Superseded by the current 12-descriptor Route B set for some values (see `figures/data_recalc/routeB12.json`, `figures/data_recalc/vip_routeB.json`); not regenerated at 12 descriptors. |
-| `s_two.json` | Additional two-stage VIP variant on the 25 literature descriptors. Table S16. |
-| `perm*_*.npz` | The raw null distributions, 2,000 permutations per model, for Routes A1, A1u, A2 and the 13-/25-descriptor Route B variants. |
-| `code/run_routeB12.py`, `results/raw_permutations/permB_12_*.npz`, `permB_12nlv3_*.npz` | The raw null distributions for the published 12-descriptor Route B model (one and three latent variables), 2,000 permutations per strain per model; reproduces `figures/data_recalc/routeB12.json`'s cached summary from scratch (observed Q2/AUC match to the last printed digit). Table 1, Table 2, Fig. 2, Fig. 4, Fig. 6. |
-| `results/results.json` | Route B with both descriptor sets side by side, written by `code/run_all.py`: permutation tests at one and three components, VIP tables and confusion matrices. The `D12` block holds the published 12-descriptor values of Table 1 and Table 2; the `D13` block is the superseded 13-descriptor set, kept so the effect of dropping the redundant C_Count can be measured rather than asserted. |
-| `figures/output/FigS3c_axis_key.csv` | The Fig. S4c x-axis position (1-60) to descriptor name key, written by `figures/figS2_figS3_vip.py`; republished as the `FigS4c_axis_key` sheet of Additional file 8. |
+| `vip_simil.npy` | Spearman correlations between the per-strain VIP profiles, one latent variable. Superseded by the current 12-descriptor Route B set for some values (see `figures/data_recalc/routeB12.json`, `figures/data_recalc/vip_routeB.json`). It was not regenerated at 12 descriptors. |
+| `s_two.json` | Additional two-stage VIP variant on the 25 literature descriptors. Table S26. |
+| `perm*_*.npz` | The raw null distributions, 2,000 permutations per model, for Routes A1, A1u, A2 and the 13-/25-descriptor Route B variants. The draws of the top-15 models of Tables S17 and S18 as the corrected code writes them are in `a1_top15_corrected/` (see "Known limitations"). |
+| `code/run_routeB12.py`, `results/raw_permutations/permB_12_*.npz`, `permB_12nlv3_*.npz` | The raw null distributions for the published 12-descriptor Route B model (one and three latent variables), 2,000 permutations per strain per model. The script reproduces `figures/data_recalc/routeB12.json`'s cached summary from scratch (observed Q2/AUC match to the last printed digit). Table 1, Table S16, Fig. 2, Fig. S4, Fig. 4. |
+| `results/results.json` | Route B with both descriptor sets side by side, written by `code/run_all.py`: permutation tests at one and three components, VIP tables and confusion matrices. The `D12` block holds the published 12-descriptor values of Table 1 and Table S16. The `D13` block is the superseded 13-descriptor set, kept so the effect of dropping the redundant C_Count can be measured rather than asserted. |
+| `figures/output/FigS3c_axis_key.csv` | The Fig. S3c x-axis position (1-60) to descriptor name key, written by `figures/figS2_figS3_vip.py` and republished as the `FigS3c_axis_key` sheet of Additional file 13. |
 
 **Note.** The entry `A1v15` in `final_all.npy` is a superseded two-component variant of the
-VIP top-15 model and does **not** correspond to Table 4. Use `vip1lv_final.npy` for that table.
+VIP top-15 model and does **not** correspond to Table S18. Use `vip1lv_final.npy` for that table.
 
 The table references above match the manuscript's current Supplementary Information numbering
 throughout.
 
 ## Reproducing
 
+`RESULT_MAP.md` gives, for every table and figure of the article, the script and its call, the seed and the archived result.
+
+`python check_all.py` checks the archive against a fresh computation in about two minutes. It
+rebuilds the Gaucher input files and the hit-count null distributions byte for byte, recomputes the
+observed honest Q2 and AUC of Table 1 and the three evaluations of the benchmark, and, when
+Additional files 1 and 2 and the main text are given (`--af1`, `--af2`, `--main`), checks every
+sheet of Additional file 2 against its source. It also compares the size and the SHA-256 of
+`revision/lone/PRESPEC.md`, the pre-specification of the second data set, with the values recorded
+in Additional file 5. It writes nothing into the archive and ends with exit code 0 when every check
+passes.
+
 ### One input has to be placed by hand
 
-The Route A descriptor matrix is Additional file 6 of the article and is not bundled here
+The Route A descriptor matrix is Additional file 3 of the article and is not bundled here
 because of its size (17 MB). Download it and put it in `data/` under the name the code
 expects:
 
@@ -93,10 +113,10 @@ data/20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx
 ```
 
 In the submission package the same file was called
-`Additional_file_4_RouteA_descriptor_matrix.xlsx` (byte-identical, only the name differed). With
-the revised article it is Additional file 6, `Additional_file_6_RouteA_descriptor_matrix.xlsx`:
-every data sheet is unchanged cell for cell, only the references in its note sheets follow the
-revised numbering, so it can be used in the same way. To keep it elsewhere, point `QSAR_ROUTEA_XLSX` at it instead. Everything the Route B
+`Additional_file_4_RouteA_descriptor_matrix.xlsx` (byte-identical, only the name differed), in the
+first revision `Additional_file_6_RouteA_descriptor_matrix.xlsx`. In the published article it is
+Additional file 3, `Additional_file_3_RouteA_descriptor_matrix.xlsx`. Every number cell is unchanged,
+only the explanatory texts follow the published numbering, so it can be used in the same way. To keep it elsewhere, point `QSAR_ROUTEA_XLSX` at it instead. Everything the Route B
 and figure scripts need is already in `data/`.
 
 Results are written to `results/recalc/`, or to `QSAR_RECALC_DIR` if that is set.
@@ -105,56 +125,75 @@ Results are written to `results/recalc/`, or to `QSAR_RECALC_DIR` if that is set
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements.txt           # version ranges. The exact versions of the
+                                          #   revision runs are in
+                                          #   revision/requirements-revision-lock.txt
 
 python code/desc_compute.py               # Route B descriptors from SMILES
 python code/add_structure_identifiers.py data/RouteB_descriptor_data.xlsx
                                           # recomputes all 775 descriptor values of
-                                          #   Additional file 3 from its SMILES column and
+                                          #   Additional file 4 from its SMILES column and
                                           #   re-derives its canonical SMILES, InChI and
-                                          #   InChIKey; exits non-zero on any mismatch
+                                          #   InChIKey. It exits non-zero on any mismatch
 python code/run_all.py                    # Route B, both descriptor sets: reproduces
-                                          #   results/results.json (about 9 minutes;
+                                          #   results/results.json (about 9 minutes,
                                           #   two AUC p-values differ because of the
                                           #   tie correction, CHANGELOG_revision.md,
-                                          #   section 7; the other values agree to
+                                          #   section 7, the other values agree to
                                           #   within 3e-7, or bit for bit from the
-                                          #   submitted data file; see below)
+                                          #   submitted data file, see below)
 python code/run_nested_observed.py       # honest Q2 and AUC of Routes A1 / A1u / A2,
-                                          #   all five strains (Table 1, blocks a and b);
+                                          #   all five strains (Table 1, blocks a and b).
                                           #   code/nested_generic.py holds the routines
                                           #   and has no entry point of its own
-python code/make_hits_three_variants.py  # Table S12, Fig. 7, Fig. S1: hit-count null
-                                          #   distributions; compares the result with the
+python code/make_hits_three_variants.py  # Table S20, Fig. 5, Fig. S6: hit-count null
+                                          #   distributions. Compares the result with the
                                           #   archived object (byte-identical, seconds)
 python code/fold_reduction.py 2000        # Table S1: grouping recomputed inside every fold
 python code/fold_grouping_routeA.py 2000  # Table S2: the same for the 2,208 pool
-python revision/fig1_v3.py figures/output  # Fig. 1 of the revised article
+python revision2/figures/fig1_rev2c.py figures/output  # Fig. 1 (environment of
+                                          #   revision2/requirements-revision2-lock.txt)
+python revision/fig1_v3.py figures/output  # Fig. 1 of the first revision (superseded,
+                                          #   writes the same file name)
 python figures/fig1_scheme.py             # Fig. 1 as submitted (superseded)
 
-# whole-pipeline permutations, one call per strain (Fig. 5, Table 3)
+# whole-pipeline permutations, one call per strain (Fig. S5, Table S17)
 python code/prun_a1.py e HI    Cleaned_Steps1-4 2000 HI    100000
 python code/prun_a1.py e SA    Cleaned_Steps1-4 2000 SA    100000
 python code/prun_a1.py e SPneu Cleaned_Steps1-4 2000 SPneu 100000
 python code/prun_a1.py e SPyo  Cleaned_Steps1-4 2000 SPyo  100000
 python code/prun_a1.py e PA    Cleaned_Steps1-4 2000 PA    100000
+
+# the same for the top 15 by VIP, one component in the VIP model (Table S18)
+python code/prun_a1.py v1 HI    Cleaned_Steps1-4 2000 HI    100000
+python code/prun_a1.py v1 SA    Cleaned_Steps1-4 2000 SA    100000
+python code/prun_a1.py v1 SPneu Cleaned_Steps1-4 2000 SPneu 100000
+python code/prun_a1.py v1 SPyo  Cleaned_Steps1-4 2000 SPyo  100000
+python code/prun_a1.py v1 PA    Cleaned_Steps1-4 2000 PA    100000
 ```
 
 `prun_a1.py` takes its arguments in the order `MODE SHORT SHEET NPERM CODE [BUDGET]`:
 
 | Argument | Meaning |
 | --- | --- |
-| `MODE` | `e` selects the top 15 by effect size (Fig. 5, Table 3), `v` by VIP (Table 4) |
+| `MODE` | `e` selects the top 15 by effect size (Fig. S5, Table S17, seed 59), `v1` the top 15 by VIP with one component in the VIP model (Table S18, seed 137). `v` is a superseded variant with two components in the VIP model (seed 73) and does not correspond to Table S18 |
 | `SHORT` | strain key: `HI`, `SA`, `SPneu`, `SPyo`, `PA`. It also selects the activity column |
-| `SHEET` | sheet of Additional file 6 holding the descriptor pool: `Cleaned_Steps1-4` |
-| `NPERM` | number of permutations; the published runs use 2,000 |
+| `SHEET` | sheet of Additional file 3 holding the descriptor pool: `Cleaned_Steps1-4` |
+| `NPERM` | number of permutations. The published runs use 2,000 |
 | `CODE` | file suffix of the output `.npz`, conventionally the same as `SHORT` |
 | `BUDGET` | optional wall-clock limit in seconds. The run saves as it goes and resumes where it stopped, so a short budget can be called repeatedly |
+
+The `e` and `v1` runs write `perm_a1e_<SHORT>.npz` and `perm_a1v1_<SHORT>.npz` and reproduce the
+published observed values, p-values and null summaries of Tables S17 and S18 exactly
+(`results/revision/cache_topk_seeds/<SHORT>_A1_top15.json` and `<SHORT>_A1_viptop1.json`, for Table
+S18 also `results/raw_permutations/vip1lv_final.npy`). Their draws are those in
+`results/raw_permutations/a1_top15_corrected/`, element for element
+(`revision2/analysis/a1_top15_draws_check.py`).
 
 `Cleaned_Steps1-4` is the pooled sheet and carries all five activity columns side by side, so
 the strain has to be named rather than inferred. The mapping is:
 
-| Strain | `SHORT` | Activity column in Additional file 6 |
+| Strain | `SHORT` | Activity column in Additional file 3 |
 | --- | --- | --- |
 | *H. influenzae* | `HI` | `H. I. (H. influenzae)` |
 | *S. aureus* | `SA` | `S. A. (S. aureus)` |
@@ -163,7 +202,7 @@ the strain has to be named rather than inferred. The mapping is:
 | *P. aeruginosa* | `PA` | `P. A. (P. aeruginosa)` |
 
 The same mapping is what `nested_generic.build(sheet, ycol=...)` expects. Its `ycol` defaults
-to the third column, which is the convention of the strain-specific `CS1-5_*` sheets; on the
+to the third column, which is the convention of the strain-specific `CS1-5_*` sheets. On the
 pooled sheet that default would run every strain against *H. influenzae*'s labels, so
 `prun_a1.py` and `fold_grouping_routeA.py` set it explicitly.
 
@@ -178,9 +217,9 @@ seconds per fold.
 ### The Gaucher comparison data
 
 ```bash
-python code/gaucher_downsample.py 2000    # Table S21: detection-limit analysis
-python code/gaucher_bootstrap.py 2000     # Table S21 legend: the bootstrap check
-python code/gaucher_doublecv.py           # Table S20, doubly nested row
+python code/gaucher_downsample.py 2000    # Table S22: detection-limit analysis
+python code/gaucher_bootstrap.py 2000     # Table S22 legend: the bootstrap check
+python code/gaucher_doublecv.py           # Table S21, doubly nested row
 python code/gperm.py A1 2000              # permutation null, one latent variable
 python code/gperm2.py A1 2 2000           # permutation null, two latent variables
 ```
@@ -189,21 +228,53 @@ python code/gperm2.py A1 2 2000           # permutation null, two latent variabl
 `numpy.random.default_rng([SEED, k, d])`, so every subsample is fixed by `(SEED, k, d)` alone
 and any single draw can be regenerated on its own. `gaucher_doublecv.py` chooses the number of
 latent variables by a second leave-one-out inside every training fold, over the candidates one
-to five, and records the choice per fold; it takes about ten seconds per route.
+to five, and records the choice per fold. It takes about ten seconds per route.
+
+The input `data/Gaucherdata_paper39_median_normalised.csv` was made from `Gaucherdata.mat` in
+`data/gaucher_source/gaucherdata.zip`, the file published with Smit et al. (2007) (SHA-256 of the
+zip file `b4f8fa615e5e333b8931786f2706e2ff482a0cfb3d20a460065af5bc18f3862d`). It holds 40 spectra
+(20 controls, then 20 patients) with 590 m/z variables. Smit et al. left out one patient spectrum
+that appeared flawed on visual inspection (their section 4.1) but do not say which one in the file.
+By label-free criteria spectrum 38 (patient 18) deviates most from the others. It has the lowest
+rank correlation with their median spectrum (0.27, next 0.34), the highest Hotelling T2 in a
+principal component analysis of the others (18.0, next 9.1) and the smallest maximum intensity (5.8,
+next 17.1) (`revision2/analysis/gaucher_spectrum_check.py`). It is left out, which leaves the 20
+controls and 19 patients of the article. Every spectrum is divided by its median over the 590
+variables, as in Smit et al., and the values are written with ten significant digits.
+`data/Gaucherdata_paper39_autoscaled.csv` holds the same 39 spectra autoscaled over all samples. No
+script reads it, because the analyses autoscale inside every fold. `python code/gaucher_make_csv.py`
+rebuilds both files from the zip file and compares them byte for byte with those in `data/`. With
+all 40 spectra, or with any other single patient spectrum left out, the nested Q2 of Routes A1, A1u
+and A2 with one latent variable lies between 0.26 and 0.47 and the AUC between 0.82 and 0.90,
+against 0.38 to 0.45 and 0.87 to 0.89 as reported
+(`revision2/analysis/gaucher_selection_sensitivity.py`).
 
 ## Revision (October 2026)
 
 The scripts and outputs of every computation added or repeated for the revision are in `revision/`, `results/revision/`
-and `results/revision_nulls/`; `revision/README_revision.md` maps each script to the table or figure it produces, and
+and `results/revision_nulls/`. The file `revision/README_revision.md` maps each script to the table or figure it produces, and
 `CHANGELOG_revision.md` describes the code corrections.
+
+## Second revision (November 2026)
+
+The ChEMBL benchmark is in `benchmark/`. `benchmark/README_benchmark.md` describes its specifications, the three
+analyses, the pipeline from the ChEMBL records to Additional files 12, 17 and 18, and what has been checked. The
+further analyses of the second revision, the scripts of Fig. 1 and Fig. 6 and the scripts that updated the Additional
+files are in `revision2/`, described in `revision2/README_revision2.md`. Their exact environment is
+`revision2/requirements-revision2-lock.txt` (Python 3.13). `CHANGELOG_revision2.md` lists the changes of version 1.2.0.
+
+Checked on 6 November 2026: the evaluation and robustness scripts of the benchmark reproduce their archived result
+files byte for byte, the script that translates the results workbooks reproduces Additional files 17 and 18 cell for
+cell, and all 14 figures in `figures/output/` are identical pixel for pixel with the figures of the article, each
+from its archived script.
 
 ## Conventions
 
-- Every model uses one latent variable unless stated otherwise; the three-component Route B
+- Every model uses one latent variable unless stated otherwise. The three-component Route B
   models are a sensitivity analysis, not the primary inference.
-- `p = (1 + #{permuted >= observed}) / (1 + n_permutations)`; a permuted value counts as `>=` when it is at most
+- `p = (1 + #{permuted >= observed}) / (1 + n_permutations)`. A permuted value counts as `>=` when it is at most
   1e-9 below the observed one, so that equal AUC values stored with rounding differences of about 1e-16 are
-  counted as ties (revision; see `CHANGELOG_revision.md`, section 7). Recomputing a p-value from an archived
+  counted as ties (revision, see `CHANGELOG_revision.md`, section 7). Recomputing a p-value from an archived
   null distribution therefore requires the same tolerance.
 - Centring and scaling parameters are estimated inside every fold, on the training compounds only.
 - *P. aeruginosa* has three active compounds, is an artefact and is reported descriptively only.
@@ -219,8 +290,17 @@ reproduction path - `run_all.py`, `desc_compute.py`, `nested_generic.py`, `altor
 `gaucher_downsample.py`, `gperm.py` and `gperm2.py` - each resolving inputs relative to the
 archive root and writing to `results/recalc/` unless `QSAR_RECALC_DIR` overrides it.
 
+All other scripts of the archive find the archive root from their own location in the same way, so
+every script runs from any working directory and wherever the archive is unpacked. Intermediate
+files go to `results/recalc/` (or `QSAR_RECALC_DIR`). The scripts in `revision/` write their results
+to `results/revision/` (or `QSAR_REV_OUT`), where the archived results are, so a rerun replaces them
+unless `QSAR_REV_OUT` names another folder. A file that a script reads from outside the archive, or
+that can be replaced by another, is named by an environment variable, with a default in the archive
+where one exists. `revision/README_revision.md` and `revision2/README_revision2.md` list those of
+their folders.
+
 `core.py` spells out both Route B descriptor sets explicitly. `RED12` is the 12 representatives
-read from Additional file 3; `RED13` is those plus `C_Count`, the superseded set from before that
+read from Additional file 4. The set `RED13` is those plus `C_Count`, the superseded set from before that
 descriptor turned out to be perfectly collinear with `EsterLacton_flag`. Until now `RED13` was read
 from the `VIP_reduced` sheet and `C_Count` filtered out of it, but that sheet has carried no
 `C_Count` row since the reduction was documented in it, so the filter matched nothing and the two
@@ -231,22 +311,25 @@ in full (on the two data files and the tie correction see below).
 Two group caches, `altorder.get_groups()` and `unsup_rep.centrality_reps()`, key their stored
 result on a hash of the descriptor matrix they were given. Earlier they wrote to a fixed file
 name and returned it on any later call, so analysing a second sheet in the same working
-directory silently reused the first sheet's groups; keying the cache makes a different matrix
+directory silently reused the first sheet's groups. Keying the cache makes a different matrix
 use a different file.
 
 `data/` holds two versions of the Route B descriptor file. `data/RouteB_descriptor_data.xlsx`,
-which `core.py` reads by default, is byte-identical to Additional file 3 of the revised article.
+which `core.py` reads by default, is byte-identical to Additional file 3 of the first revision
+(release 1.1.0). Additional file 4 of the published article holds the same descriptor values. Its
+explanatory texts follow the published numbering, and it does not repeat the column
+`NumStereoCenters_submitted`, which this file keeps.
 `data/RouteB_descriptor_data_submitted.xlsx` is the file submitted with the original manuscript
 (and bundled as `data/RouteB_descriptor_data.xlsx` in version 1.0.0 of this archive). The two
 differ in one descriptor value and in how values are stored. The submitted file counted the
 stereocentres of 1,8-cineole as 2, because `FindMolChiralCenters` was called with
-`useLegacyImplementation=False`, which also counts the two ring-bridgehead atoms; the CIP-based
+`useLegacyImplementation=False`, which also counts the two ring-bridgehead atoms. The CIP-based
 count (`useLegacyImplementation=True`, the RDKit default) gives 0, the correct value for this
 achiral molecule. The revised file uses 0 and keeps the submitted values in the column
 `NumStereoCenters_submitted`, and it stores floating-point values to six decimals, with the
 correlation matrices recomputed from the stored values. `code/desc_compute.py` now uses the
 CIP-based count, so that `code/add_structure_identifiers.py` verifies all 775 values of the
-revised file; run against the submitted file it stops at exactly this one value
+revised file. Run against the submitted file it stops at exactly this one value
 (`('1,8-Cineole', 'NumStereoCenters', 0, 2)`).
 
 NumStereoCenters is not among the 12 modelled descriptors, and the reduction to 12 is the same
@@ -254,10 +337,10 @@ with either file. The archived result objects were computed from the submitted f
 revised file, `run_all.py`, `fold_reduction.py`, `nlvcv.py` and `extra_tables.py` reproduce
 `results/results.json`, `results/fold_reduction.json`, `results/nlvcv.json` and
 `results/extra_tables.json` to within 3e-7 (every printed digit is the same), apart from the
-tie-corrected p-values of `CHANGELOG_revision.md`, section 7; with
+tie-corrected p-values of `CHANGELOG_revision.md`, section 7. With
 `QSAR_ROUTEB_XLSX=data/RouteB_descriptor_data_submitted.xlsx` they reproduce them bit for bit.
-The analyses that use all 25 descriptors (Table 2, Table S16, the VIP values of Figs. S3c and S4b
-and of Additional file 8) were recomputed for the revision with the corrected value; their
+The analyses that use all 25 descriptors (Table S16, Table S26, the VIP values of Figs. S2c and S3b
+and of Additional file 13) were recomputed for the revision with the corrected value. Their
 scripts are in `revision/` (`job_b25_cineole0.py`, `job_twostage25.py`, `job_vip25_cineole0.py`)
 and start from the submitted file, reproducing the submitted values first. Archived objects that
 contain the 25-descriptor results as submitted (for example `permB_25_*.npz`) reproduce only from
@@ -266,7 +349,7 @@ the submitted file.
 Before the revision, the bundled file was for a while an older generation of the submitted file:
 the `Descriptors` sheet, which is the only one any computation reads values from, was already
 identical, but its `VIP_reduced` sheet still carried the superseded per-strain component numbers
-(4/4/3/1/4) instead of the uniform two that Additional file 8, Fig. S3, Fig. S4 and
+(4/4/3/1/4) instead of the uniform two that Additional file 13, Fig. S2, Fig. S3 and
 `results/results.json` use, and its `Reduction` sheet listed `EsterLacton_flag` twice, so
 `core.LIT25` came out with 26 entries rather than 25. Neither affected a number: `core.py` reads
 only the descriptor names from `VIP_reduced`, and `fold_reduction.py` de-duplicates `LIT25`
@@ -281,33 +364,35 @@ same SMILES and matched them against the sheet. The identifiers therefore descri
 constitution: the structures carry no stereochemistry apart from the double-bond geometry given
 for citral and geranic acid, while the compound names give the configuration of the material that
 was tested. `core.py` addresses this sheet by column name, so the three added columns do not move
-any value it reads; the three added columns change no number `run_all.py` computes.
+any value it reads. The three added columns change no number `run_all.py` computes.
 
 `data/` bundles the two source spreadsheets `figures/figS2_figS3_vip.py` and
 `figures/figS4_figS5_scores.py` read via `dataio.xlsx()`
-(`20260710_VIP_EffectSize_Tabellen.xlsx`, `20260802_FigS5_S6_Rohdaten.xlsx`), so Fig. S3, S4, S5
-and S6 regenerate from this archive without any external file. The VIP workbook is the revised
-Additional file 8, byte for byte, so Figs. S3 and S4 come out as printed in the revised Supplement
-(their 25-descriptor panels use the corrected stereocentre count of 1,8-cineole); the submitted
+(`20260710_VIP_EffectSize_Tabellen.xlsx`, `20260802_FigS5_S6_Rohdaten.xlsx`), so Figs. S2, S3, S7
+and S8 regenerate from this archive without any external file. The VIP workbook is Additional
+file 8 of the first revision, byte for byte. Additional file 13 of the published article holds the
+same values, with its explanatory texts in the published numbering and the sheet `FigS4c_axis_key`
+renamed `FigS3c_axis_key`. Figs. S2 and S3 come out as printed in the Supplement
+(their 25-descriptor panels use the corrected stereocentre count of 1,8-cineole). The submitted
 workbook is kept as `data/20260710_VIP_EffectSize_Tabellen_submitted.xlsx` and reproduces the
 submitted figures (`figures/README.md`). All five figure-generation
 scripts (`fig1_scheme.py`, `fig2_fig4_comparison.py`, `fig3_fig5_figS1_permutation.py`,
 `fig6_order_comparison.py`, `figS4_figS5_scores.py`) pass `dpi=300` explicitly to `savefig()`
 (via the shared `figstyle.save()` helper), so every PNG in `figures/output/` carries a pHYs
-resolution chunk; without it most viewers assume 72 dpi. Fig. 6's strain labels are single-line at
+resolution chunk. Without it most viewers assume 72 dpi. Fig. 4's strain labels are single-line at
 a 30-degree rotation, its significance asterisks sit at one common height per bar group with a
 glyph size chosen so adjacent marks stay visibly separated, and its axis label reads "descriptors
-entering PLS-DA", matching the figure legend; Fig. 6's and Fig. 7's y-axes leave headroom above
-the tallest bar; Fig. S6 is sized to fit the print area with a small margin. In Fig. 3, Fig. 5 and
-Fig. S2, the bold strain-name title above each panel row is offset from the grey
+entering PLS-DA", matching the figure legend. Fig. 4's and Fig. 5's y-axes leave headroom above
+the tallest bar. Fig. S8 is sized to fit the print area with a small margin. In Fig. 3, Fig. S5 and
+Fig. S1, the bold strain-name title above each panel row is offset from the grey
 permutations-below-axis note beneath it so the two no longer touch. `figures/figS2_figS3_vip.py`
-sorts the descriptors shown in Fig. S3 and Fig. S4 by mean VIP with the descriptor's own name as
-an explicit secondary key, so exact ties resolve the same way on every run; without it, Python's
+sorts the descriptors shown in Fig. S2 and Fig. S3 by mean VIP with the descriptor's own name as
+an explicit secondary key, so exact ties resolve the same way on every run. Without it, Python's
 per-process hash randomisation left the order of tied descriptors non-deterministic between runs,
-which would have made Fig. S4c's axis numbering (and the position-to-descriptor key it also
-writes to `figures/output/FigS3c_axis_key.csv`, republished as the `FigS4c_axis_key` sheet of
-Additional file 8) unreproducible. The five compound names that differed between Additional files 3 and 12 on the one side and
-Additional file 6 on the other (`1,8-Cineole`, `3-Carene, α-Carene`, `m-Cymene`,
+which would have made Fig. S3c's axis numbering (and the position-to-descriptor key it also
+writes to `figures/output/FigS3c_axis_key.csv`, republished as the `FigS3c_axis_key` sheet of
+Additional file 13) unreproducible. The five compound names that differed between Additional files 4 and 16 on the one side and
+Additional file 3 on the other (`1,8-Cineole`, `3-Carene, α-Carene`, `m-Cymene`,
 `p-Cymene`, `α-Pinene`) are now written the same way everywhere, including in the bundled
 `data/RouteB_descriptor_data.xlsx` and `data/20260802_FigS5_S6_Rohdaten.xlsx`.
 
@@ -321,75 +406,205 @@ The manuscript's availability statement is deliberately narrower than "every scr
 reproduction path". It states that every reported result can be obtained either through the
 documented path in "Reproducing" above, which has been run end to end from a clean unpack, or
 from an archived raw result object in `results/`. It does not state that everything under
-`code/` runs from this archive; "Known limitations" below names, file by file, what does not.
+`code/` runs from this archive. "Known limitations" below names, file by file, what does not.
 
 ## Known limitations
 
 The following are flagged here rather than silently left inconsistent:
 
-- Every command in "Reproducing" above has been run end to end from a clean unpack of this
-  archive with Additional file 6 placed as described, and reproduces the archived result objects
-  exactly: the observed Q2 and AUC of all five strains, and the permutation draws element for
-  element (the two Route B scripts `run_all.py` and `fold_reduction.py` to within 3e-7 on the revised
-  descriptor file and bit for bit on the submitted one, apart from the tie-corrected p-values; see
-  "Conventions" above on the two Route B descriptor files); `code/run_nested_observed.py` reproduces the 30 honest Q2 and AUC values of Routes A1,
-  A1u and A2 in Table 1 to the printed two decimals. What has *not* been verified end to end is the rest of `code/`: 29 of the 54 files
-  there (25 Python and the 4 JavaScript files under `code/manuscript_build/`) still contain
-  hardcoded absolute paths, mostly `/home/claude/...` output caches and `/mnt/user-data/...`
-  input files. The list is not an estimate: it is `code/build_af2.py`, `build_excel.py`,
-  `check_ccount_esterlacton.py`, `compute_vip.py`, `extra_tables.py`, `ga_run.py`,
-  `lit_final.py`, `lit_nlv1.py`, `lit_plsda.py`, `nested_h.py`, `nested_write.py`, `nlvcv.py`,
-  `perm_runner.py`, `prun.py`, `prun15.py`, `prun_a1_k.py`, `prun_a1u_vip.py`, `prun_alt.py`,
-  `prun_uns.py`, `prun_vip1.py`, `recompute_a1_figs.py`, `reduction.py`,
-  `run_ordinary_one.py`, `run_routeB.py`, `vip_fig.py` and the four files under
-  `code/manuscript_build/`. None of them is called by the documented path above. These are working and repair scripts outside the documented path; every script
-  the documented path actually calls has been made archive-relative. The paths
-  originate from the working environment in which the code was developed; the use of a large
-  language model in implementing this code is declared in the Methods section of the article,
-  under "Use of large language models".
+- Every command in "Reproducing" above has been run end to end from a clean unpack of this archive
+  with Additional file 3 placed as described, and reproduces the archived result objects exactly:
+  the observed Q2 and AUC of all five strains, and the permutation draws element for element (the
+  two Route B scripts `run_all.py` and `fold_reduction.py` to within 3e-7 on the revised descriptor
+  file and bit for bit on the submitted one, apart from the tie-corrected p-values, see
+  "Conventions" above on the two Route B descriptor files). For `prun_a1.py` the archived draws it
+  reproduces are those in `results/raw_permutations/a1_top15_corrected/`. The older draws
+  `perm_a1e_*.npz` (Table S17) and `perm_a1vip1_*.npz` (Table S18) in `results/raw_permutations/`
+  were computed before the fallback correction of `CHANGELOG_revision.md`, section 1. The corrected
+  code gives the same observed values and p-values and differs from them only in draws in which a
+  fold reaches the fallback branch, 6 to 11 of the 2,000 draws per strain for Table S17 and 10 to 16
+  for Table S18 (93 and 106 for *P. aeruginosa*). The former fallback reproduces each of these draws
+  exactly (`revision2/analysis/a1_top15_draws_check.py`). The script `code/run_nested_observed.py`
+  reproduces the 30 honest Q2 and AUC values of Routes A1, A1u and A2 in Table 1 to the printed two
+  decimals.
+- The other scripts in `code/` resolve their paths relative to the archive root as well, but only
+  those of the documented path have been verified end to end, and several no longer run against the
+  current files. `ga_run.py`, `nested_h.py`, `nested_write.py`, `perm_runner.py`,
+  `recompute_a1_figs.py` and `run_ordinary_one.py` address the per-strain sheets of Additional file
+  3 under their former names `CS1-4_*`. `reduction.py` reads the sheet `Reduction` of the Route B
+  file under its former name `Reduktion`. `prun15.py` calls a function `nested_cv_topk()` that
+  `nested_generic.py` no longer contains, and `build_af2.py` needs a template `AF2_en.xlsx` that is
+  not archived. `check_ccount_esterlacton.py` reads `20260706_31MT_LitDeskriptoren_Analyse.xlsx`
+  (`QSAR_LITDESK_XLSX`), the output of the chain named in the next point. These are working and
+  repair scripts outside the documented path. The use of a large language model in implementing this
+  code is declared in the Methods section of the article, under "Use of large language models".
 - The four scripts that first assembled the 25 literature descriptors (`build_excel.py`,
   `lit_plsda.py`, `lit_final.py`, `compute_vip.py`) do not run from this archive. They are the
-  original working chain and expect intermediate objects that were never archived
-  (`desc_table.pkl`, `desc_full.pkl`, `reduced_desc.npy`), they address the per-strain sheets of
-  Additional file 6 under their former names `CS1-4_*` rather than the current `CS1-5_*`, and
-  `lit_plsda.py` and `compute_vip.py` still use the former spelling `S. A. (Staph. Aureus)` of
-  one activity column. The workbook `20260706_31MT_LitDeskriptoren_Analyse.xlsx` that these
-  scripts write is an *output* of the chain, not an input it is missing. Its content is
-  published: the descriptor values are Additional file 3 and the VIP and effect-size tables are
-  Additional file 8. The same numbers are reachable and were re-derived through `core.py`, which
-  does run from the bundled data, so no result of the paper depends on this chain; the gap is in
-  the reproduction path of a superseded working script, not in the evidence.
+  original working chain. They read their intermediate objects (`desc_table.pkl`, `desc_full.pkl`,
+  `reduced_desc.npy`) from `results/recalc/`, where `code/desc_compute.py` writes `desc_table.pkl`,
+  and copies of the other two, as read by `code/run_routeB12.py`, are in
+  `results/raw_permutations/`. They address the per-strain sheets of Additional file 3 under their
+  former names `CS1-4_*` rather than the current `CS1-5_*`, and `lit_plsda.py` and `compute_vip.py`
+  still use the former spelling `S. A. (Staph. Aureus)` of one activity column. The workbook
+  `20260706_31MT_LitDeskriptoren_Analyse.xlsx` that these scripts write is an *output* of the chain,
+  not an input it is missing. Its content is published: the descriptor values are Additional file 4
+  and the VIP and effect-size tables are Additional file 13. The same numbers are reachable and were
+  re-derived through `core.py`, which does run from the bundled data, so no result of the paper
+  depends on this chain. The gap is in the reproduction path of a superseded working script, not in
+  the evidence.
 - Two of the archived Gaucher result objects still have no generating script here:
   `gaucher_optlv.pkl` and `gaucher_top15.pkl`. Both are
   supporting analyses rather than sources of a published table row, and `gaucher_pipe.py`, the
   library they were built on, runs from the bundled data. `gaucher_res.pkl` is reconstructed
-  exactly by that library; `code/gaucher_downsample.py` regenerates Table S21,
+  exactly by that library. The script `code/gaucher_downsample.py` regenerates Table S22,
   `code/gaucher_bootstrap.py` the bootstrap check quoted in its legend and
-  `code/gaucher_doublecv.py` the doubly nested row of Table S20, each verified against the
+  `code/gaucher_doublecv.py` the doubly nested row of Table S21, each verified against the
   archived object. The verification differs in strength and is worth stating exactly: the
   doubly nested script reproduces the archived Q2, AUC and the per-fold record of how many
-  components were chosen to the last bit, for all three routes; the downsample script
+  components were chosen to the last bit, for all three routes. The downsample script
   reproduces the deterministic k = 19 anchor to the last bit, and its sampled columns agree
   with the archived ones within the draw-to-draw variation, since the two runs use different
-  random seeds; the bootstrap script likewise agrees distributionally and reproduces the mean
+  random seeds. The bootstrap script likewise agrees distributionally and reproduces the mean
   number of duplicated controls. Where a table now reports the 2,000-draw figures, they come
   from these scripts and not from the archived 150-draw objects, which are kept for reference. The
   2,000-draw outputs themselves are bundled as
   `results/raw_permutations/gaucher_downsample_2000.json` and
-  `results/raw_permutations/gaucher_bootstrap_2000.json`, so no figure in Table S21 or its legend
+  `results/raw_permutations/gaucher_bootstrap_2000.json`, so no figure in Table S22 or its legend
   depends on a run the reader has to repeat.
-- Genuine German prose (docstrings, comments or console/log output, not just isolated column-name
-  references) remains in a number of files under `code/`, concentrated in the working/repair
-  scripts named below rather than the core pipeline (e.g. `s_two.json`'s own keys, "Erreger",
-  "Q2_genestet", and full German sentences in `altorder.py`, `build_af2.py`,
-  `fold_reduction.py`, `plsda.py`).
+- The script that originally computed the descriptor pool of the second data set
+  (`revision/lone/desc_pool.csv`) is not included, and the Mordred version it used was not recorded.
+  `revision/lone/build.py` writes the SMILES of the 37 peptides (`rows.json`).
+  `revision2/analysis/mordred_peptides_check.py` recomputes the 1,830 two-dimensional descriptors
+  from these SMILES with Mordred and RDKit, applies the cleaning steps and compares the result with
+  the archived pool. In an independent run with mordredcommunity 2.0.7 and RDKit 2026.09.1 it gave
+  the same 1,275 columns in the same order, 44,936 of the 47,175 cells bit-identical and a largest
+  relative difference of 1.2e-14 (`revision2/results/Mordred_Peptide_Pruefung 13.11.2026 2348.json`, per
+  descriptor in `Mordred_Peptide_je_Deskriptor 13.11.2026 2348.csv`). According to the same check,
+  mordredcommunity 2.0.6 and RDKit 2026.03.6 give identical values, so the values agree with
+  version 2.0.7 but do not identify the version used. The script needs Mordred and is not part of
+  `check_all.py`. Twelve cells of the pool are imputed with the column median: four descriptors of
+  methyl groups (MAXsCH3, MINsCH3, MDEC-12, MDEC-13) for peptides 30, 31 and 32.
+- The correlation grouping and the univariate hit counts of the second data set depend on the last
+  digits of the descriptor values. Many of the peptides are isomers, so many values are equal in
+  exact arithmetic and differ only by floating-point error, and the rank-sum filter and the
+  Spearman correlation break such pseudo-ties by these digits. All results were computed from
+  `revision/lone/desc_pool.csv` as `revision/lone/run2.py` and `run3.py` read it, with the default
+  float parser of pandas. The sheet Descriptors_1275 of Additional file 6 holds this matrix bit for
+  bit. Read with `float_precision='round_trip'`, 13,584 of the 47,175 cells differ in their last
+  digits (largest relative difference 9.4e-13), the number of correlation groups (50) and the hit
+  counts of Routes A1 and A1u are the same, and one Route A2 count changes (*A. baumannii*, 251 instead of
+  252). Rounded to between 13 and 10 significant digits, the pool has 47 groups instead of 50, and
+  the observed counts are 17, 28, 20 and 13 instead of 16, 25, 23 and 12 under Route A1, 6, 14, 9
+  and 3 instead of 4, 12, 11 and 3 under Route A1u, and change by up to 6 under Route A2
+  (`revision2/analysis/input_precision_check.py`, `revision2/results/Eingabegenauigkeit_Peptide
+  13.11.2026 2348.json`). The nested models were refitted on the rounded matrices without permutations
+  (`revision2/analysis/rounding_nested_q2.py`, `revision2/results/Rundung_geschachtelte_Q2_Peptide 16.11.2026 1245.json`).
+  Rounded to 10 significant digits, the nested Q² of Routes A1, A1u and A2 changes by up to 0.19 (Route A1u,
+  *S. aureus*, 0.44 instead of 0.25), whereas PLS-DA on all 1,275 descriptors is unchanged to four decimals.
+  Null distributions, inflation factors and p-values were not recomputed with rounded values.
+  For the monoterpenoids the number of groups (182) and the Route A1 counts do not
+  change down to 10 significant digits, and the Route A2 counts change by at most 2. In the
+  benchmark, rounding to 10 significant digits changes the number of groups in 9 of the 16 series
+  of the main analysis by 1 to 3 (`revision2/analysis/rounding_sensitivity.py`,
+  `revision2/results/Rundungsempfindlichkeit 13.11.2026 2348.txt`).
+- File names, folder names, the keys of the result files and the cell texts of internal working
+  workbooks are German. Comments, docstrings and console messages are English. See "Language of
+  the code" below.
+- The ChEMBL database file and the articles read for the benchmark are not included. What this
+  means for each step is stated in `benchmark/README_benchmark.md`. The working scripts in `benchmark/` and `revision2/` that need inputs from outside this archive
+  are named in `benchmark/README_benchmark.md` and `revision2/README_revision2.md`. None of them
+  is needed for a reported result.
 - `code/` mixes the analysis pipeline with working/repair scripts (`build_af2.py`,
-  `fix_af2_af9.py`, `check_ccount_esterlacton.py`, `altorder.py`, `recompute_a1_figs.py`); it has
+  `fix_af2_af9.py`, `check_ccount_esterlacton.py`, `altorder.py`, `recompute_a1_figs.py`). It has
   not been reorganised into a clean, ordered pipeline. Two of them no longer run against the
   current data: `fix_af2_af9.py` expects a `Table1B_top15` sheet that the repair it performs has
-  since renamed away, and `build_af2.py` rebuilds an earlier generation of Additional file 3.
+  since renamed away, and `build_af2.py` rebuilds an earlier generation of Additional file 4.
   They are kept as a record of what was done, not as reproduction steps.
+
+## Language of the code
+
+The code was written in a German working environment. Since version 1.2.0 all comments, docstrings
+and console messages are English. German are the file and folder names, the keys of the result
+files (JSON), the cell texts of internal working workbooks, the entries of the selection logs of the
+benchmark and the regular expressions that recognise German text. These are data: the scripts read
+them back or write them into the archived results, and translating them would change results that
+the scripts now reproduce byte for byte. The published Additional files are English throughout.
+
+| German | English |
+| --- | --- |
+| `abgleich` | comparison |
+| `aktiv`, `nicht_aktiv` | active, non-active |
+| `anteil`, `anteil_kleinere` | share, share of the smaller class |
+| `art` | type of activity: `MIC`, `Enzym` (enzyme IC50), `Rezeptor` (receptor Ki), `Zytotox` (cytotoxicity) |
+| `auswahl` | selection |
+| `ausschluss`, `ausgeschlossen` | exclusion, excluded |
+| `auswertung` | evaluation (hypothesis tests) |
+| `beobachtet` | observed |
+| `beschaffung` | procurement of the articles |
+| `diversitaet`: `kongener`, `divers` | diversity: congeneric, diverse |
+| `dokument` | document (publication) |
+| `Durchgang` | pass (of the selection) |
+| `einheit` | unit |
+| `Elternpool`, `elternpools` | parent pool (of the size subsets) |
+| `endbericht` | final report |
+| `Endpunkt`, `Effektive_Endpunkte` | endpoint, effective endpoints |
+| `entscheidungen` | decisions (per compound) |
+| `Ergaenzung` | addendum |
+| `ergebnisse`, `ergebnismappe` | results, results workbook |
+| `Erreger`, `Stamm` | pathogen, strain |
+| `FESTGESCHRIEBEN` | frozen |
+| `gelesen` | read |
+| `genestet`, `scheinbar` | nested, apparent |
+| `Gegenpruefung`, `Pruefung`, `Vergleich` | cross-check, check, comparison |
+| `GEWAEHLT` | selected |
+| `grund` | reason |
+| `gruppen`, `gruppieren` | groups, to group |
+| `Hauptanalyse`, suffix `_k` | main analysis (supplementary rule, without reference and control compounds) |
+| `Vorab-Analyse`, `vorab` | analysis under the original rule of the pre-specification |
+| `Median-Regel`, suffix `_m` | median rule (sensitivity analysis) |
+| `Kennzahlen` | key figures |
+| `kontrollen` | reference and control compounds |
+| `laufzeit`, `sekunden` | run time, seconds |
+| `leseliste`, `leseplan` | reading list, reading plan |
+| `Monoterpenoide`, `Octapeptide` | monoterpenoids, peptides of the second data set |
+| `Nachrechnung` | recomputation |
+| `Naeherung`, `endlich` | approximation, finite |
+| `ohneAuswahl`, `ohneFilter` | control without selection, control without filter |
+| `optimismus`, `faktor` | optimism, (inflation) factor |
+| `organismus`, `ziel`, `zelle` | organism, target, cell of the design |
+| `p_roh`, `p_sauber` | number of descriptors before and after cleaning |
+| `praed`, `vorhersagen` | predictions |
+| `redundanz` | redundancy |
+| `robustheit` | robustness |
+| `schwelle` | threshold |
+| `sekundaer` | secondary |
+| `Studiendaten` | the data sets of this study |
+| `tabelle`, `hypothesen`, `positiv` | table, hypotheses, positive |
+| `teilmengen` | subsets (size variation) |
+| `Treffer` | hits (univariate hit count) |
+| `verdikte` | verdicts on the articles: `original`, `review`, `methoden` (method paper), `unlesbar` (unreadable), `keine_serie` (values compiled from other publications), `vorselektiert` (compounds preselected by activity) |
+| `Vorab-Spezifikation`, `Zusatzspezifikation` | pre-specification, supplementary specification |
+| `vorl`, `vorlaeufig` | provisional |
+| `wert`, `werte` | value, values |
+| `zusammenfassung` | summary |
 
 ## Licence
 
-MIT, see `LICENSE`.
+MIT, see `LICENSE`. The ChEMBL-derived data in `benchmark/` are distributed under the Creative
+Commons Attribution-ShareAlike 3.0 licence, see `benchmark/DATA_LICENCE.md`.
+
+The values taken from Table 1 of Lone et al. (2019), Molecules 24:4571,
+https://doi.org/10.3390/molecules24244571, in `revision/lone/t1.csv` and `revision/lone/rows.json` are
+© 2019 by the authors and are distributed under the Creative Commons Attribution 4.0 licence
+(https://creativecommons.org/licenses/by/4.0/), not under the MIT licence. The SMILES, activity classes and
+descriptors derived from them were added by us.
+
+The Gaucher data in `data/` (`Gaucherdata_paper39_median_normalised.csv`,
+`Gaucherdata_paper39_autoscaled.csv` and the original file in `data/gaucher_source/`) are
+third-party data. They are not covered by the MIT licence of this archive or by the Creative Commons
+licence of the article and its Additional files. They are the serum spectra of Smit et al. (2007),
+Copyright 2005 Biosystems Data Analysis Group, Universiteit van Amsterdam, published at
+https://bdagroup.nl/?p=686, and are redistributed under that group's licence,
+`data/gaucher_source/license.txt`. The licence permits use and redistribution for research only, not
+in a commercial product and not for profit, and requires that the copyright notice and the licence
+stay with the data and with any part of them. Its full terms are in the licence file.

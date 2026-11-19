@@ -1,4 +1,15 @@
-"""GA-Deskriptorauswahl nach Mansouri-Bauplan, apparent und vollstaendig genestet."""
+"""GA descriptor selection following the Mansouri design, apparent and fully nested."""
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import sys, os, time, pickle, numpy as np
 import nested_generic as ng, altorder as ao, unsup_rep as ur
 from sklearn.cross_decomposition import PLSRegression
@@ -42,7 +53,7 @@ def loo_fixed(Xs, ys, idx):
 
 if __name__=='__main__':
     code=sys.argv[1]; sheet=sys.argv[2]; budget=float(sys.argv[3]) if len(sys.argv)>3 else 250.0
-    STORE=f'/home/claude/ga_{code}.pkl'; t0=time.time()
+    STORE=f'{_WORK}/ga_{code}.pkl'; t0=time.time()
     D=ng.build(sheet); y=D['Y']; N=D['N']
     D0=ng.build('CS1-4_H.I.'); groups=ao.get_groups(D0['X']); reps=ur.centrality_reps(D0['X'],groups)
     X=D['X'][:,reps]
@@ -62,7 +73,7 @@ if __name__=='__main__':
         S['yhn'][i]=m.predict((X[i:i+1,j2]-mu)/sd).ravel()[0]
         S['done'].append(i); S['sizes'].append(int(len(j2))); pickle.dump(S,open(STORE,'wb'))
     d=len(S['done'])
-    print(f"{code}: {d}/{N} Folds fertig ({time.time()-t0:.0f}s)")
+    print(f"{code}: {d}/{N} folds done ({time.time()-t0:.0f}s)")
     if d==N:
-        print(f"  apparent: GA-Fitness Q2={S['app']['fit_q2']:.3f} ({S['app']['n']} Desk.) | LOO fix Q2={S['app']['loo_q2']:.3f} AUC={S['app']['loo_auc']:.3f}")
-        print(f"  genestet: Q2={q2(y,S['yhn']):.3f} AUC={roc_auc_score(y,S['yhn']):.3f} | Modellgroesse Median {int(np.median(S['sizes']))}, {min(S['sizes'])}-{max(S['sizes'])}")
+        print(f"  apparent: GA-Fitness Q2={S['app']['fit_q2']:.3f} ({S['app']['n']} desc.) | LOO fix Q2={S['app']['loo_q2']:.3f} AUC={S['app']['loo_auc']:.3f}")
+        print(f"  nested: Q2={q2(y,S['yhn']):.3f} AUC={roc_auc_score(y,S['yhn']):.3f} | model size median {int(np.median(S['sizes']))}, {min(S['sizes'])}-{max(S['sizes'])}")

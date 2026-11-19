@@ -1,13 +1,24 @@
-# Permutations-p-Wert mit Gleichstandsbehandlung (Revision 03.10.2026).
-# p = (1 + #{Nullwerte >= beobachteter Wert}) / (1 + Zahl der Permutationen).
-# AUC-Werte sind Brueche k/(n1*n0); gleiche Brueche werden im Rechner je nach
-# Rechenweg mit Abweichungen um 1e-16 gespeichert. Der bisherige strikte Vergleich
-# zaehlte solche Gleichstaende teilweise nicht mit und machte p etwas zu klein.
-# Jetzt gilt ein Nullwert als >= beobachtet, wenn er hoechstens 1e-9 darunter liegt.
-# Jeder Aufruf legt die Nullverteilung zur Pruefung unter out/nulls/ ab.
+# Permutation p-value with treatment of ties (revision of 03.10.2026).
+# p = (1 + #{null values >= observed value}) / (1 + number of permutations).
+# AUC values are fractions k/(n1*n0). Equal fractions are stored by the computer, depending on
+# the way of computation, with deviations of about 1e-16. The former strict comparison
+# did not always count such ties and made p slightly too small.
+# Now a null value counts as >= observed if it lies at most 1e-9 below it.
+# Every call stores the null distribution under out/nulls/ for checking.
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import os as _os, sys as _sys, numpy as _np
 _TIE_EPS = 1e-9
-_NULLDIR = '/home/claude/rev/out/nulls'
+_NULLDIR = (_OUT + '/nulls')
 _CNT = [0]
 def pval(null, obs, tag=None):
     null = _np.asarray(null, float); obs = float(obs)

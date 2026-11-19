@@ -1,3 +1,9 @@
+// Archive-relative: QSAR_BUILD_IN holds the inputs of this historical build (JSON summaries, figure files and the
+// unpacked manuscript, not part of the archive), QSAR_BUILD_OUT receives the document. Both default to results/recalc.
+const _path=require('path');
+const _ROOT=_path.resolve(__dirname,'..','..');
+const _IN=(process.env.QSAR_BUILD_IN||_path.join(_ROOT,'results','recalc'))+'/';
+const _OUT=(process.env.QSAR_BUILD_OUT||_path.join(_ROOT,'results','recalc'))+'/';
 const fs = require('fs');
 const d = require('docx');
 const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, ImageRun,
@@ -117,7 +123,7 @@ push(authorNote("Software-Referenzen (ChemDes, PaDEL, Chemopy, RDKit, BlueDesc, 
 // ================= CASE STUDY / RESULTS =================
 push(H1("Case study: antimicrobial monoterpenoids"));
 push(body("Both routes were applied to the 31-monoterpenoid data set. Route A started from 3,507 descriptors (five ChemDes libraries), reduced to 2,208 after cleaning — an initial ratio of about 1:71 for 31 compounds — which the selection stages reduced to strain-specific representative sets (31–53 descriptors; Table 1). Route B used the 25 pre-selected descriptors reduced to 13 by unsupervised correlation grouping. The framework is summarised in Fig. 1."));
-push(img("/home/claude/ms_unpack/word/media/image1.jpg", 560, 249, "jpg"));
+push(img(_IN+"ms_unpack/word/media/image1.jpg", 560, 249, "jpg"));
 push(legend("1","Overview of the two descriptor-selection routes and the validation strategy. Route A (large multi-library pool → correlation grouping → supervised effect-size filter → n:p-constrained selection) is validated by fully nested cross-validation; Route B (small, literature-derived interpretable set → unsupervised correlation grouping) is leakage-free and validated by a simple permutation test."));
 push(authorNote("Fig. 1 ist noch die ursprüngliche Vierstufen-Grafik. Für die überarbeitete Aussage bitte um die zweite (unsupervised) Route und den Nested-Validation-Schritt ergänzen, oder als Schema neu zeichnen."));
 
@@ -135,10 +141,10 @@ push(makeTable([
 ], [1500, 1050, 1050, 1550, 1900, 1900]));
 push(tblCap("Table 1|  Cross-validated predictive ability (Q²) of the three analyses and the number of descriptors entering PLS-DA. Descriptors (A / B): strain-specific representative set for Route A (correlation grouping + effect-size selection) and the fixed 13-descriptor set for Route B. Route A apparent = supervised selection before cross-validation (optimistic). Route A nested = selection repeated inside every fold with whole-pipeline permutation. Route B = literature-derived descriptors, unsupervised reduction, one latent variable. Permutation p in parentheses; * significant at p < 0.05; n.s. not significant. † P. aeruginosa has only three actives and is descriptive only. All values are from the reproducible Python pipeline (Additional files)."));
 
-push(img("/mnt/user-data/outputs/Fig_three_way_comparison.png", 520, 436, "png"));
+push(img(_IN+"Fig_three_way_comparison.png", 520, 436, "png"));
 push(legend("2","Three-way comparison of PLS-DA validation across the five strains. Grouped bars show cross-validated Q² (top) and AUC (bottom) for Route A apparent (grey), Route A nested (orange) and Route B literature-derived, nLV = 1 (green). Asterisks mark models significant by permutation (p < 0.05); P. aeruginosa (hatched) is an artefact with only three actives. Apparent Route A performance is largely removed by nested validation, whereas the leakage-free Route B recovers a genuine signal for three strains."));
 
-push(img("/mnt/user-data/outputs/Fig_nested_permutation_all5.png", 470, 666, "png"));
+push(img(_IN+"Fig_nested_permutation_all5.png", 470, 666, "png"));
 push(legend("3","Fully nested permutation test of Route A for all five strains (2,000 permutations of the entire pipeline). Histograms show the null distribution of Q² (left) and AUC (right); the observed value (solid line) is compared with the 95th percentile of the null (dashed). The observed values fall inside the null distribution for H. influenzae and S. pyogenes (not significant) and exceed it only weakly for S. aureus and S. pneumoniae."));
 
 push(H2("Route B: a leakage-free interpretable set recovers a genuine signal"));
@@ -159,9 +165,9 @@ push(makeTable([
  ["P. aeruginosa †","15","0.73","1.00","0.40 (artefact)","0.98 (artefact)"],
 ], [1700,1200,1350,1350,1900,1800]));
 push(tblCap("Table 1B|  Route A restricted to the 15 highest-effect-size descriptors per strain (n:p ≈ 2:1), evaluated with apparent LOO-CV and fully nested validation (2,000 whole-pipeline permutations; nLV = 1). Permutation p in parentheses; * significant at p < 0.05; n.s. not significant. † P. aeruginosa (three actives) is an artefact. The significant strains differ from those obtained with the full representative sets (Table 1), illustrating the instability of supervised selection at small n."));
-push(img("/mnt/user-data/outputs/Fig_three_way_comparison_top15.png", 520, 436, "png"));
+push(img(_IN+"Fig_three_way_comparison_top15.png", 520, 436, "png"));
 push(legend("2b","Three-way comparison using the n:p-constrained top-15 descriptor set. As in Fig. 2, but Route A now uses the 15 highest-effect-size descriptors per strain (Route B unchanged). Constraining the ratio to ~2:1 does not restore Route A under nested validation and shifts which strains are significant (cf. Table 1B)."));
-push(img("/mnt/user-data/outputs/Fig_nested_permutation_top15.png", 470, 666, "png"));
+push(img(_IN+"Fig_nested_permutation_top15.png", 470, 666, "png"));
 push(legend("3b","Fully nested permutation test of the top-15 Route A models for all five strains (2,000 permutations of the entire pipeline). Layout as in Fig. 3. Observed values are significant only for S. pneumoniae and S. pyogenes (P. aeruginosa is an artefact); H. influenzae and S. aureus remain within the null distribution."));
 
 // ---- selection-criterion comparison (Table 1C) ----
@@ -176,7 +182,7 @@ push(makeTable([
  ["P. aeruginosa †","15","0.40 (artefact)","0.98 (artefact)","0.43 (artefact)","0.99 (artefact)"],
 ], [1350,750,1800,1750,1550,1550]));
 push(tblCap("Table 1C|  Route A top-15 selected by effect size versus by VIP, both evaluated by apparent LOO-CV and fully nested validation (2,000 whole-pipeline permutations; nLV = 1). Permutation p in parentheses; * significant at p < 0.05; n.s. not significant. † P. aeruginosa (three actives) is an artefact. The significant strains differ between the two criteria — S. aureus and S. pneumoniae exchange significance — while only S. pyogenes is significant under both."));
-push(img("/mnt/user-data/outputs/Fig_selection_effsize_vs_vip.png", 500, 408, "png"));
+push(img(_IN+"Fig_selection_effsize_vs_vip.png", 500, 408, "png"));
 push(legend("2c","Route A top-15 under effect-size versus VIP selection (nested validation, 2,000 permutations). Nested Q² (top) and AUC (bottom) per strain for effect-size (purple) and VIP (teal) selection; asterisks mark p < 0.05; P. aeruginosa (hatched) is an artefact. The set of significant strains depends on the selection criterion, illustrating the instability of supervised selection at small n."));
 
 // ================= RESULTS AND DISCUSSION =================
@@ -189,7 +195,7 @@ push(H2("Supervised filtering outside cross-validation invalidates apparent perf
 push(body("The central result of this study is a cautionary one. Reducing a very large pool by correlation and then by a supervised effect-size filter, and reporting the cross-validated performance of the resulting model, appears to work — Route A gave positive apparent Q² and permutation p ≈ 0.0005 for four strains. This apparent success is, however, largely an artefact of selection bias. The effect-size filter uses the activity labels of all 31 compounds to choose descriptors; a left-out compound has therefore already influenced the selection, so the ordinary permutation test — which permutes labels only for the modelling step while holding the label-selected descriptors fixed — is circular and reports a spuriously small p. With p ≫ n some descriptors always separate a particular small dataset by chance, so this route effectively selects, and then rewards, stable noise [Ambroise & McLachlan; Varma & Simon; Rücker et al.]. When the entire selection is moved inside the cross-validation and the whole pipeline is permuted, the apparent ability disappears for H. influenzae and S. pyogenes (Q² < 0). In short: the widely used large-pool-plus-effect-size route, validated in the usual non-nested way, yields statistically invalid performance estimates. It must be checked by nested validation before any predictive claim is made."));
 push(H2("The excess of univariate hits does not prove signal"));
 push(body("A natural objection is that far more descriptors pass the effect-size filter than the ~110 (5 % of 2,208) expected by chance — 373 to 603 across the strains — so the surplus of several hundred descriptors ought to reflect genuine discrimination. That reasoning assumes 2,208 independent tests, which the data violate: the descriptors are strongly correlated, so the number passing by chance is not fixed near 110 but varies enormously. Permuting the class labels 1,000 times and recomputing the filter (Fig. 4) yields a null distribution with a mean of about 85–95 but a 95th percentile of ~285–300 and a maximum of 580–690, because a single fortuitous label split is echoed by whole families of correlated descriptors that pass together. The observed counts do exceed the null mean — consistent with some genuine signal, matching the strains that survive nested validation — yet they lie within the null maximum (for S. aureus the null reaches 692 against 603 observed). One therefore cannot subtract 110 and treat the remainder as real, nor identify which specific descriptors are the true positives; and because these p-values were not corrected for multiple testing, a surplus is expected even under weak signal. The honest counterpart of the excess-hits argument is the whole-pipeline permutation test, which asks whether the complete selection-and-modelling procedure predicts better than chance — and for most endpoints it does not."));
-push(img("/mnt/user-data/outputs/Fig_correlation_inflation.png", 560, 137, "png"));
+push(img(_IN+"Fig_correlation_inflation.png", 560, 137, "png"));
 push(legend("4","Correlation inflates the number of descriptors passing the effect-size filter by chance. For each strain the null distribution (grey) is the count of descriptors with |r| > 0.3 and p ≤ 0.05 over 1,000 label permutations; the observed count (red) and the naïve independence expectation (5 % × 2,208 ≈ 110, dotted) are marked. Chance alone can produce up to ~580–690 hits — for S. aureus more than the 603 observed — so the surplus over 110 is not evidence that hundreds of descriptors genuinely discriminate."));
 push(body("The same caution applies to visual evidence. Two-dimensional PLS-DA score plots of the selected descriptors show convincing separation of active and inactive compounds for every strain (Additional file, Figs S6–S7), including the strains that fail nested validation. Apparent separation on the training data, whether summarised as a high apparent Q², a small ordinary permutation p, or a clean score plot, is a property of fitting a flexible model to few samples in many dimensions — not evidence of predictive ability."));
 push(H2("Yet nested validation can still succeed — the procedure is not worthless"));
@@ -280,5 +286,5 @@ const doc = new Document({
   styles:{ default:{ document:{ run:{ font:FONT, size:22 } } } },
   sections:[{ properties:{ page:{ margin:{ top:1440,bottom:1440,left:1440,right:1440 } } }, children }]
 });
-Packer.toBuffer(doc).then(b=>{ fs.writeFileSync("/mnt/user-data/outputs/Werle_JCheminform_revised_Claude_2026-07-10.docx", b);
+Packer.toBuffer(doc).then(b=>{ fs.writeFileSync(_OUT+"Werle_JCheminform_revised_Claude_2026-07-10.docx", b);
   console.log("written"); });

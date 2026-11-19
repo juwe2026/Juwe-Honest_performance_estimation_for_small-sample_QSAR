@@ -1,16 +1,16 @@
-"""Sicherheitsnetz: meldet Abbildungen, die praktisch leer sind.
+"""Safety net: reports figures that are practically empty.
 
-Gemessen wird der Anteil nicht weisser Pixel, also alles Gezeichnete einschliesslich
-grauer Histogramme, und zusaetzlich der Anteil farbiger Pixel. Faellt einer der beiden
-Werte unter die Schwelle, greift vermutlich ein Datenfilter ins Leere und es werden nur
-noch Achsen gezeichnet.
+Measured is the share of non-white pixels, that is everything drawn including
+grey histograms, and in addition the share of coloured pixels. If one of the two
+values falls below the threshold, a data filter presumably matches nothing and only
+the axes are drawn.
 """
 import sys, os, glob
 import numpy as np
 from PIL import Image
 
-INK_MIN = 0.012      # Anteil nicht weisser Pixel
-COLOUR_MIN = 0.0015  # Anteil farbiger Pixel
+INK_MIN = 0.012      # share of non-white pixels
+COLOUR_MIN = 0.0015  # share of coloured pixels
 
 
 def fractions(path):
@@ -19,8 +19,8 @@ def fractions(path):
     a = np.asarray(im, dtype=int)
     mx = a.max(axis=2)
     mn = a.min(axis=2)
-    ink = mx < 245                      # alles Gezeichnete
-    colour = (mx - mn) > 25             # farbig, nicht grau
+    ink = mx < 245                      # everything drawn
+    colour = (mx - mn) > 25             # coloured, not grey
     return float(ink.mean()), float(colour.mean())
 
 
@@ -29,15 +29,15 @@ def main(folder):
     for f in sorted(glob.glob(os.path.join(folder, "*.png"))):
         ink, colour = fractions(f)
         ok = ink >= INK_MIN and colour >= COLOUR_MIN
-        print("%-46s Zeichnung %5.2f %%  Farbe %5.2f %%%s"
+        print("%-46s drawing %5.2f %%  colour %5.2f %%%s"
               % (os.path.basename(f), 100 * ink, 100 * colour,
-                 "" if ok else "   <-- VERDAECHTIG LEER"))
+                 "" if ok else "   <-- SUSPICIOUSLY EMPTY"))
         if not ok:
             bad.append(f)
     if bad:
-        print("\n%d Abbildung(en) pruefen!" % len(bad))
+        print("\n%d figure(s) to check!" % len(bad))
         return 1
-    print("\nAlle Abbildungen enthalten Daten.")
+    print("\nAll figures contain data.")
     return 0
 
 

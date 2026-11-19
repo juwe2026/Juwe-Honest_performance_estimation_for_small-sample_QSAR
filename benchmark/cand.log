@@ -1,0 +1,8 @@
+zulaessige Assays [('CELL', '', 381528), ('ORG', '', 238812), ('SP', 'Enzym', 275787), ('SP', 'Rezeptor', 121647)]
+Gruppen mit >=30 Verbindungen 17906
+0 0
+5000 3690
+10000 7892
+15000 12356
+Kandidaten nach Strukturpruefung 15031 Counter({'Enzym': 4540, 'MIC': 4524, 'Zytotox': 4489, 'Rezeptor': 1478})
+EXIT 0

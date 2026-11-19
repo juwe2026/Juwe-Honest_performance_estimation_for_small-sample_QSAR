@@ -1,13 +1,13 @@
-"""Bereinigt zwei Zusatzdateien.
+"""Cleans two supplementary files.
 
-Zusatzdatei 2 enthielt drei Blaetter aus frueheren Rechenlaeufen, deren Zahlen
-den Tabellen des Manuskripts widersprechen: Comparison_3_routes mit veralteten
-Route-A2-Werten, Table1B_top15 mit p-Werten aus 500 statt 2.000 Permutationen
-und einem Namen, der mit Tabelle 1b des Haupttexts kollidiert, sowie
-Conclusions mit veraltetem Freitext.
+Supplementary file 2 contained three sheets from earlier computation runs whose numbers
+contradict the tables of the manuscript: Comparison_3_routes with outdated
+Route A2 values, Table1B_top15 with p-values from 500 instead of 2,000 permutations
+and a name that collides with Table 1b of the main text, and
+Conclusions with outdated free text.
 
-Zusatzdatei 9 trug Blattnamen aus einer frueheren Abbildungsnummerierung
-(FigS5/FigS6 statt Fig. S4/Fig. S5).
+Supplementary file 9 carried sheet names from an earlier figure numbering
+(FigS5/FigS6 instead of Fig. S4/Fig. S5).
 """
 import json, os, shutil
 import numpy as np, openpyxl
@@ -30,7 +30,7 @@ wb = openpyxl.load_workbook(AF2)
 I = Font(italic=True, size=10)
 B = Font(bold=True)
 
-# --- Comparison_3_routes: Route-A2-Spalten aus final_all.npy neu setzen
+# --- Comparison_3_routes: set the Route A2 columns again from final_all.npy
 ws = wb["Comparison_3_routes"]
 ws.cell(row=1, column=2, value="(1) Route A2, apparent Q2 (2,208 descriptors)")
 ws.cell(row=1, column=3, value="(2) Route A2, nested Q2")
@@ -57,9 +57,9 @@ for line in [
 ]:
     ws.cell(row=n, column=1, value=line).font = I
     n += 1
-print("  Comparison_3_routes an Tabelle 1a angeglichen")
+print("  Comparison_3_routes aligned with Table 1a")
 
-# --- Table1B_top15: p-Werte aus 2.000 Permutationen, Blatt umbenannt
+# --- Table1B_top15: p-values from 2,000 permutations, sheet renamed
 w7 = openpyxl.load_workbook(AF7, data_only=True)["Top15_RouteA2_EffSize_vs_VIP"]
 rows7 = {r[0]: r for r in w7.iter_rows(min_row=2, values_only=True) if r[0]}
 ws = wb["Table1B_top15"]
@@ -84,9 +84,9 @@ for line in [
     ws.cell(row=n, column=1, value=line).font = I
     n += 1
 ws.title = "RouteA2_top15"
-print("  Table1B_top15 auf 2.000 Permutationen gesetzt und in RouteA2_top15 umbenannt")
+print("  Table1B_top15 set to 2,000 permutations and renamed to RouteA2_top15")
 
-# --- Conclusions: veraltete Zahlen ersetzen
+# --- Conclusions: replace outdated numbers
 ws = wb["Conclusions"]
 FIX = [
     ("S. pyogenes remains weak (Q2 = 0.06, n.s.)",
@@ -120,10 +120,10 @@ for line in [
 ]:
     ws.cell(row=n, column=1, value=line).font = I
     n += 1
-print("  Conclusions: %d Zeilen aktualisiert" % hits)
+print("  Conclusions: %d rows updated" % hits)
 
 wb.save(AF2)
-print("geschrieben:", AF2)
+print("written:", AF2)
 
 # ===================================================================== AF9
 if not os.path.exists(AF9):
@@ -136,6 +136,6 @@ for s in list(wb9.sheetnames):
         new = "S5_" + s[3:]
     if new and new != s:
         wb9[s].title = new
-print("  Zusatzdatei 9, Blattnamen:", wb9.sheetnames)
+print("  supplementary file 9, sheet names:", wb9.sheetnames)
 wb9.save(AF9)
-print("geschrieben:", AF9)
+print("written:", AF9)

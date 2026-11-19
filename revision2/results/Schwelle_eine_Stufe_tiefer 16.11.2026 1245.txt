@@ -1,0 +1,23 @@
+columns: ('Compound', 'Strain', 'Phase', 'Replicate', 'MIC_ug_mL')
+H. influenzae (31 compounds)
+   mean below 2048 (main analysis)  10  
+   mean below 1024 (one step down)   5  Carvacrol, Citral, Thymol, Thymoquinone, β-Thujaplicin
+   median at or below 512            4  Carvacrol, Thymol, Thymoquinone, β-Thujaplicin
+   between 512 and 1024: Citral, mean 796.44, median 1024, 9 values
+P. aeruginosa (31 compounds)
+   mean below 2048 (main analysis)   3  Carvacrol, Thymol, β-Thujaplicin
+   mean below 1024 (one step down)   3  Carvacrol, Thymol, β-Thujaplicin
+   median at or below 512            2  Carvacrol, β-Thujaplicin
+   between 512 and 1024: Thymol, mean 967.11, median 1024, 9 values
+S. aureus (31 compounds)
+   mean below 2048 (main analysis)   5  Carvacrol, Citral, Thymol, Thymoquinone, β-Thujaplicin
+   mean below 1024 (one step down)   4  Carvacrol, Thymol, Thymoquinone, β-Thujaplicin
+   median at or below 512            4  Carvacrol, Thymol, Thymoquinone, β-Thujaplicin
+S. pneumoniae (31 compounds)
+   mean below 2048 (main analysis)   6  Carvacrol, Citral, Safranal, Thymol, Thymoquinone, β-Thujaplicin
+   mean below 1024 (one step down)   4  Carvacrol, Thymol, Thymoquinone, β-Thujaplicin
+   median at or below 512            4  Carvacrol, Thymol, Thymoquinone, β-Thujaplicin
+S. pyogenes (31 compounds)
+   mean below 2048 (main analysis)  11  
+   mean below 1024 (one step down)   4  Carvacrol, Thymol, Thymoquinone, β-Thujaplicin
+   median at or below 512            4  Carvacrol, Thymol, Thymoquinone, β-Thujaplicin

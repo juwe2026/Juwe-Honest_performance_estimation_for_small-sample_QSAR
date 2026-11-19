@@ -1,0 +1,102 @@
+{
+ "DS01": {
+  "n": 50,
+  "p": 1394,
+  "sek_pro_permutation": 42.64
+ },
+ "DS02": {
+  "n": 36,
+  "p": 1410,
+  "sek_pro_permutation": 31.41
+ },
+ "DS03": {
+  "n": 45,
+  "p": 1295,
+  "sek_pro_permutation": 36.9
+ },
+ "DS04": {
+  "n": 40,
+  "p": 1286,
+  "sek_pro_permutation": 32.62
+ },
+ "DS05": {
+  "n": 44,
+  "p": 1356,
+  "sek_pro_permutation": 38.12
+ },
+ "DS06": {
+  "n": 30,
+  "p": 1436,
+  "sek_pro_permutation": 26.84
+ },
+ "DS07": {
+  "n": 43,
+  "p": 1327,
+  "sek_pro_permutation": 34.58
+ },
+ "DS08": {
+  "n": 37,
+  "p": 1359,
+  "sek_pro_permutation": 31.13
+ },
+ "DS09": {
+  "n": 36,
+  "p": 1375,
+  "sek_pro_permutation": 31.43
+ },
+ "DS10": {
+  "n": 47,
+  "p": 1388,
+  "sek_pro_permutation": 39.41
+ },
+ "DS11": {
+  "n": 35,
+  "p": 1362,
+  "sek_pro_permutation": 29.54
+ },
+ "DS12": {
+  "n": 31,
+  "p": 1336,
+  "sek_pro_permutation": 25.43
+ },
+ "DS13": {
+  "n": 35,
+  "p": 1376,
+  "sek_pro_permutation": 29.29
+ },
+ "DS14": {
+  "n": 49,
+  "p": 1375,
+  "sek_pro_permutation": 40.82
+ },
+ "DS15": {
+  "n": 39,
+  "p": 1353,
+  "sek_pro_permutation": 31.24
+ },
+ "DS16": {
+  "n": 33,
+  "p": 1355,
+  "sek_pro_permutation": 27.12
+ },
+ "DS21": {
+  "n": 25,
+  "p": 1370,
+  "sek_pro_permutation": 21.59
+ },
+ "DS22": {
+  "n": 60,
+  "p": 1398,
+  "sek_pro_permutation": 51.42
+ },
+ "DS23": {
+  "n": 25,
+  "p": 1369,
+  "sek_pro_permutation": 20.51
+ },
+ "DS24": {
+  "n": 60,
+  "p": 1384,
+  "sek_pro_permutation": 52.75
+ }
+}

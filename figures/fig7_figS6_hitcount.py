@@ -100,7 +100,7 @@ def fig7(outdir):
                    ncol=1, handlelength=1.5, fontsize=7.5, borderaxespad=0)
     fig.text(0.26, 0.011,
              "a: null SD of the hit count over the binomial SD of\nindependent tests at the route's own null hit rate\n"
-             "(bars) and at 5 % (ticks); dashed line: ratio = 1.",
+             "(bars) and at 5 % (ticks). Dashed line: ratio = 1.",
              ha="center", fontsize=7.2, color=MUTED, linespacing=1.4)
     fig.text(0.76, 0.011,
              "b: null range of the Route A1u hit count,\n2.5th to 97.5th percentile of 1,000 permutations.\n"

@@ -1,7 +1,18 @@
 # G2-6 / G2-9: tie-break sensitivity with own nulls; route-specific calibration of inflation factors
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 from common import *
 import nested_generic as ng
-H=np.load('/home/claude/rev/QSAR_selection_leakage/results/raw_permutations/hits_three_variants.npy',allow_pickle=True).item()
+H=np.load((_ROOT + '/results/raw_permutations/hits_three_variants.npy'),allow_pickle=True).item()
 MAP={'HI':'H.I.','SA':'S.A.','SPneu':'S.Pneu','SPyo':'S.Pyo','PA':'P.A.'}
 cal={}
 for k in KEYS:
@@ -64,7 +75,7 @@ dump('B_hits',dict(calibration=cal,tiebreak_fixed={g:res[g] for g in ['variance 
      seeds=dict(null='default_rng([8202,j]), 1000 permutations',random_tiebreak='default_rng(8203), 100 groupings')))
 # deposit groups
 import csv
-with open('/home/claude/rev/out/groups_182.csv','w',newline='') as f:
+with open((_OUT + '/groups_182.csv'),'w',newline='') as f:
     w=csv.writer(f); w.writerow(['group','size','hub_order','representative_A1u_centrality','member'])
     for gi,g in enumerate(GV['variance (as published)']):
         rep=RP['variance (as published)'][gi]

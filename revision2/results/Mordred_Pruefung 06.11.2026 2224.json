@@ -1,0 +1,856 @@
+{
+ "versions": {
+  "mordredcommunity": "2.0.7",
+  "rdkit": "2026.09.1",
+  "numpy": "2.5.3",
+  "pandas": "3.0.5"
+ },
+ "data_sets": {
+  "datasets/DS01": {
+   "n": 50,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1394,
+    1394
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7515,
+   "max_relative_difference": 7.437508796312052e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS02": {
+   "n": 36,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1410,
+    1410
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.754,
+   "max_relative_difference": 8.244281191925293e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS03": {
+   "n": 45,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1295,
+    1295
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7319,
+   "max_relative_difference": 6.338621668367291e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS04": {
+   "n": 40,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1286,
+    1286
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7269,
+   "max_relative_difference": 9.242232346455887e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS05": {
+   "n": 44,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1356,
+    1356
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7504,
+   "max_relative_difference": 9.59309164861171e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS06": {
+   "n": 30,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1436,
+    1436
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7192,
+   "max_relative_difference": 0.00201908708272572,
+   "descriptors_above_1e-9": [
+    "RD_AvgIpc",
+    "RD_Ipc",
+    "VR1_A",
+    "VR2_A",
+    "VR3_A"
+   ]
+  },
+  "datasets/DS07": {
+   "n": 43,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1327,
+    1327
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7428,
+   "max_relative_difference": 9.875853465430512e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS08": {
+   "n": 37,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1359,
+    1359
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7348,
+   "max_relative_difference": 4.370131587463563e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS09": {
+   "n": 36,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1375,
+    1375
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.736,
+   "max_relative_difference": 7.881738738782868e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS10": {
+   "n": 47,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1388,
+    1388
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7394,
+   "max_relative_difference": 8.342769280399493e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS11": {
+   "n": 35,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1362,
+    1362
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7572,
+   "max_relative_difference": 8.439765474118904e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS12": {
+   "n": 31,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1336,
+    1336
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.729,
+   "max_relative_difference": 6.880009351993384e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS13": {
+   "n": 35,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1376,
+    1376
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7486,
+   "max_relative_difference": 8.715512100838833e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS14": {
+   "n": 49,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1375,
+    1375
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7453,
+   "max_relative_difference": 7.806882089582259e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS15": {
+   "n": 39,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1353,
+    1353
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7241,
+   "max_relative_difference": 8.556519292179022e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS16": {
+   "n": 33,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1355,
+    1355
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7402,
+   "max_relative_difference": 8.715512100838833e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS21": {
+   "n": 25,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1370,
+    1370
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7544,
+   "max_relative_difference": 8.381733978266271e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS22": {
+   "n": 60,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1398,
+    1398
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7605,
+   "max_relative_difference": 8.381733978266271e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS23": {
+   "n": 25,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1369,
+    1369
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7384,
+   "max_relative_difference": 9.755043569836974e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets/DS24": {
+   "n": 60,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1384,
+    1384
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7457,
+   "max_relative_difference": 8.554365408622629e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS01": {
+   "n": 50,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1394,
+    1394
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7515,
+   "max_relative_difference": 7.437508796312052e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS02": {
+   "n": 34,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1396,
+    1396
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7513,
+   "max_relative_difference": 8.244281191925293e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS03": {
+   "n": 45,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1295,
+    1295
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7319,
+   "max_relative_difference": 6.338621668367291e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS04": {
+   "n": 40,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1286,
+    1286
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7269,
+   "max_relative_difference": 9.242232346455887e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS05": {
+   "n": 42,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1335,
+    1335
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7459,
+   "max_relative_difference": 9.59309164861171e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS06": {
+   "n": 58,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1371,
+    1371
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7473,
+   "max_relative_difference": 9.566295509660654e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS07": {
+   "n": 42,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1316,
+    1316
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7397,
+   "max_relative_difference": 9.875853465430512e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS08": {
+   "n": 36,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1309,
+    1309
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7246,
+   "max_relative_difference": 4.370131587463563e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS09": {
+   "n": 32,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1373,
+    1373
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7425,
+   "max_relative_difference": 7.18741379117449e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS10": {
+   "n": 45,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1387,
+    1387
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7391,
+   "max_relative_difference": 8.342769280399493e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS11": {
+   "n": 34,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1315,
+    1315
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7494,
+   "max_relative_difference": 8.439765474118904e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS12": {
+   "n": 30,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1306,
+    1306
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7227,
+   "max_relative_difference": 6.880009351993384e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS13": {
+   "n": 34,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1370,
+    1370
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7474,
+   "max_relative_difference": 5.676200239951215e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS14": {
+   "n": 48,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1372,
+    1372
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7444,
+   "max_relative_difference": 7.806882089582259e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS15": {
+   "n": 39,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1353,
+    1353
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7241,
+   "max_relative_difference": 8.556519292179022e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS16": {
+   "n": 32,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1307,
+    1307
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7291,
+   "max_relative_difference": 7.548271078310244e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS21": {
+   "n": 25,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1351,
+    1351
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7512,
+   "max_relative_difference": 5.893143559168443e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS22": {
+   "n": 60,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1382,
+    1382
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7569,
+   "max_relative_difference": 8.029914102519551e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS23": {
+   "n": 25,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1365,
+    1365
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7414,
+   "max_relative_difference": 6.001810027612339e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_k/DS24": {
+   "n": 60,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1384,
+    1384
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7456,
+   "max_relative_difference": 7.703289286788708e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS01": {
+   "n": 50,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1394,
+    1394
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7515,
+   "max_relative_difference": 7.437508796312052e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS02": {
+   "n": 34,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1396,
+    1396
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7513,
+   "max_relative_difference": 8.244281191925293e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS03": {
+   "n": 45,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1295,
+    1295
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7319,
+   "max_relative_difference": 6.338621668367291e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS04": {
+   "n": 40,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1286,
+    1286
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7269,
+   "max_relative_difference": 9.242232346455887e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS05": {
+   "n": 42,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1335,
+    1335
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7459,
+   "max_relative_difference": 9.59309164861171e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS06": {
+   "n": 58,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1371,
+    1371
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7473,
+   "max_relative_difference": 9.566295509660654e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS07": {
+   "n": 42,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1316,
+    1316
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7397,
+   "max_relative_difference": 9.875853465430512e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS08": {
+   "n": 36,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1309,
+    1309
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7246,
+   "max_relative_difference": 4.370131587463563e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS09": {
+   "n": 32,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1373,
+    1373
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7425,
+   "max_relative_difference": 7.18741379117449e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS10": {
+   "n": 45,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1387,
+    1387
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7391,
+   "max_relative_difference": 8.342769280399493e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS11": {
+   "n": 34,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1315,
+    1315
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7494,
+   "max_relative_difference": 8.439765474118904e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS12": {
+   "n": 30,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1306,
+    1306
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7227,
+   "max_relative_difference": 6.880009351993384e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS13": {
+   "n": 28,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1361,
+    1361
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.747,
+   "max_relative_difference": 5.676200239951215e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS14": {
+   "n": 48,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1372,
+    1372
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7444,
+   "max_relative_difference": 7.806882089582259e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS15": {
+   "n": 39,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1353,
+    1353
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7241,
+   "max_relative_difference": 8.556519292179022e-13,
+   "descriptors_above_1e-9": []
+  },
+  "datasets_m/DS16": {
+   "n": 32,
+   "raw": [
+    1830,
+    1830
+   ],
+   "cleaned": [
+    1307,
+    1307
+   ],
+   "same_columns": true,
+   "share_identical_cells": 0.7291,
+   "max_relative_difference": 7.548271078310244e-13,
+   "descriptors_above_1e-9": []
+  }
+ }
+}

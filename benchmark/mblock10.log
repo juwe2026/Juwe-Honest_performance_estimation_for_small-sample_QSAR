@@ -1,0 +1,58 @@
+beobachtete Werte vollstaendig (3s)
+Pakete gesamt 2320, offen 319
+DS15 A1u 0100  100 Permutationen  123s
+DS15 A1u 0200  100 Permutationen  129s
+DS15 A1u 0300  100 Permutationen  122s
+DS15 A1u 0400  100 Permutationen  136s
+DS15 A1u 0500  100 Permutationen  126s
+DS15 A1u 0600  100 Permutationen  115s
+DS15 A1u 0700  100 Permutationen  119s
+DS15 A1u 0800  100 Permutationen  125s
+DS15 A1u 0900  100 Permutationen  122s
+DS15 A1u 1000  100 Permutationen  116s
+DS15 A1u 1100  100 Permutationen  116s
+DS15 A1u 1200  100 Permutationen  115s
+DS15 A1u 1300  100 Permutationen  114s
+DS15 A1u 1400  100 Permutationen  109s
+DS15 A1u 1500  100 Permutationen  108s
+DS15 A1u 1600  100 Permutationen  112s
+DS15 A1u 1700  100 Permutationen  110s
+DS15 A1u 1800  100 Permutationen  110s
+DS15 A1u 1900  100 Permutationen  111s
+DS16 A1u 0000  100 Permutationen  59s
+DS16 A1u 0100  100 Permutationen  62s
+DS16 A1u 0200  100 Permutationen  59s
+DS16 A1u 0300  100 Permutationen  58s
+DS16 A1u 0400  100 Permutationen  59s
+DS16 A1u 0500  100 Permutationen  60s
+DS16 A1u 0600  100 Permutationen  59s
+DS16 A1u 0700  100 Permutationen  62s
+DS16 A1u 0800  100 Permutationen  61s
+DS16 A1u 0900  100 Permutationen  61s
+DS16 A1u 1000  100 Permutationen  62s
+DS16 A1u 1100  100 Permutationen  59s
+DS16 A1u 1200  100 Permutationen  60s
+DS16 A1u 1300  100 Permutationen  60s
+DS16 A1u 1400  100 Permutationen  59s
+DS16 A1u 1500  100 Permutationen  60s
+DS16 A1u 1600  100 Permutationen  62s
+DS16 A1u 1700  100 Permutationen  60s
+DS16 A1u 1800  100 Permutationen  59s
+DS16 A1u 1900  100 Permutationen  60s
+DS01 A2 0000  100 Permutationen  248s
+DS01 A2 0100  100 Permutationen  217s
+DS01 A2 0200  100 Permutationen  241s
+DS01 A2 0300  100 Permutationen  198s
+DS01 A2 0400  100 Permutationen  249s
+DS01 A2 0500  100 Permutationen  219s
+DS01 A2 0600  100 Permutationen  238s
+DS01 A2 0700  100 Permutationen  226s
+DS01 A2 0800  100 Permutationen  212s
+DS01 A2 0900  100 Permutationen  259s
+DS01 A2 1000  100 Permutationen  242s
+DS01 A2 1100  100 Permutationen  248s
+DS01 A2 1200  100 Permutationen  258s
+DS01 A2 1300  100 Permutationen  261s
+Zeitlimit erreicht
+FERTIG in diesem Block: 53 Pakete, offen danach: 266
+EXIT 0

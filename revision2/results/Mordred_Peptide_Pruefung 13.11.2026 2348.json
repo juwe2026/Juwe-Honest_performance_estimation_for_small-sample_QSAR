@@ -1,0 +1,33 @@
+{
+ "versions": {
+  "mordredcommunity": "2.0.7",
+  "rdkit": "2026.09.1",
+  "numpy": "2.5.3",
+  "pandas": "3.0.5"
+ },
+ "n_peptides": 37,
+ "raw_descriptors": 1830,
+ "removed_more_than_half_missing": 148,
+ "removed_all_missing": 143,
+ "removed_constant": 407,
+ "cleaned": 1275,
+ "archived": 1275,
+ "imputed_cells": 12,
+ "imputed_columns": [
+  "Mordred::MAXsCH3",
+  "Mordred::MINsCH3",
+  "Mordred::MDEC-12",
+  "Mordred::MDEC-13"
+ ],
+ "imputed_peptides": [
+  "30",
+  "31",
+  "32"
+ ],
+ "same_columns_same_order": true,
+ "cells": 47175,
+ "bit_identical_cells": 44936,
+ "max_relative_difference": 1.2249480900360934e-14,
+ "cells_above_1e_12": 0,
+ "descriptors_above_1e_9": []
+}

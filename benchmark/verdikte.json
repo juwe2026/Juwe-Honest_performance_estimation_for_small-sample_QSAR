@@ -1,0 +1,344 @@
+{
+ "CHEMBL5370535": {
+  "art": "original",
+  "schwelle": "keine"
+ },
+ "CHEMBL2086304": {
+  "art": "original",
+  "schwelle": "keine"
+ },
+ "CHEMBL5042496": {
+  "art": "original",
+  "schwelle": "keine"
+ },
+ "CHEMBL4118063": {
+  "art": "original",
+  "schwelle": "keine"
+ },
+ "CHEMBL4665863": {
+  "art": "original",
+  "schwelle": "keine"
+ },
+ "CHEMBL4387753": {
+  "art": "original",
+  "schwelle": "keine"
+ },
+ "CHEMBL2203015": {
+  "art": "original",
+  "schwelle": "keine"
+ },
+ "CHEMBL3611970": {
+  "art": "original",
+  "schwelle": "keine"
+ },
+ "CHEMBL1159121": {
+  "art": "original",
+  "schwelle": "keine"
+ },
+ "CHEMBL1817626": {
+  "art": "original",
+  "schwelle": "keine"
+ },
+ "CHEMBL1145536": {
+  "art": "methoden",
+  "schwelle": ""
+ },
+ "CHEMBL5390229": {
+  "art": "review",
+  "schwelle": ""
+ },
+ "CHEMBL5046218": {
+  "art": "original",
+  "schwelle": "keine"
+ },
+ "CHEMBL4368888": {
+  "art": "original",
+  "schwelle": "keine"
+ },
+ "CHEMBL3621184": {
+  "art": "original",
+  "doi": "10.1039/c4md00371c",
+  "schwelle": "keine"
+ },
+ "CHEMBL3603803": {
+  "art": "original",
+  "doi": "10.1016/j.bmc.2015.07.037",
+  "schwelle": "offen"
+ },
+ "CHEMBL1146665": {
+  "art": "original",
+  "doi": "10.1016/j.bmcl.2003.11.030",
+  "schwelle": "offen"
+ },
+ "CHEMBL1139165": {
+  "art": "original",
+  "doi": "10.1016/j.bmcl.2007.01.093",
+  "schwelle": "keine"
+ },
+ "CHEMBL1140004": {
+  "art": "original",
+  "doi": "10.1016/j.bmcl.2007.04.093",
+  "schwelle": "offen"
+ },
+ "CHEMBL1143213": {
+  "art": "original",
+  "doi": "10.1016/j.bmcl.2007.12.070",
+  "schwelle": "offen"
+ },
+ "CHEMBL3616448": {
+  "art": "original",
+  "doi": "10.1016/j.bmcl.2015.08.024",
+  "schwelle": "offen"
+ },
+ "CHEMBL4396946": {
+  "art": "original",
+  "doi": "10.1016/j.bmcl.2019.126624",
+  "schwelle": "offen"
+ },
+ "CHEMBL1649384": {
+  "art": "original",
+  "doi": "10.1016/j.ejmech.2010.11.013",
+  "schwelle": "offen"
+ },
+ "CHEMBL1667752": {
+  "art": "keine_serie",
+  "doi": "10.1016/j.ejmech.2010.11.034",
+  "schwelle": "offen"
+ },
+ "CHEMBL2021919": {
+  "art": "keine_serie",
+  "doi": "10.1016/j.ejmech.2012.03.008",
+  "schwelle": "offen"
+ },
+ "CHEMBL4024706": {
+  "art": "original",
+  "doi": "10.1016/j.ejmech.2017.03.001",
+  "schwelle": "offen"
+ },
+ "CHEMBL4130419": {
+  "art": "original",
+  "doi": "10.1016/j.ejmech.2017.07.037",
+  "schwelle": "offen"
+ },
+ "CHEMBL4270616": {
+  "art": "original",
+  "doi": "10.1016/j.ejmech.2018.08.039",
+  "schwelle": "offen"
+ },
+ "CHEMBL4316584": {
+  "art": "review",
+  "doi": "10.1016/j.ejmech.2019.01.028",
+  "schwelle": "offen"
+ },
+ "CHEMBL4390654": {
+  "art": "original",
+  "doi": "10.1016/j.ejmech.2019.02.024",
+  "schwelle": "offen"
+ },
+ "CHEMBL4342421": {
+  "art": "review",
+  "doi": "10.1016/j.ejmech.2019.111744",
+  "schwelle": "offen"
+ },
+ "CHEMBL5241074": {
+  "art": "review",
+  "doi": "10.1016/j.ejmech.2021.113492",
+  "schwelle": "offen"
+ },
+ "CHEMBL5137044": {
+  "art": "original",
+  "doi": "10.1016/j.ejmech.2022.114512",
+  "schwelle": "offen"
+ },
+ "CHEMBL5505975": {
+  "art": "original",
+  "doi": "10.1016/j.ejmech.2024.116204",
+  "schwelle": "offen"
+ },
+ "CHEMBL5500360": {
+  "art": "original",
+  "doi": "10.1016/j.ejmech.2024.116415",
+  "schwelle": "offen"
+ },
+ "CHEMBL5550161": {
+  "art": "original",
+  "doi": "10.1016/j.ejmech.2024.116500",
+  "schwelle": "offen"
+ },
+ "CHEMBL4627398": {
+  "art": "original",
+  "doi": "10.1021/acs.jmedchem.0c00450",
+  "schwelle": "offen"
+ },
+ "CHEMBL5096172": {
+  "art": "original",
+  "doi": "10.1021/acs.jmedchem.1c00244",
+  "schwelle": "offen"
+ },
+ "CHEMBL4834472": {
+  "art": "original",
+  "doi": "10.1021/acs.jmedchem.1c00330",
+  "schwelle": "offen"
+ },
+ "CHEMBL5042482": {
+  "art": "original",
+  "doi": "10.1021/acs.jmedchem.1c00582",
+  "schwelle": "offen"
+ },
+ "CHEMBL5247649": {
+  "art": "keine_serie",
+  "doi": "10.1021/acs.jmedchem.2c02068",
+  "schwelle": "offen"
+ },
+ "CHEMBL5360615": {
+  "art": "original",
+  "doi": "10.1021/acs.jmedchem.3c00417",
+  "schwelle": "offen"
+ },
+ "CHEMBL6153174": {
+  "art": "original",
+  "doi": "10.1021/acs.jmedchem.4c02391",
+  "schwelle": "offen"
+ },
+ "CHEMBL6103657": {
+  "art": "original",
+  "doi": "10.1021/acs.jmedchem.4c03127",
+  "schwelle": "offen"
+ },
+ "CHEMBL3414558": {
+  "art": "original",
+  "doi": "10.1021/acs.jmedchem.5b00215",
+  "schwelle": "offen"
+ },
+ "CHEMBL3600310": {
+  "art": "original",
+  "doi": "10.1021/acs.jmedchem.5b00910",
+  "schwelle": "offen"
+ },
+ "CHEMBL1128248": {
+  "art": "original",
+  "doi": "10.1021/jm00004a018",
+  "schwelle": "offen"
+ },
+ "CHEMBL1128536": {
+  "art": "original",
+  "doi": "10.1021/jm00018a008",
+  "schwelle": "offen"
+ },
+ "CHEMBL1134792": {
+  "art": "original",
+  "doi": "10.1021/jm0010264",
+  "schwelle": "offen"
+ },
+ "CHEMBL1134599": {
+  "art": "original",
+  "doi": "10.1021/jm010146o",
+  "schwelle": "offen"
+ },
+ "CHEMBL1145819": {
+  "art": "review",
+  "doi": "10.1021/jm030030n",
+  "schwelle": "offen"
+ },
+ "CHEMBL1148321": {
+  "art": "original",
+  "doi": "10.1021/jm031111m",
+  "schwelle": "offen"
+ },
+ "CHEMBL1140325": {
+  "art": "original",
+  "doi": "10.1021/jm049073+",
+  "schwelle": "offen"
+ },
+ "CHEMBL1141372": {
+  "art": "original",
+  "doi": "10.1021/jm060849b",
+  "schwelle": "offen"
+ },
+ "CHEMBL1833864": {
+  "art": "original",
+  "doi": "10.1021/jm200466r",
+  "schwelle": "offen"
+ },
+ "CHEMBL2016491": {
+  "art": "original",
+  "doi": "10.1021/jm2013453",
+  "schwelle": "offen"
+ },
+ "CHEMBL2331332": {
+  "art": "original",
+  "doi": "10.1021/jm301900x",
+  "schwelle": "offen"
+ },
+ "CHEMBL2429786": {
+  "art": "original",
+  "doi": "10.1021/jm400766k",
+  "schwelle": "offen"
+ },
+ "CHEMBL1144767": {
+  "art": "vorselektiert",
+  "doi": "10.1021/jm701302v",
+  "schwelle": "offen"
+ },
+ "CHEMBL1157785": {
+  "art": "original",
+  "doi": "10.1021/jm901713n",
+  "schwelle": "offen"
+ },
+ "CHEMBL4190169": {
+  "art": "original",
+  "doi": "10.1039/c6md00367b",
+  "schwelle": "offen"
+ },
+ "CHEMBL4368861": {
+  "art": "original",
+  "doi": "10.1039/c8md00319j",
+  "schwelle": "offen"
+ },
+ "CHEMBL4190362": {
+  "art": "original",
+  "doi": "10.1016/j.ejmech.2017.09.026",
+  "schwelle": "keine",
+  "rolle": "Elternpool MIC"
+ },
+ "CHEMBL5241054": {
+  "art": "review",
+  "doi": "10.1016/j.ejmech.2020.112845",
+  "schwelle": "",
+  "rolle": "Elternpool-Kandidat abgelehnt"
+ },
+ "CHEMBL5375941": {
+  "art": "review",
+  "doi": "10.1016/j.ejmech.2017.05.041",
+  "schwelle": "",
+  "rolle": "Elternpool-Kandidat abgelehnt"
+ },
+ "CHEMBL2029208": {
+  "art": "vorselektiert",
+  "doi": "10.1016/j.bmc.2012.03.058",
+  "schwelle": "",
+  "rolle": "Elternpool-Kandidat abgelehnt"
+ },
+ "CHEMBL1629439": {
+  "art": "vorselektiert",
+  "doi": "10.1016/j.bmc.2010.10.036",
+  "schwelle": "",
+  "rolle": "Elternpool-Kandidat abgelehnt"
+ },
+ "CHEMBL5360622": {
+  "art": "original",
+  "doi": "10.1021/acs.jmedchem.3c00884",
+  "schwelle": "keine",
+  "rolle": "Elternpool Enzym"
+ },
+ "CHEMBL1123819": {
+  "art": "original",
+  "schwelle": "keine",
+  "doi": "10.1021/jm00391a037"
+ },
+ "CHEMBL3407479": {
+  "art": "original",
+  "schwelle": "MIC <= 8 ug/mL (Autoren: \"Active compounds (MIC <= 8 ug/mL)\")",
+  "doi": "10.1021/jm501661f"
+ }
+}

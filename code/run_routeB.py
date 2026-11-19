@@ -1,17 +1,28 @@
-# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
+# Revision 03.10.2026: permutation p-values count ties (tolerance 1e-9), see CHANGELOG_revision.md
 """Route B permutation test with a FIXED, a priori descriptor set (leakage-free:
 apparent == nested, and a simple permutation test is already honest)."""
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import sys, os, pickle, time, numpy as np, pandas as pd
 from sklearn.cross_decomposition import PLSRegression
 from sklearn.metrics import roc_auc_score
 
 short=sys.argv[1]; which=sys.argv[2]; target=int(sys.argv[3])
 budget=float(sys.argv[4]) if len(sys.argv)>4 else 230.0
-STORE=f'/home/claude/permB_{which}_{short.replace(".","")}.npz'
+STORE=f'{_WORK}/permB_{which}_{short.replace(".","")}.npz'
 t0=time.time()
-full=pd.read_pickle('/home/claude/desc_full.pkl')
-cols = list(np.load('/home/claude/lit25_desc.npy',allow_pickle=True)) if which=='25' \
-       else list(np.load('/home/claude/reduced_desc.npy',allow_pickle=True))
+full=pd.read_pickle((_WORK + '/desc_full.pkl'))
+cols = list(np.load((_WORK + '/lit25_desc.npy'),allow_pickle=True)) if which=='25' \
+       else list(np.load((_WORK + '/reduced_desc.npy'),allow_pickle=True))
 Yc={'H.I.':'H. I. (H. influenzae)','S.A.':'S. A. (Staph. Aureus)','S.Pneu':'S. Pneu (S. pneumoniae)',
     'S.Pyo':'S. pyo (S. pyogenes)','P.A.':'P. A. (P. aeruginosa)'}
 y=(full[Yc[short]].astype(str).str.strip().str.lower()=='active').astype(float).values

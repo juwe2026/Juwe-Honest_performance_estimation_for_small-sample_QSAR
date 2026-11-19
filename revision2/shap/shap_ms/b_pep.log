@@ -1,0 +1,1 @@
+{"datensatz": "Peptide", "endpunkt": "EC", "n": 37, "nsamples": 30000, "rang_stichprobenkovarianz": 36, "wiederholung_stichprobe": [0.961, 8], "wiederholung_ledoit": [0.971, 9], "stichprobe_vs_ledoit": [0.747, 7], "nur5_ledoit_wolf_seed1": [0.83, 0], "nur5_ledoit_wolf_seed2": [0.829, 1], "nur5_stichprobe_seed1": [0.868, 26], "nur5_stichprobe_seed2": [0.874, 31]}

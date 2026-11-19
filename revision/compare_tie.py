@@ -1,16 +1,30 @@
 # -*- coding: utf-8 -*-
-"""Vergleich der p-Werte vor und nach der Gleichstandsbehandlung (Revision 03.10.2026).
+"""Comparison of the p-values before and after the treatment of ties (revision of 03.10.2026).
 
-Vorher: Ergebnisdateien mit korrigiertem Rueckfallzweig, strikter Vergleich (Sicherung in
-out/strict_backup_20261003). Nachher: dieselben Laeufe, gleiche Seeds, Gleichstaende mitgezaehlt.
-Prueft ausserdem, dass die Punktschaetzer und die Q2-p-Werte unveraendert sind (Determinismus)
-und dass jeder neue p-Wert >= dem alten ist. Schreibt out/tie_effect.json und .xlsx.
+Before: result files with corrected fallback branch, strict comparison (backup in
+out/strict_backup_20261003). After: the same runs, same seeds, ties counted.
+Also checks that the point estimates and the Q2 p-values are unchanged (determinism)
+and that every new p-value is >= the old one. Writes out/tie_effect.json and .xlsx.
 """
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import json, glob, os
 import pandas as pd
 
-B = '/home/claude/rev/out/strict_backup_20261003/'
-N = '/home/claude/rev/out/'
+B = (_OUT + '/strict_backup_20261003/')
+if not os.path.isdir(B):   # without the backup the comparison would be incomplete and would overwrite tie_effect.json
+    raise SystemExit('compare_tie.py needs ' + B + ' (results before the treatment of ties), which is not part of '
+                     'this archive. Nothing was written.')
+N = (_OUT + '/')
 rows = []
 
 def walk(old, new, path):
@@ -35,14 +49,14 @@ for a, b in PAIRS:
     walk(json.load(open(B + a)), json.load(open(N + b)), [a])
 for r_ in ('A', 'C'):
     for nm, sub in (('res_%s.json' % r_, ''), ('res_%s_fix.json' % r_, '')):
-        fo, fn = B + 'lone/' + nm, '/home/claude/rev/lone/' + nm
+        fo, fn = B + 'lone/' + nm, (_OUT + '/lone/') + nm
         if os.path.exists(fo) and os.path.exists(fn):
             walk(json.load(open(fo)), json.load(open(fn)), ['lone/' + nm])
         else:
             missing.append('lone/' + nm)
 
 import numpy as np
-RP = '/home/claude/rev/QSAR_selection_leakage/results/raw_permutations/'
+RP = (_ROOT + '/results/raw_permutations/')
 for pre in ('permB_12', 'permB_12nlv3', 'permB_25', 'gperm_A1', 'gperm_A1u', 'gperm_A2', 'gperm2_A1', 'gperm2_A1u', 'gperm2_A2'):
     for s_ in (('HI', 'SA', 'SPneu', 'SPyo') if pre.startswith('permB') else ('',)):
         z = np.load(RP + (pre + '_' + s_ if s_ else pre) + '.npz')
@@ -72,8 +86,8 @@ summary = dict(n_p=len(pv), n_changed=int((pv['diff'].abs() > 1e-12).sum()), max
                negative=neg[['path', 'old', 'new']].to_dict('records'), missing=missing)
 json.dump(summary, open(N + 'tie_effect.json', 'w'), indent=1)
 pv.to_excel(N + 'tie_effect.xlsx', index=False)
-print('p-Werte verglichen:', len(pv), '| geaendert:', summary['n_changed'], '| groesste Aenderung: %.4f' % summary['max_change'])
-print('ueber 0,05 gerutscht:', [(c['path'], round(c['old'], 4), round(c['new'], 4)) for c in summary['cross_05']])
-print('ueber 0,0125 gerutscht:', [(c['path'], round(c['old'], 4), round(c['new'], 4)) for c in summary['cross_bonf']])
-print('Punktschaetzer veraendert:', len(bad_est), '| Q2-p veraendert:', len(bad_q2), '| p kleiner geworden:', len(neg))
-print('fehlend:', missing)
+print('p-values compared:', len(pv), '| changed:', summary['n_changed'], '| largest change: %.4f' % summary['max_change'])
+print('moved above 0.05:', [(c['path'], round(c['old'], 4), round(c['new'], 4)) for c in summary['cross_05']])
+print('moved above 0.0125:', [(c['path'], round(c['old'], 4), round(c['new'], 4)) for c in summary['cross_bonf']])
+print('point estimates changed:', len(bad_est), '| Q2-p changed:', len(bad_q2), '| p became smaller:', len(neg))
+print('missing:', missing)

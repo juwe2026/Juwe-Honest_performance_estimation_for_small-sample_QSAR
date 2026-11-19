@@ -16,7 +16,7 @@ SPEC = [("A1", "A1_nq", "A1_p", "A1_n"),
 
 
 def main(outdir):
-    # Gleiche Breitenverhaeltnisse, damit die Balken in beiden Feldern gleich breit erscheinen
+    # same width ratios, so that the bars appear equally wide in both panels
     # Sized to fit 180 mm width at 300 dpi; previously 251 mm wide. Height and layout
     # (axis label size, panel proportions, a/b label size and offset) matched to
     # Fig. 7's panel a/b, which uses the same rotated-label, two-panel layout.
@@ -95,9 +95,10 @@ def main(outdir):
     fig.subplots_adjust(left=0.085, right=0.985, bottom=0.33, top=0.80, wspace=0.48)   # = Fig. 7
     fig.legend(handles, labels, loc="upper center", ncol=2, columnspacing=1.2, handlelength=1.5, fontsize=7.5)
     fig.text(0.5, 0.005,
-             "* marks p < 0.05 in the permutation test of the nested $Q^2$; hatched bars mark\n"
-             "the P. aeruginosa artefact; Route B is fixed at 12 descriptors",
-             ha="center", fontsize=7.2, color=MUTED, linespacing=1.4)   # as the notes of Fig. 7
+             "* marks p < 0.05 in the permutation test of the nested $Q^2$. Hatched bars mark\n"
+             "P. aeruginosa (three actives, descriptive only). Route B is fixed at 12 descriptors.",
+             ha="center", fontsize=8.0, color=MUTED, linespacing=1.4)
+    # note text and 8 pt changed on 07.11.2026 (approved by EW, items Ä17 and F17 of the review of 06.11.2026)
     save(fig, "Fig6_order_comparison", outdir, xspan=XSPAN_FIG6_FIG7)
 
 

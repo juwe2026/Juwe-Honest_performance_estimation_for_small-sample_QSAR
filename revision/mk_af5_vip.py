@@ -1,26 +1,39 @@
 # -*- coding: utf-8 -*-
-"""Zusatzdatei 5 (neu: Additional file 8, VIP- und Effektstaerke-Tabellen) fuer die Revision (G2-20, 03.10.2026).
-Nur die Spalten der Blaetter VIP_Lit_<Stamm>, die alle 25 Literaturdeskriptoren verwenden (TwoStage_VIP_apparent,
-TwoStage_VIP_nested_mean, TwoStage_selfreq_VIPgt1, EffectSize), werden mit NumStereoCenters von 1,8-Cineol = 0 neu
-berechnet (out/vip25_cineole0.json, Algorithmus code/compute_vip.py, zwei Komponenten). Die RouteB_*-Spalten (12er-Satz,
-ohne NumStereoCenters) und die ChemDes-Blaetter bleiben unveraendert. Vorher wird geprueft, dass die eingereichten Werte
-mit Cineol = 2 reproduziert werden. Zeilen werden wie in der Einreichung nach TwoStage_VIP_apparent absteigend sortiert."""
+"""Supplementary file 5 (new: Additional file 8 in the numbering of Revision 1, VIP and effect size tables) for the revision (G2-20, 03.10.2026).
+Only the columns of the sheets VIP_Lit_<strain> that use all 25 literature descriptors (TwoStage_VIP_apparent,
+TwoStage_VIP_nested_mean, TwoStage_selfreq_VIPgt1, EffectSize) are recomputed with NumStereoCenters of 1,8-cineole = 0
+(out/vip25_cineole0.json, algorithm code/compute_vip.py, two components). The RouteB_* columns (12-descriptor set,
+without NumStereoCenters) and the ChemDes sheets stay unchanged. First it is checked that the submitted values
+are reproduced with cineole = 2. Rows are sorted by TwoStage_VIP_apparent in descending order, as in the submission."""
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import os, sys, json, datetime, zoneinfo, numpy as np, openpyxl, pandas as pd
-os.environ.setdefault('QSAR_ROUTEA_XLSX', '/home/claude/rev/QSAR_selection_leakage/data/20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx')
-sys.path.insert(0, '/home/claude/rev/QSAR_selection_leakage/code')
+os.environ.setdefault('QSAR_ROUTEA_XLSX', (_ROOT + '/data/20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx'))
+# The check below needs the Route B descriptors as submitted (1,8-cineole with NumStereoCenters = 2).
+os.environ.setdefault('QSAR_ROUTEB_XLSX', _ROOT + '/data/RouteB_descriptor_data_submitted.xlsx')
+sys.path.insert(0, (_ROOT + '/code'))
 import core, desc_compute as dc
 from scipy.stats import rankdata
 from openpyxl.styles import Font
-SRC = '/mnt/user-data/uploads/J_Chemometrics/2026-09-01 Manuskript+Suppl+addfile2-10 upload/2026-09-01 1805 Additional_file_5_VIP_and_effect_size_tables.xlsx'
+SRC = _osp.environ.get('QSAR_AF5_SUBMITTED', _ROOT + '/data/20260710_VIP_EffectSize_Tabellen_submitted.xlsx')
 TS = datetime.datetime.now(zoneinfo.ZoneInfo('Europe/Berlin')).strftime('%d.%m.%Y %H%M')
-OUT = '/mnt/user-data/outputs/Additional_file_5_VIP_and_effect_size_tables_neu %s.xlsx' % TS
-V = json.load(open('/home/claude/rev/out/vip25_cineole0.json')); L25 = V['L25']
+OUT = (_WORK + '/Additional_file_5_VIP_and_effect_size_tables_neu %s.xlsx') % TS
+V = json.load(open((_OUT + '/vip25_cineole0.json'))); L25 = V['L25']
 X2 = core.X_of(L25); ci = core.COMPOUNDS.index('1,8-Cineole'); j = L25.index('NumStereoCenters')
 assert X2[ci, j] == 2
 X0 = X2.copy(); X0[ci, j] = 0
-# Die eingereichte Effektstaerke von MolWt wurde aus ungerundeten Werten berechnet, in denen Isomere gleicher Summenformel
-# in der 14. Stelle differieren (Gleichstaende aufgebrochen, vgl. Spearman-Matrix); hier mit Gleichstaenden.
-_D = pd.read_excel('/home/claude/rev/QSAR_selection_leakage/data/RouteB_descriptor_data.xlsx', 'Descriptors')
+# The submitted effect size of MolWt was computed from unrounded values in which isomers of equal molecular formula
+# differ in the 14th digit (ties broken, compare the Spearman matrix), here with ties.
+_D = pd.read_excel((_ROOT + '/data/RouteB_descriptor_data_submitted.xlsx'), 'Descriptors')
 _smi = dict(zip(_D.Monoterpenoid, _D.SMILES))
 MW_NOISY = np.array([dc.compute(_smi[c])['MolWt'] for c in core.COMPOUNDS])
 assert np.allclose(MW_NOISY, X2[:, L25.index('MolWt')], atol=1e-9)
@@ -59,7 +72,7 @@ wb.save(OUT)
 ns = [l for l in LOG if l[1] in ('NumStereoCenters', 'MolWt')]
 assert max(abs(l[2][3] - l[3][3]) for l in LOG if l[1] == 'MolWt') <= 0.024
 mx = max(abs(a - b) for l in LOG if l[1] != 'NumStereoCenters' for a, b in zip(l[2][:2], l[3][:2]))
-print('geaendert: %d Zeilen; groesste Aenderung ausser NumStereoCenters: %.3f' % (len(LOG), mx))
+print('changed: %d rows, largest change except NumStereoCenters: %.3f' % (len(LOG), mx))
 for l in ns: print('  ', l)
-json.dump(dict(out=OUT, changes=LOG, max_other=mx), open('/home/claude/rev/out/af5_vip_regen.json', 'w'), indent=1, default=str)
-print('geschrieben:', OUT)
+json.dump(dict(out=OUT, changes=LOG, max_other=mx), open((_OUT + '/af5_vip_regen.json'), 'w'), indent=1, default=str)
+print('written:', OUT)

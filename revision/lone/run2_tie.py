@@ -1,31 +1,42 @@
-# Zweiter MHK-Datensatz (Lone 2019). Wie run_lone.py, aber mit Cache pro Arm (neustartfest).
+# Second MIC data set (Lone 2019). As run_lone.py, but with a cache per arm (restart-safe).
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import sys, os, json, time
-sys.path.insert(0,'/home/claude/rev/QSAR_selection_leakage/code')
+sys.path.insert(0,(_ROOT + '/code'))
 import numpy as np, pandas as pd
 from scipy.stats import rankdata
 from sklearn.cross_decomposition import PLSRegression
 from sklearn.metrics import roc_auc_score
 from sklearn.ensemble import RandomForestClassifier
 import nested_generic as ng, altorder as ao, unsup_rep as ur
-os.environ['QSAR_RECALC_DIR']='/home/claude/rev/lone/recalc'
+os.environ['QSAR_RECALC_DIR']=(_WORK + '/lone/recalc')
 
-RULE=sys.argv[1]            # 'A' oder 'C'
-CACHE='/home/claude/rev/lone/cache_tie'; os.makedirs(CACHE,exist_ok=True)
+RULE=sys.argv[1]            # 'A' or 'C'
+CACHE=(_WORK + '/lone/cache_tie'); os.makedirs(CACHE,exist_ok=True)
 NPERM=2000; NPERM_RF=500; NPERM_HITS=1000
 SEED={'A1':9201,'A1u':9202,'A2':9203,'nosel':9204,'nofilter':9205,'rf':9206,'hits':9207}
 if RULE=='C': SEED={k:v+100 for k,v in SEED.items()}
 THR={'A':{'EC':8,'SA':8,'PA':16,'AB':8},'C':{'EC':16,'SA':16,'PA':16,'AB':16}}[RULE]
 
-rows=json.load(open('/home/claude/rev/lone/rows.json'))
-X=pd.read_csv('/home/claude/rev/lone/desc_pool.csv'); assert list(X['No'].astype(str))==[r['No'] for r in rows]
+rows=json.load(open((_REV + '/lone/rows.json')))
+X=pd.read_csv((_REV + '/lone/desc_pool.csv')); assert list(X['No'].astype(str))==[r['No'] for r in rows]
 DESC=[c for c in X.columns if c!='No']; X=X[DESC].values.astype(float); N=X.shape[0]
 Y={}
 for k in ['EC','SA','PA','AB']:
     Y[k]=np.array([1.0 if (float(r['MIC_'+k])<=THR[k] and r['censored_'+k]!='yes') else 0.0 for r in rows])
-print('Regel',RULE,'Deskriptoren',X.shape,'Aktive',{k:int(v.sum()) for k,v in Y.items()},flush=True)
+print('rule',RULE,'descriptors',X.shape,'actives',{k:int(v.sum()) for k,v in Y.items()},flush=True)
 
 def q2(y,yh): return 1-np.sum((y-yh)**2)/np.sum((y-y.mean())**2)
-exec(open('/home/claude/rev/pval_tie.py').read())   # Gleichstandsbehandlung, Revision 03.10.2026
+exec(open((_REV + '/pval_tie.py')).read())   # treatment of ties, revision of 03.10.2026
 def mcc(y,yh,thr=0.5):
     p=(yh>=thr).astype(float); tp=int(((p==1)&(y==1)).sum()); fn=int(((p==0)&(y==1)).sum())
     fp=int(((p==1)&(y==0)).sum()); tn=int(((p==0)&(y==0)).sum())
@@ -45,7 +56,7 @@ for i in range(N):
     tr=np.ones(N,bool); tr[i]=False
     FOLDS.append(dict(tr=tr,i=i,Xtr=X[tr],R=rankdata(X[tr],axis=0),Xte=X[i:i+1]))
 t=time.time(); G,_=ao.build_groups(X); REPS=np.asarray(ur.centrality_reps(X,G))
-print('Gruppen',len(G),'(%.0fs)'%(time.time()-t),flush=True)
+print('groups',len(G),'(%.0fs)'%(time.time()-t),flush=True)
 R=rankdata(X,axis=0)
 
 def cached(name,fn):
@@ -76,7 +87,7 @@ for k,y in Y.items():
         out[k][nm]=cached('%s_%s'%(k,nm),lambda f=f,sd=sd,y=y: perm(f,y,sd))
         r=out[k][nm]
         print('%s %-16s Q2 %6.3f p %.4f AUC %.3f p %.4f MCC %6.3f %ss'%(k,nm,r['q2'],r['p_q2'],r['auc'],r['p_auc'],r['mcc'],r.get('seconds')),flush=True)
-        json.dump(out,open('/home/claude/rev/lone/res_%s.json'%RULE,'w'),indent=1,default=float)
+        json.dump(out,open((_OUT + '/lone/res_%s.json')%RULE,'w'),indent=1,default=float)
     def rf_arm(y=y):
         def rf_oob(yy,seed=0):
             rf=RandomForestClassifier(300,min_samples_leaf=1,max_features='sqrt',oob_score=True,n_jobs=1,random_state=seed).fit(X,yy)
@@ -103,5 +114,5 @@ for k,y in Y.items():
         return d
     out[k]['hits']=cached('%s_hits'%k,hits_arm)
     print(k,'hits',{n:(v['obs'],round(v['infl_own'],2) if v.get('infl_own') else None,round(v['p'],4)) for n,v in out[k]['hits'].items() if isinstance(v,dict)},flush=True)
-    json.dump(out,open('/home/claude/rev/lone/res_%s.json'%RULE,'w'),indent=1,default=float)
-print('fertig',RULE,flush=True)
+    json.dump(out,open((_OUT + '/lone/res_%s.json')%RULE,'w'),indent=1,default=float)
+print('done',RULE,flush=True)

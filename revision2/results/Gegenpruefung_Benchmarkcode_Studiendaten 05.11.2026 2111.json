@@ -1,0 +1,380 @@
+{
+ "Octapeptide": {
+  "G": 50,
+  "p": 1275,
+  "endpunkte": {
+   "EC": {
+    "aktiv": 20,
+    "faktoren": {
+     "A1": {
+      "kalibriert": 2.127,
+      "nominal": 3.467,
+      "null_rate": 0.1482,
+      "beobachtet": 16
+     },
+     "A1u": {
+      "kalibriert": 1.669,
+      "nominal": 1.605,
+      "null_rate": 0.046,
+      "beobachtet": 5
+     },
+     "A2": {
+      "kalibriert": 12.848,
+      "nominal": 12.773,
+      "null_rate": 0.0494,
+      "beobachtet": 262
+     }
+    },
+    "q2": {
+     "A1": {
+      "scheinbar": 0.3847,
+      "genestet": 0.1872,
+      "optimismus": 0.1975
+     },
+     "A1u": {
+      "scheinbar": 0.3609,
+      "genestet": 0.1537,
+      "optimismus": 0.2072
+     },
+     "A2": {
+      "scheinbar": 0.3963,
+      "genestet": 0.0439,
+      "optimismus": 0.3523
+     }
+    }
+   },
+   "SA": {
+    "aktiv": 23,
+    "faktoren": {
+     "A1": {
+      "kalibriert": 2.087,
+      "nominal": 3.337,
+      "null_rate": 0.1415,
+      "beobachtet": 25
+     },
+     "A1u": {
+      "kalibriert": 1.592,
+      "nominal": 1.488,
+      "null_rate": 0.0434,
+      "beobachtet": 12
+     },
+     "A2": {
+      "kalibriert": 13.077,
+      "nominal": 12.424,
+      "null_rate": 0.0449,
+      "beobachtet": 727
+     }
+    },
+    "q2": {
+     "A1": {
+      "scheinbar": 0.5758,
+      "genestet": 0.4453,
+      "optimismus": 0.1305
+     },
+     "A1u": {
+      "scheinbar": 0.505,
+      "genestet": 0.1982,
+      "optimismus": 0.3068
+     },
+     "A2": {
+      "scheinbar": 0.5555,
+      "genestet": 0.4147,
+      "optimismus": 0.1408
+     }
+    }
+   },
+   "PA": {
+    "aktiv": 14,
+    "faktoren": {
+     "A1": {
+      "kalibriert": 2.161,
+      "nominal": 3.431,
+      "null_rate": 0.139,
+      "beobachtet": 23
+     },
+     "A1u": {
+      "kalibriert": 1.678,
+      "nominal": 1.554,
+      "null_rate": 0.0425,
+      "beobachtet": 10
+     },
+     "A2": {
+      "kalibriert": 13.536,
+      "nominal": 12.944,
+      "null_rate": 0.0455,
+      "beobachtet": 210
+     }
+    },
+    "q2": {
+     "A1": {
+      "scheinbar": 0.4765,
+      "genestet": 0.29,
+      "optimismus": 0.1865
+     },
+     "A1u": {
+      "scheinbar": 0.4365,
+      "genestet": 0.3607,
+      "optimismus": 0.0758
+     },
+     "A2": {
+      "scheinbar": 0.4565,
+      "genestet": 0.2424,
+      "optimismus": 0.2142
+     }
+    }
+   },
+   "AB": {
+    "aktiv": 14,
+    "faktoren": {
+     "A1": {
+      "kalibriert": 2.069,
+      "nominal": 3.358,
+      "null_rate": 0.1466,
+      "beobachtet": 13
+     },
+     "A1u": {
+      "kalibriert": 1.564,
+      "nominal": 1.497,
+      "null_rate": 0.0456,
+      "beobachtet": 4
+     },
+     "A2": {
+      "kalibriert": 13.465,
+      "nominal": 13.205,
+      "null_rate": 0.048,
+      "beobachtet": 299
+     }
+    },
+    "q2": {
+     "A1": {
+      "scheinbar": 0.1789,
+      "genestet": -0.2581,
+      "optimismus": 0.437
+     },
+     "A1u": {
+      "scheinbar": 0.1442,
+      "genestet": -0.2724,
+      "optimismus": 0.4166
+     },
+     "A2": {
+      "scheinbar": 0.1525,
+      "genestet": -0.2974,
+      "optimismus": 0.4498
+     }
+    }
+   }
+  }
+ },
+ "Gaucher": {
+  "G": 428,
+  "p": 590,
+  "endpunkte": {
+   "Gaucher": {
+    "aktiv": 19,
+    "faktoren": {
+     "A1": {
+      "kalibriert": 1.767,
+      "nominal": 1.866,
+      "null_rate": 0.0561,
+      "beobachtet": 66
+     },
+     "A1u": {
+      "kalibriert": 1.692,
+      "nominal": 1.652,
+      "null_rate": 0.0476,
+      "beobachtet": 59
+     },
+     "A2": {
+      "kalibriert": 2.461,
+      "nominal": 2.409,
+      "null_rate": 0.0478,
+      "beobachtet": 91
+     }
+    },
+    "q2": {
+     "A1": {
+      "scheinbar": 0.7148,
+      "genestet": 0.3796,
+      "optimismus": 0.3352
+     },
+     "A1u": {
+      "scheinbar": 0.7631,
+      "genestet": 0.4534,
+      "optimismus": 0.3098
+     },
+     "A2": {
+      "scheinbar": 0.7375,
+      "genestet": 0.3608,
+      "optimismus": 0.3767
+     }
+    }
+   }
+  }
+ },
+ "Monoterpenoide": {
+  "G": 182,
+  "p": 2208,
+  "endpunkte": {
+   "HI": {
+    "aktiv": 10,
+    "faktoren": {
+     "A1": {
+      "kalibriert": 2.282,
+      "nominal": 3.311,
+      "null_rate": 0.1128,
+      "beobachtet": 41
+     },
+     "A1u": {
+      "kalibriert": 1.741,
+      "nominal": 1.651,
+      "null_rate": 0.0447,
+      "beobachtet": 14
+     },
+     "A2": {
+      "kalibriert": 10.784,
+      "nominal": 10.491,
+      "null_rate": 0.0472,
+      "beobachtet": 386
+     }
+    },
+    "q2": {
+     "A1": {
+      "scheinbar": 0.4129,
+      "genestet": 0.0393,
+      "optimismus": 0.3736
+     },
+     "A1u": {
+      "scheinbar": 0.3394,
+      "genestet": -0.1398,
+      "optimismus": 0.4791
+     },
+     "A2": {
+      "scheinbar": 0.4511,
+      "genestet": -0.1118,
+      "optimismus": 0.5629
+     }
+    }
+   },
+   "SA": {
+    "aktiv": 5,
+    "faktoren": {
+     "A1": {
+      "kalibriert": 2.239,
+      "nominal": 3.182,
+      "null_rate": 0.1075,
+      "beobachtet": 57
+     },
+     "A1u": {
+      "kalibriert": 1.754,
+      "nominal": 1.61,
+      "null_rate": 0.0417,
+      "beobachtet": 29
+     },
+     "A2": {
+      "kalibriert": 10.277,
+      "nominal": 9.558,
+      "null_rate": 0.0429,
+      "beobachtet": 630
+     }
+    },
+    "q2": {
+     "A1": {
+      "scheinbar": 0.5099,
+      "genestet": 0.1389,
+      "optimismus": 0.371
+     },
+     "A1u": {
+      "scheinbar": 0.5429,
+      "genestet": 0.1516,
+      "optimismus": 0.3913
+     },
+     "A2": {
+      "scheinbar": 0.502,
+      "genestet": 0.2192,
+      "optimismus": 0.2828
+     }
+    }
+   },
+   "SPneu": {
+    "aktiv": 6,
+    "faktoren": {
+     "A1": {
+      "kalibriert": 2.289,
+      "nominal": 3.263,
+      "null_rate": 0.1082,
+      "beobachtet": 51
+     },
+     "A1u": {
+      "kalibriert": 1.816,
+      "nominal": 1.699,
+      "null_rate": 0.0434,
+      "beobachtet": 24
+     },
+     "A2": {
+      "kalibriert": 10.496,
+      "nominal": 9.833,
+      "null_rate": 0.0436,
+      "beobachtet": 531
+     }
+    },
+    "q2": {
+     "A1": {
+      "scheinbar": 0.5762,
+      "genestet": 0.3358,
+      "optimismus": 0.2404
+     },
+     "A1u": {
+      "scheinbar": 0.5544,
+      "genestet": 0.2124,
+      "optimismus": 0.342
+     },
+     "A2": {
+      "scheinbar": 0.5727,
+      "genestet": 0.2605,
+      "optimismus": 0.3123
+     }
+    }
+   },
+   "SPyo": {
+    "aktiv": 11,
+    "faktoren": {
+     "A1": {
+      "kalibriert": 2.345,
+      "nominal": 3.424,
+      "null_rate": 0.1143,
+      "beobachtet": 37
+     },
+     "A1u": {
+      "kalibriert": 1.834,
+      "nominal": 1.748,
+      "null_rate": 0.0452,
+      "beobachtet": 17
+     },
+     "A2": {
+      "kalibriert": 10.986,
+      "nominal": 10.725,
+      "null_rate": 0.0475,
+      "beobachtet": 544
+     }
+    },
+    "q2": {
+     "A1": {
+      "scheinbar": 0.4775,
+      "genestet": -0.0834,
+      "optimismus": 0.5609
+     },
+     "A1u": {
+      "scheinbar": 0.3667,
+      "genestet": -0.045,
+      "optimismus": 0.4117
+     },
+     "A2": {
+      "scheinbar": 0.5344,
+      "genestet": -0.049,
+      "optimismus": 0.5834
+     }
+    }
+   }
+  }
+ }
+}

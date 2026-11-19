@@ -11,21 +11,21 @@ import pandas as pd, numpy as np
 from rdkit import Chem
 from rdkit.Chem import Descriptors, rdMolDescriptors, Crippen
 
-# SMARTS-Definitionen (getrennt Aldehyd/Keton; Ether ohne Ester)
+# SMARTS definitions (aldehyde and ketone separately, ether without ester)
 SM = {
  'Aldehyde_flag'  : '[CX3H1](=O)[#6]',
  'Ketone_flag'    : '[#6][CX3](=[OX1])[#6]',
  'CarboxAcid_flag': '[CX3](=O)[OX2H1]',
  'Phenol_flag'    : '[c][OX2H1]',
- 'Ether_flag'     : '[OD2]([#6;!$([CX3]=[OX1])])[#6;!$([CX3]=[OX1])]',  # schließt Ester-O aus
- 'EsterLacton_flag': '[CX3](=[OX1])[OX2][#6]',   # Ester + Lacton (O an C gebunden, nicht H)
- 'Alcohol_flag'   : '[CX4][OX2H]',               # aliphatisches -OH
- 'CeqC_count'     : '[CX3]=[CX3]',   # aliphatische C=C
+ 'Ether_flag'     : '[OD2]([#6;!$([CX3]=[OX1])])[#6;!$([CX3]=[OX1])]',  # excludes ester O
+ 'EsterLacton_flag': '[CX3](=[OX1])[OX2][#6]',   # ester + lactone (O bound to C, not H)
+ 'Alcohol_flag'   : '[CX4][OX2H]',               # aliphatic -OH
+ 'CeqC_count'     : '[CX3]=[CX3]',   # aliphatic C=C
 }
 SMOBJ={k:Chem.MolFromSmarts(v) for k,v in SM.items()}
 
 def dou(mol):
-    # Degree of Unsaturation = (2C+2+N-H-X)/2  (X=Halogene)
+    # Degree of Unsaturation = (2C+2+N-H-X)/2  (X=halogens)
     cnt={}
     mh=Chem.AddHs(mol)
     for a in mh.GetAtoms(): cnt[a.GetSymbol()]=cnt.get(a.GetSymbol(),0)+1
@@ -34,7 +34,7 @@ def dou(mol):
     return (2*C+2+N-H-X)/2
 
 def compute(smiles):
-    mol=Chem.MolFromSmiles(smiles)           # Sanitize + RDKit-Default-Aromatizität
+    mol=Chem.MolFromSmiles(smiles)           # sanitize + RDKit default aromaticity
     Chem.AssignStereochemistry(mol,cleanIt=True,force=True)
     logp,mr=Crippen.MolLogP(mol),Crippen.MolMR(mol)
     n_atoms=lambda z:sum(1 for a in mol.GetAtoms() if a.GetAtomicNum()==z)
@@ -44,7 +44,7 @@ def compute(smiles):
     # ring-bridgehead atoms of 1,8-cineole (2 instead of 0); every other value of the 25 descriptors is the same.
     stereo=len(Chem.FindMolChiralCenters(mol,includeUnassigned=True,useLegacyImplementation=True))
     d={
-     # Grundlegende Konstitution
+     # basic constitution
      'MolWt'            : Descriptors.MolWt(mol),
      'C_Count'          : n_atoms(6),
      'O_Count'          : n_atoms(8),
@@ -52,13 +52,13 @@ def compute(smiles):
      'RingCount'        : rdMolDescriptors.CalcNumRings(mol),
      'NumAromaticRings' : rdMolDescriptors.CalcNumAromaticRings(mol),
      'NumRotatableBonds': rdMolDescriptors.CalcNumRotatableBonds(mol,rdMolDescriptors.NumRotatableBondsOptions.Strict),
-     # Sättigung / Struktur
+     # saturation / structure
      'FractionCSP3'     : rdMolDescriptors.CalcFractionCSP3(mol),
      'CeqC_DoubleBonds' : nmatch('CeqC_count'),
      'NumStereoCenters' : stereo,
      'NumAliphaticRings': rdMolDescriptors.CalcNumAliphaticRings(mol),
      'DegreeUnsaturation': dou(mol),
-     # Funktionelle Gruppen
+     # functional groups
      'NumHDonors'       : rdMolDescriptors.CalcNumHBD(mol),
      'NumHAcceptors'    : rdMolDescriptors.CalcNumHBA(mol),
      'Aldehyde_flag'    : int(nmatch('Aldehyde_flag')>0),
@@ -68,7 +68,7 @@ def compute(smiles):
      'Ether_flag'       : int(nmatch('Ether_flag')>0),
      'EsterLacton_flag' : int(nmatch('EsterLacton_flag')>0),
      'Alcohol_flag'     : int(nmatch('Alcohol_flag')>0),
-     # Physikochemie
+     # physicochemistry
      'MolLogP'          : logp,
      'TPSA'             : Descriptors.TPSA(mol),
      'MolMR'            : mr,
@@ -85,7 +85,7 @@ if __name__=='__main__':
     out=pd.concat([df[meta].reset_index(drop=True),D],axis=1)
     out.to_pickle(_os.path.join(_RES, 'desc_table.pkl'))
     print('Descriptors:',len(order))
-    # Heikle Fälle prüfen
+    # check difficult cases
     print('\n== Functional-group flags (which molecules) ==')
     for flag in ['Aldehyde_flag','Ketone_flag','CarboxAcid_flag','Phenol_flag','Ether_flag']:
         names=out.loc[out[flag]==1,'Monoterpenoid'].tolist()

@@ -1,6 +1,6 @@
-# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
-# Revision 05.10.2026: ruft die rekonstruierte Funktion a2vip.nested_cv_a2_viptop auf, setzt die Aktivitaetsspalte
-# ausdruecklich und schreibt archivrelativ (CHANGELOG_revision.md, Abschnitt 5).
+# Revision 03.10.2026: permutation p-values count ties (tolerance 1e-9), see CHANGELOG_revision.md
+# Revision 05.10.2026: calls the reconstructed function a2vip.nested_cv_a2_viptop, sets the activity column
+# explicitly and writes relative to the archive (CHANGELOG_revision.md, section 5).
 """Whole-pipeline permutation test for the Route A2 top-15-by-VIP arm (Additional file 10).
 
 Usage:  python code/prun_vip.py SHORT SHEET NPERM CODE [BUDGET]

@@ -1,0 +1,97 @@
+{
+ "Monoterpenoide": {
+  "n": 31,
+  "p": 2206,
+  "G": 182,
+  "endpunkte": {
+   "HI": {
+    "aktiv": 10,
+    "kor_coef_XTy": 1.0,
+    "max_abw_shap_formel": 0.0,
+    "spearman_imp_r": 0.982,
+    "top20_gruppen": 6,
+    "top20_paare_r07": 114,
+    "median_verh_paare_r095": 0.846
+   },
+   "PA": {
+    "aktiv": 3,
+    "kor_coef_XTy": 1.0,
+    "max_abw_shap_formel": 0.0,
+    "spearman_imp_r": 0.99,
+    "top20_gruppen": 5,
+    "top20_paare_r07": 90,
+    "median_verh_paare_r095": 0.816
+   },
+   "SA": {
+    "aktiv": 5,
+    "kor_coef_XTy": 1.0,
+    "max_abw_shap_formel": 0.0,
+    "spearman_imp_r": 0.988,
+    "top20_gruppen": 3,
+    "top20_paare_r07": 164,
+    "median_verh_paare_r095": 0.834
+   },
+   "SPneu": {
+    "aktiv": 6,
+    "kor_coef_XTy": 1.0,
+    "max_abw_shap_formel": 0.0,
+    "spearman_imp_r": 0.988,
+    "top20_gruppen": 3,
+    "top20_paare_r07": 140,
+    "median_verh_paare_r095": 0.825
+   },
+   "SPyo": {
+    "aktiv": 11,
+    "kor_coef_XTy": 1.0,
+    "max_abw_shap_formel": 0.0,
+    "spearman_imp_r": 0.978,
+    "top20_gruppen": 5,
+    "top20_paare_r07": 59,
+    "median_verh_paare_r095": 0.904
+   }
+  }
+ },
+ "Peptide": {
+  "n": 37,
+  "p": 1274,
+  "G": 50,
+  "endpunkte": {
+   "EC": {
+    "aktiv": 20,
+    "kor_coef_XTy": 1.0,
+    "max_abw_shap_formel": 0.0,
+    "spearman_imp_r": 0.965,
+    "top20_gruppen": 4,
+    "top20_paare_r07": 132,
+    "median_verh_paare_r095": 0.947
+   },
+   "SA": {
+    "aktiv": 23,
+    "kor_coef_XTy": 1.0,
+    "max_abw_shap_formel": 0.0,
+    "spearman_imp_r": 0.946,
+    "top20_gruppen": 6,
+    "top20_paare_r07": 49,
+    "median_verh_paare_r095": 0.943
+   },
+   "PA": {
+    "aktiv": 14,
+    "kor_coef_XTy": 1.0,
+    "max_abw_shap_formel": 0.0,
+    "spearman_imp_r": 0.984,
+    "top20_gruppen": 7,
+    "top20_paare_r07": 23,
+    "median_verh_paare_r095": 0.886
+   },
+   "AB": {
+    "aktiv": 14,
+    "kor_coef_XTy": 1.0,
+    "max_abw_shap_formel": 0.0,
+    "spearman_imp_r": 0.932,
+    "top20_gruppen": 6,
+    "top20_paare_r07": 51,
+    "median_verh_paare_r095": 0.935
+   }
+  }
+ }
+}

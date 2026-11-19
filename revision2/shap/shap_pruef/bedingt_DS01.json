@@ -1,0 +1,14 @@
+{
+ "zeit_p25_50samples_s": 0.12,
+ "zeit_p50_50samples_s": 0.19,
+ "zeit_p100_50samples_s": 0.63,
+ "p100_spearman_stichprobe_ledoit": 0.10364485199150036,
+ "p100_spearman_stichprobe_interv": 0.07787952616987315,
+ "p100_spearman_ledoit_interv": 0.4005136638096747,
+ "p100_top10_ueberlapp_stichprobe_ledoit": 1,
+ "p100_top10_ueberlapp_stichprobe_interv": 1,
+ "p100_top10_ueberlapp_ledoit_interv": 2,
+ "nur5_genutzt_anteil_wichtigkeit_auf_ungenutzten": 0.8114690887070423,
+ "nur5_genutzt_ungenutzte_mit_wichtigkeit_ueber_kleinster_genutzter": 21,
+ "nur5_interventionell_wichtigkeit_ungenutzte": 0.0
+}

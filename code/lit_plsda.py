@@ -1,14 +1,25 @@
-# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
+# Revision 03.10.2026: permutation p-values count ties (tolerance 1e-9), see CHANGELOG_revision.md
 # REVISION OCTOBER 2026: the empty-selection / single-class fallback below previously
 # predicted ytr.mean(). Under leave-one-out that equals (S - y_i)/(n - 1) and therefore
 # carries the held-out label; it is now the neutral constant 0.5. See CHANGELOG_revision.md.
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import numpy as np, pandas as pd, openpyxl
 from openpyxl.styles import Font, PatternFill
 from sklearn.cross_decomposition import PLSRegression
 from sklearn.metrics import roc_auc_score, matthews_corrcoef
 
-full=pd.read_pickle('desc_full.pkl')
-reduced=list(np.load('reduced_desc.npy',allow_pickle=True))
+full=pd.read_pickle(_WORK + '/desc_full.pkl')
+reduced=list(np.load(_WORK + '/reduced_desc.npy',allow_pickle=True))
 ACT=[c for c in full.columns if c.startswith(('H. I','P. A','S. A','S. Pneu','S. pyo'))]
 ALLD=[c for c in full.columns if c not in ['Monoterpenoid','SMILES']+ACT]
 NAME={'H. I. (H. influenzae)':'H.I.','P. A. (P. aeruginosa)':'P.A.','S. A. (Staph. Aureus)':'S.A.',
@@ -53,18 +64,18 @@ rows=[]; vip_tab={'Deskriptor':reduced}; twostage=[]
 for col in ACT:
     y=(full[col].astype(str).str.strip().str.lower()=='active').astype(float).values
     short=NAME[col]; n1=int(y.sum())
-    # --- Hauptmodell: reduzierter Satz (unsupervised reduziert -> einfache Permutation ist ehrlich) ---
+    # --- main model: reduced set (reduced unsupervised -> simple permutation is honest) ---
     scan=[(k,q2(y,loo(Xred,y,k))) for k in range(1,5)]
     nlv=sorted(scan,key=lambda r:(-r[1],r[0]))[0][0]
     yh=loo(Xred,y,nlv); Q=q2(y,yh); AUC=roc_auc_score(y,yh); mt=metrics(y,yh)
-    # ehrliche Permutation (fixer Satz)
+    # honest permutation (fixed set)
     pq=pa=0
     permsQ=np.empty(2000); permsA=np.empty(2000)
     for k in range(2000):
         yp=rng.permutation(y); yhp=loo(Xred,yp,nlv)
         permsQ[k]=q2(yp,yhp); permsA[k]=roc_auc_score(yp,yhp)
     pQ=(1+np.sum(permsQ>=Q - 1e-9))/2001; pA=(1+np.sum(permsA>=AUC - 1e-9))/2001
-    # VIP auf Gesamtdaten (nur Interpretation)
+    # VIP on all data (interpretation only)
     mu=Xred.mean(0); sd=Xred.std(0,ddof=1); sd[sd==0]=1
     Vfull=vip(PLSRegression(nlv,scale=False).fit((Xred-mu)/sd,y),(Xred-mu)/sd,y)
     vip_tab[short]=np.round(Vfull,3)
@@ -72,26 +83,26 @@ for col in ACT:
                      BA=round(mt['ba'],3),Sens=round(mt['sens'],3),Spez=round(mt['spec'],3),
                      MCC=round(mt['mcc'],3),Konfusion=f"{mt['TP']}/{mt['FN']}/{mt['FP']}/{mt['TN']}",
                      p_Q2=round(pQ,4),p_AUC=round(pA,4)))
-    # --- Zweistufiger VIP-Ansatz (Start: volle 25) : naiv vs. genestet ---
-    def sel_vip_train(Xtr,ytr,nlv):  # Selektion NUR auf Training (genestet)
+    # --- two-stage VIP approach (start: all 25): naive vs. nested ---
+    def sel_vip_train(Xtr,ytr,nlv):  # selection ONLY on training (nested)
         V=fit_vip(Xtr,ytr,min(nlv,Xtr.shape[1])); c=np.where(V>1)[0]; return c if len(c) else np.arange(Xtr.shape[1])
-    # naiv: VIP>1 auf ALLEN Daten bestimmen, dann fixe Spalten in LOO
+    # naive: determine VIP>1 on ALL data, then fixed columns in LOO
     Vall=fit_vip(Xall,y,nlv); naive_cols=np.where(Vall>1)[0]
     yh_naive=loo(Xall[:,naive_cols] if len(naive_cols) else Xall, y, nlv)
     Qn=q2(y,yh_naive); An=roc_auc_score(y,yh_naive)
-    # genestet: VIP>1 in jeder Fold neu
+    # nested: VIP>1 again in every fold
     yh_nest=loo(Xall,y,nlv,selector=sel_vip_train); Qg=q2(y,yh_nest); Ag=roc_auc_score(y,yh_nest)
     twostage.append(dict(Erreger=short,aktiv=n1,nLV=nlv,
                          Q2_naiv=round(Qn,3),AUC_naiv=round(An,3),
                          Q2_genestet=round(Qg,3),AUC_genestet=round(Ag,3),
                          nVIP_gt1_gesamt=int(len(naive_cols))))
-    print(f'{short}: nLV={nlv} | reduziert Q2={Q:.3f} AUC={AUC:.3f} p(Q2)={pQ:.4f} p(AUC)={pA:.4f} | VIP naiv Q2={Qn:.3f} genestet Q2={Qg:.3f}')
+    print(f'{short}: nLV={nlv} | reduced Q2={Q:.3f} AUC={AUC:.3f} p(Q2)={pQ:.4f} p(AUC)={pA:.4f} | VIP naive Q2={Qn:.3f} nested Q2={Qg:.3f}')
 
 RES=pd.DataFrame(rows); VIP=pd.DataFrame(vip_tab); TWO=pd.DataFrame(twostage)
-fn='/mnt/user-data/outputs/20260706_31MT_LitDeskriptoren_Analyse.xlsx'
+fn=(_WORK + '/20260706_31MT_LitDeskriptoren_Analyse.xlsx')
 with pd.ExcelWriter(fn,engine='openpyxl',mode='a',if_sheet_exists='replace') as w:
     RES.to_excel(w,sheet_name='PLS-DA_reduziert',index=False)
     VIP.to_excel(w,sheet_name='VIP_reduziert',index=False)
     TWO.to_excel(w,sheet_name='VIP_zweistufig',index=False)
-RES.to_pickle('/home/claude/lit_results.pkl'); TWO.to_pickle('/home/claude/lit_twostage.pkl')
+RES.to_pickle((_WORK + '/lit_results.pkl')); TWO.to_pickle((_WORK + '/lit_twostage.pkl'))
 print('\nGeschrieben.')

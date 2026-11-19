@@ -1,0 +1,23 @@
+
+== alle16: n = 16
+  H1 Q2: {'A1': (0.00029, '15/16', 0.246), 'A1u': (0.00258, '15/16', 0.197), 'A2': (2e-05, '16/16', 0.285)}
+  H2: {'p': 3.5447041512174616e-13, 'ordnung_vollstaendig': 16}  H3: {'rho': -0.3341, 'p': 0.103}
+  H4: {'anzahl': 3, 'datensaetze': ['DS03', 'DS09', 'DS13'], 'grenze': 4, 'widerlegt': False, 'median_beste_minus_kontrolle': 0.06603121237895426}  Holm: {'H2': True, 'H1': True, 'H3': False}
+
+== R1: n = 13
+  H1 Q2: {'A1': (0.00012, '13/13', 0.233), 'A1u': (0.00012, '13/13', 0.208), 'A2': (0.00012, '13/13', 0.199)}
+  H2: {'p': 7.656560966629718e-11, 'ordnung_vollstaendig': 13}  H3: {'rho': -0.2582, 'p': 0.1971}
+  H4: {'anzahl': 2, 'datensaetze': ['DS09', 'DS13'], 'grenze': 4, 'widerlegt': False, 'median_beste_minus_kontrolle': 0.05074244404666195}  Holm: {'H2': True, 'H1': True, 'H3': False}
+
+== R2: n = 10
+  H1 Q2: {'A1': (0.00098, '10/10', 0.195), 'A1u': (0.00098, '10/10', 0.192), 'A2': (0.00098, '10/10', 0.194)}
+  H2: {'p': 1.6538171687920194e-08, 'ordnung_vollstaendig': 10}  H3: {'rho': -0.3818, 'p': 0.1381}
+  H4: {'anzahl': 1, 'datensaetze': ['DS13'], 'grenze': 3, 'widerlegt': False, 'median_beste_minus_kontrolle': 0.05301630658212825}  Holm: {'H2': True, 'H1': True, 'H3': False}
+
+ausgeschlossen R1: ['DS03', 'DS11', 'DS15']  R2: ['DS03', 'DS04', 'DS08', 'DS09', 'DS11', 'DS15']
+AUC H1: {'A1': {'p': 0.0003274791716928477, 'positiv': 15, 'median': 0.11738816738816737}, 'A1u': {'p': 1.52587890625e-05, 'positiv': 16, 'median': 0.1262728364324625}, 'A2': {'p': 0.0003274791716928477, 'positiv': 15, 'median': 0.14491399405192507}}
+AUC H4: {'anzahl': 2, 'datensaetze': ['DS03', 'DS09'], 'grenze': 4, 'widerlegt': False, 'median_beste_minus_kontrolle': 0.0061802232854864525}
+
+real	0m16.185s
+user	0m14.498s
+sys	0m1.720s

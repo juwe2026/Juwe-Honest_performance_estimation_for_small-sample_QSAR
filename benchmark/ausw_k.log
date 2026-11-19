@@ -1,0 +1,116 @@
+DS01 fertig
+DS02 fertig
+DS03 fertig
+DS04 fertig
+DS05 fertig
+DS06 fertig
+DS07 fertig
+DS08 fertig
+DS09 fertig
+DS10 fertig
+DS11 fertig
+DS12 fertig
+DS13 fertig
+DS14 fertig
+DS15 fertig
+DS16 fertig
+DS21 fertig
+DS22 fertig
+DS23 fertig
+DS24 fertig
+{
+ "H1": {
+  "test": "Wilcoxon, einseitig, app_A1 - A1 (Q2) > 0",
+  "p": 0.0002899169921875,
+  "median_diff": 0.24642782961263848,
+  "positiv": 15,
+  "sekundaer": {
+   "A1u": {
+    "p": 0.0025787353515625,
+    "median_diff": 0.19678777251012264,
+    "positiv": 15
+   },
+   "A2": {
+    "p": 1.52587890625e-05,
+    "median_diff": 0.2853377980814229,
+    "positiv": 16
+   }
+  }
+ },
+ "H2": {
+  "test": "Page-Trendtest, Bloecke = 16 Datensaetze, vorhergesagt A1u < A1 < A2 (kalibrierter Faktor)",
+  "L": 224.0,
+  "p": 3.5447041512174616e-13,
+  "methode": "exact",
+  "sekundaer": {
+   "A2_gt_A1": 1.52587890625e-05,
+   "A1_gt_A1u": 1.52587890625e-05,
+   "ordnung_vollstaendig": 16
+  },
+  "median_IF": {
+   "A1": 2.1623687751878187,
+   "A1u": 1.7241146930693945,
+   "A2": 12.465731126069219
+  }
+ },
+ "H3": {
+  "test": "Spearman G/p gegen log(kalibrierter Faktor A2), einseitig negativ",
+  "rho": -0.33406925894773515,
+  "p": 0.10300784147376107,
+  "sekundaer": {
+   "A1": {
+    "rho": 0.5062547360265238,
+    "p": 0.9773017222359747
+   },
+   "A1u": {
+    "rho": 0.6092716881249443,
+    "p": 0.9938831190012303
+   }
+  }
+ },
+ "H4": {
+  "kriterium": "widerlegt, wenn in >= 4 von 16 Datensaetzen ein Intervall (Route - ohneFilter) ganz ueber 0 liegt",
+  "anzahl": 3,
+  "datensaetze": [
+   "DS03",
+   "DS09",
+   "DS13"
+  ],
+  "widerlegt": false,
+  "binomial_p_ab_k": 0.11347499639776285,
+  "sekundaer": {
+   "ohneAuswahl": [
+    "DS01",
+    "DS03",
+    "DS06",
+    "DS08",
+    "DS09",
+    "DS13",
+    "DS14"
+   ],
+   "RF": [
+    "DS03"
+   ]
+  },
+  "median_beste_minus_kontrolle": 0.06603121237895426,
+  "median_ci95": [
+   0.014738962026252356,
+   0.2662763005348141
+  ],
+  "hinweis_seed": "Bootstrap ueber Datensaetze: Seed nicht spezifiziert, verwendet default_rng([93, 0, 208])"
+ },
+ "holm_m3": {
+  "H2": true,
+  "H1": true,
+  "H3": false
+ },
+ "holm_m4": {
+  "H2": true,
+  "H1": true,
+  "H3": false
+ }
+}
+
+real	0m15.967s
+user	0m14.581s
+sys	0m1.356s

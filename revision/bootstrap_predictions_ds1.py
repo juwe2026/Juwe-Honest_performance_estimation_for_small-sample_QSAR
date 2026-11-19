@@ -1,13 +1,26 @@
 # Observed predictions of every monoterpenoid model whose honest Q2 is compared in the manuscript (input of paired_bootstrap.py).
 # No permutations, deterministic (random forest: random_state 0, out-of-bag). Same computations as jobE_misc.py, jobJ2_topk.py
 # and jobD_rf.py; the Q2 of every model reproduces the published value. Paths as in the other revision scripts (README_revision.md).
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
+# These scripts imported core.py from the archive as submitted, whose default Route B file is the submitted one.
+_osp.environ.setdefault('QSAR_ROUTEB_XLSX', _ROOT + '/data/RouteB_descriptor_data_submitted.xlsx')
 import sys, os, json
-os.environ.setdefault('QSAR_ROUTEA_XLSX','/home/claude/rev/QSAR_selection_leakage/data/20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx')
-sys.path.insert(0,'/home/claude/rev/QSAR_selection_leakage/code')
-exec(open('/home/claude/rev/common.py').read())
+os.environ.setdefault('QSAR_ROUTEA_XLSX',(_ROOT + '/data/20260706_31MT_5Bac_AllDes_cleaned_CS1-4.xlsx'))
+sys.path.insert(0,(_ROOT + '/code'))
+exec(open((_REV + '/common.py')).read())
 import core
 for _m in ['nested_generic','altorder','unsup_rep']: sys.modules.pop(_m,None)
-sys.path.insert(0,'/home/claude/rev/fixcode')
+sys.path.insert(0,(_ROOT + '/code'))
 import nested_generic as ng, altorder as ao, unsup_rep as ur, a2vip
 print('core', core.__file__, 'RED12', core.RED12)
 from scipy.stats import rankdata
@@ -44,4 +57,4 @@ for k in KEYS:
     P['A2_vip15']=a2vip.nested_cv_a2_viptop(D1,y,1,15,2)[2]
     out[k]=dict(y=y.tolist(),pred={n:np.asarray(v).tolist() for n,v in P.items()})
     print(k,{n:round(q2(y,np.asarray(v)),3) for n,v in P.items()},flush=True)
-json.dump(out,open('/home/claude/rev/out/bootstrap_predictions_ds1.json','w'))
+json.dump(out,open((_OUT + '/bootstrap_predictions_ds1.json'),'w'))

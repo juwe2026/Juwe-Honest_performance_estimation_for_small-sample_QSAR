@@ -1,0 +1,67 @@
+{
+ "DS01": {
+  "n": 50,
+  "p": 1394,
+  "G": 95,
+  "kor_coef_XTy": 0.9999999999999993,
+  "max_abw_shap_formel": 0.0,
+  "spearman_imp_rpb": 0.9648917998342494,
+  "paare_r095": 23508,
+  "median_verhaeltnis_paar": 0.9194133186061562,
+  "anteil_paare_verh_ueber_0_8": 0.8482644206227667,
+  "top20_gruppen": 3,
+  "top20_paare_r07": 116
+ },
+ "DS02": {
+  "n": 34,
+  "p": 1396,
+  "G": 82,
+  "kor_coef_XTy": 1.0,
+  "max_abw_shap_formel": 0.0,
+  "spearman_imp_rpb": 0.9617560443474475,
+  "paare_r095": 15292,
+  "median_verhaeltnis_paar": 0.8922446273885747,
+  "anteil_paare_verh_ueber_0_8": 0.7272667800601857,
+  "top20_gruppen": 6,
+  "top20_paare_r07": 53
+ },
+ "DS09": {
+  "n": 32,
+  "p": 1373,
+  "G": 86,
+  "kor_coef_XTy": 0.9999999999999998,
+  "max_abw_shap_formel": 0.0,
+  "spearman_imp_rpb": 0.9809264061235609,
+  "paare_r095": 21040,
+  "median_verhaeltnis_paar": 0.9121806748579285,
+  "anteil_paare_verh_ueber_0_8": 0.8746673003802281,
+  "top20_gruppen": 6,
+  "top20_paare_r07": 77
+ },
+ "DS13": {
+  "n": 34,
+  "p": 1370,
+  "G": 66,
+  "kor_coef_XTy": 1.0,
+  "max_abw_shap_formel": 0.0,
+  "spearman_imp_rpb": 0.9894991193418786,
+  "paare_r095": 27186,
+  "median_verhaeltnis_paar": 0.9103715575770008,
+  "anteil_paare_verh_ueber_0_8": 0.9040682704333113,
+  "top20_gruppen": 6,
+  "top20_paare_r07": 114
+ },
+ "DS14": {
+  "n": 48,
+  "p": 1372,
+  "G": 79,
+  "kor_coef_XTy": 1.0,
+  "max_abw_shap_formel": 0.0,
+  "spearman_imp_rpb": 0.9863227731774588,
+  "paare_r095": 32435,
+  "median_verhaeltnis_paar": 0.7644352812376906,
+  "anteil_paare_verh_ueber_0_8": 0.43342068752890395,
+  "top20_gruppen": 1,
+  "top20_paare_r07": 190
+ }
+}

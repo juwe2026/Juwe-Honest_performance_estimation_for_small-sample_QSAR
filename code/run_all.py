@@ -16,7 +16,7 @@ OUT_PATH = os.path.join(OUT_DIR, "results.json")
 t0 = time.time(); out = {}
 SETS = {"D13": core.RED13, "D12": core.RED12}
 
-# ---- Permutationstests, identische Seeds fuer beide Saetze -> Differenz ist rein der Deskriptor
+# ---- permutation tests, identical seeds for both sets -> the difference is purely the descriptor
 out["perm"] = {}
 for tag, cols in SETS.items():
     out["perm"][tag] = {}
@@ -29,14 +29,14 @@ for tag, cols in SETS.items():
                   % (tag, nlv, s, r["q2"], r["p_q2"], r["auc"], r["p_auc"], time.time()-t0), flush=True)
         json.dump(out, open(OUT_PATH, "w"), indent=1)
 
-# ---- VIP-Tabellen mit dem publizierten nLV je Stamm
+# ---- VIP tables with the published nLV per strain
 out["vip"] = {tag: core.vip_table(cols) for tag, cols in SETS.items()}
-# ---- VIP zusaetzlich bei nLV = 1 und 3, wie in Fig. S2 und S3 verwendet
+# ---- VIP in addition at nLV = 1 and 3, as used in Fig. S2 and S3
 out["vip_nlv"] = {tag: {str(n): core.vip_table(cols, {s: n for s in core.STRAINS})
                         for n in (1, 3)} for tag, cols in SETS.items()}
-# ---- Konfusionsmatrizen
+# ---- confusion matrices
 out["conf"] = {tag: {str(n): {s: core.confusion(cols, s, n) for s in core.STRAINS}
                      for n in (1, 3)} for tag, cols in SETS.items()}
 out["descriptors"] = {tag: cols for tag, cols in SETS.items()}
 json.dump(out, open(OUT_PATH, "w"), indent=1)
-print("FERTIG nach %.0f s -> %s" % (time.time()-t0, OUT_PATH))
+print("DONE after %.0f s -> %s" % (time.time()-t0, OUT_PATH))

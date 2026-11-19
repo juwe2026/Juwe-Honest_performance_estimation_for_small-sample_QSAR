@@ -1,5 +1,5 @@
-"""Alternative Route-A-Reihenfolge: erst Korrelationsgruppierung (unsupervised),
-dann Effektgroessenfilter auf den Repraesentanten."""
+"""Alternative Route A order: first correlation grouping (unsupervised),
+then effect size filter on the representatives."""
 import os as _os
 _ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 _DATA = _os.path.join(_ROOT, "data")
@@ -28,8 +28,8 @@ def _store(X):
     return _os.path.join(_RES, "alt_groups_%s.pkl" % h)
 
 def build_groups(X, thresh=0.7):
-    """Unsupervised: Gruppenstruktur aus Deskriptor-Deskriptor-Korrelation (Pearson ODER Spearman).
-    Hub = am staerksten vernetzt (Tie-break: hoehere Varianz, rein unsupervised)."""
+    """Unsupervised: group structure from the descriptor-descriptor correlation (Pearson OR Spearman).
+    Hub = most strongly connected (tie-break: higher variance, purely unsupervised)."""
     n, p = X.shape
     R = rankdata(X, axis=0)
     def adj(M):
@@ -46,7 +46,7 @@ def build_groups(X, thresh=0.7):
     while remaining.any():
         d = np.where(remaining, deg, -1)
         mx = d.max()
-        if mx <= 0:                      # nur noch Singletons
+        if mx <= 0:                      # only singletons left
             for i in np.where(remaining)[0]: groups.append([int(i)])
             break
         cand = np.where(d == mx)[0]
@@ -54,7 +54,7 @@ def build_groups(X, thresh=0.7):
         members = np.concatenate([[hub], np.where(ADJ[hub] & remaining)[0]])
         members = np.unique(members).astype(int)
         groups.append([int(m) for m in members])
-        for m in members:                               # Grad inkrementell aktualisieren
+        for m in members:                               # update the degree incrementally
             deg -= ADJ[m].astype(int)
         remaining[members] = False
     return groups, ADJ
@@ -68,8 +68,8 @@ def get_groups(X):
     return g
 
 def alt_select(groups, R, ytr, ntr, eff_thr=0.3, p_thr=0.05):
-    """Repraesentant je Gruppe = hoechste Effektgroesse (supervised),
-    danach Effektgroessenfilter auf den Repraesentanten."""
+    """Representative per group = highest effect size (supervised),
+    then effect size filter on the representatives."""
     eff, pv = ng.eff_filter(R, ytr, ntr)
     reps = np.array([g[int(np.argmax(eff[g]))] for g in groups], dtype=int)
     keep = reps[(eff[reps] > eff_thr) & (pv[reps] <= p_thr)]
@@ -93,7 +93,7 @@ def alt_nested_cv(D, groups, yv, nlv=1, top_k=None):
     return q2, roc_auc_score(yv, yhat), yhat
 
 def alt_apparent(D, groups, nlv=1, top_k=None):
-    """Apparente LOO-CV mit fixer, auf allen Daten bestimmter Auswahl."""
+    """Apparent LOO-CV with a fixed selection determined on all data."""
     y = D['Y']; N = D['N']; R = rankdata(D['X'], axis=0)
     cols, eff, pv, reps = alt_select(groups, R, y, N)
     if top_k is not None and len(cols) > top_k:
@@ -109,7 +109,7 @@ def alt_apparent(D, groups, nlv=1, top_k=None):
     return q2, roc_auc_score(y, yhat), len(cols), len(reps)
 
 def alt_viptop(D, groups, yv, nlv=1, top_k=15, nlv_vip=2):
-    """A1 + VIP-Auswahl: erstes PLS-DA auf den gefilterten Repraesentanten, Top-k nach VIP, zweites PLS-DA."""
+    """A1 + VIP selection: first PLS-DA on the filtered representatives, top k by VIP, second PLS-DA."""
     import numpy as _np
     N=D['N']; yhat=_np.zeros(N)
     for F in D['FOLDS']:

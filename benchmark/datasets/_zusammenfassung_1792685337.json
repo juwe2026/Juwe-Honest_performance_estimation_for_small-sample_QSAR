@@ -1,0 +1,24 @@
+[
+ {
+  "ds": "DS01",
+  "zelle": [
+   "Enzym",
+   "divers",
+   "A 25-35 %"
+  ],
+  "dokument": "CHEMBL4627398",
+  "doi": "10.1021/acs.jmedchem.0c00450",
+  "assay": "CHEMBL4630006",
+  "ziel": "Tyrosine-protein kinase JAK3",
+  "einheit": "nM",
+  "n": 50,
+  "aktiv": 34,
+  "nicht_aktiv": 16,
+  "anteil_kleinere": 0.32,
+  "p_roh": 1830,
+  "p_sauber": 1394,
+  "gruppen": 95,
+  "redundanz_G_p": 0.0681,
+  "sekunden": 25.9
+ }
+]

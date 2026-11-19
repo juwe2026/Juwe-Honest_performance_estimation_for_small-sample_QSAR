@@ -1,14 +1,25 @@
-# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
+# Revision 03.10.2026: permutation p-values count ties (tolerance 1e-9), see CHANGELOG_revision.md
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import numpy as np, pandas as pd, openpyxl
 from openpyxl.styles import Font, PatternFill
 from collections import Counter
 import nested_generic as ng
 
 BIASED={'P.A.':(0.88,1.00),'S.A.':(0.50,0.97),'S. Pneu':(0.56,0.97),'S. Pyo':(0.52,0.95)}
-EP=[('P.A.','P. aeruginosa','CS1-4_P.A.','PA','/mnt/user-data/outputs/20260706_31MT_P.A._Step5.xlsx'),
-    ('S.A.','Staph. aureus','CS1-4_S.A.','SA','/mnt/user-data/outputs/20260706_31MT_S.A._Step5.xlsx'),
-    ('S. Pneu','S. pneumoniae','CS1-4_S. Pneu','SPneu','/mnt/user-data/outputs/20260706_31MT_S.Pneu_Step5.xlsx'),
-    ('S. Pyo','S. pyogenes','CS1-4_S. Pyo','SPyo','/mnt/user-data/outputs/20260706_31MT_S.Pyo_Step5.xlsx')]
+EP=[('P.A.','P. aeruginosa','CS1-4_P.A.','PA',(_WORK + '/20260706_31MT_P.A._Step5.xlsx')),
+    ('S.A.','Staph. aureus','CS1-4_S.A.','SA',(_WORK + '/20260706_31MT_S.A._Step5.xlsx')),
+    ('S. Pneu','S. pneumoniae','CS1-4_S. Pneu','SPneu',(_WORK + '/20260706_31MT_S.Pneu_Step5.xlsx')),
+    ('S. Pyo','S. pyogenes','CS1-4_S. Pyo','SPyo',(_WORK + '/20260706_31MT_S.Pyo_Step5.xlsx'))]
 
 def stability(D):
     cnt=Counter()
@@ -41,7 +52,7 @@ def comments(short,n1,oq,oa,pQ,pA,bias):
     return L
 
 def write(short,full,sheet,code,fpath,D,cnt):
-    d=np.load(f'/home/claude/perm_{code}.npz'); q2=d['q2s']; auc=d['aucs']
+    d=np.load(f'{_WORK}/perm_{code}.npz'); q2=d['q2s']; auc=d['aucs']
     oq=float(d['obs_q2']); oa=float(d['obs_auc']); n=len(q2)
     pQ=(1+np.sum(q2>=oq - 1e-9))/(1+n); pA=(1+np.sum(auc>=oa - 1e-9))/(1+n)
     n1=int(D['Y'].sum()); bias=BIASED[short]; stab=sorted(cnt.items(),key=lambda x:-x[1])
@@ -84,6 +95,6 @@ def write(short,full,sheet,code,fpath,D,cnt):
 res={}
 for short,full,sheet,code,fpath in EP:
     D=ng.build(sheet); cnt=stability(D); res[short]=write(short,full,sheet,code,fpath,D,cnt)
-    print(f'{short}: geschrieben | n1={res[short]["n1"]} Q2={res[short]["oq"]:.3f} AUC={res[short]["oa"]:.3f} p(Q2)={res[short]["pQ"]:.4f} p(AUC)={res[short]["pA"]:.4f}')
-np.save('/home/claude/nested_summary.npy',res)
+    print(f'{short}: written | n1={res[short]["n1"]} Q2={res[short]["oq"]:.3f} AUC={res[short]["oa"]:.3f} p(Q2)={res[short]["pQ"]:.4f} p(AUC)={res[short]["pA"]:.4f}')
+np.save((_WORK + '/nested_summary.npy'),res)
 print('OK')

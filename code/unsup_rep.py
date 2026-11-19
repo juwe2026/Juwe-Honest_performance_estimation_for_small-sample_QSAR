@@ -1,6 +1,6 @@
-"""Route A mit VOLLSTAENDIG unsupervidierter Korrelationsgruppierung:
-Repraesentant = Mitglied mit hoechster Zentralitaet (mittlerer |r| innerhalb der Gruppe),
-also OHNE jede Verwendung der Labels. Danach erst der Effektgroessenfilter."""
+"""Route A with FULLY unsupervised correlation grouping:
+representative = member with the highest centrality (mean |r| within the group),
+that is WITHOUT any use of the labels. Only then the effect size filter."""
 import os as _os
 _ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 _DATA = _os.path.join(_ROOT, "data")
@@ -23,8 +23,8 @@ def _repstore(X):
     return _os.path.join(_RES, "unsup_reps_%s.pkl" % h)
 
 def centrality_reps(X, groups):
-    """Repraesentant je Gruppe = hoechste mittlere |Korrelation| zu den anderen Mitgliedern.
-    Nutzt ausschliesslich Deskriptorwerte, keine Labels."""
+    """Representative per group = highest mean |correlation| with the other members.
+    Uses descriptor values only, no labels."""
     REPSTORE = _repstore(X)
     if os.path.exists(REPSTORE):
         with open(REPSTORE,'rb') as f: return pickle.load(f)

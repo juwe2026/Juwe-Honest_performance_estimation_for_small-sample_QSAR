@@ -1,3 +1,9 @@
+// Archive-relative: QSAR_BUILD_IN holds the inputs of this historical build (JSON summaries, figure files and the
+// unpacked manuscript, not part of the archive), QSAR_BUILD_OUT receives the document. Both default to results/recalc.
+const _path=require('path');
+const _ROOT=_path.resolve(__dirname,'..','..');
+const _IN=(process.env.QSAR_BUILD_IN||_path.join(_ROOT,'results','recalc'))+'/';
+const _OUT=(process.env.QSAR_BUILD_OUT||_path.join(_ROOT,'results','recalc'))+'/';
 const fs = require('fs');
 const d = require('docx');
 const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, ImageRun,
@@ -132,7 +138,7 @@ push(body("A large language model (Claude Opus 5.0; Anthropic, PBC) was used, un
 // ================= CASE STUDY =================
 push(H1("Case study: antimicrobial monoterpenoids"));
 push(body("To test the two descriptor-selection routes and the two orders of the Route A reduction steps under a realistic small-n, large-p scenario, we applied all of them to the 31-monoterpenoid data set. Route A started from 3,507 descriptors computed by five ChemDes libraries, reduced to 2,208 after cleaning, which for 31 compounds is an initial ratio of about 1:71. In Route A1 the unsupervised correlation grouping reduced this pool to 182 representatives, the same for every endpoint, and the subsequent effect-size filter left strain-specific sets of 35 to 56 descriptors; in Route A2 the effect-size filter was applied first, leaving 373 to 603 descriptors, and the subsequent grouping left 27 to 50 representatives (Fig. 1a, Table 1a). Route B used the 25 pre-selected descriptors reduced to 13 by unsupervised correlation grouping (Fig. 1b). The VIP-based selection, in which a first PLS-DA ranks the Route A1 descriptors and a second PLS-DA is fitted on the 15 highest-ranked of them, is shown in Fig. 1c and evaluated below."));
-push(img("/mnt/user-data/outputs/Fig1_two_route_scheme.png", 580, 477, "png"));
+push(img(_IN+"Fig1_two_route_scheme.png", 580, 477, "png"));
 push(legend("1","Descriptor-selection routes evaluated in this study; full details are given in Materials and methods. (a) Route A reduces a large multi-library pool by an unsupervised correlation grouping and a supervised effect-size filter, applied either in that order (Route A1) or in the reverse order (Route A2); in the variant Route A1u the group representative is chosen by centrality rather than by effect size, which makes the grouping entirely label-free. (b) Route B uses a small set of interpretable descriptors chosen a priori and reduced only by correlation grouping. (c) The VIP-based selection ranks the Route A1 descriptors in a first PLS-DA and reports a second PLS-DA fitted on the 15 highest-ranked descriptors. Orange marks steps that use the activity labels and are therefore a source of selection leakage, green marks label-independent steps, blue marks PLS-DA models and grey marks data steps without descriptor selection."));
 
 push(H2("Route A1: apparent performance is largely removed by nested validation"));
@@ -170,9 +176,9 @@ push(makeTable([
  ["Route B, AUC at nLV = 1 (p)", "0.85 (0.001) *", "0.82 (0.016) *", "0.85 (0.008) *", "0.62 (0.127) n.s.", "1.00 (artefact)"],
  ["Route B, AUC at nLV = 3 (p)","0.92 (<0.001) *","0.82 (0.033) *","0.93 (0.002) *","0.65 (0.090) n.s.","1.00 (artefact)"],], [2350, 1550, 1400, 1550, 1450, 1500]));
 push(tblCap("Table 1b|  Cross-validated AUC of Route A1, Route A2 and Route B. Same models, layout, permutations and conventions as Table 1a, reporting AUC instead of Q2."));
-push(img("/mnt/user-data/outputs/Fig_three_way_comparison.png", 545, 392, "png"));
+push(img(_IN+"Fig_three_way_comparison.png", 545, 392, "png"));
 push(legend("2a","Comparison of PLS-DA validation across the five strains for Route A1, Route A2 and Route B. Grouped bars show the cross-validated Q2 (top) and AUC (bottom) for Route A1 apparent (light grey) and nested (orange), Route A2 apparent (light blue) and nested (dark blue), and Route B with the 13 literature-derived descriptors at one latent variable (dark green) and at three (light green). Asterisks mark models that are significant by permutation (p < 0.05) for the quantity plotted, and hatched bars mark P. aeruginosa, which is an artefact with only three actives. The apparent performance of both Route A1 and Route A2 is largely removed by nested validation and the two orderings agree on which strains remain significant, whereas Route B shows no apparent-to-nested gap at all, because it contains no supervised selection, and reaches the highest honest values of any route once three latent variables are allowed. One entry needs care: the three-component Route B bar for S. pyogenes carries an asterisk although its Q2 is slightly negative. The permutation test asks whether the procedure beats random labels, which it does, while a negative Q2 means the model does not beat the class-mean predictor; the Table 1a caption explains this, and S. pyogenes is not counted as a positive finding anywhere in this work."));
-push(img("/mnt/user-data/outputs/Fig_nested_permutation_all5.png", 470, 666, "png"));
+push(img(_IN+"Fig_nested_permutation_all5.png", 470, 666, "png"));
 push(legend("2b","Fully nested permutation test of Route A1 for all five strains, based on 2,000 permutations of the entire pipeline. Histograms show the null distribution of Q2 (left) and AUC (right); the observed value (solid line) is compared with the 95th percentile of the null distribution (dashed line). The observed values fall inside the null distribution for H. influenzae and S. pyogenes, which are therefore not significant, and exceed it only weakly for S. aureus and S. pneumoniae."));
 
 push(H2("Route B: a leakage-free interpretable set recovers a genuine signal"));
@@ -236,9 +242,9 @@ push(makeTable([
  ["Nested AUC (p)", "0.72 (0.0505) n.s.", "0.76 (0.066) n.s.", "0.83 (0.019) *", "0.84 (0.003) *", "1.00 (artefact)"],
 ], [2350, 1550, 1400, 1550, 1450, 1500]));
 push(tblCap("Table 3|  Route A1 restricted to the 15 descriptors with the highest effect size per strain (n:p about 2:1), apparent and fully nested. Conventions as in Table 1a; the nested AUC for H. influenzae is given to four decimals because it falls immediately above the 0.05 threshold."));
-push(img("/mnt/user-data/outputs/Fig_three_way_comparison_top15.png", 520, 436, "png"));
+push(img(_IN+"Fig_three_way_comparison_top15.png", 520, 436, "png"));
 push(legend("3a","Three-way comparison using the n:p-constrained top-15 descriptor set. The layout is as in Fig. 2a: both Route A1 and Route A2 now use their 15 descriptors with the highest effect size per strain, while Route B is unchanged. Constraining the ratio to about 2:1 does not restore either ordering of Route A under nested validation and shifts which strains are significant relative to the full descriptor sets (compare Table 3)."));
-push(img("/mnt/user-data/outputs/Fig_nested_permutation_top15.png", 470, 666, "png"));
+push(img(_IN+"Fig_nested_permutation_top15.png", 470, 666, "png"));
 push(legend("3b","Fully nested permutation test of the top-15 Route A1 models for all five strains, based on 2,000 permutations of the entire pipeline. The layout is as in Fig. 2b. Observed values are significant only for S. pneumoniae and S. pyogenes; P. aeruginosa is an artefact, and H. influenzae and S. aureus remain within the null distribution."));
 
 push(H2("Effect-size versus VIP selection, and what changes with model size"));
@@ -286,10 +292,10 @@ push(makeTable([
  ["Nested Q2 (p)", "-0.22 (0.351) n.s.", "+0.08 (0.046) *", "+0.14 (0.031) *", "-0.26 (0.396) n.s.", "0.13 (artefact)"],
 ], [2350, 1550, 1400, 1550, 1450, 1500]));
 push(tblCap("Table 5|  Route A1u, the fully label-free variant of Route A1 in which the group representative is chosen by centrality rather than by effect size. Table 1a and Table 1b give the corresponding Route A1 and Route A2 values. Conventions as in Table 1a; the nested AUC for S. aureus is given to four decimals because it falls immediately above the 0.05 threshold."));
-push(img("/mnt/user-data/outputs/Fig_order_comparison.png", 520, 259, "png"));
+push(img(_IN+"Fig_order_comparison.png", 520, 259, "png"));
 push(legend("4","Effect of the reduction scheme in Route A, alongside Route B. (a) Nested Q2 per strain for Route A1 (orange), Route A1u (green), Route A2 (blue) and Route B (dark green). Asterisks mark p < 0.05 in the permutation test of the quantity plotted; for S. pyogenes under Route B the asterisk refers to Q2 only, the corresponding AUC being non-significant (Table 1b). Hatched bars mark P. aeruginosa, which is an artefact. (b) Number of descriptors entering PLS-DA; Route B is fixed at 13."));
 
-push(img("/mnt/user-data/outputs/Fig_hitcount_boxplot.png", 596, 259, "png"));
+push(img(_IN+"Fig_hitcount_boxplot.png", 596, 259, "png"));
 push(legend("5","Interpreting the univariate hit count under the label-free Route A1u scheme. (a) Dependence between the univariate tests for the three reduction schemes, expressed as the standard deviation of the null distribution of the hit count divided by the value expected for independent tests. (b) Null distribution of the Route A1u hit count per strain, shown as a box spanning the 2.5th to 97.5th percentile of 1,000 label permutations, with the observed count overlaid as a diamond; red marks counts above the null range. The full null distributions for all three schemes are given in Fig. S6."));
 
 // ================= RESULTS AND DISCUSSION =================
@@ -443,5 +449,5 @@ const doc = new Document({
   styles:{ default:{ document:{ run:{ font:FONT, size:22 } } } },
   sections:[{ properties:{ page:{ margin:{ top:1440,bottom:1440,left:1440,right:1440 } } }, children:children }]
 });
-Packer.toBuffer(doc).then(function(b){ fs.writeFileSync("/mnt/user-data/outputs/Werle_JCheminform_revised_Claude_2026-08-10.docx", b);
+Packer.toBuffer(doc).then(function(b){ fs.writeFileSync(_OUT+"Werle_JCheminform_revised_Claude_2026-08-10.docx", b);
   console.log("written"); });

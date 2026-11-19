@@ -1,0 +1,135 @@
+voll bewertet 50
+voll bewertet 100
+voll bewertet 150
+voll bewertet 200
+voll bewertet 250
+voll bewertet 300
+voll bewertet 350
+voll bewertet 400
+voll bewertet 450
+voll bewertet 500
+voll bewertet 550
+voll bewertet 600
+voll bewertet 650
+voll bewertet 700
+voll bewertet 750
+voll bewertet 800
+voll bewertet 850
+voll bewertet 900
+voll bewertet 950
+voll bewertet 1000
+voll bewertet 1050
+voll bewertet 1100
+voll bewertet 1150
+voll bewertet 1200
+voll bewertet 1250
+voll bewertet 1300
+voll bewertet 1350
+voll bewertet 1400
+voll bewertet 1450
+voll bewertet 1500
+voll bewertet 1550
+voll bewertet 1600
+voll bewertet 1650
+voll bewertet 1700
+voll bewertet 1750
+voll bewertet 1800
+voll bewertet 1850
+voll bewertet 1900
+voll bewertet 1950
+voll bewertet 2000
+voll bewertet 2050
+voll bewertet 2100
+voll bewertet 2150
+voll bewertet 2200
+voll bewertet 2250
+voll bewertet 2300
+voll bewertet 2350
+voll bewertet 2400
+voll bewertet 2450
+voll bewertet 2500
+voll bewertet 2550
+voll bewertet 2600
+voll bewertet 2650
+voll bewertet 2700
+voll bewertet 2750
+voll bewertet 2800
+voll bewertet 2850
+voll bewertet 2900
+voll bewertet 2950
+voll bewertet 3000
+voll bewertet 3050
+voll bewertet 3100
+voll bewertet 3150
+voll bewertet 3200
+voll bewertet 3250
+voll bewertet 3300
+voll bewertet 3350
+voll bewertet 3400
+voll bewertet 3450
+voll bewertet 3500
+voll bewertet 3550
+voll bewertet 3600
+voll bewertet 3650
+voll bewertet 3700
+voll bewertet 3750
+voll bewertet 3800
+voll bewertet 3850
+voll bewertet 3900
+voll bewertet 3950
+voll bewertet 4000
+voll bewertet 4050
+voll bewertet 4100
+voll bewertet 4150
+voll bewertet 4200
+voll bewertet 4250
+voll bewertet 4300
+voll bewertet 4350
+voll bewertet 4400
+voll bewertet 4450
+voll bewertet 4500
+voll bewertet 4550
+voll bewertet 4600
+voll bewertet 4650
+voll bewertet 4700
+voll bewertet 4750
+voll bewertet 4800
+voll bewertet 4850
+voll bewertet 4900
+voll bewertet 4950
+voll bewertet 5000
+voll bewertet 5050
+voll bewertet 5100
+voll bewertet 5150
+voll bewertet 5200
+voll bewertet 5250
+voll bewertet 5300
+voll bewertet 5350
+voll bewertet 5400
+voll bewertet 5450
+voll bewertet 5500
+voll bewertet 5550
+voll bewertet 5600
+voll bewertet 5650
+voll bewertet 5700
+voll bewertet 5750
+voll bewertet 5800
+('Enzym', 'divers', 'A 25-35 %') CHEMBL4627398 CHEMBL4630006 Tyrosine-protein kinase JAK3 n 51 34/16 0.32 divers entfernt [] 
+('Enzym', 'divers', 'B >35-50 %') CHEMBL4190169 CHEMBL4190510 Prostaglandin G/H synthase 2 n 34 14/20 0.4118 divers entfernt ['DICLOFENAC', 'CELECOXIB'] 
+('Enzym', 'kongener', 'A 25-35 %') CHEMBL2016491 CHEMBL2020643 Vascular endothelial growth fa n 45 12/33 0.2667 kongener entfernt [] 
+('Enzym', 'kongener', 'B >35-50 %') CHEMBL1128536 CHEMBL677204 Epidermal growth factor recept n 43 23/17 0.425 kongener entfernt [] 
+('MIC', 'divers', 'A 25-35 %') CHEMBL1817626 CHEMBL1820655 Mycobacterium tuberculosis n 42 30/12 0.2857 divers entfernt ['ETHAMBUTOL', 'ISONIAZID'] 
+('MIC', 'divers', 'B >35-50 %') CHEMBL1123819 CHEMBL649170 Aspergillus fumigatus n 60 24/36 0.4 divers entfernt ['CLOTRIMAZOLE', 'CROCONAZOLE'] VORLAEUFIG
+('MIC', 'kongener', 'A 25-35 %') CHEMBL2086304 CHEMBL2091563 Mycobacterium tuberculosis n 42 13/29 0.3095 kongener entfernt ['ISONIAZID'] 
+('MIC', 'kongener', 'B >35-50 %') CHEMBL5370535 CHEMBL5371223 Candida albicans n 36 15/21 0.4167 kongener entfernt ['FLUCONAZOLE'] 
+('Rezeptor', 'divers', 'A 25-35 %') CHEMBL1139165 CHEMBL886703 5-hydroxytryptamine receptor 7 n 32 10/22 0.312 divers entfernt [] 
+('Rezeptor', 'divers', 'B >35-50 %') CHEMBL5046218 CHEMBL5046487 Mu-type opioid receptor n 45 19/26 0.4222 divers entfernt ['FENTANYL', 'HALOPERIDOL'] 
+('Rezeptor', 'kongener', 'A 25-35 %') CHEMBL1140004 CHEMBL888169 Cannabinoid receptor 2 n 34 10/24 0.2941 kongener entfernt ['WIN-552122'] 
+('Rezeptor', 'kongener', 'B >35-50 %') CHEMBL1128248 CHEMBL677676 D(2) dopamine receptor n 30 11/19 0.3667 kongener entfernt ['8-OH-DPAT'] 
+('Zytotox', 'divers', 'A 25-35 %') CHEMBL3621184 CHEMBL3624429 HCT-116 n 35 10/24 0.2941 divers entfernt ['DOXORUBICIN'] 
+('Zytotox', 'divers', 'B >35-50 %') CHEMBL1143213 CHEMBL931586 MCF7 n 48 22/26 0.4583 divers entfernt ['FLUOROURACIL'] 
+('Zytotox', 'kongener', 'A 25-35 %') CHEMBL1159121 CHEMBL1065834 RH7777 n 39 27/12 0.3077 kongener entfernt [] 
+('Zytotox', 'kongener', 'B >35-50 %') CHEMBL3603803 CHEMBL3608173 HeLa n 32 13/19 0.4062 kongener entfernt ['DOXORUBICIN'] 
+offen: []
+zu lesen: [('CHEMBL1123819', 'CHEMBL649170', ('MIC', 'divers', 'B >35-50 %'))]
+EXIT 0

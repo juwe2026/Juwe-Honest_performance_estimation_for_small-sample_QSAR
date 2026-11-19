@@ -1,16 +1,27 @@
-# Revision (EW 03.10.2026): Table S5 (continued) fuer Route A1 und Route B, 1-4 LV.
-# R2 = Anpassung an alle 31 Verbindungen (Route A1: Auswahl auf allen Verbindungen), wie Table S10;
-# Q2 apparent = Auswahl einmal auf allen Verbindungen, danach LOO (Route A1, wie Table 1);
-# Q2 nested = Auswahl in jedem Fold wiederholt (Route A1); Route B: feste 12 Deskriptoren, LOO.
-# Deterministisch, keine Permutationen. Gleicher Code wie jobI2_fallback.py (fixcode).
+# Revision (EW 03.10.2026): Table S5 (continued) of Revision 1 for Route A1 and Route B, 1-4 LV.
+# R2 = fit to all 31 compounds (Route A1: selection on all compounds), as Table S10 of Revision 1,
+# Q2 apparent = selection once on all compounds, then LOO (Route A1, as Table 1),
+# Q2 nested = selection repeated in every fold (Route A1), Route B: fixed 12 descriptors, LOO.
+# Deterministic, no permutations. Same code as jobI2_fallback.py (fixcode).
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import sys, json
-sys.path.insert(0, '/home/claude/rev/fixcode')
-exec(open('/home/claude/rev/common.py').read())
+sys.path.insert(0, (_ROOT + '/code'))
+exec(open((_REV + '/common.py')).read())
 for _m in ['nested_generic', 'altorder', 'unsup_rep', 'core']: sys.modules.pop(_m, None)
-sys.path.insert(0, '/home/claude/rev/fixcode')
+sys.path.insert(0, (_ROOT + '/code'))
 import altorder as ao
-assert '/home/claude/rev/fixcode' in ao.__file__
-sys.path.insert(1, '/home/claude/rev/QSAR_selection_leakage/code')
+assert (_ROOT + '/code') in ao.__file__
+sys.path.insert(1, (_ROOT + '/code'))
 import core
 FOLDS = []
 for i in range(N):
@@ -42,4 +53,4 @@ for k in KEYS:
           'R2', [round(rA[L]['r2'], 2) for L in '1234'], 'app', [round(rA[L]['q2_app'], 2) for L in '1234'],
           'nest', [round(rA[L]['q2_nest'], 2) for L in '1234'], '| B R2', [round(rB[L]['r2'], 2) for L in '1234'],
           'Q2', [round(rB[L]['q2'], 2) for L in '1234'], flush=True)
-json.dump(out, open('/home/claude/rev/out/lv_routes.json', 'w'), indent=1, default=float)
+json.dump(out, open((_OUT + '/lv_routes.json'), 'w'), indent=1, default=float)

@@ -1,0 +1,31 @@
+# Package versions of the computing environment of the second revision (October and November 2026), Python 3.13
+#
+# Used for everything under benchmark/ and revision2/.
+# The scripts under code/, revision/ and figures/ were run in the environment of revision/requirements-revision-lock.txt
+# (Python 3.11.15). Both files are needed to reproduce the figures pixel for pixel: figures/*.py with matplotlib 3.10.9,
+# revision2/figures/fig1_rev2c.py and fig6_benchmark.py with matplotlib 3.11.2.
+#
+# Recorded during the benchmark permutation runs (22 to 30 October 2026): numpy, scipy, scikit-learn, pandas, rdkit.
+# Recorded during the SHAP analyses: shap.
+# Checked on 6 November 2026 with Python 3.13.18 and the versions below: benchmark/auswertung.py, auswertung_k.py,
+# auswertung_m.py, robustheit.py, robustheit_k.py and robustheit_m.py reproduce their archived JSON outputs byte for
+# byte, and revision2/figures/fig1_rev2c.py and fig6_benchmark.py reproduce Fig. 1 and Fig. 6 pixel for pixel.
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+pandas==3.0.5
+rdkit==2026.9.1          # rdkit.__version__ reports 2026.09.1
+shap==0.54.1
+matplotlib==3.11.2
+openpyxl==3.1.5
+python-docx==1.2.0
+pillow==12.3.0
+pymupdf==2.1             # only for revision2/figures/abb_pruefung.py
+#
+# mordred: used only by benchmark/datasets.py (imported by datasets_k.py and datasets_m.py) to compute the descriptor
+# matrices of the benchmark data sets from the ChEMBL structures. Its version was not recorded at the time. The computed
+# matrices are archived (benchmark/datasets*/DSxx_X.csv) and every later step reads them, so no reported result requires
+# the descriptor calculation to be repeated. mordredcommunity==2.0.7 reproduces 55 of the 56 benchmark matrices within a
+# relative difference of 1e-12 (analysis/mordred_check.py) and the descriptor pool of the peptides within 1.2e-14
+# (analysis/mordred_peptides_check.py, independent run). Version 2.0.6 gives identical values for the peptides, so the
+# version used at the time is not identified.

@@ -1,22 +1,22 @@
 """Fig. 1: the descriptor-selection routes evaluated in this study.
 
-Neu aufgebaut am 22. August, ueberarbeitet am 23. August nach der Autorenpruefung
-des Word-Ausdrucks. Zwei Probleme wurden behoben:
+Rebuilt on 22 August, revised on 23 August after the authors' check
+of the Word printout. Two problems were fixed:
 
-1. Cleaning und Descriptor pool hatten unterschiedliche Kastenhoehen, sodass die
-   Verteilerschiene zu den drei Routen durch den Kasten Descriptor pool lief.
-   Beide Kaesten haben jetzt dieselbe Hoehe.
+1. Cleaning and Descriptor pool had different box heights, so that the
+   distribution rail to the three routes ran through the box Descriptor pool.
+   Both boxes now have the same height.
 2. Final set, PLS-DA, Nested validation required (Route A), Simple permutation
-   is already honest (Route B) und der VIP-Hinweis (Route C) standen links bzw.
-   unterhalb der Ketten und liessen viel Weissraum rechts frei. Sie stehen jetzt
-   am rechten Rand der Abbildung, Final set/PLS-DA auf Hoehe von Route A1u,
-   Nested validation required unterhalb von Route A2, und die drei Hinweiskaesten
-   in Route A/B/C haben dieselbe Breite.
+   is already honest (Route B) and the VIP note (Route C) stood to the left of or
+   below the chains and left much white space on the right. They now stand
+   at the right edge of the figure, Final set/PLS-DA at the height of Route A1u,
+   Nested validation required below Route A2, and the three note boxes
+   in Route A/B/C have the same width.
 
-Die Breite jedes Kastens wird weiterhin aus der laengsten Textzeile berechnet, und
-die Gesamtabbildung wird am Ende auf die tatsaechlich benutzte Breite und Hoehe
-zugeschnitten (nicht auf eine angenommene Breite von 100 Einheiten), damit nichts
-abgeschnitten wird und die Schrift durchgehend im richtigen Massstab steht.
+The width of every box is still computed from the longest line of text, and
+the whole figure is cropped at the end to the width and height actually used
+(not to an assumed width of 100 units), so that nothing
+is cut off and the font is at the right scale throughout.
 """
 import sys, os
 OUT = sys.argv[1] if len(sys.argv) > 1 else '.'
@@ -98,7 +98,7 @@ class Canvas:
         self.arrows.append((x1, y1, x2, y2, color, lw, ls))
 
     def line(self, pts, color='#8A94A0', lw=1.1, ls=(0, (4, 3))):
-        """Streckenzug ohne Pfeilspitze, fuer Sammel- und Verteilerschienen."""
+        """Polyline without arrowhead, for collecting and distribution rails."""
         self.lines.append((pts, color, lw, ls))
 
     def draw(self, ax):
@@ -182,9 +182,9 @@ LANES = [
       (['Correlation grouping', '27 to 50 representatives'], UNS_F, UNS_E, False)]),
 ]
 
-# Alle drei Spuren bekommen dieselbe Spaltenbreite (Kasten 1 und Kasten 2 je
-# ueber alle Routen hinweg), damit sie denselben linken und rechten Rand haben,
-# statt je nach Textlaenge unterschiedlich weit zu reichen.
+# All three lanes get the same column width (box 1 and box 2 each
+# across all routes), so that they have the same left and right margin,
+# instead of reaching different widths depending on the text length.
 COL_W = [max(measure(specs[ci][0], specs[ci][3])[0] for _, _, specs in LANES) for ci in (0, 1)]
 
 lane_rows = []
@@ -206,12 +206,12 @@ for li, (label, colour, specs) in enumerate(LANES):
     lane_rows.append(out)
     y -= out[0][3]
 
-# Rechte Spalte: eine gemeinsame Spalte fuer alle PLS-DA-Kaesten in a, b und c,
-# so platziert, dass der Pfeil nach unten in jeder Route senkrecht auf die Mitte
-# des Kastens darunter (Nested validation required / Simple permutation is
-# already honest / VIP-Hinweis) trifft. Diese drei Kaesten liegen bereits alle
-# auf derselben Spalte (BUS, Breite NESTED_W), berechnet aus dem Text der
-# laengsten der drei, bevor sie gezeichnet werden.
+# Right column: one common column for all PLS-DA boxes in a, b and c,
+# placed so that the arrow downwards in every route hits the centre
+# of the box below (Nested validation required / Simple permutation is
+# already honest / VIP note) vertically. These three boxes already all lie
+# on the same column (BUS, width NESTED_W), computed from the text of the
+# longest of the three, before they are drawn.
 banner = ['Nested validation required',
           'Every label-dependent step, including the choice of a supervised or a label-free',
           'group representative, is repeated inside each leave-one-out fold, and 2,000',
@@ -255,7 +255,7 @@ C.line([(ELBOW_X, lane_rows[0][-1][1] + lane_rows[0][-1][3] / 2),
         (ELBOW_X, lane_rows[-1][-1][1] + lane_rows[-1][-1][3] / 2)])
 C.arrow(ELBOW_X, A1U_ARROW_Y, finalSet[0] - 0.4, A1U_ARROW_Y, color='#8A94A0', lw=1.1)
 
-# Verteilerschiene links: unter der Bereinigung nach links, dann in die drei Spuren
+# distribution rail on the left: below the cleaning to the left, then into the three lanes
 SPLIT = LEFT - 2.2
 _xc = rowA[1][0] + rowA[1][2] / 2
 _y_bus = rowA[1][1] - 2.2
@@ -321,8 +321,8 @@ X_CONTENT = CONTENT_R + 3.0
 # ============================ ZEICHNEN ============================
 H = -Y_MIN
 fig = plt.figure(figsize=(X_CONTENT * UNIT_IN, H * UNIT_IN), dpi=300)
-# Die Achse muss die ganze Leinwand fuellen, sonst stimmt der Massstab nicht,
-# mit dem oben die Kastenbreiten aus der Textbreite berechnet wurden.
+# The axis must fill the whole canvas, otherwise the scale is wrong
+# with which the box widths were computed above from the text width.
 ax = fig.add_axes([0.0, 0.0, 1.0, 1.0])
 ax.set_xlim(-1.0, X_CONTENT)
 ax.set_ylim(Y_MIN, 0)

@@ -1,3 +1,14 @@
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import numpy as np, pandas as pd, pickle
 from scipy.stats import rankdata, norm
 from sklearn.cross_decomposition import PLSRegression
@@ -20,7 +31,7 @@ def eff_rb(x,y):  # rank-biserial effect size, active vs non-active
 
 sheets={'H.I.':'CS1-4_H.I.','S.A.':'CS1-4_S.A.','S.Pneu':'CS1-4_S. Pneu','S.Pyo':'CS1-4_S. Pyo','P.A.':'CS1-4_P.A.'}
 # Literature data
-full=pd.read_pickle('desc_full.pkl'); reduced=list(np.load('reduced_desc.npy',allow_pickle=True))
+full=pd.read_pickle(_WORK + '/desc_full.pkl'); reduced=list(np.load(_WORK + '/reduced_desc.npy',allow_pickle=True))
 LITALL=[c for c in full.columns if c not in ['Monoterpenoid','SMILES'] and not c.startswith(('H. I','P. A','S. A','S. Pneu','S. pyo'))]
 Ycols={'H.I.':'H. I. (H. influenzae)','S.A.':'S. A. (Staph. Aureus)','S.Pneu':'S. Pneu (S. pneumoniae)','S.Pyo':'S. pyo (S. pyogenes)','P.A.':'P. A. (P. aeruginosa)'}
 
@@ -83,5 +94,5 @@ for short,sh in sheets.items():
                      scoreA=dict(X=D['X'][:,cols15].copy(), y=y.copy(), names=names15))
     print(f'{short}: Route A top15 VIP ok ({len(rowsA)}), Route B/Two-stage ok ({len(rowsLit)})')
 
-pickle.dump(DATA, open('/home/claude/vip_data.pkl','wb'))
-print('gespeichert.')
+pickle.dump(DATA, open((_WORK + '/vip_data.pkl'),'wb'))
+print('saved.')

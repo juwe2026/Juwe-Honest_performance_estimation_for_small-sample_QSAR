@@ -1,0 +1,33 @@
+=== peptides (archive csv as read by run2.py), rounding level
+  digits full  G=50 | A2 [252, 705, 203, 252] | A1 [16, 25, 23, 12] | columns with ties 1070
+  digits 15    G=50 | A2 [249, 705, 205, 255] | A1 [16, 25, 23, 12] | columns with ties 1087
+  digits 14    G=50 | A2 [248, 705, 205, 259] | A1 [16, 25, 23, 12] | columns with ties 1091
+  digits 13    G=47 | A2 [246, 705, 204, 258] | A1 [17, 28, 20, 13] | columns with ties 1092
+  digits 12    G=47 | A2 [245, 704, 204, 258] | A1 [17, 28, 20, 13] | columns with ties 1095
+  digits 10    G=47 | A2 [247, 699, 205, 258] | A1 [17, 28, 20, 13] | columns with ties 1101
+  digits 8     G=48 | A2 [247, 697, 205, 258] | A1 [17, 28, 20, 13] | columns with ties 1108
+  digits 6     G=49 | A2 [247, 697, 205, 259] | A1 [17, 28, 20, 13] | columns with ties 1140
+=== monoterpenoids (Additional file 3, 2,208 descriptors)
+  digits full  G=182 | A2 [373, 603, 510, 531] | A1 [37, 56, 48, 35]
+  digits 12    G=182 | A2 [371, 602, 508, 531] | A1 [37, 56, 48, 35]
+  digits 10    G=182 | A2 [371, 602, 508, 531] | A1 [37, 56, 48, 35]
+  digits 8     G=182 | A2 [371, 602, 508, 532] | A1 [37, 56, 48, 36]
+=== benchmark main analysis: number of groups, stored vs recomputed vs after rounding to 10 digits
+  DS01 stored G= 95 | recomputed  95 | rounded to 10 digits  94  <-- differs
+  DS02 stored G= 82 | recomputed  82 | rounded to 10 digits  82
+  DS03 stored G= 66 | recomputed  66 | rounded to 10 digits  66
+  DS04 stored G= 89 | recomputed  89 | rounded to 10 digits  88  <-- differs
+  DS05 stored G= 90 | recomputed  90 | rounded to 10 digits  90
+  DS06 stored G=140 | recomputed 140 | rounded to 10 digits 140
+  DS07 stored G= 47 | recomputed  47 | rounded to 10 digits  48  <-- differs
+  DS08 stored G= 68 | recomputed  68 | rounded to 10 digits  69  <-- differs
+  DS09 stored G= 86 | recomputed  86 | rounded to 10 digits  86
+  DS10 stored G= 98 | recomputed  98 | rounded to 10 digits  97  <-- differs
+  DS11 stored G= 93 | recomputed  93 | rounded to 10 digits  92  <-- differs
+  DS12 stored G= 61 | recomputed  61 | rounded to 10 digits  64  <-- differs
+  DS13 stored G= 66 | recomputed  66 | rounded to 10 digits  66
+  DS14 stored G= 79 | recomputed  79 | rounded to 10 digits  80  <-- differs
+  DS15 stored G= 62 | recomputed  62 | rounded to 10 digits  61  <-- differs
+  DS16 stored G= 30 | recomputed  30 | rounded to 10 digits  30
+  series whose number of groups changes under rounding: 9 of 16
+

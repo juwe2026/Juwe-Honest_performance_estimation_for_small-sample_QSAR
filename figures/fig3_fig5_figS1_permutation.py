@@ -135,8 +135,10 @@ if __name__ == "__main__":
     MULTI = dict(tick_fs=8.0, label_fs=9.0, note_max_fs=7.0, name_fs=9.0,
                  name_gap_pt=3.0, h_pad=1.3, legend_fs=8.0, labelpad=2.0, rect_top=0.940)
     TEXT_WIDTH_IN = 6.268
+    # Fig. 3 height 7.28 in (185 mm) instead of 8.72 in, so that figure and legend stay within the 225 mm of the
+    # journal (change of 07.11.2026, approved by EW, item D4 of the review of 06.11.2026). Fig. S5 keeps 8.72 in.
     draw("perm_alt", STRAINS, "Fig3_nested_permutation_RouteA1_all5", out, ROUTE["A1"],
-         (TEXT_WIDTH_IN, 8.72), **MULTI)
+         (TEXT_WIDTH_IN, 7.28), **MULTI)
     draw("perm_a1e", STRAINS, "Fig5_nested_permutation_RouteA1_top15", out, ROUTE["A1"],
          (TEXT_WIDTH_IN, 8.72), **MULTI)
     # Fig. S1 is the enlarged single-strain panel and keeps the larger typography of the

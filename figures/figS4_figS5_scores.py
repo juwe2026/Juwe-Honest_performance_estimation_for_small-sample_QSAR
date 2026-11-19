@@ -1,7 +1,12 @@
 """Fig. S4 and Fig. S5: what the Route A1 top-15 models do on the training data.
 
 Fig. S4  one-component (LV1) apparent class separation, box plot with every compound overlaid
-Fig. S5  two-component PLS-DA score plots with 95 % confidence ellipses
+Fig. S5  two-component PLS-DA score plots with 95 % data ellipses (normal theory)
+
+Change of 16.11.2026 (approved by EW, item G7): the dashed outlines are covariance ellipses of the scores of each
+class scaled to cover 95 % of a bivariate normal distribution (chi-square, two degrees of freedom). They describe
+the spread of the data and are not confidence regions for the class means, so the line printed under Fig. S8
+(Fig. S5 in the numbering of this script) now calls them data ellipses. Nothing else in the figure changed.
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -59,8 +64,8 @@ def figS4(outdir):
         if c == 0:
             ax.set_ylabel("LV1 score (apparent)", fontsize=8.5)   # 11.5 -> 8.5 pt
     fig.tight_layout(rect=[0, 0.03, 1, 1])
-    fig.text(0.5, 0.005, "Route A1 top-15 descriptors; every compound is shown, "
-             "the LV1 axis is oriented so that active compounds score higher",
+    fig.text(0.5, 0.005, "Route A1 top-15 descriptors. Every compound is shown, "
+             "the LV1 axis is oriented so that active compounds score higher.",
              ha="center", fontsize=7.5, color=MUTED)
     save(fig, "FigS4_LV1_class_separation", outdir)
 
@@ -115,8 +120,8 @@ def figS5(outdir):
     handles, labels = axes[0].get_legend_handles_labels()
     fig.tight_layout(rect=[0, 0.04, 1, 0.88])
     fig.legend(handles[:2], labels[:2], loc="upper center", ncol=2, handlelength=1.2, fontsize=8.0)   # 10.5 -> 8 pt
-    fig.text(0.5, 0.005, "Route A1 top-15 descriptors, apparent two-component model; "
-             "dashed outlines are 95 % confidence ellipses",
+    fig.text(0.5, 0.005, "Route A1 top-15 descriptors, apparent two-component model. "
+             "Dashed outlines are 95 % data ellipses (normal theory).",
              ha="center", fontsize=7.5, color=MUTED)
     save(fig, "FigS5_PLSDA_score_plots", outdir)
 

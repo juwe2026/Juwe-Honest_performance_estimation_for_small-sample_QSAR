@@ -1,0 +1,45 @@
+beobachtete Werte vollstaendig (3s)
+Pakete gesamt 2900, offen 57
+DS22 A2 0300  100 Permutationen  252s
+DS22 A2 0400  100 Permutationen  254s
+DS22 A2 0500  100 Permutationen  252s
+DS22 A2 0600  100 Permutationen  288s
+DS22 A2 0700  100 Permutationen  235s
+DS22 A2 0800  100 Permutationen  281s
+DS22 A2 0900  100 Permutationen  258s
+DS22 A2 1000  100 Permutationen  224s
+DS22 A2 1100  100 Permutationen  255s
+DS22 A2 1200  100 Permutationen  238s
+DS22 A2 1300  100 Permutationen  227s
+DS22 A2 1400  100 Permutationen  267s
+DS22 A2 1500  100 Permutationen  261s
+DS22 A2 1600  100 Permutationen  215s
+DS22 A2 1700  100 Permutationen  241s
+DS22 A2 1800  100 Permutationen  289s
+DS22 A2 1900  100 Permutationen  233s
+DS23 A2 0000  100 Permutationen  88s
+DS23 A2 0100  100 Permutationen  72s
+DS23 A2 0200  100 Permutationen  89s
+DS23 A2 0300  100 Permutationen  89s
+DS23 A2 0400  100 Permutationen  75s
+DS23 A2 0500  100 Permutationen  83s
+DS23 A2 0600  100 Permutationen  88s
+DS23 A2 0700  100 Permutationen  82s
+DS23 A2 0800  100 Permutationen  82s
+DS23 A2 0900  100 Permutationen  86s
+DS23 A2 1000  100 Permutationen  89s
+DS23 A2 1100  100 Permutationen  78s
+DS23 A2 1200  100 Permutationen  85s
+DS23 A2 1300  100 Permutationen  83s
+DS23 A2 1400  100 Permutationen  88s
+DS23 A2 1500  100 Permutationen  91s
+DS23 A2 1600  100 Permutationen  103s
+DS23 A2 1700  100 Permutationen  84s
+DS23 A2 1800  100 Permutationen  94s
+DS23 A2 1900  100 Permutationen  93s
+DS24 A2 0000  100 Permutationen  268s
+DS24 A2 0100  100 Permutationen  268s
+DS24 A2 0200  100 Permutationen  248s
+Zeitlimit erreicht
+FERTIG in diesem Block: 40 Pakete, offen danach: 17
+EXIT 0

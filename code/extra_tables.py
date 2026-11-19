@@ -1,5 +1,16 @@
-"""Weitere Route-B-Groessen der Supplementtabellen S7, S8 und S10."""
-import sys, json, collections; sys.path.insert(0,'/home/claude/work/recalc')
+"""Further Route B quantities of the supplementary tables S7, S8 and S10 (numbering of Revision 1)."""
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
+import sys, json, collections; sys.path.insert(0,(_ROOT + '/code'))
 import numpy as np, core
 from sklearn.cross_decomposition import PLSRegression
 from sklearn.metrics import roc_auc_score
@@ -62,4 +73,4 @@ for tag, cols in (("D13", core.RED13), ("D12", core.RED12)):
         print("%s %-7s 1LV %.2f 2LV %.2f 3LV %.2f | dn %.2f (%d, %d-%d) | AUC %.2f c %.2f R2 %.2f"
               % (tag, s, r["q2_1lv"], r["q2_2lv"], r["q2_3lv"], r["dn_q2"], mode, lo, hi,
                  r["auc_loo"], r["lpo_c"], r["r2"]), flush=True)
-json.dump(out, open("recalc/extra_tables.json", "w"), indent=1)
+json.dump(out, open(_WORK + '/extra_tables.json', 'w'), indent=1)

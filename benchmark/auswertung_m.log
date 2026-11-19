@@ -1,0 +1,98 @@
+DS01 fertig
+DS02 fertig
+DS03 fertig
+DS04 fertig
+DS05 fertig
+DS06 fertig
+DS07 fertig
+DS08 fertig
+DS09 fertig
+DS10 fertig
+DS11 fertig
+DS12 fertig
+DS13 fertig
+DS14 fertig
+DS15 fertig
+DS16 fertig
+{
+ "H1": {
+  "test": "Wilcoxon, einseitig, app_A1 - A1 (Q2) > 0",
+  "p": 1.52587890625e-05,
+  "median_diff": 0.2894175716431259,
+  "positiv": 16,
+  "sekundaer": {
+   "A1u": {
+    "p": 1.52587890625e-05,
+    "median_diff": 0.18700913431401867,
+    "positiv": 16
+   },
+   "A2": {
+    "p": 1.52587890625e-05,
+    "median_diff": 0.2845717795103569,
+    "positiv": 16
+   }
+  }
+ },
+ "H2": {
+  "test": "Page-Trendtest, Bloecke = 16 Datensaetze, vorhergesagt A1u < A1 < A2 (kalibrierter Faktor)",
+  "L": 224.0,
+  "p": 3.5447041512174616e-13,
+  "methode": "exact",
+  "sekundaer": {
+   "A2_gt_A1": 1.52587890625e-05,
+   "A1_gt_A1u": 1.52587890625e-05,
+   "ordnung_vollstaendig": 16
+  },
+  "median_IF": {
+   "A1": 2.1301973295451324,
+   "A1u": 1.6792743497876144,
+   "A2": 12.555213402697085
+  }
+ },
+ "H3": {
+  "test": "Spearman G/p gegen log(kalibrierter Faktor A2), einseitig negativ",
+  "rho": -0.61663004184626,
+  "p": 0.005477994115852276,
+  "sekundaer": {
+   "A1": {
+    "rho": 0.6019133344036285,
+    "p": 0.9931871692122397
+   },
+   "A1u": {
+    "rho": 0.5857249562167338,
+    "p": 0.9914382476492567
+   }
+  }
+ },
+ "H4": {
+  "kriterium": "nur beschreibend: Zahl der Datensaetze, in denen ein Intervall (Route - ohneFilter) ganz ueber 0 liegt (Hauptanalyse: Grenze 4 von 16)",
+  "anzahl": 4,
+  "datensaetze": [
+   "DS03",
+   "DS05",
+   "DS08",
+   "DS15"
+  ],
+  "binomial_p_ab_k": 0.02772890297402491,
+  "sekundaer": {
+   "ohneAuswahl": [
+    "DS04",
+    "DS06",
+    "DS08",
+    "DS13",
+    "DS14",
+    "DS15"
+   ],
+   "RF": [
+    "DS03",
+    "DS08"
+   ]
+  },
+  "median_beste_minus_kontrolle": 0.09350901809926054,
+  "median_ci95": [
+   0.026873413616433472,
+   0.18767450896099175
+  ],
+  "hinweis_seed": "Bootstrap ueber Datensaetze: Seed nicht spezifiziert, verwendet default_rng([93, 0, 308])"
+ }
+}

@@ -1,9 +1,22 @@
 # -*- coding: utf-8 -*-
-"""G2-20: Table S8 (zweistufiger VIP>1-Ansatz auf den 25 Literaturdeskriptoren) und VIP_gt1_list mit NumStereoCenters
-von 1,8-Cineol = 0. Algorithmus unveraendert aus code/lit_plsda.py (nLV = Q2-optimale Zahl des 12er-Satzes, wie Table S8).
-Zuerst Reproduktion der publizierten Werte mit Cineol = 2."""
+"""G2-20: Table S8 of Revision 1 (two-stage VIP>1 approach on the 25 literature descriptors) and VIP_gt1_list with NumStereoCenters
+of 1,8-cineole = 0. Algorithm unchanged from code/lit_plsda.py (nLV = Q2-optimal number of the 12-descriptor set, as Table S8).
+First reproduction of the published values with cineole = 2."""
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
+# These scripts imported core.py from the archive as submitted, whose default Route B file is the submitted one.
+_osp.environ.setdefault('QSAR_ROUTEB_XLSX', _ROOT + '/data/RouteB_descriptor_data_submitted.xlsx')
 import sys, json, numpy as np
-sys.path.insert(0, '/home/claude/rev/QSAR_selection_leakage/code')
+sys.path.insert(0, (_ROOT + '/code'))
 import core
 from sklearn.cross_decomposition import PLSRegression
 from sklearn.metrics import roc_auc_score
@@ -46,4 +59,4 @@ for s, nlv in NLV.items():
           '| cineole0', tuple(round(r['cineole0'][k], 3) for k in ('q2_naive', 'auc_naive', 'q2_nested', 'auc_nested')), r['cineole0']['n_vip_gt1'],
           '| VIP>1 lost/gained', set(r['cineole2']['vip_gt1']) - set(r['cineole0']['vip_gt1']), set(r['cineole0']['vip_gt1']) - set(r['cineole2']['vip_gt1']), flush=True)
     out[s] = dict(nlv=nlv, **r)
-json.dump(out, open('/home/claude/rev/out/twostage25_cineole0.json', 'w'), indent=1)
+json.dump(out, open((_OUT + '/twostage25_cineole0.json'), 'w'), indent=1)

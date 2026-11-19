@@ -1,0 +1,5801 @@
+{
+ "n_checked": 325,
+ "n_in_table": 67,
+ "thresholds": [
+  0.05,
+  0.016666666666666666
+ ],
+ "by_source": {
+  "Table 1": [
+   64,
+   18
+  ],
+  "Table 2": [
+   8,
+   0
+  ],
+  "Table 3": [
+   16,
+   4
+  ],
+  "Table 4": [
+   16,
+   4
+  ],
+  "Table 5": [
+   80,
+   15
+  ],
+  "Table S1": [
+   8,
+   1
+  ],
+  "Table S2": [
+   16,
+   3
+  ],
+  "Table S3": [
+   24,
+   7
+  ],
+  "Table S5": [
+   8,
+   2
+  ],
+  "Table S12": [
+   12,
+   3
+  ],
+  "Table S13": [
+   40,
+   7
+  ],
+  "Table S20": [
+   12,
+   0
+  ],
+  "3D section": [
+   16,
+   1
+  ],
+  "Route B section (text)": [
+   3,
+   1
+  ],
+  "Top-15 section (text)": [
+   2,
+   1
+  ]
+ },
+ "identity_checks": [
+  [
+   "Table S3 mean rule",
+   "Route A1",
+   "H. influenzae",
+   "Q²",
+   0.0805,
+   0.08045977011494253,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route A1",
+   "S. pyogenes",
+   "Q²",
+   0.2049,
+   0.2048975512243878,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route A1u",
+   "H. influenzae",
+   "Q²",
+   0.3508,
+   0.35082458770614694,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route A1u",
+   "S. pyogenes",
+   "Q²",
+   0.3968,
+   0.3968015992003998,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route A2",
+   "H. influenzae",
+   "Q²",
+   0.1544,
+   0.15442278860569716,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route A2",
+   "S. pyogenes",
+   "Q²",
+   0.1349,
+   0.13493253373313344,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "No selection, all 2,208 descriptors",
+   "H. influenzae",
+   "Q²",
+   0.044,
+   0.04397801099450275,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "No selection, all 2,208 descriptors",
+   "S. pyogenes",
+   "Q²",
+   0.031,
+   0.030984507746126936,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route B, 12 descriptors, 1 LV",
+   "H. influenzae",
+   "Q²",
+   0.002,
+   0.001999000499750125,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route B, 12 descriptors, 1 LV",
+   "S. pyogenes",
+   "Q²",
+   0.036,
+   0.035982008995502246,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route B, 12 descriptors, 3 LV",
+   "H. influenzae",
+   "Q²",
+   0.0005,
+   0.0004997501249375312,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route B, 12 descriptors, 3 LV",
+   "S. pyogenes",
+   "Q²",
+   0.0485,
+   0.04847576211894053,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route A1",
+   "H. influenzae",
+   "AUC",
+   0.077,
+   0.0769615192403798,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route A1",
+   "S. pyogenes",
+   "AUC",
+   0.1379,
+   0.13793103448275862,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route A1u",
+   "H. influenzae",
+   "AUC",
+   0.3888,
+   0.3888055972013993,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route A1u",
+   "S. pyogenes",
+   "AUC",
+   0.2859,
+   0.28585707146426786,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route A2",
+   "H. influenzae",
+   "AUC",
+   0.08,
+   0.079960019990005,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route A2",
+   "S. pyogenes",
+   "AUC",
+   0.058,
+   0.057971014492753624,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "No selection, all 2,208 descriptors",
+   "H. influenzae",
+   "AUC",
+   0.0345,
+   0.034482758620689655,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "No selection, all 2,208 descriptors",
+   "S. pyogenes",
+   "AUC",
+   0.005,
+   0.004997501249375313,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route B, 12 descriptors, 1 LV",
+   "H. influenzae",
+   "AUC",
+   0.0015,
+   0.0014992503748125937,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route B, 12 descriptors, 1 LV",
+   "S. pyogenes",
+   "AUC",
+   0.1219,
+   0.12193903048475763,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route B, 12 descriptors, 3 LV",
+   "H. influenzae",
+   "AUC",
+   0.0005,
+   0.0004997501249375312,
+   true
+  ],
+  [
+   "Table S3 mean rule",
+   "Route B, 12 descriptors, 3 LV",
+   "S. pyogenes",
+   "AUC",
+   0.1089,
+   0.1089455272363818,
+   true
+  ],
+  [
+   "Table S1 fixed",
+   "Route B, 12 descriptors, 1 LV",
+   "H. influenzae",
+   "Q²",
+   0.002,
+   0.001999000499750125,
+   true
+  ],
+  [
+   "Table S1 fixed",
+   "Route B, 12 descriptors, 1 LV",
+   "S. aureus",
+   "Q²",
+   0.001,
+   0.0009995002498750624,
+   true
+  ],
+  [
+   "Table S1 fixed",
+   "Route B, 12 descriptors, 1 LV",
+   "S. pneumoniae",
+   "Q²",
+   0.0015,
+   0.0014992503748125937,
+   true
+  ],
+  [
+   "Table S1 fixed",
+   "Route B, 12 descriptors, 1 LV",
+   "S. pyogenes",
+   "Q²",
+   0.036,
+   0.035982008995502246,
+   true
+  ],
+  [
+   "Table S1 fixed",
+   "Route B, 12 descriptors, 3 LV",
+   "H. influenzae",
+   "Q²",
+   0.0005,
+   0.0004997501249375312,
+   true
+  ],
+  [
+   "Table S1 fixed",
+   "Route B, 12 descriptors, 3 LV",
+   "S. aureus",
+   "Q²",
+   0.001,
+   0.0009995002498750624,
+   true
+  ],
+  [
+   "Table S1 fixed",
+   "Route B, 12 descriptors, 3 LV",
+   "S. pneumoniae",
+   "Q²",
+   0.0015,
+   0.0014992503748125937,
+   true
+  ],
+  [
+   "Table S1 fixed",
+   "Route B, 12 descriptors, 3 LV",
+   "S. pyogenes",
+   "Q²",
+   0.0485,
+   0.04847576211894053,
+   true
+  ],
+  [
+   "Table S13 all descriptors",
+   "Random forest",
+   "H. influenzae",
+   "Q²",
+   0.018,
+   0.017964071856287425,
+   true
+  ],
+  [
+   "Table S13 all descriptors",
+   "Random forest",
+   "S. aureus",
+   "Q²",
+   0.006,
+   0.005988023952095809,
+   true
+  ],
+  [
+   "Table S13 all descriptors",
+   "Random forest",
+   "S. pneumoniae",
+   "Q²",
+   0.004,
+   0.003992015968063872,
+   true
+  ],
+  [
+   "Table S13 all descriptors",
+   "Random forest",
+   "S. pyogenes",
+   "Q²",
+   0.0319,
+   0.031936127744510975,
+   true
+  ],
+  [
+   "Table S13 all descriptors",
+   "Random forest",
+   "H. influenzae",
+   "AUC",
+   0.0379,
+   0.03792415169660679,
+   true
+  ],
+  [
+   "Table S13 all descriptors",
+   "Random forest",
+   "S. aureus",
+   "AUC",
+   0.012,
+   0.011976047904191617,
+   true
+  ],
+  [
+   "Table S13 all descriptors",
+   "Random forest",
+   "S. pneumoniae",
+   "AUC",
+   0.014,
+   0.013972055888223553,
+   true
+  ],
+  [
+   "Table S13 all descriptors",
+   "Random forest",
+   "S. pyogenes",
+   "AUC",
+   0.014,
+   0.013972055888223553,
+   true
+  ]
+ ],
+ "note": "Table S5, 100 random tie-break rules: reported as median and range and as the share of rules with p <= 0.05 and p <= 0.0125. The per-rule p-values are not archived (B_hits.json keeps the summary only), so the share at 0.0167 requires re-running the counting step of jobB_hits.py with the same seeds.",
+ "items": [
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.08045977011494253,
+   "n": 2000,
+   "k": 160,
+   "ci_low": 0.06848269756317969,
+   "ci_high": 0.09276551096862622,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1u",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.35082458770614694,
+   "n": 2000,
+   "k": 701,
+   "ci_low": 0.3295713381665332,
+   "ci_high": 0.37186786439554703,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A2",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.15442278860569716,
+   "n": 2000,
+   "k": 308,
+   "ci_low": 0.13844698887928578,
+   "ci_high": 0.1705745186080143,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No selection, all 2,208 descriptors",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.04397801099450275,
+   "n": 2000,
+   "k": 87,
+   "ci_low": 0.034985862846768585,
+   "ci_high": 0.053382598893372525,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No filter, 182 label-free representatives",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.07396301849075462,
+   "n": 2000,
+   "k": 147,
+   "ci_low": 0.06244514465607089,
+   "ci_high": 0.08582370833307533,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.017964071856287425,
+   "n": 500,
+   "k": 8,
+   "ci_low": 0.006932321202483599,
+   "ci_high": 0.03128200168985308,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 1 LV",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.001999000499750125,
+   "n": 2000,
+   "k": 3,
+   "ci_low": 0.00030944294931233306,
+   "ci_high": 0.004377320104529616,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 3 LV",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 2",
+   "Model": "25 descriptors",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.011494252873563218,
+   "n": 2000,
+   "k": 22,
+   "ci_low": 0.006906122788328852,
+   "ci_high": 0.01660701640128506,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, nested",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.06796601699150424,
+   "n": 2000,
+   "k": 135,
+   "ci_low": 0.05689513093346526,
+   "ci_high": 0.07939298782934733,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, nested",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.06846576711644178,
+   "n": 2000,
+   "k": 136,
+   "ci_low": 0.05735671775546187,
+   "ci_high": 0.07992978675450121,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.0769615192403798,
+   "n": 2000,
+   "k": 153,
+   "ci_low": 0.06522864995669941,
+   "ci_high": 0.08903064834649903,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1u",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.3888055972013993,
+   "n": 2000,
+   "k": 777,
+   "ci_low": 0.36706539280102096,
+   "ci_high": 0.41026206656114894,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A2",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.079960019990005,
+   "n": 2000,
+   "k": 159,
+   "ci_low": 0.06801741216673172,
+   "ci_high": 0.09223237707052359,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No selection, all 2,208 descriptors",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.034482758620689655,
+   "n": 2000,
+   "k": 68,
+   "ci_low": 0.0264970896565636,
+   "ci_high": 0.042905884883076235,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No filter, 182 label-free representatives",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.07796101949025487,
+   "n": 2000,
+   "k": 155,
+   "ci_low": 0.06615766717099252,
+   "ci_high": 0.09009845658893209,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.03792415169660679,
+   "n": 500,
+   "k": 18,
+   "ci_low": 0.021472856586093284,
+   "ci_high": 0.05630017620179107,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 1 LV",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.0014992503748125937,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 3 LV",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 2",
+   "Model": "25 descriptors",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.004997501249375313,
+   "n": 2000,
+   "k": 9,
+   "ci_low": 0.0020596885284903574,
+   "ci_high": 0.00852514124099515,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, nested",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.05547226386806597,
+   "n": 2000,
+   "k": 110,
+   "ci_low": 0.04541715292148978,
+   "ci_high": 0.06591197819998716,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, nested",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.0559720139930035,
+   "n": 2000,
+   "k": 111,
+   "ci_low": 0.04587376649393303,
+   "ci_high": 0.0664536955313304,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.031984007996002,
+   "n": 2000,
+   "k": 63,
+   "ci_low": 0.024288566203896706,
+   "ci_high": 0.040123971659625404,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1u",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.04697651174412794,
+   "n": 2000,
+   "k": 93,
+   "ci_low": 0.037692824415269686,
+   "ci_high": 0.0566651760410299,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A2",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.012993503248375811,
+   "n": 2000,
+   "k": 25,
+   "ci_low": 0.008105230838877509,
+   "ci_high": 0.018397493413938,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No selection, all 2,208 descriptors",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.004497751124437781,
+   "n": 2000,
+   "k": 8,
+   "ci_low": 0.001728449573476145,
+   "ci_high": 0.007866303828537383,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No filter, 182 label-free representatives",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.012993503248375811,
+   "n": 2000,
+   "k": 25,
+   "ci_low": 0.008105230838877509,
+   "ci_high": 0.018397493413938,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.005988023952095809,
+   "n": 500,
+   "k": 2,
+   "ci_low": 0.0004847861762900009,
+   "ci_high": 0.014374078562200309,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 1 LV",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0009995002498750624,
+   "n": 2000,
+   "k": 1,
+   "ci_low": 1.2658823868557889e-05,
+   "ci_high": 0.0027826398346589465,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 3 LV",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0009995002498750624,
+   "n": 2000,
+   "k": 1,
+   "ci_low": 1.2658823868557889e-05,
+   "ci_high": 0.0027826398346589465,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 2",
+   "Model": "25 descriptors",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, nested",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.07396301849075462,
+   "n": 2000,
+   "k": 147,
+   "ci_low": 0.06244514465607089,
+   "ci_high": 0.08582370833307533,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, nested",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.079960019990005,
+   "n": 2000,
+   "k": 159,
+   "ci_low": 0.06801741216673172,
+   "ci_high": 0.09223237707052359,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.03298350824587706,
+   "n": 2000,
+   "k": 65,
+   "ci_low": 0.025170508326027474,
+   "ci_high": 0.04123817360406892,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1u",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.057971014492753624,
+   "n": 2000,
+   "k": 115,
+   "ci_low": 0.0477024773802507,
+   "ci_high": 0.06861833547127534,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A2",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.022988505747126436,
+   "n": 2000,
+   "k": 45,
+   "ci_low": 0.016457868212595234,
+   "ci_high": 0.02999193257730853,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No selection, all 2,208 descriptors",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.005497251374312844,
+   "n": 2000,
+   "k": 10,
+   "ci_low": 0.0024002197556657725,
+   "ci_high": 0.009175895070019778,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No filter, 182 label-free representatives",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.015992003998001,
+   "n": 2000,
+   "k": 31,
+   "ci_low": 0.010555158919957628,
+   "ci_high": 0.02192938918963121,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.011976047904191617,
+   "n": 500,
+   "k": 5,
+   "ci_low": 0.0032547214070242523,
+   "ci_high": 0.02318138806965964,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 1 LV",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.017491254372813594,
+   "n": 2000,
+   "k": 34,
+   "ci_low": 0.011800987897346257,
+   "ci_high": 0.023675406227339907,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 3 LV",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.026486756621689155,
+   "n": 2000,
+   "k": 52,
+   "ci_low": 0.019477617245196976,
+   "ci_high": 0.03395703472160681,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 2",
+   "Model": "25 descriptors",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.0029985007496251873,
+   "n": 2000,
+   "k": 5,
+   "ci_low": 0.0008122259751939095,
+   "ci_high": 0.005824445334518517,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, nested",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.06596701649175413,
+   "n": 2000,
+   "k": 131,
+   "ci_low": 0.055050537903533196,
+   "ci_high": 0.07724405539806718,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, nested",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.08245877061469266,
+   "n": 2000,
+   "k": 164,
+   "ci_low": 0.07034520016699762,
+   "ci_high": 0.0948966967162818,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.0029985007496251873,
+   "n": 2000,
+   "k": 5,
+   "ci_low": 0.0008122259751939095,
+   "ci_high": 0.005824445334518517,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1u",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.031484257871064465,
+   "n": 2000,
+   "k": 62,
+   "ci_low": 0.023848362473131622,
+   "ci_high": 0.03956611985866993,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A2",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.009495252373813094,
+   "n": 2000,
+   "k": 18,
+   "ci_low": 0.005342443023395429,
+   "ci_high": 0.014186714471514504,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No selection, all 2,208 descriptors",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.001999000499750125,
+   "n": 2000,
+   "k": 3,
+   "ci_low": 0.00030944294931233306,
+   "ci_high": 0.004377320104529616,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No filter, 182 label-free representatives",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.013493253373313344,
+   "n": 2000,
+   "k": 26,
+   "ci_low": 0.008509130391574372,
+   "ci_high": 0.01899034933822423,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.003992015968063872,
+   "n": 500,
+   "k": 1,
+   "ci_low": 5.0634334007415215e-05,
+   "ci_high": 0.011092476898968787,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 1 LV",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.0014992503748125937,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 3 LV",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.0014992503748125937,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 2",
+   "Model": "25 descriptors",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, nested",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.01899050474762619,
+   "n": 2000,
+   "k": 37,
+   "ci_low": 0.013058315418332226,
+   "ci_high": 0.025410378996541125,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, nested",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.04447776111944028,
+   "n": 2000,
+   "k": 88,
+   "ci_low": 0.03543624464675896,
+   "ci_high": 0.053930461697658826,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.0024987506246876563,
+   "n": 2000,
+   "k": 4,
+   "ci_low": 0.0005451931252109994,
+   "ci_high": 0.005112808605346209,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1u",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.029985007496251874,
+   "n": 2000,
+   "k": 59,
+   "ci_low": 0.02253096786573516,
+   "ci_high": 0.037889419299191596,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A2",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.005997001499250375,
+   "n": 2000,
+   "k": 11,
+   "ci_low": 0.002748681814632492,
+   "ci_high": 0.009819662989899393,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No selection, all 2,208 descriptors",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.0034982508745627187,
+   "n": 2000,
+   "k": 6,
+   "ci_low": 0.0011017182250253471,
+   "ci_high": 0.00651821860997453,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No filter, 182 label-free representatives",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.013493253373313344,
+   "n": 2000,
+   "k": 26,
+   "ci_low": 0.008509130391574372,
+   "ci_high": 0.01899034933822423,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.013972055888223553,
+   "n": 500,
+   "k": 6,
+   "ci_low": 0.004416172285801643,
+   "ci_high": 0.025934927265336975,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 1 LV",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.0074962518740629685,
+   "n": 2000,
+   "k": 14,
+   "ci_low": 0.0038320939003739125,
+   "ci_high": 0.01171694577053208,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 3 LV",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.0014992503748125937,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 2",
+   "Model": "25 descriptors",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.0024987506246876563,
+   "n": 2000,
+   "k": 4,
+   "ci_low": 0.0005451931252109994,
+   "ci_high": 0.005112808605346209,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, nested",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.01999000499750125,
+   "n": 2000,
+   "k": 39,
+   "ci_low": 0.013902241892437854,
+   "ci_high": 0.026561528953912023,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, nested",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.04447776111944028,
+   "n": 2000,
+   "k": 88,
+   "ci_low": 0.03543624464675896,
+   "ci_high": 0.053930461697658826,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.2048975512243878,
+   "n": 2000,
+   "k": 409,
+   "ci_low": 0.18701661747759496,
+   "ci_high": 0.22285394748631576,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1u",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.3968015992003998,
+   "n": 2000,
+   "k": 793,
+   "ci_low": 0.37497654634947464,
+   "ci_high": 0.4183274016626284,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A2",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.13493253373313344,
+   "n": 2000,
+   "k": 269,
+   "ci_low": 0.11984103470125831,
+   "ci_high": 0.15023930192356055,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No selection, all 2,208 descriptors",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.030984507746126936,
+   "n": 2000,
+   "k": 61,
+   "ci_low": 0.0234086863264066,
+   "ci_high": 0.03900775206020932,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No filter, 182 label-free representatives",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.14842578710644677,
+   "n": 2000,
+   "k": 296,
+   "ci_low": 0.13271194693366842,
+   "ci_high": 0.16432761943508267,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.031936127744510975,
+   "n": 500,
+   "k": 15,
+   "ci_low": 0.01688598420387324,
+   "ci_high": 0.04899822570881894,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 1 LV",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.035982008995502246,
+   "n": 2000,
+   "k": 71,
+   "ci_low": 0.027827825049078096,
+   "ci_high": 0.044569525372785294,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 3 LV",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.04847576211894053,
+   "n": 2000,
+   "k": 96,
+   "ci_low": 0.039050337055576895,
+   "ci_high": 0.05830249234114568,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 2",
+   "Model": "25 descriptors",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.00399800099950025,
+   "n": 2000,
+   "k": 7,
+   "ci_low": 0.0014083038325025412,
+   "ci_high": 0.007197961714658002,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, nested",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.015492253873063468,
+   "n": 2000,
+   "k": 30,
+   "ci_low": 0.010142718291276458,
+   "ci_high": 0.02134466751107879,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, nested",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.029985007496251874,
+   "n": 2000,
+   "k": 59,
+   "ci_low": 0.02253096786573516,
+   "ci_high": 0.037889419299191596,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.13793103448275862,
+   "n": 2000,
+   "k": 275,
+   "ci_low": 0.12269710453881,
+   "ci_high": 0.15337415392685352,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1u",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.28585707146426786,
+   "n": 2000,
+   "k": 571,
+   "ci_low": 0.2657820739181256,
+   "ci_high": 0.3058486333417806,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A2",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.057971014492753624,
+   "n": 2000,
+   "k": 115,
+   "ci_low": 0.0477024773802507,
+   "ci_high": 0.06861833547127534,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No selection, all 2,208 descriptors",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.004997501249375313,
+   "n": 2000,
+   "k": 9,
+   "ci_low": 0.0020596885284903574,
+   "ci_high": 0.00852514124099515,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No filter, 182 label-free representatives",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.0544727636181909,
+   "n": 2000,
+   "k": 108,
+   "ci_low": 0.04450462313867373,
+   "ci_high": 0.06482785476884043,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.013972055888223553,
+   "n": 500,
+   "k": 6,
+   "ci_low": 0.004416172285801643,
+   "ci_high": 0.025934927265336975,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 1 LV",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.12193903048475763,
+   "n": 2000,
+   "k": 243,
+   "ci_low": 0.107494382812602,
+   "ci_high": 0.1366254330434899,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 3 LV",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.1089455272363818,
+   "n": 2000,
+   "k": 217,
+   "ci_low": 0.09520099455796155,
+   "ci_high": 0.12295857766945974,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 2",
+   "Model": "25 descriptors",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.0014992503748125937,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, nested",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.00399800099950025,
+   "n": 2000,
+   "k": 7,
+   "ci_low": 0.0014083038325025412,
+   "ci_high": 0.007197961714658002,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, nested",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.022988505747126436,
+   "n": 2000,
+   "k": 45,
+   "ci_low": 0.016457868212595234,
+   "ci_high": 0.02999193257730853,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1",
+   "Endpoint": "E. coli",
+   "Metric": "Q²",
+   "p": 0.0079960019990005,
+   "n": 2000,
+   "k": 15,
+   "ci_low": 0.004203591756889188,
+   "ci_high": 0.01233998373578594,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u",
+   "Endpoint": "E. coli",
+   "Metric": "Q²",
+   "p": 0.12243878060969515,
+   "n": 2000,
+   "k": 244,
+   "ci_low": 0.10796831629064896,
+   "ci_high": 0.1371499764743377,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2",
+   "Endpoint": "E. coli",
+   "Metric": "Q²",
+   "p": 0.015492253873063468,
+   "n": 2000,
+   "k": 30,
+   "ci_low": 0.010142718291276458,
+   "ci_high": 0.02134466751107879,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors",
+   "Endpoint": "E. coli",
+   "Metric": "Q²",
+   "p": 0.004997501249375313,
+   "n": 2000,
+   "k": 9,
+   "ci_low": 0.0020596885284903574,
+   "ci_high": 0.00852514124099515,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No filter, 50 label-free representatives",
+   "Endpoint": "E. coli",
+   "Metric": "Q²",
+   "p": 0.038980509745127435,
+   "n": 2000,
+   "k": 77,
+   "ci_low": 0.030500774860506345,
+   "ci_high": 0.0478855448268192,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "E. coli",
+   "Metric": "Q²",
+   "p": 0.0718562874251497,
+   "n": 500,
+   "k": 35,
+   "ci_low": 0.0492386447203788,
+   "ci_high": 0.09601109159263317,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1",
+   "Endpoint": "E. coli",
+   "Metric": "AUC",
+   "p": 0.0074962518740629685,
+   "n": 2000,
+   "k": 14,
+   "ci_low": 0.0038320939003739125,
+   "ci_high": 0.01171694577053208,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u",
+   "Endpoint": "E. coli",
+   "Metric": "AUC",
+   "p": 0.1344327836081959,
+   "n": 2000,
+   "k": 268,
+   "ci_low": 0.11936526255294427,
+   "ci_high": 0.14971658818998115,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2",
+   "Endpoint": "E. coli",
+   "Metric": "AUC",
+   "p": 0.015992003998001,
+   "n": 2000,
+   "k": 31,
+   "ci_low": 0.010555158919957628,
+   "ci_high": 0.02192938918963121,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors",
+   "Endpoint": "E. coli",
+   "Metric": "AUC",
+   "p": 0.012993503248375811,
+   "n": 2000,
+   "k": 25,
+   "ci_low": 0.008105230838877509,
+   "ci_high": 0.018397493413938,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No filter, 50 label-free representatives",
+   "Endpoint": "E. coli",
+   "Metric": "AUC",
+   "p": 0.08295852073963018,
+   "n": 2000,
+   "k": 165,
+   "ci_low": 0.07081116036844833,
+   "ci_high": 0.09542916131269873,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "E. coli",
+   "Metric": "AUC",
+   "p": 0.041916167664670656,
+   "n": 500,
+   "k": 20,
+   "ci_low": 0.024601312085545394,
+   "ci_high": 0.06110260938824469,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.004997501249375313,
+   "n": 2000,
+   "k": 9,
+   "ci_low": 0.0020596885284903574,
+   "ci_high": 0.00852514124099515,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No filter, 50 label-free representatives",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.001996007984031936,
+   "n": 500,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.007350610051907784,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.006496751624187906,
+   "n": 2000,
+   "k": 12,
+   "ci_low": 0.0031040162823773266,
+   "ci_high": 0.010457313821794881,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No filter, 50 label-free representatives",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.001996007984031936,
+   "n": 500,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.007350610051907784,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "Q²",
+   "p": 0.001999000499750125,
+   "n": 2000,
+   "k": 3,
+   "ci_low": 0.00030944294931233306,
+   "ci_high": 0.004377320104529616,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "Q²",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "Q²",
+   "p": 0.001999000499750125,
+   "n": 2000,
+   "k": 3,
+   "ci_low": 0.00030944294931233306,
+   "ci_high": 0.004377320104529616,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "Q²",
+   "p": 0.01699150424787606,
+   "n": 2000,
+   "k": 33,
+   "ci_low": 0.01138435838023515,
+   "ci_high": 0.023094698323837825,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No filter, 50 label-free representatives",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "Q²",
+   "p": 0.0014992503748125937,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "Q²",
+   "p": 0.001996007984031936,
+   "n": 500,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.007350610051907784,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "AUC",
+   "p": 0.0014992503748125937,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "AUC",
+   "p": 0.0009995002498750624,
+   "n": 2000,
+   "k": 1,
+   "ci_low": 1.2658823868557889e-05,
+   "ci_high": 0.0027826398346589465,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "AUC",
+   "p": 0.001999000499750125,
+   "n": 2000,
+   "k": 3,
+   "ci_low": 0.00030944294931233306,
+   "ci_high": 0.004377320104529616,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "AUC",
+   "p": 0.059470264867566215,
+   "n": 2000,
+   "k": 118,
+   "ci_low": 0.04907630280393373,
+   "ci_high": 0.07023955014453875,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No filter, 50 label-free representatives",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "AUC",
+   "p": 0.001999000499750125,
+   "n": 2000,
+   "k": 3,
+   "ci_low": 0.00030944294931233306,
+   "ci_high": 0.004377320104529616,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "AUC",
+   "p": 0.001996007984031936,
+   "n": 500,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.007350610051907784,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1",
+   "Endpoint": "A. baumannii",
+   "Metric": "Q²",
+   "p": 0.3778110944527736,
+   "n": 2000,
+   "k": 755,
+   "ci_low": 0.3561974504155273,
+   "ci_high": 0.3991623439917149,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u",
+   "Endpoint": "A. baumannii",
+   "Metric": "Q²",
+   "p": 0.7006496751624188,
+   "n": 2000,
+   "k": 1401,
+   "ci_low": 0.6798924776726623,
+   "ci_high": 0.7205181136141781,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2",
+   "Endpoint": "A. baumannii",
+   "Metric": "Q²",
+   "p": 0.3473263368315842,
+   "n": 2000,
+   "k": 694,
+   "ci_low": 0.32612510685320306,
+   "ci_high": 0.36832439419404694,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors",
+   "Endpoint": "A. baumannii",
+   "Metric": "Q²",
+   "p": 0.033483258370814596,
+   "n": 2000,
+   "k": 66,
+   "ci_low": 0.025612223823264616,
+   "ci_high": 0.041794545821020095,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No filter, 50 label-free representatives",
+   "Endpoint": "A. baumannii",
+   "Metric": "Q²",
+   "p": 0.11394302848575712,
+   "n": 2000,
+   "k": 227,
+   "ci_low": 0.09992242662857796,
+   "ci_high": 0.1282218169582788,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "A. baumannii",
+   "Metric": "Q²",
+   "p": 0.5469061876247505,
+   "n": 500,
+   "k": 273,
+   "ci_low": 0.5011970310512646,
+   "ci_high": 0.5902560206838189,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1",
+   "Endpoint": "A. baumannii",
+   "Metric": "AUC",
+   "p": 0.33183408295852074,
+   "n": 2000,
+   "k": 663,
+   "ci_low": 0.31087829655377636,
+   "ci_high": 0.35261682759654916,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u",
+   "Endpoint": "A. baumannii",
+   "Metric": "AUC",
+   "p": 0.5617191404297851,
+   "n": 2000,
+   "k": 1123,
+   "ci_low": 0.539426454248913,
+   "ci_high": 0.5833929774409061,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2",
+   "Endpoint": "A. baumannii",
+   "Metric": "AUC",
+   "p": 0.2448775612193903,
+   "n": 2000,
+   "k": 489,
+   "ci_low": 0.2257994933541842,
+   "ci_high": 0.2639523889590605,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors",
+   "Endpoint": "A. baumannii",
+   "Metric": "AUC",
+   "p": 0.059470264867566215,
+   "n": 2000,
+   "k": 118,
+   "ci_low": 0.04907630280393373,
+   "ci_high": 0.07023955014453875,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No filter, 50 label-free representatives",
+   "Endpoint": "A. baumannii",
+   "Metric": "AUC",
+   "p": 0.1409295352323838,
+   "n": 2000,
+   "k": 281,
+   "ci_low": 0.1255555889291914,
+   "ci_high": 0.15650660217593884,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "A. baumannii",
+   "Metric": "AUC",
+   "p": 0.3652694610778443,
+   "n": 500,
+   "k": 182,
+   "ci_low": 0.32173892611037225,
+   "ci_high": 0.40787974836336366,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1, sensitivity definition",
+   "Endpoint": "E. coli",
+   "Metric": "Q²",
+   "p": 0.0079960019990005,
+   "n": 2000,
+   "k": 15,
+   "ci_low": 0.004203591756889188,
+   "ci_high": 0.01233998373578594,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u, sensitivity definition",
+   "Endpoint": "E. coli",
+   "Metric": "Q²",
+   "p": 0.041979010494752625,
+   "n": 2000,
+   "k": 83,
+   "ci_low": 0.0331876236508509,
+   "ci_high": 0.05118791168352146,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2, sensitivity definition",
+   "Endpoint": "E. coli",
+   "Metric": "Q²",
+   "p": 0.005497251374312844,
+   "n": 2000,
+   "k": 10,
+   "ci_low": 0.0024002197556657725,
+   "ci_high": 0.009175895070019778,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors, sensitivity definition",
+   "Endpoint": "E. coli",
+   "Metric": "Q²",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1, sensitivity definition",
+   "Endpoint": "E. coli",
+   "Metric": "AUC",
+   "p": 0.011494252873563218,
+   "n": 2000,
+   "k": 22,
+   "ci_low": 0.006906122788328852,
+   "ci_high": 0.01660701640128506,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u, sensitivity definition",
+   "Endpoint": "E. coli",
+   "Metric": "AUC",
+   "p": 0.013993003498250875,
+   "n": 2000,
+   "k": 27,
+   "ci_low": 0.008914927994426228,
+   "ci_high": 0.019581403564719605,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2, sensitivity definition",
+   "Endpoint": "E. coli",
+   "Metric": "AUC",
+   "p": 0.006496751624187906,
+   "n": 2000,
+   "k": 12,
+   "ci_low": 0.0031040162823773266,
+   "ci_high": 0.010457313821794881,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors, sensitivity definition",
+   "Endpoint": "E. coli",
+   "Metric": "AUC",
+   "p": 0.001999000499750125,
+   "n": 2000,
+   "k": 3,
+   "ci_low": 0.00030944294931233306,
+   "ci_high": 0.004377320104529616,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1, sensitivity definition",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u, sensitivity definition",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2, sensitivity definition",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors, sensitivity definition",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1, sensitivity definition",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u, sensitivity definition",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2, sensitivity definition",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.0004997501249375312,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors, sensitivity definition",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.0009995002498750624,
+   "n": 2000,
+   "k": 1,
+   "ci_low": 1.2658823868557889e-05,
+   "ci_high": 0.0027826398346589465,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1, sensitivity definition",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "Q²",
+   "p": 0.0024987506246876563,
+   "n": 2000,
+   "k": 4,
+   "ci_low": 0.0005451931252109994,
+   "ci_high": 0.005112808605346209,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u, sensitivity definition",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "Q²",
+   "p": 0.0009995002498750624,
+   "n": 2000,
+   "k": 1,
+   "ci_low": 1.2658823868557889e-05,
+   "ci_high": 0.0027826398346589465,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2, sensitivity definition",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "Q²",
+   "p": 0.0009995002498750624,
+   "n": 2000,
+   "k": 1,
+   "ci_low": 1.2658823868557889e-05,
+   "ci_high": 0.0027826398346589465,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors, sensitivity definition",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "Q²",
+   "p": 0.013993003498250875,
+   "n": 2000,
+   "k": 27,
+   "ci_low": 0.008914927994426228,
+   "ci_high": 0.019581403564719605,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1, sensitivity definition",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "AUC",
+   "p": 0.0029985007496251873,
+   "n": 2000,
+   "k": 5,
+   "ci_low": 0.0008122259751939095,
+   "ci_high": 0.005824445334518517,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u, sensitivity definition",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "AUC",
+   "p": 0.0024987506246876563,
+   "n": 2000,
+   "k": 4,
+   "ci_low": 0.0005451931252109994,
+   "ci_high": 0.005112808605346209,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2, sensitivity definition",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "AUC",
+   "p": 0.001999000499750125,
+   "n": 2000,
+   "k": 3,
+   "ci_low": 0.00030944294931233306,
+   "ci_high": 0.004377320104529616,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors, sensitivity definition",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "AUC",
+   "p": 0.05697151424287856,
+   "n": 2000,
+   "k": 113,
+   "ci_low": 0.04678767628081571,
+   "ci_high": 0.067536455833589,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1, sensitivity definition",
+   "Endpoint": "A. baumannii",
+   "Metric": "Q²",
+   "p": 0.012993503248375811,
+   "n": 2000,
+   "k": 25,
+   "ci_low": 0.008105230838877509,
+   "ci_high": 0.018397493413938,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u, sensitivity definition",
+   "Endpoint": "A. baumannii",
+   "Metric": "Q²",
+   "p": 0.030984507746126936,
+   "n": 2000,
+   "k": 61,
+   "ci_low": 0.0234086863264066,
+   "ci_high": 0.03900775206020932,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2, sensitivity definition",
+   "Endpoint": "A. baumannii",
+   "Metric": "Q²",
+   "p": 0.04547726136931534,
+   "n": 2000,
+   "k": 90,
+   "ci_low": 0.03633795731126182,
+   "ci_high": 0.05502525284745086,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors, sensitivity definition",
+   "Endpoint": "A. baumannii",
+   "Metric": "Q²",
+   "p": 0.0029985007496251873,
+   "n": 2000,
+   "k": 5,
+   "ci_low": 0.0008122259751939095,
+   "ci_high": 0.005824445334518517,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1, sensitivity definition",
+   "Endpoint": "A. baumannii",
+   "Metric": "AUC",
+   "p": 0.010494752623688156,
+   "n": 2000,
+   "k": 20,
+   "ci_low": 0.006118657542743463,
+   "ci_high": 0.015402125783560048,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u, sensitivity definition",
+   "Endpoint": "A. baumannii",
+   "Metric": "AUC",
+   "p": 0.018490754622688656,
+   "n": 2000,
+   "k": 36,
+   "ci_low": 0.012638018081131365,
+   "ci_high": 0.024833198161369478,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2, sensitivity definition",
+   "Endpoint": "A. baumannii",
+   "Metric": "AUC",
+   "p": 0.02348825587206397,
+   "n": 2000,
+   "k": 46,
+   "ci_low": 0.0168869324272122,
+   "ci_high": 0.030560637865280068,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors, sensitivity definition",
+   "Endpoint": "A. baumannii",
+   "Metric": "AUC",
+   "p": 0.005497251374312844,
+   "n": 2000,
+   "k": 10,
+   "ci_low": 0.0024002197556657725,
+   "ci_high": 0.009175895070019778,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, apparent",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, apparent",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, apparent",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, apparent",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, apparent",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, apparent",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, apparent",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, apparent",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, apparent",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, apparent",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, apparent",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, apparent",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, apparent",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, apparent",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, apparent",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, apparent",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.000999000999000999,
+   "n": 1000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.003682083896865671,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S1",
+   "Model": "Route B, 12 descriptors, 1 LV, grouping recomputed in every fold",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.004,
+   "n": 2000,
+   "k": 7,
+   "ci_low": 0.0014083038325025412,
+   "ci_high": 0.007197961714658002,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S1",
+   "Model": "Route B, 12 descriptors, 1 LV, grouping recomputed in every fold",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0015,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S1",
+   "Model": "Route B, 12 descriptors, 1 LV, grouping recomputed in every fold",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.0015,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S1",
+   "Model": "Route B, 12 descriptors, 1 LV, grouping recomputed in every fold",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.033,
+   "n": 2000,
+   "k": 65,
+   "ci_low": 0.025170508326027474,
+   "ci_high": 0.04123817360406892,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S1",
+   "Model": "Route B, 12 descriptors, 3 LV, grouping recomputed in every fold",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.0005,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S1",
+   "Model": "Route B, 12 descriptors, 3 LV, grouping recomputed in every fold",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.001,
+   "n": 2000,
+   "k": 1,
+   "ci_low": 1.2658823868557889e-05,
+   "ci_high": 0.0027826398346589465,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S1",
+   "Model": "Route B, 12 descriptors, 3 LV, grouping recomputed in every fold",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.0015,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S1",
+   "Model": "Route B, 12 descriptors, 3 LV, grouping recomputed in every fold",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.0525,
+   "n": 2000,
+   "k": 104,
+   "ci_low": 0.04268243979733736,
+   "ci_high": 0.06265676793370871,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1, groups fixed (paired draw)",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.068,
+   "n": 2000,
+   "k": 135,
+   "ci_low": 0.05689513093346526,
+   "ci_high": 0.07939298782934733,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1, groups fixed (paired draw)",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0305,
+   "n": 2000,
+   "k": 60,
+   "ci_low": 0.022969550402137478,
+   "ci_high": 0.03844885609627015,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1, groups fixed (paired draw)",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.005,
+   "n": 2000,
+   "k": 9,
+   "ci_low": 0.0020596885284903574,
+   "ci_high": 0.00852514124099515,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1, groups fixed (paired draw)",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.1934,
+   "n": 2000,
+   "k": 386,
+   "ci_low": 0.17591372243936299,
+   "ci_high": 0.21099108272574163,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1, groups rebuilt in every fold",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.041,
+   "n": 2000,
+   "k": 81,
+   "ci_low": 0.03229055657320062,
+   "ci_high": 0.050088548950005814,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1, groups rebuilt in every fold",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.01,
+   "n": 2000,
+   "k": 19,
+   "ci_low": 0.005729035522963453,
+   "ci_high": 0.01479583217228858,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1, groups rebuilt in every fold",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.0055,
+   "n": 2000,
+   "k": 10,
+   "ci_low": 0.0024002197556657725,
+   "ci_high": 0.009175895070019778,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1, groups rebuilt in every fold",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.1519,
+   "n": 2000,
+   "k": 303,
+   "ci_low": 0.13605634527463,
+   "ci_high": 0.167972682592991,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1u, groups fixed (paired draw)",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.3348,
+   "n": 2000,
+   "k": 669,
+   "ci_low": 0.31382735113054583,
+   "ci_high": 0.3556589406591858,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1u, groups fixed (paired draw)",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0455,
+   "n": 2000,
+   "k": 90,
+   "ci_low": 0.03633795731126182,
+   "ci_high": 0.05502525284745086,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1u, groups fixed (paired draw)",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.0295,
+   "n": 2000,
+   "k": 58,
+   "ci_low": 0.022092952440984793,
+   "ci_high": 0.03732942847232325,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1u, groups fixed (paired draw)",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.4073,
+   "n": 2000,
+   "k": 814,
+   "ci_low": 0.3853690089482253,
+   "ci_high": 0.42890408617348175,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1u, groups rebuilt in every fold",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.1569,
+   "n": 2000,
+   "k": 313,
+   "ci_low": 0.14083908847625876,
+   "ci_high": 0.17317490429732052,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1u, groups rebuilt in every fold",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.015,
+   "n": 2000,
+   "k": 29,
+   "ci_low": 0.009731812290767165,
+   "ci_high": 0.020758479301277086,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1u, groups rebuilt in every fold",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.005,
+   "n": 2000,
+   "k": 9,
+   "ci_low": 0.0020596885284903574,
+   "ci_high": 0.00852514124099515,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1u, groups rebuilt in every fold",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.4143,
+   "n": 2000,
+   "k": 828,
+   "ci_low": 0.3923029797658267,
+   "ci_high": 0.4359495500346337,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.3413,
+   "n": 2000,
+   "k": 682,
+   "Source": "Table S3",
+   "Model": "Route A1, median activity rule",
+   "ci_low": 0.32022017932728064,
+   "ci_high": 0.36224697917700777,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.0325,
+   "n": 2000,
+   "k": 64,
+   "Source": "Table S3",
+   "Model": "Route A1, median activity rule",
+   "ci_low": 0.02472928537813548,
+   "ci_high": 0.040681319158607475,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.7946,
+   "n": 2000,
+   "k": 1589,
+   "Source": "Table S3",
+   "Model": "Route A1u, median activity rule",
+   "ci_low": 0.776115559988283,
+   "ci_high": 0.8120168495425459,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.0385,
+   "n": 2000,
+   "k": 76,
+   "Source": "Table S3",
+   "Model": "Route A1u, median activity rule",
+   "ci_low": 0.030054275443109072,
+   "ci_high": 0.047333864305013046,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.1379,
+   "n": 2000,
+   "k": 275,
+   "Source": "Table S3",
+   "Model": "Route A2, median activity rule",
+   "ci_low": 0.12269710453881,
+   "ci_high": 0.15337415392685352,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.0135,
+   "n": 2000,
+   "k": 26,
+   "Source": "Table S3",
+   "Model": "Route A2, median activity rule",
+   "ci_low": 0.008509130391574372,
+   "ci_high": 0.01899034933822423,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.0455,
+   "n": 2000,
+   "k": 90,
+   "Source": "Table S3",
+   "Model": "No selection, all 2,208 descriptors, median activity rule",
+   "ci_low": 0.03633795731126182,
+   "ci_high": 0.05502525284745086,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.005,
+   "n": 2000,
+   "k": 9,
+   "Source": "Table S3",
+   "Model": "No selection, all 2,208 descriptors, median activity rule",
+   "ci_low": 0.0020596885284903574,
+   "ci_high": 0.00852514124099515,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.013,
+   "n": 2000,
+   "k": 25,
+   "Source": "Table S3",
+   "Model": "Route B, 12 descriptors, 1 LV, median activity rule",
+   "ci_low": 0.008105230838877509,
+   "ci_high": 0.018397493413938,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.0015,
+   "n": 2000,
+   "k": 2,
+   "Source": "Table S3",
+   "Model": "Route B, 12 descriptors, 1 LV, median activity rule",
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.0195,
+   "n": 2000,
+   "k": 38,
+   "Source": "Table S3",
+   "Model": "Route B, 12 descriptors, 3 LV, median activity rule",
+   "ci_low": 0.013479737835558647,
+   "ci_high": 0.025986475638005792,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.003,
+   "n": 2000,
+   "k": 5,
+   "Source": "Table S3",
+   "Model": "Route B, 12 descriptors, 3 LV, median activity rule",
+   "ci_low": 0.0008122259751939095,
+   "ci_high": 0.005824445334518517,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.3638,
+   "n": 2000,
+   "k": 727,
+   "Source": "Table S3",
+   "Model": "Route A1, median activity rule",
+   "ci_low": 0.34238236995795823,
+   "ci_high": 0.3850185912584095,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.0355,
+   "n": 2000,
+   "k": 70,
+   "Source": "Table S3",
+   "Model": "Route A1, median activity rule",
+   "ci_low": 0.027383801138442458,
+   "ci_high": 0.044015415278486306,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.8071,
+   "n": 2000,
+   "k": 1614,
+   "Source": "Table S3",
+   "Model": "Route A1u, median activity rule",
+   "ci_low": 0.7890089172742584,
+   "ci_high": 0.824086277560637,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.052,
+   "n": 2000,
+   "k": 103,
+   "Source": "Table S3",
+   "Model": "Route A1u, median activity rule",
+   "ci_low": 0.04222751211179243,
+   "ci_high": 0.062113386044627204,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.1569,
+   "n": 2000,
+   "k": 313,
+   "Source": "Table S3",
+   "Model": "Route A2, median activity rule",
+   "ci_low": 0.14083908847625876,
+   "ci_high": 0.17317490429732052,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.0265,
+   "n": 2000,
+   "k": 52,
+   "Source": "Table S3",
+   "Model": "Route A2, median activity rule",
+   "ci_low": 0.019477617245196976,
+   "ci_high": 0.03395703472160681,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.0505,
+   "n": 2000,
+   "k": 100,
+   "Source": "Table S3",
+   "Model": "No selection, all 2,208 descriptors, median activity rule",
+   "ci_low": 0.04086426771825132,
+   "ci_high": 0.060481722083151876,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.002,
+   "n": 2000,
+   "k": 3,
+   "Source": "Table S3",
+   "Model": "No selection, all 2,208 descriptors, median activity rule",
+   "ci_low": 0.00030944294931233306,
+   "ci_high": 0.004377320104529616,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.0815,
+   "n": 2000,
+   "k": 162,
+   "Source": "Table S3",
+   "Model": "Route B, 12 descriptors, 1 LV, median activity rule",
+   "ci_low": 0.06941367896923428,
+   "ci_high": 0.09383137153751409,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.014,
+   "n": 2000,
+   "k": 27,
+   "Source": "Table S3",
+   "Model": "Route B, 12 descriptors, 1 LV, median activity rule",
+   "ci_low": 0.008914927994426228,
+   "ci_high": 0.019581403564719605,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.07,
+   "n": 2000,
+   "k": 139,
+   "Source": "Table S3",
+   "Model": "Route B, 12 descriptors, 3 LV, median activity rule",
+   "ci_low": 0.058742502233311615,
+   "ci_high": 0.08153916953733031,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.0315,
+   "n": 2000,
+   "k": 62,
+   "Source": "Table S3",
+   "Model": "Route B, 12 descriptors, 3 LV, median activity rule",
+   "ci_low": 0.023848362473131622,
+   "ci_high": 0.03956611985866993,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S5",
+   "Model": "Route A1u hit count, tie-break largest variance, as published",
+   "Endpoint": "H. influenzae",
+   "Metric": "hit count",
+   "p": 0.23276723276723277,
+   "n": 1000,
+   "k": 232,
+   "ci_low": 0.20615813782866238,
+   "ci_high": 0.25942983045366985,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S5",
+   "Model": "Route A1u hit count, tie-break largest variance, as published",
+   "Endpoint": "S. aureus",
+   "Metric": "hit count",
+   "p": 0.008991008991008992,
+   "n": 1000,
+   "k": 8,
+   "ci_low": 0.003459976165329311,
+   "ci_high": 0.015702049176074682,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S5",
+   "Model": "Route A1u hit count, tie-break largest variance, as published",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "hit count",
+   "p": 0.024975024975024976,
+   "n": 1000,
+   "k": 24,
+   "ci_low": 0.01543638323350848,
+   "ci_high": 0.03550063853135918,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S5",
+   "Model": "Route A1u hit count, tie-break largest variance, as published",
+   "Endpoint": "S. pyogenes",
+   "Metric": "hit count",
+   "p": 0.07892107892107893,
+   "n": 1000,
+   "k": 78,
+   "ci_low": 0.062141213132714056,
+   "ci_high": 0.09639363340258299,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S5",
+   "Model": "Route A1u hit count, tie-break first index",
+   "Endpoint": "H. influenzae",
+   "Metric": "hit count",
+   "p": 0.11288711288711288,
+   "n": 1000,
+   "k": 112,
+   "ci_low": 0.09311853992161025,
+   "ci_high": 0.13319916556924022,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S5",
+   "Model": "Route A1u hit count, tie-break first index",
+   "Endpoint": "S. aureus",
+   "Metric": "hit count",
+   "p": 0.006993006993006993,
+   "n": 1000,
+   "k": 6,
+   "ci_low": 0.002204982485151377,
+   "ci_high": 0.013013423270974496,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S5",
+   "Model": "Route A1u hit count, tie-break first index",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "hit count",
+   "p": 0.011988011988011988,
+   "n": 1000,
+   "k": 11,
+   "ci_low": 0.005503594192313587,
+   "ci_high": 0.019596628222016514,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S5",
+   "Model": "Route A1u hit count, tie-break first index",
+   "Endpoint": "S. pyogenes",
+   "Metric": "hit count",
+   "p": 0.1888111888111888,
+   "n": 1000,
+   "k": 188,
+   "ci_low": 0.16423072340131878,
+   "ci_high": 0.21362154016312898,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S12",
+   "Model": "Route A2 hit count",
+   "Endpoint": "H. influenzae",
+   "Metric": "hit count",
+   "p": 0.027972027972027972,
+   "n": 1000,
+   "k": 27,
+   "ci_low": 0.017866905925249685,
+   "ci_high": 0.03904174680597016,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S12",
+   "Model": "Route A1 hit count",
+   "Endpoint": "H. influenzae",
+   "Metric": "hit count",
+   "p": 0.052947052947052944,
+   "n": 1000,
+   "k": 52,
+   "ci_low": 0.0390765349439805,
+   "ci_high": 0.06763501405050731,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S12",
+   "Model": "Route A1u hit count",
+   "Endpoint": "H. influenzae",
+   "Metric": "hit count",
+   "p": 0.2177822177822178,
+   "n": 1000,
+   "k": 217,
+   "ci_low": 0.19181534485460988,
+   "ci_high": 0.24386247525331836,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S12",
+   "Model": "Route A2 hit count",
+   "Endpoint": "S. aureus",
+   "Metric": "hit count",
+   "p": 0.001998001998001998,
+   "n": 1000,
+   "k": 1,
+   "ci_low": 2.531748749129404e-05,
+   "ci_high": 0.005558924279826672,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S12",
+   "Model": "Route A1 hit count",
+   "Endpoint": "S. aureus",
+   "Metric": "hit count",
+   "p": 0.002997002997002997,
+   "n": 1000,
+   "k": 2,
+   "ci_low": 0.00024230111687723185,
+   "ci_high": 0.007205838911457497,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S12",
+   "Model": "Route A1u hit count",
+   "Endpoint": "S. aureus",
+   "Metric": "hit count",
+   "p": 0.011988011988011988,
+   "n": 1000,
+   "k": 11,
+   "ci_low": 0.005503594192313587,
+   "ci_high": 0.019596628222016514,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S12",
+   "Model": "Route A2 hit count",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "hit count",
+   "p": 0.003996003996003996,
+   "n": 1000,
+   "k": 3,
+   "ci_low": 0.0006190999316495713,
+   "ci_high": 0.008742023238478303,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S12",
+   "Model": "Route A1 hit count",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "hit count",
+   "p": 0.005994005994005994,
+   "n": 1000,
+   "k": 5,
+   "ci_low": 0.00162541951756276,
+   "ci_high": 0.011629470559812147,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S12",
+   "Model": "Route A1u hit count",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "hit count",
+   "p": 0.01998001998001998,
+   "n": 1000,
+   "k": 19,
+   "ci_low": 0.011477036993100945,
+   "ci_high": 0.0295124016250978,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S12",
+   "Model": "Route A2 hit count",
+   "Endpoint": "S. pyogenes",
+   "Metric": "hit count",
+   "p": 0.007992007992007992,
+   "n": 1000,
+   "k": 7,
+   "ci_low": 0.002818858759620524,
+   "ci_high": 0.014369194978918632,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S12",
+   "Model": "Route A1 hit count",
+   "Endpoint": "S. pyogenes",
+   "Metric": "hit count",
+   "p": 0.08391608391608392,
+   "n": 1000,
+   "k": 83,
+   "ci_low": 0.06664893180887889,
+   "ci_high": 0.10185329675537569,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S12",
+   "Model": "Route A1u hit count",
+   "Endpoint": "S. pyogenes",
+   "Metric": "hit count",
+   "p": 0.1008991008991009,
+   "n": 1000,
+   "k": 100,
+   "ci_low": 0.08210533435558001,
+   "ci_high": 0.12028793651869263,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, 182 label-free representatives",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.125748502994012,
+   "n": 500,
+   "k": 62,
+   "ci_low": 0.09640628315082979,
+   "ci_high": 0.15612924565137248,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, 182 label-free representatives",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.0998003992015968,
+   "n": 500,
+   "k": 49,
+   "ci_low": 0.07338258560774025,
+   "ci_high": 0.12748854268589027,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Route B 12 descriptors",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.005988023952095809,
+   "n": 500,
+   "k": 2,
+   "ci_low": 0.0004847861762900009,
+   "ci_high": 0.014374078562200309,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Route B 12 descriptors",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.005988023952095809,
+   "n": 500,
+   "k": 2,
+   "ci_low": 0.0004847861762900009,
+   "ci_high": 0.014374078562200309,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, no selection",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.3058470764617691,
+   "n": 2000,
+   "k": 611,
+   "ci_low": 0.28536012525936355,
+   "ci_high": 0.3262115939846792,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, no selection",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.1954022988505747,
+   "n": 2000,
+   "k": 390,
+   "ci_low": 0.17784301140639774,
+   "ci_high": 0.2130558343113325,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, univariate filter nested",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.8270864567716142,
+   "n": 2000,
+   "k": 1654,
+   "ci_low": 0.8096970003141256,
+   "ci_high": 0.8433384767223353,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, univariate filter nested",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.8120939530234883,
+   "n": 2000,
+   "k": 1624,
+   "ci_low": 0.7941739240559157,
+   "ci_high": 0.828906363006325,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, 182 label-free representatives",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.03193612774451098,
+   "n": 500,
+   "k": 15,
+   "ci_low": 0.01688598420387324,
+   "ci_high": 0.04899822570881894,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, 182 label-free representatives",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.03592814371257485,
+   "n": 500,
+   "k": 17,
+   "ci_low": 0.019928600046206307,
+   "ci_high": 0.0538803507360769,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Route B 12 descriptors",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.005988023952095809,
+   "n": 500,
+   "k": 2,
+   "ci_low": 0.0004847861762900009,
+   "ci_high": 0.014374078562200309,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Route B 12 descriptors",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.03193612774451098,
+   "n": 500,
+   "k": 15,
+   "ci_low": 0.01688598420387324,
+   "ci_high": 0.04899822570881894,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, no selection",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.08245877061469266,
+   "n": 2000,
+   "k": 164,
+   "ci_low": 0.07034520016699762,
+   "ci_high": 0.0948966967162818,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, no selection",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.1049475262368816,
+   "n": 2000,
+   "k": 209,
+   "ci_low": 0.09143038223014209,
+   "ci_high": 0.1187414913328453,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, univariate filter nested",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.1174412793603198,
+   "n": 2000,
+   "k": 234,
+   "ci_low": 0.10323256767471362,
+   "ci_high": 0.13190097481120264,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, univariate filter nested",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.08095952023988005,
+   "n": 2000,
+   "k": 161,
+   "ci_low": 0.0689481202197387,
+   "ci_high": 0.09329850874096558,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, 182 label-free representatives",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.08582834331337326,
+   "n": 500,
+   "k": 42,
+   "ci_low": 0.06120905860834764,
+   "ci_high": 0.1118483012454121,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, 182 label-free representatives",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.06986027944111776,
+   "n": 500,
+   "k": 34,
+   "ci_low": 0.0475482466326549,
+   "ci_high": 0.09372964680737077,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Route B 12 descriptors",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.005988023952095809,
+   "n": 500,
+   "k": 2,
+   "ci_low": 0.0004847861762900009,
+   "ci_high": 0.014374078562200309,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Route B 12 descriptors",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.003992015968063872,
+   "n": 500,
+   "k": 1,
+   "ci_low": 5.0634334007415215e-05,
+   "ci_high": 0.011092476898968787,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, no selection",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.1479260369815092,
+   "n": 2000,
+   "k": 295,
+   "ci_low": 0.1322344183750201,
+   "ci_high": 0.16380665447768036,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, no selection",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.1349325337331334,
+   "n": 2000,
+   "k": 269,
+   "ci_low": 0.11984103470125831,
+   "ci_high": 0.15023930192356055,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, univariate filter nested",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.1644177911044478,
+   "n": 2000,
+   "k": 328,
+   "ci_low": 0.14802384422367804,
+   "ci_high": 0.18096763625003912,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, univariate filter nested",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.1699150424787606,
+   "n": 2000,
+   "k": 339,
+   "ci_low": 0.15330041996044846,
+   "ci_high": 0.18667457953162522,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, 182 label-free representatives",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.01796407185628742,
+   "n": 500,
+   "k": 8,
+   "ci_low": 0.006932321202483599,
+   "ci_high": 0.03128200168985308,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, 182 label-free representatives",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.01397205588822355,
+   "n": 500,
+   "k": 6,
+   "ci_low": 0.004416172285801643,
+   "ci_high": 0.025934927265336975,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Route B 12 descriptors",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.04191616766467066,
+   "n": 500,
+   "k": 20,
+   "ci_low": 0.024601312085545394,
+   "ci_high": 0.06110260938824469,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Route B 12 descriptors",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.02395209580838323,
+   "n": 500,
+   "k": 11,
+   "ci_low": 0.011032276361257526,
+   "ci_high": 0.039022550844808795,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, no selection",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.4132933533233383,
+   "n": 2000,
+   "k": 826,
+   "ci_low": 0.39131213691445305,
+   "ci_high": 0.4349433306397331,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, no selection",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.1984007996001999,
+   "n": 2000,
+   "k": 396,
+   "ci_low": 0.18073826307824822,
+   "ci_high": 0.21615164722459704,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, univariate filter nested",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.9920039980009995,
+   "n": 2000,
+   "k": 1984,
+   "ci_low": 0.9870409314115283,
+   "ci_high": 0.9954205953386015,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "PLS-DA, Morgan2 bits, univariate filter nested",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.9100449775112444,
+   "n": 2000,
+   "k": 1820,
+   "ci_low": 0.8965989653996466,
+   "ci_high": 0.9221842228453211,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Morgan2 bits",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.1357,
+   "n": 500,
+   "k": 67,
+   "ci_low": 0.10537896426139438,
+   "ci_high": 0.16702992361382143,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Morgan2 bits",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0279,
+   "n": 500,
+   "k": 13,
+   "ci_low": 0.013914930062859742,
+   "ci_high": 0.044050436856873765,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Morgan2 bits",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.1118,
+   "n": 500,
+   "k": 55,
+   "ci_low": 0.08394905540685549,
+   "ci_high": 0.14076584477314388,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Morgan2 bits",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.2615,
+   "n": 500,
+   "k": 130,
+   "ci_low": 0.22206888188879817,
+   "ci_high": 0.30079577854314343,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Morgan2 bits",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.1198,
+   "n": 500,
+   "k": 59,
+   "ci_low": 0.09105167717278687,
+   "ci_high": 0.1495603963157274,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Morgan2 bits",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.1118,
+   "n": 500,
+   "k": 55,
+   "ci_low": 0.08394905540685549,
+   "ci_high": 0.14076584477314388,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Morgan2 bits",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.3054,
+   "n": 500,
+   "k": 152,
+   "ci_low": 0.26394323586166485,
+   "ci_high": 0.3463927325388252,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Morgan2 bits",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.2355,
+   "n": 500,
+   "k": 117,
+   "ci_low": 0.19755636482427041,
+   "ci_high": 0.2736223217642218,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Gaucher",
+   "Source": "Table S20",
+   "Model": "Route A1, 1 LV",
+   "Endpoint": "Gaucher vs control",
+   "Metric": "Q²",
+   "p": 0.0005,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Gaucher",
+   "Source": "Table S20",
+   "Model": "Route A1u, 1 LV",
+   "Endpoint": "Gaucher vs control",
+   "Metric": "Q²",
+   "p": 0.001,
+   "n": 2000,
+   "k": 1,
+   "ci_low": 1.2658823868557889e-05,
+   "ci_high": 0.0027826398346589465,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Gaucher",
+   "Source": "Table S20",
+   "Model": "Route A2, 1 LV",
+   "Endpoint": "Gaucher vs control",
+   "Metric": "Q²",
+   "p": 0.0005,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Gaucher",
+   "Source": "Table S20",
+   "Model": "Route A1, 2 LV",
+   "Endpoint": "Gaucher vs control",
+   "Metric": "Q²",
+   "p": 0.0015,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Gaucher",
+   "Source": "Table S20",
+   "Model": "Route A1u, 2 LV",
+   "Endpoint": "Gaucher vs control",
+   "Metric": "Q²",
+   "p": 0.0015,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Gaucher",
+   "Source": "Table S20",
+   "Model": "Route A2, 2 LV",
+   "Endpoint": "Gaucher vs control",
+   "Metric": "Q²",
+   "p": 0.0015,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Gaucher",
+   "Source": "Table S20",
+   "Model": "Route A1, 1 LV",
+   "Endpoint": "Gaucher vs control",
+   "Metric": "AUC",
+   "p": 0.0005,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Gaucher",
+   "Source": "Table S20",
+   "Model": "Route A1u, 1 LV",
+   "Endpoint": "Gaucher vs control",
+   "Metric": "AUC",
+   "p": 0.001,
+   "n": 2000,
+   "k": 1,
+   "ci_low": 1.2658823868557889e-05,
+   "ci_high": 0.0027826398346589465,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Gaucher",
+   "Source": "Table S20",
+   "Model": "Route A2, 1 LV",
+   "Endpoint": "Gaucher vs control",
+   "Metric": "AUC",
+   "p": 0.0005,
+   "n": 2000,
+   "k": 0,
+   "ci_low": 0.0,
+   "ci_high": 0.0018427397934059364,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Gaucher",
+   "Source": "Table S20",
+   "Model": "Route A1, 2 LV",
+   "Endpoint": "Gaucher vs control",
+   "Metric": "AUC",
+   "p": 0.0015,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Gaucher",
+   "Source": "Table S20",
+   "Model": "Route A1u, 2 LV",
+   "Endpoint": "Gaucher vs control",
+   "Metric": "AUC",
+   "p": 0.0015,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Gaucher",
+   "Source": "Table S20",
+   "Model": "Route A2, 2 LV",
+   "Endpoint": "Gaucher vs control",
+   "Metric": "AUC",
+   "p": 0.0015,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1 without 3D descriptors",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.06996501749125437,
+   "n": 2000,
+   "k": 139,
+   "ci_low": 0.058742502233311615,
+   "ci_high": 0.08153916953733031,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1 without 3D descriptors",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.03548225887056472,
+   "n": 2000,
+   "k": 70,
+   "ci_low": 0.027383801138442458,
+   "ci_high": 0.044015415278486306,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1u without 3D descriptors",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.08295852073963018,
+   "n": 2000,
+   "k": 165,
+   "ci_low": 0.07081116036844833,
+   "ci_high": 0.09542916131269873,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1u without 3D descriptors",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.10594702648675662,
+   "n": 2000,
+   "k": 211,
+   "ci_low": 0.09237247294084776,
+   "ci_high": 0.11979632188838643,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1 without 3D descriptors",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.009995002498750625,
+   "n": 2000,
+   "k": 19,
+   "ci_low": 0.005729035522963453,
+   "ci_high": 0.01479583217228858,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1 without 3D descriptors",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.01899050474762619,
+   "n": 2000,
+   "k": 37,
+   "ci_low": 0.013058315418332226,
+   "ci_high": 0.025410378996541125,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1u without 3D descriptors",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.010994502748625687,
+   "n": 2000,
+   "k": 21,
+   "ci_low": 0.006511085658164156,
+   "ci_high": 0.01600579487869697,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1u without 3D descriptors",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.03298350824587706,
+   "n": 2000,
+   "k": 65,
+   "ci_low": 0.025170508326027474,
+   "ci_high": 0.04123817360406892,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1 without 3D descriptors",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.004997501249375313,
+   "n": 2000,
+   "k": 9,
+   "ci_low": 0.0020596885284903574,
+   "ci_high": 0.00852514124099515,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1 without 3D descriptors",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.004497751124437781,
+   "n": 2000,
+   "k": 8,
+   "ci_low": 0.001728449573476145,
+   "ci_high": 0.007866303828537383,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1u without 3D descriptors",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.0014992503748125937,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1u without 3D descriptors",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.0014992503748125937,
+   "n": 2000,
+   "k": 2,
+   "ci_low": 0.00012112759055682972,
+   "ci_high": 0.0036076285698285315,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1 without 3D descriptors",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.14292853573213393,
+   "n": 2000,
+   "k": 285,
+   "ci_low": 0.12746255450028082,
+   "ci_high": 0.15859359741879328,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1 without 3D descriptors",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.1934032983508246,
+   "n": 2000,
+   "k": 386,
+   "ci_low": 0.17591372243936299,
+   "ci_high": 0.21099108272574163,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1u without 3D descriptors",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.20739630184907545,
+   "n": 2000,
+   "k": 414,
+   "ci_low": 0.189433260909414,
+   "ci_high": 0.22542986864173467,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1u without 3D descriptors",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.28235882058970513,
+   "n": 2000,
+   "k": 564,
+   "ci_low": 0.26236072148541234,
+   "ci_high": 0.30228031587124227,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Route B section (text)",
+   "Model": "Route B without the phenol indicator, 11 descriptors",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.0079960019990005,
+   "n": 2000,
+   "k": 15,
+   "ci_low": 0.004203591756889188,
+   "ci_high": 0.01233998373578594,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Route B section (text)",
+   "Model": "Route B without the phenol indicator, 11 descriptors",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.02348825587206397,
+   "n": 2000,
+   "k": 46,
+   "ci_low": 0.0168869324272122,
+   "ci_high": 0.030560637865280068,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Route B section (text)",
+   "Model": "Route B without the phenol indicator, 11 descriptors",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.022488755622188907,
+   "n": 2000,
+   "k": 44,
+   "ci_low": 0.016029647169849046,
+   "ci_high": 0.029422409482738006,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Top-15 section (text)",
+   "Model": "Route A2 top-15 by effect size, nested",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.011494252873563218,
+   "n": 2000,
+   "k": 22,
+   "ci_low": 0.006906122788328852,
+   "ci_high": 0.01660701640128506,
+   "thresholds_in_ci": []
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Top-15 section (text)",
+   "Model": "Route A2 top-15 by effect size, nested",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.014992503748125937,
+   "n": 2000,
+   "k": 29,
+   "ci_low": 0.009731812290767165,
+   "ci_high": 0.020758479301277086,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  }
+ ],
+ "table_S10": [
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No selection, all 2,208 descriptors",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.04397801099450275,
+   "n": 2000,
+   "k": 87,
+   "ci_low": 0.034985862846768585,
+   "ci_high": 0.053382598893372525,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.017964071856287425,
+   "n": 500,
+   "k": 8,
+   "ci_low": 0.006932321202483599,
+   "ci_high": 0.03128200168985308,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.03792415169660679,
+   "n": 500,
+   "k": 18,
+   "ci_low": 0.021472856586093284,
+   "ci_high": 0.05630017620179107,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, nested",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.05547226386806597,
+   "n": 2000,
+   "k": 110,
+   "ci_low": 0.04541715292148978,
+   "ci_high": 0.06591197819998716,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, nested",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.0559720139930035,
+   "n": 2000,
+   "k": 111,
+   "ci_low": 0.04587376649393303,
+   "ci_high": 0.0664536955313304,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1u",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.04697651174412794,
+   "n": 2000,
+   "k": 93,
+   "ci_low": 0.037692824415269686,
+   "ci_high": 0.0566651760410299,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A2",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.012993503248375811,
+   "n": 2000,
+   "k": 25,
+   "ci_low": 0.008105230838877509,
+   "ci_high": 0.018397493413938,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No filter, 182 label-free representatives",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.012993503248375811,
+   "n": 2000,
+   "k": 25,
+   "ci_low": 0.008105230838877509,
+   "ci_high": 0.018397493413938,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A1u",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.057971014492753624,
+   "n": 2000,
+   "k": 115,
+   "ci_low": 0.0477024773802507,
+   "ci_high": 0.06861833547127534,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A2",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.022988505747126436,
+   "n": 2000,
+   "k": 45,
+   "ci_low": 0.016457868212595234,
+   "ci_high": 0.02999193257730853,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No filter, 182 label-free representatives",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.015992003998001,
+   "n": 2000,
+   "k": 31,
+   "ci_low": 0.010555158919957628,
+   "ci_high": 0.02192938918963121,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.011976047904191617,
+   "n": 500,
+   "k": 5,
+   "ci_low": 0.0032547214070242523,
+   "ci_high": 0.02318138806965964,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 1 LV",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.017491254372813594,
+   "n": 2000,
+   "k": 34,
+   "ci_low": 0.011800987897346257,
+   "ci_high": 0.023675406227339907,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No filter, 182 label-free representatives",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.013493253373313344,
+   "n": 2000,
+   "k": 26,
+   "ci_low": 0.008509130391574372,
+   "ci_high": 0.01899034933822423,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, nested",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.01899050474762619,
+   "n": 2000,
+   "k": 37,
+   "ci_low": 0.013058315418332226,
+   "ci_high": 0.025410378996541125,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, nested",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.04447776111944028,
+   "n": 2000,
+   "k": 88,
+   "ci_low": 0.03543624464675896,
+   "ci_high": 0.053930461697658826,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No filter, 182 label-free representatives",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.013493253373313344,
+   "n": 2000,
+   "k": 26,
+   "ci_low": 0.008509130391574372,
+   "ci_high": 0.01899034933822423,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.013972055888223553,
+   "n": 500,
+   "k": 6,
+   "ci_low": 0.004416172285801643,
+   "ci_high": 0.025934927265336975,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, nested",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.01999000499750125,
+   "n": 2000,
+   "k": 39,
+   "ci_low": 0.013902241892437854,
+   "ci_high": 0.026561528953912023,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, nested",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.04447776111944028,
+   "n": 2000,
+   "k": 88,
+   "ci_low": 0.03543624464675896,
+   "ci_high": 0.053930461697658826,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route B, 12 descriptors, 3 LV",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.04847576211894053,
+   "n": 2000,
+   "k": 96,
+   "ci_low": 0.039050337055576895,
+   "ci_high": 0.05830249234114568,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 3",
+   "Model": "Route A1 top-15 by effect size, nested",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.015492253873063468,
+   "n": 2000,
+   "k": 30,
+   "ci_low": 0.010142718291276458,
+   "ci_high": 0.02134466751107879,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Route A2",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.057971014492753624,
+   "n": 2000,
+   "k": 115,
+   "ci_low": 0.0477024773802507,
+   "ci_high": 0.06861833547127534,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "No filter, 182 label-free representatives",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.0544727636181909,
+   "n": 2000,
+   "k": 108,
+   "ci_low": 0.04450462313867373,
+   "ci_high": 0.06482785476884043,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 1",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.013972055888223553,
+   "n": 500,
+   "k": 6,
+   "ci_low": 0.004416172285801643,
+   "ci_high": 0.025934927265336975,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table 4",
+   "Model": "Route A1 top-15 by VIP, nested",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.022988505747126436,
+   "n": 2000,
+   "k": 45,
+   "ci_low": 0.016457868212595234,
+   "ci_high": 0.02999193257730853,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2",
+   "Endpoint": "E. coli",
+   "Metric": "Q²",
+   "p": 0.015492253873063468,
+   "n": 2000,
+   "k": 30,
+   "ci_low": 0.010142718291276458,
+   "ci_high": 0.02134466751107879,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "E. coli",
+   "Metric": "Q²",
+   "p": 0.0718562874251497,
+   "n": 500,
+   "k": 35,
+   "ci_low": 0.0492386447203788,
+   "ci_high": 0.09601109159263317,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2",
+   "Endpoint": "E. coli",
+   "Metric": "AUC",
+   "p": 0.015992003998001,
+   "n": 2000,
+   "k": 31,
+   "ci_low": 0.010555158919957628,
+   "ci_high": 0.02192938918963121,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors",
+   "Endpoint": "E. coli",
+   "Metric": "AUC",
+   "p": 0.012993503248375811,
+   "n": 2000,
+   "k": 25,
+   "ci_low": 0.008105230838877509,
+   "ci_high": 0.018397493413938,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Random forest, out-of-bag",
+   "Endpoint": "E. coli",
+   "Metric": "AUC",
+   "p": 0.041916167664670656,
+   "n": 500,
+   "k": 20,
+   "ci_low": 0.024601312085545394,
+   "ci_high": 0.06110260938824469,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "Q²",
+   "p": 0.01699150424787606,
+   "n": 2000,
+   "k": 33,
+   "ci_low": 0.01138435838023515,
+   "ci_high": 0.023094698323837825,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "AUC",
+   "p": 0.059470264867566215,
+   "n": 2000,
+   "k": 118,
+   "ci_low": 0.04907630280393373,
+   "ci_high": 0.07023955014453875,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors",
+   "Endpoint": "A. baumannii",
+   "Metric": "AUC",
+   "p": 0.059470264867566215,
+   "n": 2000,
+   "k": 118,
+   "ci_low": 0.04907630280393373,
+   "ci_high": 0.07023955014453875,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u, sensitivity definition",
+   "Endpoint": "E. coli",
+   "Metric": "Q²",
+   "p": 0.041979010494752625,
+   "n": 2000,
+   "k": 83,
+   "ci_low": 0.0331876236508509,
+   "ci_high": 0.05118791168352146,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u, sensitivity definition",
+   "Endpoint": "E. coli",
+   "Metric": "AUC",
+   "p": 0.013993003498250875,
+   "n": 2000,
+   "k": 27,
+   "ci_low": 0.008914927994426228,
+   "ci_high": 0.019581403564719605,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors, sensitivity definition",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "Q²",
+   "p": 0.013993003498250875,
+   "n": 2000,
+   "k": 27,
+   "ci_low": 0.008914927994426228,
+   "ci_high": 0.019581403564719605,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "No selection, all 1,275 descriptors, sensitivity definition",
+   "Endpoint": "P. aeruginosa",
+   "Metric": "AUC",
+   "p": 0.05697151424287856,
+   "n": 2000,
+   "k": 113,
+   "ci_low": 0.04678767628081571,
+   "ci_high": 0.067536455833589,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1, sensitivity definition",
+   "Endpoint": "A. baumannii",
+   "Metric": "Q²",
+   "p": 0.012993503248375811,
+   "n": 2000,
+   "k": 25,
+   "ci_low": 0.008105230838877509,
+   "ci_high": 0.018397493413938,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A2, sensitivity definition",
+   "Endpoint": "A. baumannii",
+   "Metric": "Q²",
+   "p": 0.04547726136931534,
+   "n": 2000,
+   "k": 90,
+   "ci_low": 0.03633795731126182,
+   "ci_high": 0.05502525284745086,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Octapeptides",
+   "Source": "Table 5",
+   "Model": "Route A1u, sensitivity definition",
+   "Endpoint": "A. baumannii",
+   "Metric": "AUC",
+   "p": 0.018490754622688656,
+   "n": 2000,
+   "k": 36,
+   "ci_low": 0.012638018081131365,
+   "ci_high": 0.024833198161369478,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S1",
+   "Model": "Route B, 12 descriptors, 3 LV, grouping recomputed in every fold",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.0525,
+   "n": 2000,
+   "k": 104,
+   "ci_low": 0.04268243979733736,
+   "ci_high": 0.06265676793370871,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1, groups rebuilt in every fold",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.041,
+   "n": 2000,
+   "k": 81,
+   "ci_low": 0.03229055657320062,
+   "ci_high": 0.050088548950005814,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1u, groups fixed (paired draw)",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0455,
+   "n": 2000,
+   "k": 90,
+   "ci_low": 0.03633795731126182,
+   "ci_high": 0.05502525284745086,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S2",
+   "Model": "Route A1u, groups rebuilt in every fold",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.015,
+   "n": 2000,
+   "k": 29,
+   "ci_low": 0.009731812290767165,
+   "ci_high": 0.020758479301277086,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.0135,
+   "n": 2000,
+   "k": 26,
+   "Source": "Table S3",
+   "Model": "Route A2, median activity rule",
+   "ci_low": 0.008509130391574372,
+   "ci_high": 0.01899034933822423,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.0455,
+   "n": 2000,
+   "k": 90,
+   "Source": "Table S3",
+   "Model": "No selection, all 2,208 descriptors, median activity rule",
+   "ci_low": 0.03633795731126182,
+   "ci_high": 0.05502525284745086,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.013,
+   "n": 2000,
+   "k": 25,
+   "Source": "Table S3",
+   "Model": "Route B, 12 descriptors, 1 LV, median activity rule",
+   "ci_low": 0.008105230838877509,
+   "ci_high": 0.018397493413938,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "Q²",
+   "p": 0.0195,
+   "n": 2000,
+   "k": 38,
+   "Source": "Table S3",
+   "Model": "Route B, 12 descriptors, 3 LV, median activity rule",
+   "ci_low": 0.013479737835558647,
+   "ci_high": 0.025986475638005792,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.052,
+   "n": 2000,
+   "k": 103,
+   "Source": "Table S3",
+   "Model": "Route A1u, median activity rule",
+   "ci_low": 0.04222751211179243,
+   "ci_high": 0.062113386044627204,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "H. influenzae",
+   "Metric": "AUC",
+   "p": 0.0505,
+   "n": 2000,
+   "k": 100,
+   "Source": "Table S3",
+   "Model": "No selection, all 2,208 descriptors, median activity rule",
+   "ci_low": 0.04086426771825132,
+   "ci_high": 0.060481722083151876,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.014,
+   "n": 2000,
+   "k": 27,
+   "Source": "Table S3",
+   "Model": "Route B, 12 descriptors, 1 LV, median activity rule",
+   "ci_low": 0.008914927994426228,
+   "ci_high": 0.019581403564719605,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S5",
+   "Model": "Route A1u hit count, tie-break largest variance, as published",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "hit count",
+   "p": 0.024975024975024976,
+   "n": 1000,
+   "k": 24,
+   "ci_low": 0.01543638323350848,
+   "ci_high": 0.03550063853135918,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S5",
+   "Model": "Route A1u hit count, tie-break first index",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "hit count",
+   "p": 0.011988011988011988,
+   "n": 1000,
+   "k": 11,
+   "ci_low": 0.005503594192313587,
+   "ci_high": 0.019596628222016514,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S12",
+   "Model": "Route A1 hit count",
+   "Endpoint": "H. influenzae",
+   "Metric": "hit count",
+   "p": 0.052947052947052944,
+   "n": 1000,
+   "k": 52,
+   "ci_low": 0.0390765349439805,
+   "ci_high": 0.06763501405050731,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S12",
+   "Model": "Route A1u hit count",
+   "Endpoint": "S. aureus",
+   "Metric": "hit count",
+   "p": 0.011988011988011988,
+   "n": 1000,
+   "k": 11,
+   "ci_low": 0.005503594192313587,
+   "ci_high": 0.019596628222016514,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S12",
+   "Model": "Route A1u hit count",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "hit count",
+   "p": 0.01998001998001998,
+   "n": 1000,
+   "k": 19,
+   "ci_low": 0.011477036993100945,
+   "ci_high": 0.0295124016250978,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, 182 label-free representatives",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.03592814371257485,
+   "n": 500,
+   "k": 17,
+   "ci_low": 0.019928600046206307,
+   "ci_high": 0.0538803507360769,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, 182 label-free representatives",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "AUC",
+   "p": 0.06986027944111776,
+   "n": 500,
+   "k": 34,
+   "ci_low": 0.0475482466326549,
+   "ci_high": 0.09372964680737077,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, 182 label-free representatives",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.01796407185628742,
+   "n": 500,
+   "k": 8,
+   "ci_low": 0.006932321202483599,
+   "ci_high": 0.03128200168985308,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, 182 label-free representatives",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.01397205588822355,
+   "n": 500,
+   "k": 6,
+   "ci_low": 0.004416172285801643,
+   "ci_high": 0.025934927265336975,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Route B 12 descriptors",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.04191616766467066,
+   "n": 500,
+   "k": 20,
+   "ci_low": 0.024601312085545394,
+   "ci_high": 0.06110260938824469,
+   "thresholds_in_ci": [
+    0.05
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Route B 12 descriptors",
+   "Endpoint": "S. pyogenes",
+   "Metric": "AUC",
+   "p": 0.02395209580838323,
+   "n": 500,
+   "k": 11,
+   "ci_low": 0.011032276361257526,
+   "ci_high": 0.039022550844808795,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Table S13",
+   "Model": "Random forest, Morgan2 bits",
+   "Endpoint": "S. aureus",
+   "Metric": "Q²",
+   "p": 0.0279,
+   "n": 500,
+   "k": 13,
+   "ci_low": 0.013914930062859742,
+   "ci_high": 0.044050436856873765,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "3D section",
+   "Model": "Route A1 without 3D descriptors",
+   "Endpoint": "S. aureus",
+   "Metric": "AUC",
+   "p": 0.01899050474762619,
+   "n": 2000,
+   "k": 37,
+   "ci_low": 0.013058315418332226,
+   "ci_high": 0.025410378996541125,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Route B section (text)",
+   "Model": "Route B without the phenol indicator, 11 descriptors",
+   "Endpoint": "S. pneumoniae",
+   "Metric": "Q²",
+   "p": 0.022488755622188907,
+   "n": 2000,
+   "k": 44,
+   "ci_low": 0.016029647169849046,
+   "ci_high": 0.029422409482738006,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  },
+  {
+   "Data": "Monoterpenoids",
+   "Source": "Top-15 section (text)",
+   "Model": "Route A2 top-15 by effect size, nested",
+   "Endpoint": "S. pyogenes",
+   "Metric": "Q²",
+   "p": 0.014992503748125937,
+   "n": 2000,
+   "k": 29,
+   "ci_low": 0.009731812290767165,
+   "ci_high": 0.020758479301277086,
+   "thresholds_in_ci": [
+    0.016666666666666666
+   ]
+  }
+ ]
+}

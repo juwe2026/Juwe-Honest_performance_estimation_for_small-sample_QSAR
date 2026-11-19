@@ -1,14 +1,25 @@
 # -*- coding: utf-8 -*-
-"""G2-20: Route B mit allen 25 Deskriptoren, NumStereoCenters von 1,8-Cineol = 0 (CIP-basiert).
-Gleiches Permutationsschema wie das Archiv permB_25_*.npz (code/run_routeB.py: default_rng([701, k]), 2,000 Permutationen,
-LOO, PLS-DA mit 1 LV). Zuerst wird geprueft, dass das Schema mit dem alten Wert (Cineol = 2) die archivierten Nullwerte
-reproduziert; dann wird mit Cineol = 0 neu gerechnet. p mit Gleichstandsbehandlung (pval_tie.py)."""
+"""G2-20: Route B with all 25 descriptors, NumStereoCenters of 1,8-cineole = 0 (CIP-based).
+Same permutation scheme as the archive permB_25_*.npz (code/run_routeB.py: default_rng([701, k]), 2,000 permutations,
+LOO, PLS-DA with 1 LV). First it is checked that the scheme with the old value (cineole = 2) reproduces the archived null values,
+then it is recomputed with cineole = 0. p with treatment of ties (pval_tie.py)."""
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import sys, json, numpy as np
 from multiprocessing import Pool
 from common import *
 import core
 from sklearn.metrics import roc_auc_score
-RP = '/home/claude/rev/QSAR_selection_leakage/results/raw_permutations/'
+RP = (_ROOT + '/results/raw_permutations/')
 L25 = sorted(set(core.LIT25)); assert len(L25) == 25
 X25 = core.X_of(L25); ci = core.COMPOUNDS.index('1,8-Cineole'); j = L25.index('NumStereoCenters')
 assert X25[ci, j] == 2
@@ -31,6 +42,6 @@ if __name__ == '__main__':
                           q2_cineole2=float(z['obs_q2']), auc_cineole2=float(z['obs_auc']),
                           p_q2_cineole2=pval(z['q2s'], float(z['obs_q2'])), p_auc_cineole2=pval(z['aucs'], float(z['obs_auc'])),
                           scheme_check_max_dq=float(dq))
-            np.savez_compressed('/home/claude/rev/out/permB_25_cineole0_%s.npz' % k, q2s=qs, aucs=as_, obs_q2=oq, obs_auc=oa)
+            np.savez_compressed((_OUT + '/permB_25_cineole0_%s.npz') % k, q2s=qs, aucs=as_, obs_q2=oq, obs_auc=oa)
             print(k, {a: round(b, 4) for a, b in out[k].items() if isinstance(b, float)}, flush=True)
-    json.dump(out, open('/home/claude/rev/out/B25_cineole0_seed701.json', 'w'), indent=1)
+    json.dump(out, open((_OUT + '/B25_cineole0_seed701.json'), 'w'), indent=1)

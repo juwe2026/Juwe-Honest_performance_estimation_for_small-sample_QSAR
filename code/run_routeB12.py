@@ -1,4 +1,4 @@
-# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
+# Revision 03.10.2026: permutation p-values count ties (tolerance 1e-9), see CHANGELOG_revision.md
 """Route B, 12-descriptor set (C_Count removed, perfectly collinear with
 EsterLacton_flag): fully leave-one-out nested permutation test, one and three
 latent variables, 2,000 permutations per strain per model.

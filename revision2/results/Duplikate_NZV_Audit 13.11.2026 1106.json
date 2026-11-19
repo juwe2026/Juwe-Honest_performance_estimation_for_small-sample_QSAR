@@ -1,0 +1,408 @@
+{
+ "Monoterpenoide": {
+  "n": 31,
+  "p": 2208,
+  "dup": 0,
+  "nzv": 0,
+  "sd_le_1e-12": 2
+ },
+ "Peptide": {
+  "n": 37,
+  "p": 1275,
+  "dup": 105,
+  "nzv": 0,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS01": {
+  "n": 50,
+  "p": 1394,
+  "dup": 140,
+  "nzv": 38,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS02": {
+  "n": 34,
+  "p": 1396,
+  "dup": 138,
+  "nzv": 10,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS03": {
+  "n": 45,
+  "p": 1295,
+  "dup": 101,
+  "nzv": 12,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS04": {
+  "n": 40,
+  "p": 1286,
+  "dup": 96,
+  "nzv": 25,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS05": {
+  "n": 42,
+  "p": 1335,
+  "dup": 116,
+  "nzv": 47,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS06": {
+  "n": 58,
+  "p": 1371,
+  "dup": 118,
+  "nzv": 55,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS07": {
+  "n": 42,
+  "p": 1316,
+  "dup": 129,
+  "nzv": 0,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS08": {
+  "n": 36,
+  "p": 1309,
+  "dup": 104,
+  "nzv": 47,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS09": {
+  "n": 32,
+  "p": 1373,
+  "dup": 125,
+  "nzv": 34,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS10": {
+  "n": 45,
+  "p": 1387,
+  "dup": 130,
+  "nzv": 7,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS11": {
+  "n": 34,
+  "p": 1315,
+  "dup": 101,
+  "nzv": 31,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS12": {
+  "n": 30,
+  "p": 1306,
+  "dup": 103,
+  "nzv": 23,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS13": {
+  "n": 34,
+  "p": 1370,
+  "dup": 120,
+  "nzv": 19,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS14": {
+  "n": 48,
+  "p": 1372,
+  "dup": 129,
+  "nzv": 12,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS15": {
+  "n": 39,
+  "p": 1353,
+  "dup": 110,
+  "nzv": 62,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS16": {
+  "n": 32,
+  "p": 1307,
+  "dup": 107,
+  "nzv": 0,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS21": {
+  "n": 25,
+  "p": 1351,
+  "dup": 124,
+  "nzv": 31,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS22": {
+  "n": 60,
+  "p": 1382,
+  "dup": 121,
+  "nzv": 46,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS23": {
+  "n": 25,
+  "p": 1365,
+  "dup": 122,
+  "nzv": 37,
+  "sd_le_1e-12": 0
+ },
+ "datasets_k/DS24": {
+  "n": 60,
+  "p": 1384,
+  "dup": 118,
+  "nzv": 57,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS01": {
+  "n": 50,
+  "p": 1394,
+  "dup": 140,
+  "nzv": 38,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS02": {
+  "n": 36,
+  "p": 1410,
+  "dup": 139,
+  "nzv": 24,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS03": {
+  "n": 45,
+  "p": 1295,
+  "dup": 101,
+  "nzv": 12,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS04": {
+  "n": 40,
+  "p": 1286,
+  "dup": 96,
+  "nzv": 25,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS05": {
+  "n": 44,
+  "p": 1356,
+  "dup": 117,
+  "nzv": 67,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS06": {
+  "n": 30,
+  "p": 1436,
+  "dup": 133,
+  "nzv": 27,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS07": {
+  "n": 43,
+  "p": 1327,
+  "dup": 120,
+  "nzv": 11,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS08": {
+  "n": 37,
+  "p": 1359,
+  "dup": 130,
+  "nzv": 93,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS09": {
+  "n": 36,
+  "p": 1375,
+  "dup": 116,
+  "nzv": 7,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS10": {
+  "n": 47,
+  "p": 1388,
+  "dup": 128,
+  "nzv": 8,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS11": {
+  "n": 35,
+  "p": 1362,
+  "dup": 129,
+  "nzv": 78,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS12": {
+  "n": 31,
+  "p": 1336,
+  "dup": 125,
+  "nzv": 56,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS13": {
+  "n": 35,
+  "p": 1376,
+  "dup": 118,
+  "nzv": 25,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS14": {
+  "n": 49,
+  "p": 1375,
+  "dup": 120,
+  "nzv": 15,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS15": {
+  "n": 39,
+  "p": 1353,
+  "dup": 110,
+  "nzv": 62,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS16": {
+  "n": 33,
+  "p": 1355,
+  "dup": 132,
+  "nzv": 55,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS21": {
+  "n": 25,
+  "p": 1370,
+  "dup": 119,
+  "nzv": 25,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS22": {
+  "n": 60,
+  "p": 1398,
+  "dup": 123,
+  "nzv": 93,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS23": {
+  "n": 25,
+  "p": 1369,
+  "dup": 131,
+  "nzv": 49,
+  "sd_le_1e-12": 0
+ },
+ "datasets/DS24": {
+  "n": 60,
+  "p": 1384,
+  "dup": 121,
+  "nzv": 55,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS01": {
+  "n": 50,
+  "p": 1394,
+  "dup": 140,
+  "nzv": 38,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS02": {
+  "n": 34,
+  "p": 1396,
+  "dup": 138,
+  "nzv": 10,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS03": {
+  "n": 45,
+  "p": 1295,
+  "dup": 101,
+  "nzv": 12,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS04": {
+  "n": 40,
+  "p": 1286,
+  "dup": 96,
+  "nzv": 25,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS05": {
+  "n": 42,
+  "p": 1335,
+  "dup": 116,
+  "nzv": 47,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS06": {
+  "n": 58,
+  "p": 1371,
+  "dup": 118,
+  "nzv": 55,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS07": {
+  "n": 42,
+  "p": 1316,
+  "dup": 129,
+  "nzv": 0,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS08": {
+  "n": 36,
+  "p": 1309,
+  "dup": 104,
+  "nzv": 47,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS09": {
+  "n": 32,
+  "p": 1373,
+  "dup": 125,
+  "nzv": 34,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS10": {
+  "n": 45,
+  "p": 1387,
+  "dup": 130,
+  "nzv": 7,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS11": {
+  "n": 34,
+  "p": 1315,
+  "dup": 101,
+  "nzv": 31,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS12": {
+  "n": 30,
+  "p": 1306,
+  "dup": 103,
+  "nzv": 23,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS13": {
+  "n": 28,
+  "p": 1361,
+  "dup": 123,
+  "nzv": 14,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS14": {
+  "n": 48,
+  "p": 1372,
+  "dup": 129,
+  "nzv": 12,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS15": {
+  "n": 39,
+  "p": 1353,
+  "dup": 110,
+  "nzv": 62,
+  "sd_le_1e-12": 0
+ },
+ "datasets_m/DS16": {
+  "n": 32,
+  "p": 1307,
+  "dup": 107,
+  "nzv": 0,
+  "sd_le_1e-12": 0
+ }
+}

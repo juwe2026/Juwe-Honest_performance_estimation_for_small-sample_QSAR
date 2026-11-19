@@ -1,3 +1,14 @@
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 from common import *
 import nested_generic as ng, altorder as ao, unsup_rep as ur, core
 from scipy.stats import rankdata
@@ -32,7 +43,7 @@ for k in KEYS:
     out['B25_cineole0'][k]=dict(**r,q2_as_published_values=r0); print('B25c',k,round(r0,3),'->',round(r['q2'],3),'p',r['p_q2'],'AUC',round(r['auc'],3),'p',r['p_auc'],flush=True)
 dump('E_misc',out)
 # 3) Morgan2: no selection PLS-DA; nested univariate filter + PLS-DA
-MB=np.load('/home/claude/rev/out/morgan2_bits.npy')
+MB=np.load((_OUT + '/morgan2_bits.npy'))
 def nested_filter(Xm,y):
     yh=np.zeros(N)
     for i in range(N):

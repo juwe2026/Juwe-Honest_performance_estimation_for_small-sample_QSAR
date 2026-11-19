@@ -1,18 +1,29 @@
 # -*- coding: utf-8 -*-
-"""Clopper-Pearson-Intervalle (95 %) fuer die Monte-Carlo-Unsicherheit der berichteten Permutations-p-Werte.
+"""Clopper-Pearson intervals (95 %) for the Monte Carlo uncertainty of the reported permutation p-values.
 
-k = Zahl der permutierten Werte >= beobachtet (mit Gleichstandsbehandlung), n = Zahl der Permutationen;
-berichtet wird p = (1 + k)/(1 + n), das Intervall gilt fuer den Anteil k/n, den das Monte-Carlo-Verfahren
-schaetzt. Ausgewiesen werden alle in Tables 1 bis 4 und 6 berichteten p-Werte der auswertbaren Endpunkte (Tables 1 bis 5),
-deren Intervall 0,05 oder 0,0125 einschliesst (Zusage im Antwortschreiben, G2-7; Entscheidung EW 03.10.2026).
-Schreibt out/cp_borderline.json.
+k = number of permuted values >= observed (with treatment of ties), n = number of permutations.
+Reported is p = (1 + k)/(1 + n), the interval refers to the proportion k/n that the Monte Carlo procedure
+estimates. Listed are all p-values of the evaluable endpoints reported in Tables 1 to 4 and 6 (Tables 1 to 5)
+whose interval includes 0.05 or 0.0125 (commitment in the response letter of Revision 1, G2-7, decision EW 03.10.2026).
+Writes out/cp_borderline.json.
 """
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import json
 import numpy as np
 from scipy.stats import beta
 
-O = '/home/claude/rev/out/'
-RP = '/home/claude/rev/QSAR_selection_leakage/results/raw_permutations/'
+O = (_OUT + '/')
+RP = (_ROOT + '/results/raw_permutations/')
 J = lambda f: json.load(open(f))
 
 def cp(k, n, a=0.05):
@@ -50,7 +61,7 @@ for s in ('HI', 'SA', 'SPneu', 'SPyo'):
         add('Table 3', 'Route A1 top-15 by effect size, nested', s, m, J(O + 'cache_topk_seeds/%s_A1_top15.json' % s)['p_' + m], 2000)
         add('Table 4', 'Route A1 top-15 by VIP, nested', s, m, J(O + 'cache_topk_seeds/%s_A1_viptop1.json' % s)['p_' + m], 2000)
 for rule, lab in (('A', ''), ('C', ', sensitivity definition')):
-    R = J('/home/claude/rev/lone/res_%s.json' % rule); RX = J('/home/claude/rev/lone/res_%s_fix.json' % rule)
+    R = J((_OUT + '/lone/res_%s.json') % rule); RX = J((_OUT + '/lone/res_%s_fix.json') % rule)
     for s in ('EC', 'SA', 'AB'):
         for m in ('q2', 'auc'):
             for r in ('A1', 'A1u', 'A2'):
@@ -66,7 +77,7 @@ for it in ITEMS:
     if thr:
         out.append(dict(it, k=k, ci_low=lo, ci_high=hi, threshold=' and '.join('%g' % t for t in thr)))
 json.dump(dict(n_checked=len(ITEMS), borderline=out), open(O + 'cp_borderline.json', 'w'), indent=1)
-print('geprueft:', len(ITEMS), '| Intervall schliesst 0,05 oder 0,0125 ein:', len(out))
+print('checked:', len(ITEMS), '| interval includes 0.05 or 0.0125:', len(out))
 for o in out:
     print('  %-8s %-48s %-14s %-4s p = %.4f  k = %d/%d  95 %% CI %.4f–%.4f  (%s)' % (
         o['Source'], o['Model'], o['Endpoint'], o['Metric'], o['p'], o['k'], o['n'], o['ci_low'], o['ci_high'], o['threshold']))

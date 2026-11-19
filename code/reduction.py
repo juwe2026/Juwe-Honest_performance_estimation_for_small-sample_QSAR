@@ -1,6 +1,17 @@
-"""Route-B-Korrelationsreduktion auf Basis der PUBLIZIERTEN Matrizen
-(Blaetter Pearson_Corr und Spearman_Corr in Zusatzdatei 2)."""
-import sys; sys.path.insert(0, '/home/claude/work/recalc')
+"""Route B correlation reduction on the basis of the PUBLISHED matrices
+(sheets Pearson_Corr and Spearman_Corr in supplementary file 2)."""
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
+import sys; sys.path.insert(0, (_ROOT + '/code'))
 import numpy as np, openpyxl, core
 
 THR = 0.7
@@ -43,17 +54,17 @@ def reduce(mode, exempt_first):
         left = [m for m in left if m != best and m not in partners]
     return reps + exempt, clusters, exempt
 
-print("Publiziert laut Blatt Reduktion: %d Repraesentanten\n" % len(PUB))
+print("Published according to sheet Reduction: %d representatives\n" % len(PUB))
 for mode in ("combined", "pearson", "spearman"):
-    for ef, lab in ((True, "alt: Ausnahme VOR Gruppierung"), (False, "neu: Gruppierung VOR Ausnahme")):
+    for ef, lab in ((True, "old: exemption BEFORE grouping"), (False, "new: grouping BEFORE exemption")):
         reps, cl, ex = reduce(mode, ef)
         mark = ""
         if mode == "combined" and ef:
-            mark = "   <-- reproduziert die Publikation" if set(reps) == set(PUB) else "   <-- WEICHT AB"
+            mark = "   <-- reproduces the publication" if set(reps) == set(PUB) else "   <-- DIFFERS"
         print("%-9s | %-32s -> %2d%s" % (mode, lab, len(reps), mark))
 print()
 reps, cl, ex = reduce("combined", False)
-print("Neue Reduktion (combined, korrigierte Reihenfolge): %d Deskriptoren" % len(reps))
+print("New reduction (combined, corrected order): %d descriptors" % len(reps))
 for r in reps:
     p = cl.get(r, [])
     print("   %-20s %-16s %s" % (r, "Singleton" if not p else "Cluster (%d)" % (len(p)+1), ", ".join(p)))

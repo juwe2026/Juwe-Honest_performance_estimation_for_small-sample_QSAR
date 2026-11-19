@@ -1,4 +1,4 @@
-# Paired bootstrap of differences in honest Q2 between models (revision, October 2026): Table S22 and the Methods
+# Paired bootstrap of differences in honest Q2 between models (revision, October 2026): Table S11 and the Methods
 # paragraph on model comparisons.
 #
 # Input: the observed leave-one-out (or out-of-bag) predictions of every compared model, written by
@@ -14,10 +14,21 @@
 # and applies the Holm and the Benjamini-Hochberg procedure (5 % each) over all 104 comparisons.
 #
 # Usage: python revision/paired_bootstrap.py   (paths as in the other revision scripts, see README_revision.md)
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import json, csv
 import numpy as np
 
-RES = '/home/claude/rev/out/'          # results/revision/ in this archive
+RES = (_OUT + '/')          # results/revision/ in this archive
 B = 20000
 SEED = 8302
 
@@ -28,7 +39,7 @@ def resamples(y):
     rng = np.random.default_rng(SEED); i1 = np.where(y == 1)[0]; i0 = np.where(y == 0)[0]
     return [np.concatenate([rng.choice(i1, len(i1)), rng.choice(i0, len(i0))]) for _ in range(B)]
 
-# model keys of the prediction files and the labels printed in Table S22
+# model keys of the prediction files and the labels printed in Table S11
 LAB = {'NoSel2208': 'PLS-DA, all 2,208 descriptors', 'RF2208': 'Random forest, all 2,208', 'A1': 'Route A1', 'A2': 'Route A2',
        'A1u': 'Route A1u', 'B12': 'Route B (12, 1 LV)', 'A1_top15': 'Route A1 top-15', 'A2_top15': 'Route A2 top-15',
        'A1_top6': 'Route A1 top-6', 'A1_vip15': 'Route A1 top-15, VIP', 'A2_vip15': 'Route A2 top-15, VIP',

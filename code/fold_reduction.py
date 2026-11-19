@@ -1,14 +1,14 @@
-# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
-"""Sensitivitaetsanalyse zu Gutachterpunkt 1.
+# Revision 03.10.2026: permutation p-values count ties (tolerance 1e-9), see CHANGELOG_revision.md
+"""Sensitivity analysis on reviewer point 1 (first round of review).
 
-Die Korrelationsgruppierung von Route B benutzt keine Aktivitaetslabels, sie
-benutzt aber die Deskriptorwerte aller 31 Verbindungen. Damit traegt auch die
-jeweils ausgelassene Verbindung zur Definition der Merkmale bei. Ob das die
-LOO-Schaetzung optimistisch macht, laesst sich nur empirisch klaeren: Hier wird
-die Gruppierung in jedem Trainingsfold aus den 30 Trainingsverbindungen neu
-bestimmt, einschliesslich der Ausnahmeregel fuer seltene Flags.
+The correlation grouping of Route B uses no activity labels, but it
+uses the descriptor values of all 31 compounds. So the compound
+left out in each case also contributes to the definition of the features. Whether this makes the
+LOO estimate optimistic can only be clarified empirically: here
+the grouping is determined again in every training fold from the 30 training compounds,
+including the exemption rule for rare flags.
 
-Ausgabe: results/recalc/fold_reduction.json (QSAR_RECALC_DIR ueberschreibt das)
+Output: results/recalc/fold_reduction.json (QSAR_RECALC_DIR overrides this)
 """
 import os as _os
 _ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
@@ -29,13 +29,13 @@ from scipy.stats import rankdata
 THR = 0.7
 N = core.N
 LIT25 = list(dict.fromkeys(core.LIT25))
-assert len(LIT25) == 25, "a priori Satz hat %d Deskriptoren" % len(LIT25)
+assert len(LIT25) == 25, "a priori set has %d descriptors" % len(LIT25)
 
 X25 = core.X_of(LIT25)
 
 
 def _corr(A):
-    """Pearson- und Spearman-Matrix, Spalten mit Nullvarianz bekommen 0."""
+    """Pearson and Spearman matrix, columns with zero variance get 0."""
     def cc(M):
         M = M - M.mean(0)
         sd = M.std(0)
@@ -54,8 +54,8 @@ def _is_binary(v):
 
 
 def group(A, names, thr=THR):
-    """Dieselbe Regel wie im Manuskript: seltene Binaerflags (weniger als vier
-    Positive) werden vor der Gruppierung ausgenommen, dann greedy nach Grad."""
+    """The same rule as in the manuscript: rare binary flags (fewer than four
+    positives) are exempted before the grouping, then greedy by degree."""
     P, S = _corr(A)
     L = (np.maximum(np.abs(P), np.abs(S)) > thr)
     np.fill_diagonal(L, False)
@@ -70,10 +70,10 @@ def group(A, names, thr=THR):
         reps.append(best)
         left = [k for k in left if k != best and k not in partners]
     final = sorted(reps + rare)
-    # Die Ausnahme fuer seltene Flags laeuft vor der Gruppierung und laesst exakt
-    # redundante Paare durch. Genau dieser Fall tritt global fuer EsterLacton_flag
-    # und C_Count auf. Aufloesung wie im Manuskript: das benannte Strukturmerkmal
-    # bleibt, der Zaehler faellt weg.
+    # The exemption of rare flags runs before the grouping and lets exactly
+    # redundant pairs through. Exactly this case occurs globally for EsterLacton_flag
+    # and C_Count. Resolution as in the manuscript: the named structural feature
+    # stays, the count is dropped.
     drop = set()
     for a_i, a in enumerate(final):
         for b in final[a_i + 1:]:
@@ -85,9 +85,9 @@ def group(A, names, thr=THR):
     return [j for j in final if j not in drop]
 
 
-# ---------------------------------------------------------------- Gruppierungen
+# ---------------------------------------------------------------- groupings
 GLOBAL = group(X25, LIT25)
-print("Globale Gruppierung: %d Repraesentanten" % len(GLOBAL))
+print("Global grouping: %d representatives" % len(GLOBAL))
 print("  ", ", ".join(LIT25[j] for j in GLOBAL))
 
 FOLD = []
@@ -97,19 +97,19 @@ for i in range(N):
 
 sizes = [len(f) for f in FOLD]
 same = sum(1 for f in FOLD if f == GLOBAL)
-print("Foldweise Gruppierung: Groesse %d bis %d, identisch mit global in %d von %d Folds"
+print("Fold-wise grouping: size %d to %d, identical with global in %d of %d folds"
       % (min(sizes), max(sizes), same, N))
 
 _union = sorted(set().union(*[set(f) for f in FOLD]))
 _inter = sorted(set(FOLD[0]).intersection(*[set(f) for f in FOLD]))
-print("  Kern in allen Folds: %d, Vereinigung ueber alle Folds: %d"
+print("  core in all folds: %d, union over all folds: %d"
       % (len(_inter), len(_union)))
 _var = [LIT25[j] for j in _union if j not in _inter]
-print("  wechselnde Repraesentanten:", ", ".join(_var) if _var else "keine")
+print("  changing representatives:", ", ".join(_var) if _var else "none")
 
 
 def loo_fold(y, nlv, folds):
-    """LOO, in dem die Merkmalsdefinition je Fold aus den Trainingsdaten kommt."""
+    """LOO in which the feature definition per fold comes from the training data."""
     yh = np.zeros(N)
     for i in range(N):
         tr = np.ones(N, bool); tr[i] = False
@@ -158,10 +158,10 @@ d1 = [v["dq2"] for k, v in out["results"].items() if k.endswith("1LV")]
 d3 = [v["dq2"] for k, v in out["results"].items() if k.endswith("3LV")]
 out["summary"] = {"mean_dq2_1LV": float(np.mean(d1)), "max_abs_dq2_1LV": float(np.max(np.abs(d1))),
                   "mean_dq2_3LV": float(np.mean(d3)), "max_abs_dq2_3LV": float(np.max(np.abs(d3)))}
-print("\nMittlere Differenz Q2 (fold minus global): 1 LV %+.4f, 3 LV %+.4f"
+print("\nMean difference Q2 (fold minus global): 1 LV %+.4f, 3 LV %+.4f"
       % (out["summary"]["mean_dq2_1LV"], out["summary"]["mean_dq2_3LV"]))
-print("Groesste absolute Differenz: 1 LV %.4f, 3 LV %.4f"
+print("Largest absolute difference: 1 LV %.4f, 3 LV %.4f"
       % (out["summary"]["max_abs_dq2_1LV"], out["summary"]["max_abs_dq2_3LV"]))
 
 json.dump(out, open(_os.path.join(_RES, "fold_reduction.json"), "w"), indent=1)
-print("geschrieben: %s" % _os.path.join(_RES, "fold_reduction.json"))
+print("written: %s" % _os.path.join(_RES, "fold_reduction.json"))

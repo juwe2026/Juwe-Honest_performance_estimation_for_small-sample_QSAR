@@ -1,21 +1,21 @@
-# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
-"""Sensitivitaetsanalyse fuer den 2.208-Deskriptor-Pool von Route A.
+# Revision 03.10.2026: permutation p-values count ties (tolerance 1e-9), see CHANGELOG_revision.md
+"""Sensitivity analysis for the 2,208-descriptor pool of Route A.
 
-Tabelle S1 misst die X-Datenabhaengigkeit der unueberwachten Korrelations-
-gruppierung fuer die 25 a priori Deskriptoren von Route B. Die Routen A1 und A1u
-fixieren dieselbe Art von Schritt auf einem um zwei Groessenordnungen groesseren
-Pool: die Partition der 2.208 bereinigten Deskriptoren in 182 Korrelations-
-gruppen wird einmal auf allen 31 Verbindungen bestimmt. Hier wird diese Partition
-in jedem Trainingsfold aus den 30 Trainingsverbindungen neu gebildet, mit
-identischer Regel, und gegen die globale Fassung gestellt.
+Table S1 measures the X-data dependence of the unsupervised correlation
+grouping for the 25 a priori descriptors of Route B. Routes A1 and A1u
+fix the same kind of step on a pool two orders of magnitude larger:
+the partition of the 2,208 cleaned descriptors into 182 correlation
+groups is determined once on all 31 compounds. Here this partition is
+formed again in every training fold from the 30 training compounds, with
+the identical rule, and compared with the global version.
 
-Die Gruppierung benutzt keine Labels, sie wird deshalb einmal je Fold berechnet
-und fuer alle Staemme und alle Permutationen wiederverwendet. Alles
-Label-Abhaengige - Repraesentantenwahl nach Effektgroesse (A1), Filter, PLS-DA -
-laeuft wie im Manuskript in jedem Fold neu.
+The grouping uses no labels, so it is computed once per fold
+and reused for all strains and all permutations. Everything
+label-dependent - choice of representative by effect size (A1), filter, PLS-DA -
+runs again in every fold, as in the manuscript.
 
-Aufruf:  python3 code/fold_grouping_routeA.py [NPERM]
-Ausgabe: results/recalc/fold_grouping_routeA.json (QSAR_RECALC_DIR ueberschreibt das)
+Usage:  python3 code/fold_grouping_routeA.py [NPERM]
+Output: results/recalc/fold_grouping_routeA.json (QSAR_RECALC_DIR overrides this)
 """
 import os as _os
 _ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
@@ -37,12 +37,12 @@ CACHE = _os.path.join(_RES, '_foldgroups_A.pkl')
 THR = 0.7
 
 STRAINS = ['H.I.', 'S.A.', 'S.Pneu', 'S.Pyo', 'P.A.']
-# Die Gruppierung ist labelfrei und fuer alle fuenf Staemme dieselbe, also ist das
-# gepoolte Blatt die richtige Quelle sowohl fuer X als auch - ueber seine eigenen
-# fuenf Aktivitaetsspalten - fuer Y. Die frueher hier genannten Blaetter CS1-4_*
-# gibt es in der aktuellen Datenmatrix nicht mehr; ihre Nachfolger CS1-5_* sind die
-# stammspezifischen Saetze NACH dem Effektgroessenfilter und damit nicht der
-# ungefilterte 2.208er-Pool, den diese Analyse braucht (Runde-6-Bericht, 8.3).
+# The grouping is label-free and the same for all five strains, so the
+# pooled sheet is the right source both for X and - via its own
+# five activity columns - for Y. The sheets CS1-4_* named here earlier
+# no longer exist in the current data matrix. Their successors CS1-5_* are the
+# strain-specific sets AFTER the effect size filter and therefore not the
+# unfiltered 2,208 pool that this analysis needs (report of round 6, 8.3).
 SHEET = {s: 'Cleaned_Steps1-4' for s in STRAINS}
 YCOL = {'H.I.': 'H. I. (H. influenzae)', 'S.A.': 'S. A. (S. aureus)',
         'S.Pneu': 'S. Pneu (S. pneumoniae)', 'S.Pyo': 'S. pyo (S. pyogenes)',
@@ -50,15 +50,15 @@ YCOL = {'H.I.': 'H. I. (H. influenzae)', 'S.A.': 'S. A. (S. aureus)',
 FULL = {'H.I.': 'H. influenzae', 'S.A.': 'S. aureus', 'S.Pneu': 'S. pneumoniae',
         'S.Pyo': 'S. pyogenes', 'P.A.': 'P. aeruginosa'}
 
-print("lade Deskriptormatrix ...")
+print("loading descriptor matrix ...")
 _xl = pd.ExcelFile(BIG)
 _clean = pd.read_excel(_xl, 'Cleaned_Steps1-4')
 _first = pd.read_excel(_xl, SHEET['H.I.'])
 DESC = [c for c in _clean.columns if '::' in c and c in _first.columns]
 X = _first[DESC].apply(pd.to_numeric, errors='coerce').values.astype(float)
 N, P = X.shape
-print("  %d Verbindungen, %d Deskriptoren" % (N, P))
-assert P == 2208, "Deskriptorzahl %d, erwartet 2208" % P
+print("  %d compounds, %d descriptors" % (N, P))
+assert P == 2208, "number of descriptors %d, expected 2208" % P
 
 Y = {}
 for s in STRAINS:
@@ -66,12 +66,12 @@ for s in STRAINS:
     yc = YCOL[s]
     Y[s] = (h[yc].astype(str).str.strip() == 'active').astype(float).values
     assert len(Y[s]) == N
-print("  Aktive je Stamm:", {s: int(Y[s].sum()) for s in STRAINS})
+print("  actives per strain:", {s: int(Y[s].sum()) for s in STRAINS})
 
 
-# ------------------------------------------------------------------ Gruppierung
+# ------------------------------------------------------------------ grouping
 def build_groups(Xs, thresh=THR):
-    """Identisch zu code/altorder.py build_groups, nur ohne Zwischenspeicher."""
+    """Identical to code/altorder.py build_groups, only without the cache."""
     n, p = Xs.shape
     R = rankdata(Xs, axis=0)
 
@@ -109,7 +109,7 @@ def build_groups(Xs, thresh=THR):
 
 
 def centrality_reps(Xs, groups):
-    """Repraesentant je Gruppe nach Zentralitaet, wie code/unsup_rep.py."""
+    """Representative per group by centrality, as code/unsup_rep.py."""
     R = rankdata(Xs, axis=0)
     reps = []
     for g in groups:
@@ -125,37 +125,37 @@ def centrality_reps(Xs, groups):
 
 
 def flatten(groups):
-    """Gruppen als (order, starts) fuer eine vektorisierte Repraesentantenwahl."""
+    """Groups as (order, starts) for a vectorised choice of representatives."""
     order = np.concatenate([np.asarray(g, dtype=int) for g in groups])
     sizes = np.array([len(g) for g in groups], dtype=int)
     starts = np.concatenate([[0], np.cumsum(sizes)[:-1]])
     return order, starts, sizes
 
 
-# --------------------------------------------------------- Fold-Gruppierungen
+# --------------------------------------------------------- fold groupings
 if os.path.exists(CACHE):
     FG = pickle.load(open(CACHE, 'rb'))
-    print("Fold-Gruppierungen aus Zwischenspeicher gelesen")
+    print("Fold groupings read from the cache")
 else:
     t0 = time.time()
     GL, _ = build_groups(X)
-    print("globale Gruppierung: %d Gruppen (%.1f s)" % (len(GL), time.time() - t0))
+    print("global grouping: %d groups (%.1f s)" % (len(GL), time.time() - t0))
     FG = {'global': GL, 'global_cent': centrality_reps(X, GL), 'folds': [], 'folds_cent': []}
     for i in range(N):
         tr = np.ones(N, bool); tr[i] = False
         g, _ = build_groups(X[tr])
         FG['folds'].append(g)
         FG['folds_cent'].append(centrality_reps(X[tr], g))
-        print("  Fold %2d: %d Gruppen (%.1f s)" % (i, len(g), time.time() - t0))
+        print("  fold %2d: %d groups (%.1f s)" % (i, len(g), time.time() - t0))
     pickle.dump(FG, open(CACHE, 'wb'))
 
 GL = FG['global']
 NG = [len(g) for g in FG['folds']]
-print("\nglobale Partition: %d Gruppen; foldweise %d bis %d, Median %d"
+print("\nglobal partition: %d groups, fold-wise %d to %d, median %d"
       % (len(GL), min(NG), max(NG), int(np.median(NG))))
 
-# Wie stark aendert sich die Partition? Anteil der Deskriptorpaare, die in
-# beiden Fassungen gemeinsam gruppiert sind beziehungsweise nicht.
+# How much does the partition change? Share of the descriptor pairs that are
+# grouped together in both versions or not.
 def gid_of(groups, p=P):
     gid = np.empty(p, dtype=np.int32)
     for k, g in enumerate(groups):
@@ -166,12 +166,12 @@ gid_g = gid_of(GL)
 agree = []
 for g in FG['folds']:
     gid_f = gid_of(g)
-    # Rand-Index ueber eine Stichprobe von Paaren, exakt waere 2.4 Millionen Paare
+    # Rand index over a sample of pairs, exactly it would be 2.4 million pairs
     rng = np.random.default_rng(7)
     a = rng.integers(0, P, 200000); b = rng.integers(0, P, 200000)
     m = a != b
     agree.append(float(np.mean((gid_g[a[m]] == gid_g[b[m]]) == (gid_f[a[m]] == gid_f[b[m]]))))
-print("Rand-Index der Partition, global gegen foldweise: %.4f bis %.4f (Mittel %.4f)"
+print("Rand index of the partition, global against fold-wise: %.4f to %.4f (mean %.4f)"
       % (min(agree), max(agree), float(np.mean(agree))))
 
 FLAT_G = flatten(GL)
@@ -195,7 +195,7 @@ def eff_filter(R, ytr, ntr):
 
 
 def reps_by_eff(flat, eff):
-    """Repraesentant je Gruppe = groesste Effektgroesse, vektorisiert."""
+    """Representative per group = largest effect size, vectorised."""
     order, starts, sizes = flat
     e = eff[order]
     out = np.empty(len(starts), dtype=int)
@@ -205,7 +205,7 @@ def reps_by_eff(flat, eff):
 
 
 def loo(y, mode, per_fold):
-    """mode 'A1' (Repraesentant nach Effektgroesse) oder 'A1u' (nach Zentralitaet)."""
+    """mode 'A1' (representative by effect size) or 'A1u' (by centrality)."""
     yh = np.zeros(N)
     for i in range(N):
         tr = np.ones(N, bool); tr[i] = False
@@ -255,7 +255,7 @@ out = {'n_groups_global': len(GL), 'n_groups_folds': NG,
        'rand_index': {'min': min(agree), 'max': max(agree), 'mean': float(np.mean(agree))},
        'nperm': NPERM, 'results': {}}
 
-print("\n%-8s %-4s %-28s %-28s %s" % ("Stamm", "Rte", "global", "foldweise", "Differenz"))
+print("\n%-8s %-4s %-28s %-28s %s" % ("strain", "Rte", "global", "fold-wise", "difference"))
 for mode in ('A1', 'A1u'):
     for s in STRAINS:
         t0 = time.time()
@@ -274,8 +274,8 @@ for mode in ('A1', 'A1u'):
     d = [v['dq2'] for k, v in out['results'].items() if k.endswith('_' + mode)]
     out.setdefault('summary', {})[mode] = {'mean_dq2': float(np.mean(d)),
                                            'max_abs_dq2': float(np.max(np.abs(d)))}
-    print("%s: mittlere Differenz Q2 %+.4f, groesste absolute %.4f"
+    print("%s: mean difference Q2 %+.4f, largest absolute %.4f"
           % (mode, np.mean(d), np.max(np.abs(d))))
 
 json.dump(out, open(_os.path.join(_RES, 'fold_grouping_routeA.json'), 'w'), indent=1)
-print("geschrieben: %s" % _os.path.join(_RES, "fold_grouping_routeA.json"))
+print("written: %s" % _os.path.join(_RES, "fold_grouping_routeA.json"))

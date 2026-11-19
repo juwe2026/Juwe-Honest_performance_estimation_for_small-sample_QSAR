@@ -1,0 +1,105 @@
+{
+ "n_series": 16,
+ "n": {
+  "min": 30.0,
+  "median": 39.5,
+  "max": 58.0
+ },
+ "p (cleaned)": {
+  "min": 1286.0,
+  "median": 1344.0,
+  "max": 1396.0
+ },
+ "G": {
+  "min": 30.0,
+  "median": 80.5,
+  "max": 140.0
+ },
+ "G/p": {
+  "min": 0.023,
+  "median": 0.0582,
+  "max": 0.1021
+ },
+ "Calibrated inflation A1u": {
+  "min": 1.5063,
+  "median": 1.7241,
+  "max": 1.9388
+ },
+ "Calibrated inflation A1": {
+  "min": 1.9587,
+  "median": 2.1624,
+  "max": 2.4277
+ },
+ "Calibrated inflation A2": {
+  "min": 10.1935,
+  "median": 12.4657,
+  "max": 13.7827
+ },
+ "Optimism A1 (apparent - nested Q2)": {
+  "min": -0.2315,
+  "median": 0.2464,
+  "max": 7.8227
+ },
+ "Optimism A1u": {
+  "min": -9.4263,
+  "median": 0.1968,
+  "max": 0.468
+ },
+ "Optimism A2": {
+  "min": 0.041,
+  "median": 0.2853,
+  "max": 46.831
+ },
+ "Q2 no selection": {
+  "min": -4.9218,
+  "median": 0.1124,
+  "max": 0.5274
+ },
+ "Q2 no filter": {
+  "min": -8.6855,
+  "median": 0.2142,
+  "max": 0.729
+ },
+ "Q2 random forest": {
+  "min": -0.3246,
+  "median": 0.2742,
+  "max": 0.8575
+ },
+ "optimism A1 positive": 15,
+ "p(Q2) A1 <= 0.05": 11,
+ "optimism A1u positive": 15,
+ "p(Q2) A1u <= 0.05": 10,
+ "optimism A2 positive": 16,
+ "p(Q2) A2 <= 0.05": 11,
+ "POSTHOC median A1 - no filter": -0.0321,
+ "POSTHOC A1 > no filter (point estimate)": 7,
+ "POSTHOC median A1u - no filter": -0.0301,
+ "POSTHOC A1u > no filter (point estimate)": 4,
+ "POSTHOC median A2 - no filter": 0.0286,
+ "POSTHOC A2 > no filter (point estimate)": 9,
+ "median best route - no filter (pre-specified effect, check)": 0.066,
+ "POSTHOC no filter > no selection": 12,
+ "POSTHOC median no filter - no selection": 0.1182,
+ "subsets": {
+  "DS21": {
+   "n": 25,
+   "optimism_A1": 0.594,
+   "calibrated_A2": 11.62
+  },
+  "DS22": {
+   "n": 60,
+   "optimism_A1": 0.266,
+   "calibrated_A2": 12.85
+  },
+  "DS23": {
+   "n": 25,
+   "optimism_A1": 4.754,
+   "calibrated_A2": 10.1
+  },
+  "DS24": {
+   "n": 60,
+   "optimism_A1": 0.212,
+   "calibrated_A2": 10.71
+  }
+ }
+}

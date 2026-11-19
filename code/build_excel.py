@@ -1,7 +1,18 @@
+# Archive-relative paths. _ROOT is the archive root, found from the location of this file. _REV is revision/,
+# _OUT holds the outputs of the revision scripts (default results/revision, or QSAR_REV_OUT), and _WORK holds
+# intermediate files (default results/recalc, or QSAR_RECALC_DIR).
+import os as _osp
+_ROOT = _osp.path.dirname(_osp.path.abspath(__file__))
+while not _osp.path.exists(_osp.path.join(_ROOT, 'CHANGELOG_revision2.md')) and _osp.path.dirname(_ROOT) != _ROOT:
+    _ROOT = _osp.path.dirname(_ROOT)
+_REV = _osp.path.join(_ROOT, 'revision')
+_OUT = _osp.environ.get('QSAR_REV_OUT', _osp.path.join(_ROOT, 'results', 'revision'))
+_WORK = _osp.environ.get('QSAR_RECALC_DIR', _osp.path.join(_ROOT, 'results', 'recalc'))
+_osp.makedirs(_WORK, exist_ok=True)
 import pandas as pd, numpy as np
 from scipy.stats import t as tdist
 
-out=pd.read_pickle('desc_table.pkl')
+out=pd.read_pickle(_WORK + '/desc_table.pkl')
 META=['Monoterpenoid','SMILES']
 ACT=[c for c in out.columns if c.startswith(('H. I','P. A','S. A','S. Pneu','S. pyo'))]
 DESC=[c for c in out.columns if c not in META+ACT]
@@ -46,13 +57,13 @@ maxabs=np.maximum(P.abs().values,S.abs().values)
 adj=((P.abs().values>0.7)&(pmat(P)<0.05))|((S.abs().values>0.7)&(pmat(S)<0.05))
 np.fill_diagonal(adj,False)
 
-# Seltene Binär-Flags (<4 Treffer) -> feste Singletons (instabile Korrelationen)
+# rare binary flags (<4 hits) -> fixed singletons (unstable correlations)
 is01=[set(np.unique(X[d]))<= {0,1} for d in DESC]
 rare=[i for i,d in enumerate(DESC) if is01[i] and X[d].sum()<4]
 for i in rare: adj[i,:]=False; adj[:,i]=False
-print('Feste Singletons (seltene Flags <4):',[DESC[i] for i in rare])
+print('fixed singletons (rare flags <4):',[DESC[i] for i in rare])
 
-# Greedy Cluster; Repräsentant = höchste Zentralität (mittlere |r| im Cluster), unsupervised
+# greedy clusters, representative = highest centrality (mean |r| in the cluster), unsupervised
 remaining=set(range(len(DESC))); groups=[]
 partners={i:set(np.where(adj[i])[0]) for i in range(len(DESC))}
 while remaining:
@@ -61,11 +72,11 @@ while remaining:
     hub=sorted([i for i in remaining if cnt[i]==mx],key=lambda i:(-cnt[i],i))[0]
     mem=[hub]+sorted(partners[hub]&remaining)
     cent={i:np.mean([maxabs[i,j] for j in mem if j!=i]) for i in mem}
-    rep=sorted(mem,key=lambda i:(-cent[i], is01[i], i))[0]  # höchste Zentralität, Nicht-Flag bevorzugt
+    rep=sorted(mem,key=lambda i:(-cent[i], is01[i], i))[0]  # highest centrality, non-flag preferred
     groups.append((rep,mem,cent)); remaining-=set(mem)
 singletons=sorted(remaining)
 reduced=[DESC[rep] for rep,_,_ in groups]+[DESC[i] for i in singletons]
-print('Cluster:',len(groups),'| Singletons:',len(singletons),'| reduziert:',len(reduced))
+print('Cluster:',len(groups),'| Singletons:',len(singletons),'| reduced:',len(reduced))
 for rep,mem,cent in groups:
     print(f'  [{DESC[rep]}] <- {[DESC[i] for i in mem if i!=rep]}')
 print('  Singletons:',[DESC[i] for i in singletons])
@@ -81,13 +92,13 @@ for i in singletons:
                      'redundante Partner (|r|>0.7)':'','Clustergröße':1})
 RED=pd.DataFrame(red_rows)
 
-fn='/mnt/user-data/outputs/20260706_31MT_LitDeskriptoren_Analyse.xlsx'
+fn=(_WORK + '/20260706_31MT_LitDeskriptoren_Analyse.xlsx')
 with pd.ExcelWriter(fn,engine='openpyxl') as w:
     out[META+ACT+DESC].to_excel(w,sheet_name='Deskriptoren',index=False)
     REZ.to_excel(w,sheet_name='Rechenvorschriften',index=False)
     P.round(4).to_excel(w,sheet_name='Pearson_Corr')
     S.round(4).to_excel(w,sheet_name='Spearman_Corr')
     RED.to_excel(w,sheet_name='Reduktion',index=False)
-np.save('/home/claude/reduced_desc.npy',np.array(reduced,dtype=object))
-out[META+ACT+DESC].to_pickle('/home/claude/desc_full.pkl')
-print('\nExcel-Basis geschrieben. Reduzierter Satz ('+str(len(reduced))+'):',reduced)
+np.save((_WORK + '/reduced_desc.npy'),np.array(reduced,dtype=object))
+out[META+ACT+DESC].to_pickle((_WORK + '/desc_full.pkl'))
+print('\nExcel basis written. Reduced set ('+str(len(reduced))+'):',reduced)

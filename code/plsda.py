@@ -1,4 +1,4 @@
-# Revision 03.10.2026: Permutations-p-Werte zaehlen Gleichstaende mit (Toleranz 1e-9), siehe CHANGELOG_revision.md
+# Revision 03.10.2026: permutation p-values count ties (tolerance 1e-9), see CHANGELOG_revision.md
 import numpy as np, pandas as pd
 from sklearn.cross_decomposition import PLSRegression
 from sklearn.metrics import roc_auc_score, matthews_corrcoef
@@ -32,7 +32,7 @@ def fit_full(X, y, nlv):
     m = PLSRegression(n_components=nlv, scale=False).fit(Xs, y)
     yh = m.predict(Xs).ravel()
     r2y = 1 - np.sum((y - yh)**2) / np.sum((y - y.mean())**2)
-    # R2X kumulativ
+    # R2X cumulative
     T = m.x_scores_; P = m.x_loadings_
     ssx = np.sum(Xs**2)
     r2x = np.sum([(T[:, a]**2).sum() * (P[:, a]**2).sum() for a in range(nlv)]) / ssx
@@ -69,7 +69,7 @@ def run_endpoint(fpath, short, full, nperm=2000, seed=42, maxlv=6):
     y = (cs[ycol].astype(str).str.strip() == 'active').astype(float).values
     n = len(y); n1 = int(y.sum()); n0 = int(n - n1)
 
-    # Komponentenwahl: max LOO-Q2 (Tie: kleineres nLV)
+    # choice of components: max LOO-Q2 (tie: smaller nLV)
     scan = []
     for nlv in range(1, min(maxlv, X.shape[1], n - 2) + 1):
         yh = loo_cont(X, y, nlv); scan.append((nlv, q2(y, yh), roc_auc_score(y, yh)))
@@ -79,7 +79,7 @@ def run_endpoint(fpath, short, full, nperm=2000, seed=42, maxlv=6):
     Q2 = q2(y, yh); AUC = roc_auc_score(y, yh); cls = classification(y, yh)
     R2Y, R2X, vip = fit_full(X, y, nlv)
 
-    # Permutationstest
+    # permutation test
     permQ = np.empty(nperm); permA = np.empty(nperm); permR = np.empty(nperm)
     for k in range(nperm):
         yp = rng.permutation(y)

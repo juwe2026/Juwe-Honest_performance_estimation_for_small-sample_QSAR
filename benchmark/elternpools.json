@@ -1,0 +1,34 @@
+{
+ "MIC": {
+  "dokument": "CHEMBL4190362",
+  "doi": "10.1016/j.ejmech.2017.09.026",
+  "assay": "CHEMBL4194372",
+  "ziel": "Candida parapsilosis",
+  "n": 122,
+  "aktiv": 68,
+  "nicht_aktiv": 54,
+  "anteil": 0.443,
+  "journal": "Eur J Med Chem 2017",
+  "teilmengen": [
+   25,
+   60
+  ],
+  "schwelle": "Ersatzregel MIC <= 8 ug/mL"
+ },
+ "Enzym": {
+  "dokument": "CHEMBL5360622",
+  "doi": "10.1021/acs.jmedchem.3c00884",
+  "assay": "CHEMBL5363956",
+  "ziel": "Dual specificity protein kinase CLK3",
+  "n": 232,
+  "aktiv": 118,
+  "nicht_aktiv": 114,
+  "anteil": 0.491,
+  "journal": "J Med Chem 2023",
+  "teilmengen": [
+   25,
+   60
+  ],
+  "schwelle": "Ersatzregel IC50 <= 1 uM"
+ }
+}
